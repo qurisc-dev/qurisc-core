@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Jul  3 00:01:55 2019
+# Process ID: 18760
+# Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1
+# Command line: vivado.exe -log thinpad_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source thinpad_top.tcl
+# Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/thinpad_top.vds
+# Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source thinpad_top.tcl -notrace

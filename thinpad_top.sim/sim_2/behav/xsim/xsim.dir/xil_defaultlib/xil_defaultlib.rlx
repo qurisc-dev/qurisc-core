@@ -1,0 +1,10 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.sim/sim_2/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/imports/new/uut_ringedbuffer.sv,1562199716,systemVerilog,,C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/uut.sv,,uut_ringedbuffer,,,../../../../thinpad_top.srcs/sim_1/new/include,,,,,
+C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/uut.sv,1562200245,systemVerilog,,,,uut,,,../../../../thinpad_top.srcs/sim_1/new/include,,,,,
+C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/uut_arbit.sv,1562200237,systemVerilog,,C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/imports/new/uut_ringedbuffer.sv,,uut_arbit,,,../../../../thinpad_top.srcs/sim_1/new/include,,,,,
+C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv,1562202333,systemVerilog,,C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/uut_arbit.sv,,cdb_selector;data_selector;priority_arbiter;roundrobin_arbiter,,,../../../../thinpad_top.srcs/sim_1/new/include,,,,,
+C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/ringedbuffer.v,1562174979,verilog,,,,ringedbuffer,,,../../../../thinpad_top.srcs/sim_1/new/include,,,,,

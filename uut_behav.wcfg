@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="uut_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="uut" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="61500001fs"></ZoomEndTime>
+      <Cursor1Time time="5000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/uut/rb/rb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/push" type="logic">
+      <obj_property name="ElementShortName">push</obj_property>
+      <obj_property name="ObjectShortName">push</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/input_data" type="array">
+      <obj_property name="ElementShortName">input_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">input_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/pop" type="logic">
+      <obj_property name="ElementShortName">pop</obj_property>
+      <obj_property name="ObjectShortName">pop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/output_data" type="array">
+      <obj_property name="ElementShortName">output_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">output_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/can_pop" type="logic">
+      <obj_property name="ElementShortName">can_pop</obj_property>
+      <obj_property name="ObjectShortName">can_pop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/is_alert" type="logic">
+      <obj_property name="ElementShortName">is_alert</obj_property>
+      <obj_property name="ObjectShortName">is_alert</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/head" type="array">
+      <obj_property name="ElementShortName">head[3:0]</obj_property>
+      <obj_property name="ObjectShortName">head[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/tail" type="array">
+      <obj_property name="ElementShortName">tail[3:0]</obj_property>
+      <obj_property name="ObjectShortName">tail[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/queue_data" type="array">
+      <obj_property name="ElementShortName">queue_data[0:15][63:0]</obj_property>
+      <obj_property name="ObjectShortName">queue_data[0:15][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/CAPACITY_LOG2" type="array">
+      <obj_property name="ElementShortName">CAPACITY_LOG2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CAPACITY_LOG2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/rb/rb/MAX_SIZE" type="array">
+      <obj_property name="ElementShortName">MAX_SIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_SIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider171">
+      <obj_property name="label">arbit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/arbit/requests" type="array">
+      <obj_property name="ElementShortName">requests[7:0]</obj_property>
+      <obj_property name="ObjectShortName">requests[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/arbit/responses" type="array">
+      <obj_property name="ElementShortName">responses[7:0]</obj_property>
+      <obj_property name="ObjectShortName">responses[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uut/arbit/masks" type="array">
+      <obj_property name="ElementShortName">masks[7:0]</obj_property>
+      <obj_property name="ObjectShortName">masks[7:0]</obj_property>
+   </wvobject>
+</wave_config>
