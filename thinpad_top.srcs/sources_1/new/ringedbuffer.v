@@ -39,7 +39,7 @@ module ringedbuffer #(parameter DATA_WIDTH = 64, parameter CAPACITY_LOG2=4, para
     reg [DATA_WIDTH-1:0] queue_data[0:(1<<CAPACITY_LOG2)-1];
     assign can_pop=(head!=tail) || push; // If something is pushing in then can still pop.
     assign output_data = (head==tail && push)? input_data : queue_data[head];
-    assign is_alert=size<=MAX_SIZE;
+    assign is_alert=size>=MAX_SIZE;
     always @(posedge clk) begin
         if(rst) begin
             head<=0;

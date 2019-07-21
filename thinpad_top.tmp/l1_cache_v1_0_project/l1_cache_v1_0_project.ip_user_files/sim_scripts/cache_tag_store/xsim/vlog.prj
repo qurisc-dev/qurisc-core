@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../../../../ip_repo/l1_cache_1.0/src/cache_tag_store/cache_tag_store_sim_netlist.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,19 +1,23 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 1e0777dd008c45fcbaffd6b18f2c35e9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uut_behav xil_defaultlib.uut xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 1e0777dd008c45fcbaffd6b18f2c35e9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uut_behav xil_defaultlib.uut xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'enable' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/uut_arbit.sv:5]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'ram_be_n' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/burst_sram_test.sv:90]
 Completed static elaboration
 Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/uut_arbit.sv" Line 1. Module uut_arbit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sim_2/new/burst_sram_test.sv" Line 1. Module uut_burst_sram doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.ringedbuffer
 Compiling module xil_defaultlib.uut_ringedbuffer
-Compiling module xil_defaultlib.priority_arbiter(SIZE_LOG2=1)
-Compiling module xil_defaultlib.priority_arbiter(SIZE_LOG2=2)
 Compiling module xil_defaultlib.priority_arbiter(SIZE_LOG2=3)
 Compiling module xil_defaultlib.uut_arbit
+Compiling module xil_defaultlib.sram_model
+Compiling module xil_defaultlib.burst_sram
+Compiling module xil_defaultlib.uut_burst_sram
 Compiling module xil_defaultlib.uut
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot uut_behav

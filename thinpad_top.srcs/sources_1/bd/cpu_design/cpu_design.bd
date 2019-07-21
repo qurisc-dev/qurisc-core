@@ -1,12 +1,1889 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0xEDAC9A23FDF7D136",
       "device": "xc7a100tfgg676-2L",
       "name": "cpu_design",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2019.1"
     },
-    "design_tree": {}
+    "design_tree": {
+      "axi_interconnect_0": {
+        "xbar": "",
+        "s00_couplers": {},
+        "m00_couplers": {},
+        "m01_couplers": {}
+      },
+      "reservestation_0": "",
+      "decoder_0": "",
+      "branch_predictor_0": "",
+      "dispatcher_0": "",
+      "if_controller_0": "",
+      "if_insn_queue_0": "",
+      "if_memory_accessor_0": "",
+      "if_tlb_fetcher_0": "",
+      "jump_predictor_0": "",
+      "pc_counter_0": "",
+      "registers_0": "",
+      "renamebuffer_0": "",
+      "rob_0": "",
+      "loadstoreunit_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I"
+      }
+    },
+    "components": {
+      "axi_interconnect_0": {
+        "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
+        "xci_name": "cpu_design_axi_interconnect_0_0",
+        "parameters": {
+          "ENABLE_ADVANCED_OPTIONS": {
+            "value": "0"
+          },
+          "XBAR_DATA_WIDTH": {
+            "value": "64"
+          }
+        },
+        "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M00_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M01_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        },
+        "ports": {
+          "ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "ARESETN"
+              }
+            }
+          },
+          "ARESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "S00_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "S00_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "S00_ARESETN"
+              }
+            }
+          },
+          "S00_ARESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "M00_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M00_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M00_ARESETN"
+              }
+            }
+          },
+          "M00_ARESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "M01_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M01_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M01_ARESETN"
+              }
+            }
+          },
+          "M01_ARESETN": {
+            "type": "rst",
+            "direction": "I"
+          }
+        },
+        "components": {
+          "xbar": {
+            "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
+            "xci_name": "cpu_design_xbar_0",
+            "parameters": {
+              "NUM_MI": {
+                "value": "2"
+              },
+              "NUM_SI": {
+                "value": "1"
+              },
+              "STRATEGY": {
+                "value": "0"
+              }
+            }
+          },
+          "s00_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "s00_couplers_to_s00_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
+          },
+          "m00_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m00_couplers_to_m00_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
+          },
+          "m01_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m01_couplers_to_m01_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
+          }
+        },
+        "interface_nets": {
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
+          "m00_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "axi_interconnect_0_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "m01_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          }
+        },
+        "nets": {
+          "axi_interconnect_0_ACLK_net": {
+            "ports": [
+              "ACLK",
+              "xbar/aclk",
+              "s00_couplers/S_ACLK",
+              "s00_couplers/M_ACLK",
+              "m00_couplers/M_ACLK",
+              "m01_couplers/M_ACLK",
+              "m00_couplers/S_ACLK",
+              "m01_couplers/S_ACLK"
+            ]
+          },
+          "axi_interconnect_0_ARESETN_net": {
+            "ports": [
+              "ARESETN",
+              "xbar/aresetn",
+              "s00_couplers/S_ARESETN",
+              "s00_couplers/M_ARESETN",
+              "m00_couplers/M_ARESETN",
+              "m01_couplers/M_ARESETN",
+              "m00_couplers/S_ARESETN",
+              "m01_couplers/S_ARESETN"
+            ]
+          }
+        }
+      },
+      "reservestation_0": {
+        "vlnv": "xilinx.com:module_ref:reservestation:1.0",
+        "xci_name": "cpu_design_reservestation_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "reservestation",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "rst_startreissue": {
+            "direction": "I"
+          },
+          "try_reserve": {
+            "direction": "I"
+          },
+          "din": {
+            "direction": "I",
+            "left": "221",
+            "right": "0"
+          },
+          "svalue": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "tvalue": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "s_isval": {
+            "direction": "I"
+          },
+          "t_isval": {
+            "direction": "I"
+          },
+          "rob_free_item": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "known_load_mask": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "can_reserve": {
+            "direction": "O"
+          },
+          "kill_by_mask": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "cdb": {
+            "direction": "O",
+            "left": "148",
+            "right": "0"
+          },
+          "lsu_din": {
+            "direction": "O",
+            "left": "233",
+            "right": "0"
+          },
+          "lsu_dout": {
+            "direction": "I",
+            "left": "144",
+            "right": "0"
+          }
+        }
+      },
+      "decoder_0": {
+        "vlnv": "xilinx.com:module_ref:decoder:1.0",
+        "xci_name": "cpu_design_decoder_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "inst": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "bp_result_branch": {
+            "direction": "I"
+          },
+          "bp_result_jump": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "decoded": {
+            "direction": "O",
+            "left": "221",
+            "right": "0"
+          },
+          "do_jp": {
+            "direction": "O"
+          },
+          "jp_is_jal": {
+            "direction": "O"
+          },
+          "jp_is_jalr": {
+            "direction": "O"
+          },
+          "bp_branch_taken_target": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "jp_val_rs1": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "jp_val_rd": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "bp_need_jump": {
+            "direction": "O"
+          },
+          "bp_result": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      },
+      "branch_predictor_0": {
+        "vlnv": "xilinx.com:module_ref:branch_predictor:1.0",
+        "xci_name": "cpu_design_branch_predictor_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "branch_predictor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "bp": {
+            "direction": "O"
+          },
+          "bp_commit": {
+            "direction": "I"
+          },
+          "bp_commit_result": {
+            "direction": "I"
+          }
+        }
+      },
+      "dispatcher_0": {
+        "vlnv": "xilinx.com:module_ref:dispatcher:1.0",
+        "xci_name": "cpu_design_dispatcher_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "dispatcher",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "decoder_input": {
+            "direction": "I",
+            "left": "221",
+            "right": "0"
+          },
+          "decoder_valid": {
+            "direction": "I"
+          },
+          "decoder_pop": {
+            "direction": "O"
+          },
+          "reissue_input": {
+            "direction": "I",
+            "left": "221",
+            "right": "0"
+          },
+          "reissue_valid": {
+            "direction": "I"
+          },
+          "reissue_next": {
+            "direction": "O"
+          },
+          "can_dispatch": {
+            "direction": "O"
+          },
+          "rob_ready": {
+            "direction": "I"
+          },
+          "rs_ready": {
+            "direction": "I"
+          },
+          "decode_result": {
+            "direction": "O",
+            "left": "221",
+            "right": "0"
+          },
+          "rs_register_dependency": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "rt_register_dependency": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "rd_register_target": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "rs_register_value": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "rt_register_value": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "rs_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "rt_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "start_reissue": {
+            "direction": "I"
+          },
+          "rob_empty": {
+            "direction": "I"
+          },
+          "store_queue_ready": {
+            "direction": "I"
+          }
+        }
+      },
+      "if_controller_0": {
+        "vlnv": "xilinx.com:module_ref:if_controller:1.0",
+        "xci_name": "cpu_design_if_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "if_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rob_commit": {
+            "direction": "I"
+          },
+          "rob_bpfail": {
+            "direction": "I"
+          },
+          "rob_bpfail_target": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "bp_needjump": {
+            "direction": "I"
+          },
+          "bp_jump_target": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "pc_flush": {
+            "direction": "O"
+          },
+          "pc_flush_addr": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "if_tlb_flush": {
+            "direction": "O"
+          },
+          "if_mem_flush": {
+            "direction": "O"
+          },
+          "if_queue_flush": {
+            "direction": "O"
+          }
+        }
+      },
+      "if_insn_queue_0": {
+        "vlnv": "xilinx.com:module_ref:if_insn_queue:1.0",
+        "xci_name": "cpu_design_if_insn_queue_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "if_insn_queue",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "rst_bpfailed": {
+            "direction": "I"
+          },
+          "inInstruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "inPC": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "inException": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "in_valid": {
+            "direction": "I"
+          },
+          "in_ready": {
+            "direction": "O"
+          },
+          "out_bpjump": {
+            "direction": "O"
+          },
+          "out_bptarget": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_valid": {
+            "direction": "O"
+          },
+          "out_ready": {
+            "direction": "I"
+          },
+          "decoding_instruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "decode_result": {
+            "direction": "I",
+            "left": "221",
+            "right": "0"
+          },
+          "next_insn": {
+            "direction": "O",
+            "left": "221",
+            "right": "0"
+          }
+        }
+      },
+      "if_memory_accessor_0": {
+        "vlnv": "xilinx.com:module_ref:if_memory_accessor:1.0",
+        "xci_name": "cpu_design_if_memory_accessor_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "if_memory_accessor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "flush": {
+            "direction": "I"
+          },
+          "PC_physical": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "PC_virtual": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "tlbmiss": {
+            "direction": "I"
+          },
+          "memoryattr": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "outInstruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "outPC": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "outException": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "in_ready": {
+            "direction": "O"
+          },
+          "in_valid": {
+            "direction": "I"
+          },
+          "out_valid": {
+            "direction": "O"
+          },
+          "out_ready": {
+            "direction": "I"
+          }
+        }
+      },
+      "if_tlb_fetcher_0": {
+        "vlnv": "xilinx.com:module_ref:if_tlb_fetcher:1.0",
+        "xci_name": "cpu_design_if_tlb_fetcher_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "if_tlb_fetcher",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "flush": {
+            "direction": "I"
+          },
+          "PC": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "outPC_physical": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "outPC_virtual": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "memoryattr": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "out_tlbmiss": {
+            "direction": "O"
+          },
+          "in_ready": {
+            "direction": "O"
+          },
+          "out_valid": {
+            "direction": "O"
+          },
+          "out_ready": {
+            "direction": "I"
+          }
+        }
+      },
+      "jump_predictor_0": {
+        "vlnv": "xilinx.com:module_ref:jump_predictor:1.0",
+        "xci_name": "cpu_design_jump_predictor_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "jump_predictor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "do_jp": {
+            "direction": "I"
+          },
+          "is_jal": {
+            "direction": "I"
+          },
+          "is_jalr": {
+            "direction": "I"
+          },
+          "val_rs1": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "val_rd": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ras_push_item": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "ras_next_address": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "forward_index": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "forward_value": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "do_commit": {
+            "direction": "I"
+          },
+          "commit_is_jal": {
+            "direction": "I"
+          },
+          "commit_is_jalr": {
+            "direction": "I"
+          },
+          "commit_val_rs1": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "commit_val_rd": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ras_commit_push_item": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "ras_commit_flush": {
+            "direction": "I"
+          }
+        }
+      },
+      "pc_counter_0": {
+        "vlnv": "xilinx.com:module_ref:pc_counter:1.0",
+        "xci_name": "cpu_design_pc_counter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pc_counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "PC": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "flush": {
+            "direction": "I"
+          },
+          "new_pc": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "out_ready": {
+            "direction": "I"
+          }
+        }
+      },
+      "registers_0": {
+        "vlnv": "xilinx.com:module_ref:registers:1.0",
+        "xci_name": "cpu_design_registers_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "registers",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "query_rs": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "query_rs_result": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "query_rt": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "query_rt_result": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "commit": {
+            "direction": "I"
+          },
+          "commit_idx": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "commit_val": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "bp_query": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "bp_query_result": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      },
+      "renamebuffer_0": {
+        "vlnv": "xilinx.com:module_ref:renamebuffer:1.0",
+        "xci_name": "cpu_design_renamebuffer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "renamebuffer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "rst_startreissue": {
+            "direction": "I"
+          },
+          "new_rename": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "new_rob_item": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "do_rename": {
+            "direction": "I"
+          },
+          "commit_register": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "commit_robitem": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "do_commit": {
+            "direction": "I"
+          },
+          "rs_dep": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "rt_dep": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "combine_dep": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "rs_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "rs_is_value": {
+            "direction": "O"
+          },
+          "rt_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "rt_is_value": {
+            "direction": "O"
+          },
+          "query_line_rs": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "query_result_rs": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "query_ready_rs": {
+            "direction": "I"
+          },
+          "register_result_rs": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "query_line_rt": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "query_result_rt": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "query_ready_rt": {
+            "direction": "I"
+          },
+          "register_result_rt": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      },
+      "rob_0": {
+        "vlnv": "xilinx.com:module_ref:rob:1.0",
+        "xci_name": "cpu_design_rob_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "rob",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "cdb": {
+            "direction": "I",
+            "left": "148",
+            "right": "0"
+          },
+          "din": {
+            "direction": "I",
+            "left": "221",
+            "right": "0"
+          },
+          "new_dependency_mask": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "push": {
+            "direction": "I"
+          },
+          "rob_full": {
+            "direction": "O"
+          },
+          "rob_empty": {
+            "direction": "O"
+          },
+          "search_line_0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "search_result_0": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "search_ready_0": {
+            "direction": "O"
+          },
+          "search_line_1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "search_result_1": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "search_ready_1": {
+            "direction": "O"
+          },
+          "start_reissue": {
+            "direction": "O"
+          },
+          "reissue": {
+            "direction": "O"
+          },
+          "reissue_next": {
+            "direction": "I"
+          },
+          "reissue_args": {
+            "direction": "O",
+            "left": "221",
+            "right": "0"
+          },
+          "do_commit": {
+            "direction": "O"
+          },
+          "commit_regwrite_index": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "commit_regwrite_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "commit_line": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "commit_jump_address": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "commit_float_exception": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "commit_exception": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "commit_load_speculation_failed": {
+            "direction": "I"
+          },
+          "commit_store": {
+            "direction": "O"
+          },
+          "can_commit_storequeue": {
+            "direction": "I"
+          },
+          "commit_bpfailed": {
+            "direction": "O"
+          },
+          "rob_next_item": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "rob_not_full": {
+            "direction": "O"
+          }
+        }
+      },
+      "loadstoreunit_0": {
+        "vlnv": "xilinx.com:module_ref:loadstoreunit:1.0",
+        "xci_name": "cpu_design_loadstoreunit_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "loadstoreunit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "rst_reissue": {
+            "direction": "I"
+          },
+          "store_queue_available": {
+            "direction": "O"
+          },
+          "store_queue_push": {
+            "direction": "I"
+          },
+          "store_queue_pop": {
+            "direction": "I"
+          },
+          "sqitem_index": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "sq_store": {
+            "direction": "I"
+          },
+          "sq_store_addr": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "sq_store_index": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "sq_store_mask": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "sq_store_value": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "loadbypass_addr": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "loadbypass_ret_mask": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "loadbypass_ret_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "next_commit_value": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "next_commit_mask": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "next_commit_addr": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "axi_interconnect_0/M00_ACLK",
+          "axi_interconnect_0/M01_ACLK",
+          "axi_interconnect_0/S00_ACLK",
+          "axi_interconnect_0/ACLK",
+          "reservestation_0/clk",
+          "branch_predictor_0/clk",
+          "if_insn_queue_0/clk",
+          "if_memory_accessor_0/clk",
+          "if_tlb_fetcher_0/clk",
+          "jump_predictor_0/clk",
+          "pc_counter_0/clk",
+          "registers_0/clk",
+          "renamebuffer_0/clk",
+          "rob_0/clk",
+          "loadstoreunit_0/clk"
+        ]
+      },
+      "rob_0_reissue_args": {
+        "ports": [
+          "rob_0/reissue_args",
+          "dispatcher_0/reissue_input"
+        ]
+      },
+      "dispatcher_0_decode_result": {
+        "ports": [
+          "dispatcher_0/decode_result",
+          "reservestation_0/din",
+          "rob_0/din"
+        ]
+      },
+      "dispatcher_0_can_dispatch": {
+        "ports": [
+          "dispatcher_0/can_dispatch",
+          "reservestation_0/try_reserve",
+          "renamebuffer_0/do_rename",
+          "rob_0/push",
+          "loadstoreunit_0/store_queue_push"
+        ]
+      },
+      "reservestation_0_can_reserve": {
+        "ports": [
+          "reservestation_0/can_reserve",
+          "dispatcher_0/rs_ready"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "reservestation_0/rst",
+          "branch_predictor_0/rst",
+          "if_insn_queue_0/rst",
+          "if_memory_accessor_0/rst",
+          "if_tlb_fetcher_0/rst",
+          "jump_predictor_0/rst",
+          "pc_counter_0/rst",
+          "registers_0/rst",
+          "renamebuffer_0/rst",
+          "rob_0/rst",
+          "loadstoreunit_0/rst"
+        ]
+      },
+      "rob_0_rob_next_item": {
+        "ports": [
+          "rob_0/rob_next_item",
+          "reservestation_0/rob_free_item",
+          "renamebuffer_0/new_rob_item",
+          "loadstoreunit_0/sqitem_index"
+        ]
+      },
+      "rob_0_rob_not_full": {
+        "ports": [
+          "rob_0/rob_not_full",
+          "dispatcher_0/rob_ready"
+        ]
+      },
+      "rob_0_commit_regwrite_index": {
+        "ports": [
+          "rob_0/commit_regwrite_index",
+          "registers_0/commit_idx",
+          "renamebuffer_0/commit_register"
+        ]
+      },
+      "renamebuffer_0_combine_dep": {
+        "ports": [
+          "renamebuffer_0/combine_dep",
+          "reservestation_0/known_load_mask",
+          "rob_0/new_dependency_mask"
+        ]
+      },
+      "rob_0_commit_line": {
+        "ports": [
+          "rob_0/commit_line",
+          "renamebuffer_0/commit_robitem"
+        ]
+      },
+      "reservestation_0_cdb": {
+        "ports": [
+          "reservestation_0/cdb",
+          "rob_0/cdb"
+        ]
+      },
+      "rob_0_do_commit": {
+        "ports": [
+          "rob_0/do_commit",
+          "if_controller_0/rob_commit",
+          "jump_predictor_0/do_commit",
+          "registers_0/commit",
+          "renamebuffer_0/do_commit"
+        ]
+      },
+      "rob_0_search_result_0": {
+        "ports": [
+          "rob_0/search_result_0",
+          "renamebuffer_0/query_result_rs"
+        ]
+      },
+      "rob_0_search_result_1": {
+        "ports": [
+          "rob_0/search_result_1",
+          "renamebuffer_0/query_result_rt"
+        ]
+      },
+      "registers_0_query_rs_result": {
+        "ports": [
+          "registers_0/query_rs_result",
+          "renamebuffer_0/register_result_rs"
+        ]
+      },
+      "registers_0_query_rt_result": {
+        "ports": [
+          "registers_0/query_rt_result",
+          "renamebuffer_0/register_result_rt"
+        ]
+      },
+      "rob_0_commit_regwrite_value": {
+        "ports": [
+          "rob_0/commit_regwrite_value",
+          "registers_0/commit_val"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "dispatcher_0/rs_register_dependency",
+          "registers_0/query_rs",
+          "renamebuffer_0/rs_dep"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "dispatcher_0/rt_register_dependency",
+          "registers_0/query_rt",
+          "renamebuffer_0/rt_dep"
+        ]
+      },
+      "renamebuffer_0_query_line_rs": {
+        "ports": [
+          "renamebuffer_0/query_line_rs",
+          "rob_0/search_line_0"
+        ]
+      },
+      "renamebuffer_0_query_line_rt": {
+        "ports": [
+          "renamebuffer_0/query_line_rt",
+          "rob_0/search_line_1"
+        ]
+      },
+      "renamebuffer_0_rs_is_value": {
+        "ports": [
+          "renamebuffer_0/rs_is_value",
+          "reservestation_0/s_isval"
+        ]
+      },
+      "renamebuffer_0_rt_is_value": {
+        "ports": [
+          "renamebuffer_0/rt_is_value",
+          "reservestation_0/t_isval"
+        ]
+      },
+      "dispatcher_0_rd_register_target": {
+        "ports": [
+          "dispatcher_0/rd_register_target",
+          "renamebuffer_0/new_rename"
+        ]
+      },
+      "dispatcher_0_rs_value": {
+        "ports": [
+          "dispatcher_0/rs_value",
+          "reservestation_0/svalue"
+        ]
+      },
+      "dispatcher_0_rt_value": {
+        "ports": [
+          "dispatcher_0/rt_value",
+          "reservestation_0/tvalue"
+        ]
+      },
+      "renamebuffer_0_rs_value": {
+        "ports": [
+          "renamebuffer_0/rs_value",
+          "dispatcher_0/rs_register_value"
+        ]
+      },
+      "renamebuffer_0_rt_value": {
+        "ports": [
+          "renamebuffer_0/rt_value",
+          "dispatcher_0/rt_register_value"
+        ]
+      },
+      "rob_0_search_ready_0": {
+        "ports": [
+          "rob_0/search_ready_0",
+          "renamebuffer_0/query_ready_rs"
+        ]
+      },
+      "rob_0_search_ready_1": {
+        "ports": [
+          "rob_0/search_ready_1",
+          "renamebuffer_0/query_ready_rt"
+        ]
+      },
+      "rob_0_start_reissue": {
+        "ports": [
+          "rob_0/start_reissue",
+          "reservestation_0/rst_startreissue",
+          "dispatcher_0/start_reissue",
+          "renamebuffer_0/rst_startreissue",
+          "loadstoreunit_0/rst_reissue"
+        ]
+      },
+      "rob_0_reissue": {
+        "ports": [
+          "rob_0/reissue",
+          "dispatcher_0/reissue_valid"
+        ]
+      },
+      "dispatcher_0_reissue_next": {
+        "ports": [
+          "dispatcher_0/reissue_next",
+          "rob_0/reissue_next"
+        ]
+      },
+      "rob_0_rob_empty": {
+        "ports": [
+          "rob_0/rob_empty",
+          "dispatcher_0/rob_empty"
+        ]
+      },
+      "pc_counter_0_PC": {
+        "ports": [
+          "pc_counter_0/PC",
+          "if_tlb_fetcher_0/PC"
+        ]
+      },
+      "if_tlb_fetcher_0_in_ready": {
+        "ports": [
+          "if_tlb_fetcher_0/in_ready",
+          "pc_counter_0/out_ready"
+        ]
+      },
+      "if_tlb_fetcher_0_out_valid": {
+        "ports": [
+          "if_tlb_fetcher_0/out_valid",
+          "if_memory_accessor_0/in_valid"
+        ]
+      },
+      "if_tlb_fetcher_0_outPC_physical": {
+        "ports": [
+          "if_tlb_fetcher_0/outPC_physical",
+          "if_memory_accessor_0/PC_physical"
+        ]
+      },
+      "if_tlb_fetcher_0_outPC_virtual": {
+        "ports": [
+          "if_tlb_fetcher_0/outPC_virtual",
+          "if_memory_accessor_0/PC_virtual"
+        ]
+      },
+      "if_tlb_fetcher_0_memoryattr": {
+        "ports": [
+          "if_tlb_fetcher_0/memoryattr",
+          "if_memory_accessor_0/memoryattr"
+        ]
+      },
+      "if_tlb_fetcher_0_out_tlbmiss": {
+        "ports": [
+          "if_tlb_fetcher_0/out_tlbmiss",
+          "if_memory_accessor_0/tlbmiss"
+        ]
+      },
+      "if_memory_accessor_0_outInstruction": {
+        "ports": [
+          "if_memory_accessor_0/outInstruction",
+          "if_insn_queue_0/inInstruction"
+        ]
+      },
+      "if_memory_accessor_0_outPC": {
+        "ports": [
+          "if_memory_accessor_0/outPC",
+          "if_insn_queue_0/inPC"
+        ]
+      },
+      "if_memory_accessor_0_in_ready": {
+        "ports": [
+          "if_memory_accessor_0/in_ready",
+          "if_tlb_fetcher_0/out_ready"
+        ]
+      },
+      "if_insn_queue_0_in_ready": {
+        "ports": [
+          "if_insn_queue_0/in_ready",
+          "if_memory_accessor_0/out_ready"
+        ]
+      },
+      "if_memory_accessor_0_out_valid": {
+        "ports": [
+          "if_memory_accessor_0/out_valid",
+          "if_insn_queue_0/in_valid"
+        ]
+      },
+      "dispatcher_0_decoder_pop": {
+        "ports": [
+          "dispatcher_0/decoder_pop",
+          "if_insn_queue_0/out_ready"
+        ]
+      },
+      "if_insn_queue_0_out_valid": {
+        "ports": [
+          "if_insn_queue_0/out_valid",
+          "dispatcher_0/decoder_valid"
+        ]
+      },
+      "decoder_0_decoded": {
+        "ports": [
+          "decoder_0/decoded",
+          "if_insn_queue_0/decode_result"
+        ]
+      },
+      "if_memory_accessor_0_outException": {
+        "ports": [
+          "if_memory_accessor_0/outException",
+          "if_insn_queue_0/inException"
+        ]
+      },
+      "decoder_0_do_jp": {
+        "ports": [
+          "decoder_0/do_jp",
+          "jump_predictor_0/do_jp"
+        ]
+      },
+      "decoder_0_jp_is_jal": {
+        "ports": [
+          "decoder_0/jp_is_jal",
+          "jump_predictor_0/is_jal"
+        ]
+      },
+      "decoder_0_jp_is_jalr": {
+        "ports": [
+          "decoder_0/jp_is_jalr",
+          "jump_predictor_0/is_jalr"
+        ]
+      },
+      "decoder_0_jp_val_rs1": {
+        "ports": [
+          "decoder_0/jp_val_rs1",
+          "jump_predictor_0/val_rs1"
+        ]
+      },
+      "decoder_0_jp_val_rd": {
+        "ports": [
+          "decoder_0/jp_val_rd",
+          "jump_predictor_0/val_rd"
+        ]
+      },
+      "jump_predictor_0_forward_index": {
+        "ports": [
+          "jump_predictor_0/forward_index",
+          "registers_0/bp_query"
+        ]
+      },
+      "registers_0_bp_query_result": {
+        "ports": [
+          "registers_0/bp_query_result",
+          "jump_predictor_0/forward_value"
+        ]
+      },
+      "Net2": {
+        "ports": [
+          "decoder_0/pc",
+          "jump_predictor_0/ras_push_item"
+        ]
+      },
+      "jump_predictor_0_ras_next_address": {
+        "ports": [
+          "jump_predictor_0/ras_next_address",
+          "decoder_0/bp_result_jump"
+        ]
+      },
+      "if_insn_queue_0_decoding_instruction": {
+        "ports": [
+          "if_insn_queue_0/decoding_instruction",
+          "decoder_0/inst"
+        ]
+      },
+      "branch_predictor_0_bp": {
+        "ports": [
+          "branch_predictor_0/bp",
+          "decoder_0/bp_result_branch"
+        ]
+      },
+      "if_insn_queue_0_next_insn": {
+        "ports": [
+          "if_insn_queue_0/next_insn",
+          "dispatcher_0/decoder_input"
+        ]
+      },
+      "if_controller_0_pc_flush": {
+        "ports": [
+          "if_controller_0/pc_flush",
+          "pc_counter_0/flush"
+        ]
+      },
+      "if_controller_0_if_tlb_flush": {
+        "ports": [
+          "if_controller_0/if_tlb_flush",
+          "if_tlb_fetcher_0/flush"
+        ]
+      },
+      "if_controller_0_pc_flush_addr": {
+        "ports": [
+          "if_controller_0/pc_flush_addr",
+          "pc_counter_0/new_pc"
+        ]
+      },
+      "decoder_0_bp_need_jump": {
+        "ports": [
+          "decoder_0/bp_need_jump",
+          "if_controller_0/bp_needjump"
+        ]
+      },
+      "decoder_0_bp_result": {
+        "ports": [
+          "decoder_0/bp_result",
+          "if_controller_0/bp_jump_target"
+        ]
+      },
+      "if_controller_0_if_mem_flush": {
+        "ports": [
+          "if_controller_0/if_mem_flush",
+          "if_memory_accessor_0/flush"
+        ]
+      },
+      "if_controller_0_if_queue_flush": {
+        "ports": [
+          "if_controller_0/if_queue_flush",
+          "if_insn_queue_0/rst_bpfailed"
+        ]
+      },
+      "rob_0_commit_jump_address": {
+        "ports": [
+          "rob_0/commit_jump_address",
+          "if_controller_0/rob_bpfail_target"
+        ]
+      },
+      "rob_0_commit_bpfailed": {
+        "ports": [
+          "rob_0/commit_bpfailed",
+          "if_controller_0/rob_bpfail"
+        ]
+      },
+      "rob_0_commit_store": {
+        "ports": [
+          "rob_0/commit_store",
+          "loadstoreunit_0/store_queue_pop"
+        ]
+      },
+      "loadstoreunit_0_store_queue_available": {
+        "ports": [
+          "loadstoreunit_0/store_queue_available",
+          "dispatcher_0/store_queue_ready"
+        ]
+      }
+    }
   }
 }

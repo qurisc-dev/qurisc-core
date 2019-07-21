@@ -24,11 +24,33 @@
 module priority_arbiter #(parameter SIZE_LOG2=5)(
     input wire[(1<<SIZE_LOG2)-1:0] requests,
     input wire enable,
-    output wire[(1<<SIZE_LOG2)-1:0] responses,
+    output reg[(1<<SIZE_LOG2)-1:0] responses,
     // The next mask used by round-robin encoder.
     // Everything is masked until chosen element.
-    output wire[(1<<SIZE_LOG2)-1:0] mask
+    output reg[(1<<SIZE_LOG2)-1:0] mask
 );
+    integer i;
+    integer j;
+    reg has_responded;
+    always @* begin
+    if(enable) begin
+        has_responded=0;
+        for(i=(1<<SIZE_LOG2);i!=0;i=i-1) begin
+            j=i-1;
+            if(!has_responded) begin
+                has_responded=has_responded|requests[j];
+                responses[j]=requests[j];
+            end else begin
+                responses[j]=0;
+            end
+            mask[j]=~has_responded;
+        end
+    end else begin
+        responses=0;
+        mask={((1<<SIZE_LOG2)){1'b1}};
+    end
+    end
+/*
     generate
         if (SIZE_LOG2==1) begin
             assign responses[1]=requests[1] && enable;
@@ -59,6 +81,7 @@ module priority_arbiter #(parameter SIZE_LOG2=5)(
            // Special case: top enabled but no input: ignore it. 
         end
     endgenerate
+    */
 endmodule
 // The round-robin approach. Will only choose with lower priority.
 module roundrobin_arbiter #(parameter SIZE_LOG2=5)(
@@ -95,32 +118,4 @@ module roundrobin_arbiter #(parameter SIZE_LOG2=5)(
         end
     end
 endmodule
-module data_selector #(parameter ITEM_SIZE=64, parameter ITEM_COUNT=32) (
-    input wire[ITEM_SIZE-1:0][ITEM_COUNT-1:0] data,
-    input wire[ITEM_COUNT-1:0] mask,
-    output reg[ITEM_SIZE-1:0] result
-);
-    integer index;
-    integer index2;
-    reg[ITEM_COUNT-1:0] temp;
-    always @* begin
-        for(index=0;index<ITEM_SIZE;index=index+1) begin
-            for(index2=0;index2<ITEM_COUNT;index2=index2+1) begin
-                temp[index2]=mask[index] | data[index][index2];
-            end
-            result[index]=|temp;
-        end
-    end
-endmodule
-module cdb_selector #(parameter SIZE_LOG2=5)(
-        input wire clk,
-        input wire rst,
-        input wire[(1<<SIZE_LOG2)-1:0] can_pop,
-        input wire[(1<<SIZE_LOG2)-1:0][127:0] queue_data,
-        output wire[(1<<SIZE_LOG2)-1:0] pop_operation,
-        output wire[127:0] cdb
-    );
-    
-    roundrobin_arbiter#(.SIZE_LOG2(SIZE_LOG2)) arbit(clk, rst, can_pop, pop_operation);
-    data_selector#(.ITEM_SIZE(128), .ITEM_COUNT((1<<SIZE_LOG2))) sel(queue_data, pop_operation, cdb);
-endmodule
+

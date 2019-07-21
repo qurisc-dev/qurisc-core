@@ -1,0 +1,389 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Jul 22 00:24:10 2019
+# Process ID: 840
+# Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_registers_0_0_synth_1
+# Command line: vivado.exe -log cpu_design_registers_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_design_registers_0_0.tcl
+# Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_registers_0_0_synth_1/cpu_design_registers_0_0.vds
+# Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_registers_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source cpu_design_registers_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 355.680 ; gain = 58.398
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top cpu_design_registers_0_0 -part xc7a100tfgg676-2L -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'cpu_design_registers_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9876 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 820.277 ; gain = 179.016
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_registers_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_registers_0_0/synth/cpu_design_registers_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'registers' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/registers.v:23]
+WARNING: [Synth 8-6014] Unused sequential element reg_heap_reg[0] was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/registers.v:52]
+WARNING: [Synth 8-3848] Net query_rs_result in module/entity registers does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/registers.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'registers' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/registers.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_registers_0_0' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_registers_0_0/synth/cpu_design_registers_0_0.v:58]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[63]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[62]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[61]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[60]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[59]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[58]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[57]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[56]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[55]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[54]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[53]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[52]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[51]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[50]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[49]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[48]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[47]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[46]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[45]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[44]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[43]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[42]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[41]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[40]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[39]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[38]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[37]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[36]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[35]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[34]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[33]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[32]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[31]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[30]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[29]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[28]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[27]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[26]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[25]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[24]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[23]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[22]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[21]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[20]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[19]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[18]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[17]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[16]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[15]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[14]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[13]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[12]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[11]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[10]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[9]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[8]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[7]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[6]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[5]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[4]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[3]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[2]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[1]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[0]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs[5]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs[4]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs[3]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs[2]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs[1]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs[0]
+WARNING: [Synth 8-3331] design registers has unconnected port commit
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 886.012 ; gain = 244.750
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 886.012 ; gain = 244.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 886.012 ; gain = 244.750
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1013.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.841 . Memory (MB): peak = 1015.922 ; gain = 2.363
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:42 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 63    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 63    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module registers 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 63    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 63    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[63]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[62]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[61]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[60]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[59]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[58]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[57]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[56]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[55]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[54]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[53]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[52]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[51]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[50]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[49]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[48]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[47]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[46]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[45]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[44]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[43]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[42]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[41]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[40]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[39]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[38]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[37]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[36]
+WARNING: [Synth 8-3331] design registers has unconnected port query_rs_result[35]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:01:05 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:33 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:35 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:01:40 . Memory (MB): peak = 1015.922 ; gain = 374.660
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:27 ; elapsed = 00:01:47 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:28 ; elapsed = 00:01:48 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:28 ; elapsed = 00:01:48 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:01:48 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:28 ; elapsed = 00:01:48 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT5  |   128|
+|2     |LUT6  |  1599|
+|3     |MUXF7 |   768|
+|4     |MUXF8 |   256|
+|5     |FDRE  |  4032|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          |  6783|
+|2     |  inst   |registers |  6783|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:28 ; elapsed = 00:01:48 . Memory (MB): peak = 1029.250 ; gain = 387.988
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 71 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:05 ; elapsed = 00:01:39 . Memory (MB): peak = 1029.250 ; gain = 258.078
+Synthesis Optimization Complete : Time (s): cpu = 00:01:28 ; elapsed = 00:01:49 . Memory (MB): peak = 1029.250 ; gain = 387.988
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1024 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'cpu_design_registers_0_0' is not ideal for floorplanning, since the cellview 'registers' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1036.680 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:48 ; elapsed = 00:02:24 . Memory (MB): peak = 1036.680 ; gain = 657.160
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1036.680 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_registers_0_0_synth_1/cpu_design_registers_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1036.680 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_registers_0_0_synth_1/cpu_design_registers_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_design_registers_0_0_utilization_synth.rpt -pb cpu_design_registers_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 22 00:27:26 2019...

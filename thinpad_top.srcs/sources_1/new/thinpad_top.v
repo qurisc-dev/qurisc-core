@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 
 module thinpad_top(
     input wire clk_50M,           //50MHz  ±÷” ‰»Î
@@ -199,5 +199,5 @@ vga #(12, 800, 856, 976, 1040, 600, 637, 643, 666, 1, 1) vga800x600at75 (
     .data_enable(video_de)
 );
 /* =========== Demo code end =========== */
-
+cpu_design_wrapper cpu(.clk_0(clk_50M));
 endmodule

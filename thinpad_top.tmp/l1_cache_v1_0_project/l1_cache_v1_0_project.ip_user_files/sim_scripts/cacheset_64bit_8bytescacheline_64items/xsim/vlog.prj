@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../../../../ip_repo/l1_cache_1.0/src/cacheset_64bit_8bytescacheline_64items/sim/cacheset_64bit_8bytescacheline_64items.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

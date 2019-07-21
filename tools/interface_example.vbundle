@@ -1,0 +1,8 @@
+// Example for Verilog Bundle grammar.
+interface TestBundle{
+    var Foo;
+    var Bar;
+    var Baz;
+    var Arr[20];
+    var Arr2[40];
+}

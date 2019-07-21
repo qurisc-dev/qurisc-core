@@ -19,67 +19,58 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-interface DecodeResult;
-    logic[63:0] PC;
-    logic[7:0] RSType;
-    logic[7:0] FUType;
-    logic[15:0] Rs;
-    logic[15:0] Rt;
-    logic[7:0] Target;
-    logic[31:0] Immediate;
-    logic Valid;
-    logic[63:0] PredictedResult;
-    logic IsBranch;
-    logic IsJump;
-    logic IsLoad;
-    logic IsStore;
-    logic IsWordOp;
-endinterface
+
 module decode_bundle(
     input wire[`WordLen-1:0] pc,
     input wire[63:0] bp_result,
-    input reg[7:0] decoded_rs_type,
-    input reg[7:0] decoded_fu_type,
-    input reg[15:0] decoded_rs,
-    input reg[15:0] decoded_rt,
-    input reg[63:0] decoded_immediate,
-    input reg[15:0] decoded_rd,
-    input reg decoded_flags_valid,
-    input reg decoded_flags_branch,
-    input reg decoded_flags_bp,
-    input reg decoded_flags_write_csr_float,
-    input reg decoded_flags_load,
-    input reg decoded_flags_store,
-    input reg decoded_flags_wordop,
-    DecodeResult decoded);
+    input wire[7:0] decoded_rs_type,
+    input wire[7:0] decoded_fu_type,
+    input wire[15:0] decoded_rs,
+    input wire[15:0] decoded_rt,
+    input wire[63:0] decoded_immediate,
+    input wire[15:0] decoded_rd,
+    input wire decoded_flags_valid,
+    input wire decoded_flags_branch,
+    input wire decoded_flags_jump,
+    input wire decoded_flags_bp,
+    input wire decoded_flags_write_csr_float,
+    input wire decoded_flags_load,
+    input wire decoded_flags_store,
+    input wire decoded_flags_wordop,
+    output `DecodeResultReg decoded);
     always @* begin
-        decoded.PC=pc;
-        decoded.RSType=decoded_rs_type;
-        decoded.FUType=decoded_fu_type;
-        decoded.Rs=decoded_rs;
-        decoded.Rt=decoded_rt;
-        decoded.Immediate=decoded_immediate[31:0];
-        decoded.Valid=decode_flags_valid;
+        `DecodeResult$PC(decoded)=pc;
+        `DecodeResult$RSType(decoded)=decoded_rs_type;
+        `DecodeResult$FUType(decoded)=decoded_fu_type;
+        `DecodeResult$Rs(decoded)=decoded_rs;
+        `DecodeResult$Rt(decoded)=decoded_rt;
+        `DecodeResult$Immediate(decoded)=decoded_immediate[31:0];
+        `DecodeResult$Valid(decoded)=decoded_flags_valid;
+        `DecodeResult$PredictedResult(decoded)=bp_result;
+        `DecodeResult$IsBranch(decoded)=decoded_flags_branch;
+        `DecodeResult$IsJump(decoded)=decoded_flags_jump;
+        `DecodeResult$IsLoad(decoded)=decoded_flags_load;
+        `DecodeResult$IsStore(decoded)=decoded_flags_store;
+        `DecodeResult$IsWordOp(decoded)=decoded_flags_wordop;
     end
 endmodule
     
 module decoder(
     input wire[31:0] inst,
     input wire[`WordLen-1:0] pc,
-    input wire[63:0] bp_result, // Using some "pre-decoder" to decode the branch and get the result early.
-    output reg[7:0] decoded_rs_type,
-    output reg[7:0] decoded_fu_type,
-    output reg[15:0] decoded_rs,
-    output reg[15:0] decoded_rt,
-    output reg[63:0] decoded_immediate,
-    output reg[15:0] decoded_rd,
-    output reg decoded_flags_valid,
-    output reg decoded_flags_branch,
-    output reg decoded_flags_bp,
-    output reg decoded_flags_write_csr_float,
-    output reg decoded_flags_load,
-    output reg decoded_flags_store,
-    output reg decoded_flags_wordop
+    input wire bp_result_branch, // Using some "pre-decoder" to decode the branch and get the result early.
+    input wire[63:0] bp_result_jump,
+    output `DecodeResultWire decoded,
+    
+    output reg do_jp,
+    output reg jp_is_jal,
+    output reg jp_is_jalr,
+    output reg[63:0] bp_branch_taken_target,
+    output reg[4:0] jp_val_rs1,
+    output reg[4:0] jp_val_rd,
+    output reg bp_need_jump,
+    output reg[63:0] bp_result
+
     );
     // The 64bit immediate.
     reg[63:0] immediate;
@@ -88,11 +79,24 @@ module decoder(
     wire[63:0] imm_b;
     wire[63:0] imm_u;
     wire[63:0] imm_j;
+    
+    reg[2:0] imm_type;
+    
+
+    reg bp_is_branch;
+    
     assign imm_i={{21+32{inst[31]}}, inst[30:20]};
     assign imm_s={{21+32{inst[31]}}, inst[30:25], inst[11:8], inst[7]};
     assign imm_b={{20+32{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
     assign imm_u={{1+32{inst[31]}}, inst[30:20], inst[19:12], 12'b0};
     assign imm_j={{12+32{inst[31]}}, inst[19:12], inst[20], inst[30:25], inst[24:21], 1'b0};
+    always @* begin
+        bp_branch_taken_target=pc+imm_b;
+    end
+    always @* begin
+        if(bp_is_branch) bp_result=bp_result_branch?(pc+imm_b):(pc+4);
+        else bp_result=bp_result_jump;
+    end
     wire[4:0] rd; assign rd=inst[11:7];
     wire[4:0] rs1; assign rs1=inst[19:15];
     wire[4:0] rs2; assign rs2=inst[24:20];
@@ -113,16 +117,63 @@ module decoder(
     wire[4:0] zimm; assign zimm=inst[19:15];
     wire[5:0] shamt; assign shamt=inst[25:20];
     wire[4:0] shamtw; assign shamtw=inst[24:20];
-    
+    // Renamed stubs:
+    reg[7:0] decoded_rs_type;
+    reg[7:0] decoded_fu_type;
+    reg[15:0] decoded_rs;
+    reg[15:0] decoded_rt;
+    reg[63:0] decoded_immediate;
+    reg[15:0] decoded_rd;
+    reg decoded_flags_valid;
+    reg decoded_flags_branch;
+    reg decoded_flags_jump;
+    reg decoded_flags_bp;
+    reg decoded_flags_write_csr_float;
+    reg decoded_flags_load;
+    reg decoded_flags_store;
+    reg decoded_flags_wordop;
+    decode_bundle bundle_everything(
+    pc,
+    bp_result,
+    decoded_rs_type,
+    decoded_fu_type,
+    decoded_rs,
+    decoded_rt,
+    decoded_immediate,
+    decoded_rd,
+    decoded_flags_valid,
+    decoded_flags_branch,
+    decoded_flags_jump,
+    decoded_flags_bp,
+    decoded_flags_write_csr_float,
+    decoded_flags_load,
+    decoded_flags_store,
+    decoded_flags_wordop,
+    decoded
+    );
+    localparam ImmI=0, ImmS=1, ImmB=2, ImmU=3, ImmJ=4;
+    //rename done.
+    always @* begin
+        case(imm_type)
+            ImmI: immediate=imm_i;
+            ImmS: immediate=imm_s;
+            ImmB: immediate=imm_b;
+            ImmU: immediate=imm_u;
+            ImmJ: immediate=imm_j;
+            default: immediate='bx;
+        endcase
+        decoded_immediate=immediate;
+    end
     always @* begin
         decoded_flags_valid=1'b0;
-        decoded_rs_type='bx;
+        decoded_rs_type=0;
         decoded_fu_type='bx;
         decoded_rs='bx;
         decoded_rt='bx;
-        decoded_immediate='bx;
+        imm_type='bx;
         decoded_rd='bx;
         decoded_flags_branch=0;
+        decoded_flags_jump=0;
         decoded_flags_bp=bp_result;
         decoded_flags_write_csr_float=0;
         decoded_flags_load=0;
@@ -138,6 +189,7 @@ module decoder(
         decoded_rd=0;
         decoded_flags_branch=1;
         decoded_flags_valid=1;
+        imm_type=ImmB;
         end
         
         // Decode instruction <bne> .
@@ -150,6 +202,7 @@ module decoder(
         decoded_rd=0;
         decoded_flags_branch=1;
         decoded_flags_valid=1;
+        imm_type=ImmB;
         end
         
         // Decode instruction <blt> .
@@ -162,6 +215,7 @@ module decoder(
         decoded_rd=0;
         decoded_flags_branch=1;
         decoded_flags_valid=1;
+        imm_type=ImmB;
         end
         
         // Decode instruction <bge> .
@@ -174,6 +228,7 @@ module decoder(
         decoded_rd=0;
         decoded_flags_branch=1;
         decoded_flags_valid=1;
+        imm_type=ImmB;
         end
         
         // Decode instruction <bltu> .
@@ -186,6 +241,7 @@ module decoder(
         decoded_rd=0;
         decoded_flags_branch=1;
         decoded_flags_valid=1;
+        imm_type=ImmB;
         end
         
         // Decode instruction <bgeu> .
@@ -198,34 +254,45 @@ module decoder(
         decoded_rd=0;
         decoded_flags_branch=1;
         decoded_flags_valid=1;
+        imm_type=ImmB;
         end
         
         // Decode instruction <jalr> .
         if(inst[14:12] == 0 && inst[6:2] == 25 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Add;
+        decoded_fu_type=`CalcType_ALU_Jump;
         decoded_rs=rs1;
-        decoded_rt=rs2;
-        decoded_rd=0;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
         decoded_flags_branch=1;
+        decoded_flags_jump=1;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <jal> .
         if(inst[6:2] == 27 && inst[1:0] == 3) begin
         // Available arguments: rd,jimm20.
-        decoded_rs_type=`RSType_None;
+        decoded_rs_type=`RSType_ALU;
+        decoded_fu_type=`CalcType_ALU_Jump;
+        decoded_rs=`Const_PC;
+        decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmJ;
         end
         
         // Decode instruction <lui> .
         if(inst[6:2] == 13 && inst[1:0] == 3) begin
         // Available arguments: rd,imm20.
-        decoded_rs_type=`RSType_None;
+        decoded_rs_type=`RSType_ALU;
+        decoded_fu_type=`CalcType_ALU_Add;
+        decoded_rs=`Const_Imm;
+        decoded_rt=0;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmU;
         end
         
         // Decode instruction <auipc> .
@@ -237,6 +304,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmU;
         end
         
         // Decode instruction <addi> .
@@ -248,6 +316,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <slli> .
@@ -259,6 +328,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <slti> .
@@ -270,6 +340,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <sltiu> .
@@ -281,6 +352,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <xori> .
@@ -292,6 +364,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <srli> .
@@ -303,6 +376,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <srai> .
@@ -314,6 +388,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <ori> .
@@ -325,6 +400,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <andi> .
@@ -336,6 +412,7 @@ module decoder(
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <add> .
@@ -452,55 +529,59 @@ module decoder(
         if(inst[14:12] == 0 && inst[6:2] == 6 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Add;
+        decoded_fu_type=`CalcType_ALU_AddW;
         decoded_rs=rs1;
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_wordop=1;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <slliw> .
         if(inst[31:25] == 0 && inst[14:12] == 1 && inst[6:2] == 6 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,shamtw.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Sll;
+        decoded_fu_type=`CalcType_ALU_SllW;
         decoded_rs=rs1;
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_wordop=1;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <srliw> .
         if(inst[31:25] == 0 && inst[14:12] == 5 && inst[6:2] == 6 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,shamtw.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Srl;
+        decoded_fu_type=`CalcType_ALU_SrlW;
         decoded_rs=rs1;
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_wordop=1;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <sraiw> .
         if(inst[31:25] == 32 && inst[14:12] == 5 && inst[6:2] == 6 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,shamtw.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Sra;
+        decoded_fu_type=`CalcType_ALU_SraW;
         decoded_rs=rs1;
         decoded_rt=`Const_Imm;
         decoded_rd=rd;
         decoded_flags_wordop=1;
         decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <addw> .
         if(inst[31:25] == 0 && inst[14:12] == 0 && inst[6:2] == 14 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,rs2.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Add;
+        decoded_fu_type=`CalcType_ALU_AddW;
         decoded_rs=rs1;
         decoded_rt=rs2;
         decoded_rd=rd;
@@ -512,7 +593,7 @@ module decoder(
         if(inst[31:25] == 32 && inst[14:12] == 0 && inst[6:2] == 14 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,rs2.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Sub;
+        decoded_fu_type=`CalcType_ALU_SubW;
         decoded_rs=rs1;
         decoded_rt=rs2;
         decoded_rd=rd;
@@ -524,19 +605,18 @@ module decoder(
         if(inst[31:25] == 0 && inst[14:12] == 1 && inst[6:2] == 14 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,rs2.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Sll;
+        decoded_fu_type=`CalcType_ALU_SllW;
         decoded_rs=rs1;
         decoded_rt=rs2;
         decoded_rd=rd;
         decoded_flags_wordop=1;
         decoded_flags_valid=1;
         end
-        
         // Decode instruction <srlw> .
         if(inst[31:25] == 0 && inst[14:12] == 5 && inst[6:2] == 14 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,rs2.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Srl;
+        decoded_fu_type=`CalcType_ALU_SrlW;
         decoded_rs=rs1;
         decoded_rt=rs2;
         decoded_rd=rd;
@@ -548,7 +628,7 @@ module decoder(
         if(inst[31:25] == 32 && inst[14:12] == 5 && inst[6:2] == 14 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,rs2.
         decoded_rs_type=`RSType_ALU;
-        decoded_fu_type=`CalcType_ALU_Sra;
+        decoded_fu_type=`CalcType_ALU_SraW;
         decoded_rs=rs1;
         decoded_rt=rs2;
         decoded_rd=rd;
@@ -559,67 +639,144 @@ module decoder(
         // Decode instruction <lb> .
         if(inst[14:12] == 0 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LB;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <lh> .
         if(inst[14:12] == 1 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LH;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <lw> .
         if(inst[14:12] == 2 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LW;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <ld> .
         if(inst[14:12] == 3 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LD;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <lbu> .
         if(inst[14:12] == 4 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LBU;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <lhu> .
         if(inst[14:12] == 5 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LHU;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <lwu> .
         if(inst[14:12] == 6 && inst[6:2] == 0 && inst[1:0] == 3) begin
         // Available arguments: rd,rs1,imm12.
-        
+        decoded_rs_type=`RSType_Load;
+        decoded_fu_type=`CalcType_Load_LWU;
+        decoded_rs=rs1;
+        decoded_rt=`Const_Imm;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmI;
         end
         
         // Decode instruction <sb> .
         if(inst[14:12] == 0 && inst[6:2] == 8 && inst[1:0] == 3) begin
         // Available arguments: imm12hi,rs1,rs2,imm12lo.
-        
+        decoded_rs_type=`RSType_Store;
+        decoded_fu_type=`CalcType_Store_SB;
+        decoded_rs=rs1;
+        decoded_rt=rs2;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmS;
         end
         
         // Decode instruction <sh> .
         if(inst[14:12] == 1 && inst[6:2] == 8 && inst[1:0] == 3) begin
         // Available arguments: imm12hi,rs1,rs2,imm12lo.
-        
+        decoded_rs_type=`RSType_Store;
+        decoded_fu_type=`CalcType_Store_SH;
+        decoded_rs=rs1;
+        decoded_rt=rs2;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmS;
         end
         
         // Decode instruction <sw> .
         if(inst[14:12] == 2 && inst[6:2] == 8 && inst[1:0] == 3) begin
         // Available arguments: imm12hi,rs1,rs2,imm12lo.
-        
+        decoded_rs_type=`RSType_Store;
+        decoded_fu_type=`CalcType_Store_SW;
+        decoded_rs=rs1;
+        decoded_rt=rs2;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmS;
         end
         
         // Decode instruction <sd> .
         if(inst[14:12] == 3 && inst[6:2] == 8 && inst[1:0] == 3) begin
         // Available arguments: imm12hi,rs1,rs2,imm12lo.
-        
+        decoded_rs_type=`RSType_Store;
+        decoded_fu_type=`CalcType_Store_SD;
+        decoded_rs=rs1;
+        decoded_rt=rs2;
+        decoded_rd=rd;
+        decoded_flags_load=1;
+        decoded_flags_valid=1;
+        imm_type=ImmS;
         end
         
         // Decode instruction <fence> .
@@ -1515,6 +1672,5 @@ module decoder(
         // Available arguments: rd,rs1,rs2,rs3,rm.
         
         end
-
     end
 endmodule

@@ -1,0 +1,10 @@
+xpm_cdc.sv,systemverilog,xil_defaultlib,../../../../../../../../../Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
+xpm_memory.sv,systemverilog,xil_defaultlib,../../../../../../../../../Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd,
+cpu_design_rob_0_0.v,verilog,xil_defaultlib,../../../bd/cpu_design/ip/cpu_design_rob_0_0/sim/cpu_design_rob_0_0.v,
+cpu_design_renamebuffer_0_0.v,verilog,xil_defaultlib,../../../bd/cpu_design/ip/cpu_design_renamebuffer_0_0/sim/cpu_design_renamebuffer_0_0.v,
+cpu_design_reservestation_0_0.v,verilog,xil_defaultlib,../../../bd/cpu_design/ip/cpu_design_reservestation_0_0/sim/cpu_design_reservestation_0_0.v,
+cpu_design_dispatcher_0_0.v,verilog,xil_defaultlib,../../../bd/cpu_design/ip/cpu_design_dispatcher_0_0/sim/cpu_design_dispatcher_0_0.v,
+cpu_design_registers_0_0.v,verilog,xil_defaultlib,../../../bd/cpu_design/ip/cpu_design_registers_0_0/sim/cpu_design_registers_0_0.v,
+cpu_design.v,verilog,xil_defaultlib,../../../bd/cpu_design/sim/cpu_design.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,692 @@
+
+*** Running vivado
+    with args -log cpu_design_reservestation_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_design_reservestation_0_0.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source cpu_design_reservestation_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 354.082 ; gain = 66.730
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top cpu_design_reservestation_0_0 -part xc7a100tfgg676-2L -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'cpu_design_reservestation_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14252 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 819.965 ; gain = 177.684
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_reservestation_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_reservestation_0_0/synth/cpu_design_reservestation_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'reservestation' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:149]
+INFO: [Synth 8-6157] synthesizing module 'roundrobin_arbiter' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv:87]
+	Parameter SIZE_LOG2 bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'priority_arbiter' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv:24]
+	Parameter SIZE_LOG2 bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'priority_arbiter' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'roundrobin_arbiter' (2#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv:87]
+INFO: [Synth 8-6157] synthesizing module 'priority_arbiter__parameterized0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv:24]
+	Parameter SIZE_LOG2 bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'priority_arbiter__parameterized0' (2#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/cdb_selector.sv:24]
+WARNING: [Synth 8-7023] instance 'alu_input' of module 'priority_arbiter' has 4 connections declared, but only 3 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:190]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/alu.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (3#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/alu.v:24]
+INFO: [Synth 8-6157] synthesizing module 'function_unit_wrapper' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:5]
+	Parameter RESERVE_STATION_TYPE bound to: 1 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element Qs_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:65]
+WARNING: [Synth 8-6014] Unused sequential element Qt_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'function_unit_wrapper' (4#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:5]
+INFO: [Synth 8-6157] synthesizing module 'function_unit_wrapper__parameterized0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:5]
+	Parameter RESERVE_STATION_TYPE bound to: 3 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element Qs_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:65]
+WARNING: [Synth 8-6014] Unused sequential element Qt_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'function_unit_wrapper__parameterized0' (4#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:5]
+WARNING: [Synth 8-3848] Net ls_selected in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:189]
+WARNING: [Synth 8-3848] Net cdb_data[5] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[6] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[7] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[8] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[9] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[10] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[11] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[12] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[13] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[14] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+WARNING: [Synth 8-3848] Net cdb_data[15] in module/entity reservestation does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:171]
+INFO: [Synth 8-6155] done synthesizing module 'reservestation' (5#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:149]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_reservestation_0_0' (6#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_reservestation_0_0/synth/cpu_design_reservestation_0_0.v:58]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[141]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[140]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[139]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[138]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[137]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[136]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[135]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[134]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[133]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[132]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[131]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[130]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[129]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[128]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[127]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[126]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[125]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[124]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[123]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[122]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[121]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[120]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[119]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[118]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[117]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[116]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[115]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[114]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[113]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[112]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[111]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[110]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[109]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[108]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[107]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[106]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[105]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[104]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[103]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[102]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[101]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[100]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[99]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[98]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[97]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[96]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[95]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[94]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[93]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[92]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[91]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[90]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[89]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[88]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[87]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[86]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[85]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[84]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[83]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[82]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[81]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[80]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[79]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[78]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[77]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[76]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[75]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[74]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[73]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[72]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[71]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[70]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[69]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[68]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[67]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[66]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[65]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[64]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[63]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[62]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[61]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[60]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[59]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[58]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[57]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[56]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[55]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[54]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[53]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[52]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[51]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[50]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[49]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[48]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[47]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[46]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[45]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[44]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[43]
+WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port din[42]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 905.063 ; gain = 262.781
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 905.063 ; gain = 262.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 905.063 ; gain = 262.781
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1036.348 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.942 . Memory (MB): peak = 1041.383 ; gain = 5.035
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'stored_output_reg' and it is trimmed from '145' to '144' bits. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:131]
+INFO: [Synth 8-802] inferred FSM for state register 'Status_reg' in module 'function_unit_wrapper'
+WARNING: [Synth 8-3936] Found unconnected internal register 'stored_output_reg' and it is trimmed from '145' to '144' bits. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:131]
+INFO: [Synth 8-802] inferred FSM for state register 'Status_reg' in module 'function_unit_wrapper__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Status_reg' using encoding 'sequential' in module 'function_unit_wrapper'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Status_reg' using encoding 'sequential' in module 'function_unit_wrapper__parameterized0'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:54 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 8     
+	   3 Input     64 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 4     
++---XORs : 
+	   2 Input     64 Bit         XORs := 4     
++---Registers : 
+	              144 Bit    Registers := 5     
+	               64 Bit    Registers := 10    
+	               16 Bit    Registers := 6     
+	                8 Bit    Registers := 5     
+	                4 Bit    Registers := 5     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 10    
+	   4 Input     64 Bit        Muxes := 5     
+	   2 Input     16 Bit        Muxes := 6     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 104   
+	   4 Input      1 Bit        Muxes := 45    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module priority_arbiter 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 29    
+Module roundrobin_arbiter 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+Module priority_arbiter__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 5     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 2     
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+Module function_unit_wrapper 
+Detailed RTL Component Info : 
++---Registers : 
+	              144 Bit    Registers := 1     
+	               64 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   4 Input     64 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 9     
+Module function_unit_wrapper__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	              144 Bit    Registers := 1     
+	               64 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   4 Input     64 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 9     
+Module reservestation 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\CalcType_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[62] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Vt_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Dependencies_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Qd_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Qd_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Qd_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/lsu/\Qd_reg[3] )
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[0]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[0]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[0]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[0]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[1]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[1]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[1]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[1]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[2]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[2]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[2]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[2]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[3]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[3]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[3]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[3]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[4]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[4]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[4]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[4]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[5]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[5]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[5]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[5]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[6]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[6]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[6]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[6]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[7]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[7]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[7]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[7]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[8]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[8]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[8]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[8]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[9]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[9]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[9]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[9]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[10]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[10]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[10]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[10]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[11]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[11]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[11]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[11]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[12]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[12]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[12]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[12]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[13]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[13]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[13]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[13]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu0/stored_output_reg[14]' (FDE) to 'inst/alu0/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu1/stored_output_reg[14]' (FDE) to 'inst/alu1/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu2/stored_output_reg[14]' (FDE) to 'inst/alu2/stored_output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/alu3/stored_output_reg[14]' (FDE) to 'inst/alu3/stored_output_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/alu0/\stored_output_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/alu1/\stored_output_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/alu2/\stored_output_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/alu3/\stored_output_reg[15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:37 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:02:02 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:51 ; elapsed = 00:02:05 . Memory (MB): peak = 1041.383 ; gain = 399.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1072.801 ; gain = 430.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:04 ; elapsed = 00:02:21 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[2] with 1st driver pin 'i_6553/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[2] with 2nd driver pin 'i_4927/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[3] with 1st driver pin 'i_6552/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[3] with 2nd driver pin 'i_5012/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[1] with 1st driver pin 'i_6554/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[1] with 2nd driver pin 'i_4842/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[0] with 1st driver pin 'i_6555/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/alu_free[0] with 2nd driver pin 'i_4757/O' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:26]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        4|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:04 ; elapsed = 00:02:21 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:05 ; elapsed = 00:02:22 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:05 ; elapsed = 00:02:22 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:06 ; elapsed = 00:02:23 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:06 ; elapsed = 00:02:23 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |   400|
+|2     |LUT1   |     5|
+|3     |LUT2   |   819|
+|4     |LUT3   |   462|
+|5     |LUT4   |  1153|
+|6     |LUT5   |  1227|
+|7     |LUT6   |  2478|
+|8     |MUXF7  |     8|
+|9     |MUXF8  |     4|
+|10    |FDRE   |  1400|
+|11    |FDSE   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------+--------------------------------------+------+
+|      |Instance           |Module                                |Cells |
++------+-------------------+--------------------------------------+------+
+|1     |top                |                                      |  7972|
+|2     |  inst             |reservestation                        |  7918|
+|3     |    alu0           |function_unit_wrapper                 |  1867|
+|4     |    alu1           |function_unit_wrapper_0               |  1817|
+|5     |    alu2           |function_unit_wrapper_1               |  1819|
+|6     |    alu3           |function_unit_wrapper_2               |  1818|
+|7     |    cdb_rr_arbiter |roundrobin_arbiter                    |   376|
+|8     |    lsu            |function_unit_wrapper__parameterized0 |   221|
++------+-------------------+--------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:06 ; elapsed = 00:02:23 . Memory (MB): peak = 1077.555 ; gain = 435.273
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 8 critical warnings and 550 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:36 ; elapsed = 00:02:13 . Memory (MB): peak = 1077.555 ; gain = 298.953
+Synthesis Optimization Complete : Time (s): cpu = 00:02:07 ; elapsed = 00:02:24 . Memory (MB): peak = 1077.555 ; gain = 435.273
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 412 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1077.555 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+192 Infos, 121 Warnings, 8 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:24 ; elapsed = 00:02:48 . Memory (MB): peak = 1077.555 ; gain = 698.637
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1077.555 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1/cpu_design_reservestation_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 7 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1077.555 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1/cpu_design_reservestation_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_design_reservestation_0_0_utilization_synth.rpt -pb cpu_design_reservestation_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 22 00:30:47 2019...

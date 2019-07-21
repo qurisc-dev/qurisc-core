@@ -1,0 +1,65 @@
+interface DecodeResult{
+    var PC[64];
+    var RSType[8];
+    var FUType[8];
+    var Rs[16];
+    var Rt[16];
+    var Target[8];
+    var Immediate[32];
+    var Valid;
+    var PredictedResult[64];
+    var IsBranch;
+    var IsJump;
+    var IsLoad;
+    var IsStore;
+    var IsWordOp;
+}
+interface CDB{
+    var Valid;
+    var RenameID[4];
+    var NewPC[64]; // For jalr: RegisterValue+Offset.
+    var Value[64]; // For branch: result. For jalr: CurrentPC+4.
+    var Exception[8];
+    var FPUException[8];
+}
+
+
+interface FunctionUnitInput{
+    var StartCalculation;
+    var ResetCalculation;
+    var RsValue[64];
+    var RtValue[64];
+    var CurrentPC[64];
+    var Immediate[32];
+    var CalcType[8];
+}
+
+interface FunctionUnitOutput{
+    var ValueReady;
+    var Value[64];
+    var NewPC[64];
+    var Exception[8];
+    var FPUException[8];
+}
+
+interface ROBLine{
+    var Busy;
+    var FloatPointException[5];
+    var LoadSpeculationMask[16];
+    var Value[64];
+    var NewPC[64];
+    var ValueReady;
+    var ExceptionType[8];
+    var NeedReissue;
+}
+    
+
+interface SQItem{
+    var Index[4];
+    var Determined; // Used in load speculation.
+    var StoreAddr[64];
+    var StoreMask[8]; // The nightmare came when you have unaligned load or store.
+                        // Note that even though there may be unaligned load/store, all operations are aligned in bytes.
+                        // This means we can do the CAM search for each byte, and then put it together.
+    var StoreValue[64];
+}

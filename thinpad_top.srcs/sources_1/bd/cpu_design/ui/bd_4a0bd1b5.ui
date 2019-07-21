@@ -2,8 +2,101 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-levelinfo -pg 1 0 460 630
-pagesize -pg 1 -db -bbox -sgen 0 -250 630 200
+preplace port clk_0 -pg 1 -lvl 0 -x -2460 -y -50 -defaultsOSRD
+preplace port rst_0 -pg 1 -lvl 0 -x -2460 -y -30 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 6 -x 330 -y 1660 -defaultsOSRD
+preplace inst reservestation_0 -pg 1 -lvl 7 -x 1060 -y -50 -defaultsOSRD
+preplace inst decoder_0 -pg 1 -lvl 5 -x -290 -y 850 -defaultsOSRD
+preplace inst branch_predictor_0 -pg 1 -lvl 4 -x -780 -y 1210 -defaultsOSRD
+preplace inst dispatcher_0 -pg 1 -lvl 6 -x 330 -y 420 -defaultsOSRD
+preplace inst if_controller_0 -pg 1 -lvl 2 -x -1750 -y 10 -defaultsOSRD
+preplace inst if_insn_queue_0 -pg 1 -lvl 5 -x -290 -y 420 -defaultsOSRD
+preplace inst if_memory_accessor_0 -pg 1 -lvl 3 -x -1290 -y 430 -defaultsOSRD
+preplace inst if_tlb_fetcher_0 -pg 1 -lvl 2 -x -1750 -y 420 -defaultsOSRD
+preplace inst jump_predictor_0 -pg 1 -lvl 4 -x -780 -y 870 -defaultsOSRD
+preplace inst pc_counter_0 -pg 1 -lvl 1 -x -2210 -y 420 -defaultsOSRD
+preplace inst registers_0 -pg 1 -lvl 6 -x 330 -y 1100 -defaultsOSRD
+preplace inst renamebuffer_0 -pg 1 -lvl 7 -x 1060 -y 1360 -defaultsOSRD -resize 430 305
+preplace inst rob_0 -pg 1 -lvl 7 -x 1060 -y 560 -defaultsOSRD -resize 465 578
+preplace inst loadstoreunit_0 -pg 1 -lvl 8 -x 1710 -y 530 -defaultsOSRD
+preplace netloc clk_0_1 1 0 8 -2410 310 -2080 310 -1480 290 -1100 290 -500 280 10 260 660 930 1450
+preplace netloc rob_0_reissue_args 1 5 3 40 200 N 200 1390
+preplace netloc dispatcher_0_decode_result 1 6 1 620 -90n
+preplace netloc dispatcher_0_can_dispatch 1 6 2 630 940 1480
+preplace netloc reservestation_0_can_reserve 1 5 3 70 880 N 880 1430
+preplace netloc rst_0_1 1 0 8 -2440J 520 -2070 560 -1500 630 -1090 530 -520 710 30 710 670 970 1490
+preplace netloc rob_0_rob_next_item 1 6 2 720 950 1500
+preplace netloc rob_0_rob_not_full 1 5 3 40 920 N 920 1340
+preplace netloc rob_0_commit_regwrite_index 1 5 3 100 1240 640 1060 1390
+preplace netloc renamebuffer_0_combine_dep 1 6 2 760 1010 1320
+preplace netloc rob_0_commit_line 1 6 2 780 1040 1360
+preplace netloc reservestation_0_cdb 1 6 2 750 -240 1320
+preplace netloc rob_0_do_commit 1 1 7 -2060 640 N 640 -1070 630 N 630 0 1250 650 1070 1420
+preplace netloc rob_0_search_result_0 1 6 2 740 240 1320
+preplace netloc rob_0_search_result_1 1 6 2 730 250 1330
+preplace netloc registers_0_query_rs_result 1 6 1 550 1080n
+preplace netloc registers_0_query_rt_result 1 6 1 540 1100n
+preplace netloc rob_0_commit_regwrite_value 1 5 3 80 910 N 910 1350
+preplace netloc Net 1 5 2 90 1230 570
+preplace netloc Net1 1 5 2 70 1260 560
+preplace netloc renamebuffer_0_query_line_rs 1 6 2 770 1020 1370
+preplace netloc renamebuffer_0_query_line_rt 1 6 2 780 990 1400
+preplace netloc renamebuffer_0_rs_is_value 1 6 2 760 -230 1440
+preplace netloc renamebuffer_0_rt_is_value 1 6 2 710 1030 1330
+preplace netloc dispatcher_0_rd_register_target 1 6 1 580 460n
+preplace netloc dispatcher_0_rs_value 1 6 1 600 -70n
+preplace netloc dispatcher_0_rt_value 1 6 1 610 -50n
+preplace netloc renamebuffer_0_rs_value 1 5 3 80 890 600 1000 1340
+preplace netloc renamebuffer_0_rt_value 1 5 3 50 970 590 980 1380
+preplace netloc rob_0_search_ready_0 1 6 2 700 230 1350
+preplace netloc rob_0_search_ready_1 1 6 2 770 1050 1410
+preplace netloc rob_0_start_reissue 1 5 3 100 580 680 960 1460
+preplace netloc rob_0_reissue 1 5 3 50 210 N 210 1360
+preplace netloc dispatcher_0_reissue_next 1 6 1 690 360n
+preplace netloc rob_0_rob_empty 1 5 3 60 220 NJ 220 1340
+preplace netloc pc_counter_0_PC 1 1 1 -2080 420n
+preplace netloc if_tlb_fetcher_0_in_ready 1 0 3 -2410 550 NJ 550 -1570
+preplace netloc if_tlb_fetcher_0_out_valid 1 2 1 -1540 470n
+preplace netloc if_tlb_fetcher_0_outPC_physical 1 2 1 -1510 370n
+preplace netloc if_tlb_fetcher_0_outPC_virtual 1 2 1 -1520 390n
+preplace netloc if_tlb_fetcher_0_memoryattr 1 2 1 -1530 410n
+preplace netloc if_tlb_fetcher_0_out_tlbmiss 1 2 1 -1540 430n
+preplace netloc if_memory_accessor_0_outInstruction 1 3 2 N 390 -500
+preplace netloc if_memory_accessor_0_outPC 1 3 2 N 410 -510
+preplace netloc if_memory_accessor_0_in_ready 1 1 3 -2000 590 NJ 590 -1120
+preplace netloc if_insn_queue_0_in_ready 1 2 4 -1480 580 NJ 580 N 580 -50
+preplace netloc if_memory_accessor_0_out_valid 1 3 2 -1110 460 N
+preplace netloc dispatcher_0_decoder_pop 1 4 3 -510 590 NJ 590 530
+preplace netloc if_insn_queue_0_out_valid 1 5 1 30 340n
+preplace netloc decoder_0_decoded 1 4 2 -500 670 -90
+preplace netloc if_memory_accessor_0_outException 1 3 2 N 430 -550
+preplace netloc decoder_0_do_jp 1 3 3 -1000J 620 N 620 -70
+preplace netloc decoder_0_jp_is_jal 1 3 3 -1050J 560 N 560 -10
+preplace netloc decoder_0_jp_is_jalr 1 3 3 -1040J 570 N 570 -20
+preplace netloc decoder_0_jp_val_rs1 1 3 3 -1020J 650 N 650 -30
+preplace netloc decoder_0_jp_val_rd 1 3 3 -1010J 660 N 660 -40
+preplace netloc jump_predictor_0_forward_index 1 4 2 -570 1170 N
+preplace netloc registers_0_bp_query_result 1 3 4 -1060J 600 N 600 NJ 600 530
+preplace netloc Net2 1 3 2 -1030J 640 -570
+preplace netloc jump_predictor_0_ras_next_address 1 4 1 -540 860n
+preplace netloc if_insn_queue_0_decoding_instruction 1 4 2 -500 690 -60
+preplace netloc branch_predictor_0_bp 1 4 1 -510 860n
+preplace netloc if_insn_queue_0_next_insn 1 5 1 20 320n
+preplace netloc if_controller_0_pc_flush 1 0 3 -2430 530 NJ 530 -1550
+preplace netloc if_controller_0_if_tlb_flush 1 1 2 -2030 -90 -1480
+preplace netloc if_controller_0_pc_flush_addr 1 0 3 -2420 540 NJ 540 -1560
+preplace netloc decoder_0_bp_need_jump 1 1 5 -2020 600 NJ 600 -1080J 550 -550 700 -80
+preplace netloc decoder_0_bp_result 1 1 5 -2010 570 NJ 570 -1110J 540 -530 680 -50
+preplace netloc if_controller_0_if_mem_flush 1 2 1 -1490 30n
+preplace netloc if_controller_0_if_queue_flush 1 2 3 N 50 NJ 50 -510
+preplace netloc rob_0_commit_jump_address 1 1 7 -2040 620 NJ 620 -1070J 590 -540 610 NJ 610 620J 870 1320
+preplace netloc rob_0_commit_bpfailed 1 1 7 -2050 610 NJ 610 NJ 610 -560 640 NJ 640 610J 890 1330
+preplace netloc rob_0_commit_store 1 7 1 1470 500n
+preplace netloc loadstoreunit_0_store_queue_available 1 5 4 90 900 NJ 900 NJ 900 1910
+levelinfo -pg 1 -2460 -2210 -1750 -1290 -780 -290 330 1060 1710 1940
+pagesize -pg 1 -db -bbox -sgen -2550 -260 1940 2370
 "
 }
-0
+{
+   "da_clkrst_cnt":"4"
+}
