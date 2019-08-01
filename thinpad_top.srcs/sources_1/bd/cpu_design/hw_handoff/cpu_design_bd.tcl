@@ -756,7 +756,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {5} \
+   CONFIG.NUM_MI {6} \
    CONFIG.NUM_SI {4} \
  ] $axi_interconnect_0
 
@@ -785,6 +785,13 @@ proc create_root_design { parentCell } {
   # Create instance: proc_sys_reset_0, and set properties
   set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]
 
+  # Create instance: thinpad_qusim_0, and set properties
+  set thinpad_qusim_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:thinpad_qusim:1.0 thinpad_qusim_0 ]
+  set_property -dict [ list \
+   CONFIG.C_S00_AXI_ADDR_WIDTH {12} \
+   CONFIG.C_S00_AXI_DATA_WIDTH {64} \
+ ] $thinpad_qusim_0
+
   # Create instance: thinpad_serial_0, and set properties
   set thinpad_serial_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:thinpad_serial:1.0 thinpad_serial_0 ]
   set_property -dict [ list \
@@ -810,6 +817,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins axi_intc_0/s_axi] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins axi_interconnect_0/M04_AXI] [get_bd_intf_pins thinpad_serial_0/S_DATA_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins axi_interconnect_0/M05_AXI] [get_bd_intf_pins thinpad_qusim_0/S00_AXI]
 
   # Create port connections
   connect_bd_net -net CPUBackEnd_commit_branchret [get_bd_pins CPUBackEnd/commit_branchret] [get_bd_pins CPUFrontEnd/bp_commit_result]
@@ -818,7 +826,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net CPUBackEnd_commit_val_rs1 [get_bd_pins CPUBackEnd/commit_val_rs1] [get_bd_pins CPUFrontEnd/commit_val_rs1]
   connect_bd_net -net axi_gpio_0_ip2intc_irpt [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net bp_isbranch_1 [get_bd_pins CPUBackEnd/commit_isbranch] [get_bd_pins CPUFrontEnd/bp_isbranch]
-  connect_bd_net -net clk_0_1 [get_bd_pins CPUBackEnd/clk] [get_bd_pins CPUFrontEnd/clk] [get_bd_pins axi_bram_ctrl_1/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_intc_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_interconnect_0/S03_ACLK] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins thinpad_serial_0/clk] [get_bd_pins thinpad_sram_0/s00_axi_aclk]
+  connect_bd_net -net clk_0_1 [get_bd_pins CPUBackEnd/clk] [get_bd_pins CPUFrontEnd/clk] [get_bd_pins axi_bram_ctrl_1/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_intc_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_interconnect_0/S03_ACLK] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins thinpad_qusim_0/s00_axi_aclk] [get_bd_pins thinpad_serial_0/clk] [get_bd_pins thinpad_sram_0/s00_axi_aclk]
   connect_bd_net -net clk_0_2 [get_bd_ports clk_0] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins proc_sys_reset_0/dcm_locked]
   connect_bd_net -net commit_is_jalr_1 [get_bd_pins CPUBackEnd/commit_isjalr] [get_bd_pins CPUFrontEnd/commit_is_jalr]
@@ -828,7 +836,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net if_insn_queue_0_next_insn [get_bd_pins CPUBackEnd/decoder_input] [get_bd_pins CPUFrontEnd/next_insn]
   connect_bd_net -net if_insn_queue_0_out_valid [get_bd_pins CPUBackEnd/decoder_valid] [get_bd_pins CPUFrontEnd/out_valid]
   connect_bd_net -net jump_predictor_0_forward_index [get_bd_pins CPUBackEnd/bp_query] [get_bd_pins CPUFrontEnd/forward_index]
-  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins CPUBackEnd/m00_axi_aresetn] [get_bd_pins CPUFrontEnd/m00_axi_aresetn] [get_bd_pins axi_bram_ctrl_1/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_intc_0/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_interconnect_0/S03_ARESETN] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins thinpad_sram_0/s00_axi_aresetn]
+  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins CPUBackEnd/m00_axi_aresetn] [get_bd_pins CPUFrontEnd/m00_axi_aresetn] [get_bd_pins axi_bram_ctrl_1/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_intc_0/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_interconnect_0/S03_ARESETN] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins thinpad_qusim_0/s00_axi_aresetn] [get_bd_pins thinpad_sram_0/s00_axi_aresetn]
   connect_bd_net -net registers_0_bp_query_result [get_bd_pins CPUBackEnd/bp_query_result] [get_bd_pins CPUFrontEnd/forward_value]
   connect_bd_net -net rob_0_commit_bpfailed [get_bd_pins CPUBackEnd/commit_bpfailed] [get_bd_pins CPUFrontEnd/rob_bpfail]
   connect_bd_net -net rob_0_commit_jump_address [get_bd_pins CPUBackEnd/commit_jump_address] [get_bd_pins CPUFrontEnd/rob_bpfail_target]
@@ -851,16 +859,19 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00002000 -offset 0xC0000000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_0/M00_AXI] [get_bd_addr_segs axi_bram_ctrl_1/S_AXI/Mem0] SEG_axi_bram_ctrl_1_Mem0
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_0/M00_AXI] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_0/M00_AXI] [get_bd_addr_segs axi_intc_0/S_AXI/Reg] SEG_axi_intc_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x44A10000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_0/M00_AXI] [get_bd_addr_segs thinpad_qusim_0/S00_AXI/S00_AXI_reg] SEG_thinpad_qusim_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x44A00000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_0/M00_AXI] [get_bd_addr_segs thinpad_serial_0/S_DATA_AXI/S_DATA_AXI_reg] SEG_thinpad_serial_0_S_DATA_AXI_reg
   create_bd_addr_seg -range 0x00800000 -offset 0x80000000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_0/M00_AXI] [get_bd_addr_segs thinpad_sram_0/S00_AXI/S00_AXI_mem] SEG_thinpad_sram_0_S00_AXI_mem
   create_bd_addr_seg -range 0x00002000 -offset 0xC0000000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_1/M00_AXI] [get_bd_addr_segs axi_bram_ctrl_1/S_AXI/Mem0] SEG_axi_bram_ctrl_1_Mem0
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_1/M00_AXI] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_1/M00_AXI] [get_bd_addr_segs axi_intc_0/S_AXI/Reg] SEG_axi_intc_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x44A10000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_1/M00_AXI] [get_bd_addr_segs thinpad_qusim_0/S00_AXI/S00_AXI_reg] SEG_thinpad_qusim_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x44A00000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_1/M00_AXI] [get_bd_addr_segs thinpad_serial_0/S_DATA_AXI/S_DATA_AXI_reg] SEG_thinpad_serial_0_S_DATA_AXI_reg
   create_bd_addr_seg -range 0x00800000 -offset 0x80000000 [get_bd_addr_spaces CPUFrontEnd/axi_simple_master_1/M00_AXI] [get_bd_addr_segs thinpad_sram_0/S00_AXI/S00_AXI_mem] SEG_thinpad_sram_0_S00_AXI_mem
   create_bd_addr_seg -range 0x00002000 -offset 0xC0000000 [get_bd_addr_spaces CPUBackEnd/LoadStore/axi_simple_master_0/M00_AXI] [get_bd_addr_segs axi_bram_ctrl_1/S_AXI/Mem0] SEG_axi_bram_ctrl_1_Mem0
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces CPUBackEnd/LoadStore/axi_simple_master_0/M00_AXI] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00200000 -offset 0x41200000 [get_bd_addr_spaces CPUBackEnd/LoadStore/axi_simple_master_0/M00_AXI] [get_bd_addr_segs axi_intc_0/S_AXI/Reg] SEG_axi_intc_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x44A10000 [get_bd_addr_spaces CPUBackEnd/LoadStore/axi_simple_master_0/M00_AXI] [get_bd_addr_segs thinpad_qusim_0/S00_AXI/S00_AXI_reg] SEG_thinpad_qusim_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x44A00000 [get_bd_addr_spaces CPUBackEnd/LoadStore/axi_simple_master_0/M00_AXI] [get_bd_addr_segs thinpad_serial_0/S_DATA_AXI/S_DATA_AXI_reg] SEG_thinpad_serial_0_S_DATA_AXI_reg
   create_bd_addr_seg -range 0x00800000 -offset 0x80000000 [get_bd_addr_spaces CPUBackEnd/LoadStore/axi_simple_master_0/M00_AXI] [get_bd_addr_segs thinpad_sram_0/S00_AXI/S00_AXI_mem] SEG_thinpad_sram_0_S00_AXI_mem
 

@@ -9,64 +9,68 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source cpu_design_thinpad_serial_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 354.035 ; gain = 58.777
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_qusim_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/links/qsim'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 377.875 ; gain = 23.840
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SysArrProcessor:1.0'. The one found in IP location 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor' will take precedence over the same IP in location c:/links/qsim/qsim.srcs
+WARNING: [IP_Flow 19-5242] IP Cache entry (cache-ID 192198a68b8b0d0f) does not have the required number of cached files and is not valid. Please delete this entry using the TCL command: 'config_ip_cache -remove [get_ips cpu_design_thinpad_serial_0_0]'
 Command: synth_design -top cpu_design_thinpad_serial_0_0 -part xc7a100tfgg676-2L -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25448 
+INFO: Helper process launched with PID 15572 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:23 . Memory (MB): peak = 820.707 ; gain = 178.766
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 820.938 ; gain = 178.672
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_serial_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_serial_0_0/synth/cpu_design_thinpad_serial_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'thinpad_serial_v1_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:287]
+INFO: [Synth 8-6157] synthesizing module 'thinpad_serial_v1_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:287]
 	Parameter C_S_DATA_AXI_DATA_WIDTH bound to: 64 - type: integer 
 	Parameter C_S_DATA_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'thinpad_uart_serial' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:209]
-INFO: [Synth 8-6157] synthesizing module 'async_receiver' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:78]
+INFO: [Synth 8-6157] synthesizing module 'thinpad_uart_serial' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:209]
+INFO: [Synth 8-6157] synthesizing module 'async_receiver' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:78]
 	Parameter ClkFrequency bound to: 100000000 - type: integer 
 	Parameter Baud bound to: 9600 - type: integer 
 	Parameter Oversampling bound to: 8 - type: integer 
 	Parameter l2o bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'BaudTickGen' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:192]
+INFO: [Synth 8-6157] synthesizing module 'BaudTickGen' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:192]
 	Parameter ClkFrequency bound to: 100000000 - type: integer 
 	Parameter Baud bound to: 9600 - type: integer 
 	Parameter Oversampling bound to: 8 - type: integer 
 	Parameter AccWidth bound to: 22 - type: integer 
 	Parameter ShiftLimiter bound to: 8 - type: integer 
 	Parameter Inc bound to: 3221 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen' (1#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:192]
-INFO: [Synth 8-6155] done synthesizing module 'async_receiver' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:78]
-WARNING: [Synth 8-7023] instance 'ext_uart_r' of module 'async_receiver' has 7 connections declared, but only 5 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:233]
-INFO: [Synth 8-6157] synthesizing module 'async_transmitter' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen' (1#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:192]
+INFO: [Synth 8-6155] done synthesizing module 'async_receiver' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:78]
+WARNING: [Synth 8-7023] instance 'ext_uart_r' of module 'async_receiver' has 7 connections declared, but only 5 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:233]
+INFO: [Synth 8-6157] synthesizing module 'async_transmitter' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:17]
 	Parameter ClkFrequency bound to: 100000000 - type: integer 
 	Parameter Baud bound to: 9600 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'BaudTickGen__parameterized0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:192]
+INFO: [Synth 8-6157] synthesizing module 'BaudTickGen__parameterized0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:192]
 	Parameter ClkFrequency bound to: 100000000 - type: integer 
 	Parameter Baud bound to: 9600 - type: integer 
 	Parameter Oversampling bound to: 1 - type: integer 
 	Parameter AccWidth bound to: 22 - type: integer 
 	Parameter ShiftLimiter bound to: 5 - type: integer 
 	Parameter Inc bound to: 403 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen__parameterized0' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:192]
-INFO: [Synth 8-6155] done synthesizing module 'async_transmitter' (3#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'thinpad_uart_serial' (4#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:209]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:394]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:415]
-WARNING: [Synth 8-6014] Unused sequential element stored_awaddr_reg was removed.  [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:413]
-WARNING: [Synth 8-3848] Net s_data_axi_rresp in module/entity thinpad_serial_v1_0 does not have driver. [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:326]
-INFO: [Synth 8-6155] done synthesizing module 'thinpad_serial_v1_0' (5#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v:287]
+INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen__parameterized0' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:192]
+INFO: [Synth 8-6155] done synthesizing module 'async_transmitter' (3#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'thinpad_uart_serial' (4#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:209]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:394]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:415]
+WARNING: [Synth 8-6014] Unused sequential element stored_awaddr_reg was removed.  [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:413]
+WARNING: [Synth 8-3848] Net s_data_axi_rresp in module/entity thinpad_serial_v1_0 does not have driver. [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:326]
+INFO: [Synth 8-6155] done synthesizing module 'thinpad_serial_v1_0' (5#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v:287]
 INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_serial_0_0' (6#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_serial_0_0/synth/cpu_design_thinpad_serial_0_0.v:57]
 WARNING: [Synth 8-3331] design thinpad_serial_v1_0 has unconnected port s_data_axi_rresp[1]
 WARNING: [Synth 8-3331] design thinpad_serial_v1_0 has unconnected port s_data_axi_rresp[0]
@@ -145,7 +149,7 @@ WARNING: [Synth 8-3331] design thinpad_serial_v1_0 has unconnected port s_data_a
 WARNING: [Synth 8-3331] design thinpad_serial_v1_0 has unconnected port s_data_axi_arprot[1]
 WARNING: [Synth 8-3331] design thinpad_serial_v1_0 has unconnected port s_data_axi_arprot[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 887.668 ; gain = 245.727
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 887.887 ; gain = 245.621
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -158,10 +162,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:30 . Memory (MB): peak = 887.668 ; gain = 245.727
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 887.887 ; gain = 245.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:30 . Memory (MB): peak = 887.668 ; gain = 245.727
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 887.887 ; gain = 245.621
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -169,28 +173,28 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1003.895 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1004.484 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.286 . Memory (MB): peak = 1004.887 ; gain = 0.992
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1005.602 ; gain = 1.117
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'RxD_state_reg' in module 'async_receiver'
 INFO: [Synth 8-802] inferred FSM for state register 'TxD_state_reg' in module 'async_transmitter'
@@ -236,7 +240,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'TxD_state_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'thinpad_serial_v1_0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:56 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -402,7 +406,7 @@ WARNING: [Synth 8-3331] design cpu_design_thinpad_serial_0_0 has unconnected por
 WARNING: [Synth 8-3331] design cpu_design_thinpad_serial_0_0 has unconnected port s_data_axi_wdata[49]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:09 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -414,13 +418,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:16 ; elapsed = 00:01:40 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:16 ; elapsed = 00:01:40 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1005.602 ; gain = 363.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -432,7 +436,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:42 . Memory (MB): peak = 1004.887 ; gain = 362.945
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1006.023 ; gain = 363.758
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -456,7 +460,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -469,7 +473,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -481,25 +485,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -517,57 +521,56 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |    12|
 |2     |LUT1   |    12|
-|3     |LUT2   |    17|
-|4     |LUT3   |    20|
-|5     |LUT4   |    24|
-|6     |LUT5   |    54|
-|7     |LUT6   |   186|
+|3     |LUT2   |    12|
+|4     |LUT3   |    12|
+|5     |LUT4   |    28|
+|6     |LUT5   |    18|
+|7     |LUT6   |   212|
 |8     |MUXF7  |    64|
-|9     |FDRE   |   629|
-|10    |FDSE   |     5|
+|9     |FDRE   |   628|
+|10    |FDSE   |     6|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-----------------+----------------------------+------+
 |      |Instance         |Module                      |Cells |
 +------+-----------------+----------------------------+------+
-|1     |top              |                            |  1023|
-|2     |  inst           |thinpad_serial_v1_0         |  1023|
-|3     |    uart         |thinpad_uart_serial         |  1005|
-|4     |      ext_uart_r |async_receiver              |   146|
-|5     |        tickgen  |BaudTickGen                 |    45|
-|6     |      ext_uart_t |async_transmitter           |    74|
-|7     |        tickgen  |BaudTickGen__parameterized0 |    40|
+|1     |top              |                            |  1004|
+|2     |  inst           |thinpad_serial_v1_0         |  1004|
+|3     |    uart         |thinpad_uart_serial         |   989|
+|4     |      ext_uart_r |async_receiver              |   153|
+|5     |        tickgen  |BaudTickGen                 |    42|
+|6     |      ext_uart_t |async_transmitter           |    71|
+|7     |        tickgen  |BaudTickGen__parameterized0 |    38|
 +------+-----------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:52 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1011.625 ; gain = 369.359
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 76 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:43 . Memory (MB): peak = 1008.047 ; gain = 248.887
-Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:01:53 . Memory (MB): peak = 1008.047 ; gain = 366.105
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 1011.625 ; gain = 251.645
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1011.625 ; gain = 369.359
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1023.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1027.695 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-59 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+63 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:02:26 . Memory (MB): peak = 1023.445 ; gain = 637.805
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1023.445 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1027.695 ; gain = 641.262
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1027.695 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_serial_0_0_synth_1/cpu_design_thinpad_serial_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cpu_design_thinpad_serial_0_0, cache-ID = 47ab96a3c3f791e9
 INFO: [Coretcl 2-1174] Renamed 6 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1023.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1027.695 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_serial_0_0_synth_1/cpu_design_thinpad_serial_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_design_thinpad_serial_0_0_utilization_synth.rpt -pb cpu_design_thinpad_serial_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 00:36:35 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  2 01:36:05 2019...

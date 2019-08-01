@@ -2,37 +2,41 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Aug  1 20:51:20 2019
-# Process ID: 18500
+# Start of session at: Fri Aug  2 01:36:07 2019
+# Process ID: 3404
 # Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1
 # Command line: vivado.exe -log thinpad_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source thinpad_top.tcl
 # Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/thinpad_top.vds
 # Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source thinpad_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 355.211 ; gain = 64.504
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_qusim_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/links/qsim'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-add_files: Time (s): cpu = 00:00:08 ; elapsed = 00:00:26 . Memory (MB): peak = 388.543 ; gain = 9.488
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SysArrProcessor:1.0'. The one found in IP location 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor' will take precedence over the same IP in location c:/links/qsim/qsim.srcs
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 388.438 ; gain = 9.676
 Command: synth_design -top thinpad_top -part xc7a100tfgg676-2L
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 20436 
+INFO: Helper process launched with PID 15896 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 842.867 ; gain = 178.355
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 845.359 ; gain = 177.012
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'thinpad_top' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:3]
-INFO: [Synth 8-6157] synthesizing module 'pll_example' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/pll_example_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'pll_example' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/pll_example_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'pll_example' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/pll_example_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'pll_example' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/pll_example_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'vga' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/vga.v:15]
 	Parameter WIDTH bound to: 12 - type: integer 
 	Parameter HSIZE bound to: 800 - type: integer 
@@ -50,118 +54,124 @@ INFO: [Synth 8-6157] synthesizing module 'cpu_design_wrapper' [C:/Users/gjz010/D
 INFO: [Synth 8-6157] synthesizing module 'cpu_design' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1458]
 INFO: [Synth 8-6157] synthesizing module 'CPUBackEnd_imp_1ABZDV0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:12]
 INFO: [Synth 8-6157] synthesizing module 'LoadStore_imp_1PLFT48' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1103]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_simple_master_0_2' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_simple_master_0_2' (3#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_simple_master_0_2' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_simple_master_0_2' (3#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_2_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axi_simple_master_0' of module 'cpu_design_axi_simple_master_0_2' has 47 connections declared, but only 46 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1352]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_l1_cache_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_l1_cache_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_l1_cache_0_0' (4#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_l1_cache_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_loadstore_functionun_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_loadstore_functionun_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_loadstore_functionun_0_0' (5#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_loadstore_functionun_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_l1_cache_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_l1_cache_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_l1_cache_0_0' (4#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_l1_cache_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_loadstore_functionun_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_loadstore_functionun_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_loadstore_functionun_0_0' (5#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_loadstore_functionun_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'loadstore_functionun_0' of module 'cpu_design_loadstore_functionun_0_0' has 18 connections declared, but only 17 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1414]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_loadstoreunit_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_loadstoreunit_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_loadstoreunit_0_0' (6#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_loadstoreunit_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_loadstoreunit_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_loadstoreunit_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_loadstoreunit_0_0' (6#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_loadstoreunit_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'LoadStore_imp_1PLFT48' (7#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1103]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_dispatcher_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_dispatcher_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_dispatcher_0_0' (8#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_dispatcher_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_registers_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_registers_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_registers_0_0' (9#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_registers_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_renamebuffer_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_renamebuffer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_renamebuffer_0_0' (10#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_renamebuffer_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_reservestation_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_reservestation_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_reservestation_0_0' (11#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_reservestation_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_dispatcher_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_dispatcher_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_dispatcher_0_0' (8#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_dispatcher_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_registers_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_registers_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_registers_0_0' (9#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_registers_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_renamebuffer_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_renamebuffer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_renamebuffer_0_0' (10#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_renamebuffer_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_reservestation_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_reservestation_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_reservestation_0_0' (11#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_reservestation_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'reservestation_0' of module 'cpu_design_reservestation_0_0' has 19 connections declared, but only 18 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:404]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_rob_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_rob_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_rob_0_0' (12#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_rob_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_rob_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_rob_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_rob_0_0' (12#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_rob_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'rob_0' of module 'cpu_design_rob_0_0' has 38 connections declared, but only 32 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:423]
 INFO: [Synth 8-6155] done synthesizing module 'CPUBackEnd_imp_1ABZDV0' (13#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:12]
 INFO: [Synth 8-6157] synthesizing module 'CPUFrontEnd_imp_D5RT6D' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:458]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_simple_master_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_simple_master_0_0' (14#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_simple_master_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_simple_master_0_0' (14#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axi_simple_master_0' of module 'cpu_design_axi_simple_master_0_0' has 47 connections declared, but only 46 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:903]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_simple_master_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_simple_master_0_1' (15#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_simple_master_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_simple_master_0_1' (15#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_simple_master_0_1_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axi_simple_master_1' of module 'cpu_design_axi_simple_master_0_1' has 47 connections declared, but only 45 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:950]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_branch_predictor_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_branch_predictor_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_branch_predictor_0_1' (16#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_branch_predictor_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_decoder_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_decoder_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_decoder_0_0' (17#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_decoder_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_branch_predictor_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_branch_predictor_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_branch_predictor_0_1' (16#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_branch_predictor_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_decoder_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_decoder_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_decoder_0_0' (17#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_decoder_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'decoder_0' of module 'cpu_design_decoder_0_0' has 15 connections declared, but only 14 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1003]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_controller_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_controller_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_controller_0_0' (18#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_controller_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_insn_queue_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_insn_queue_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_insn_queue_0_0' (19#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_insn_queue_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_controller_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_controller_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_controller_0_0' (18#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_controller_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_insn_queue_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_insn_queue_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_insn_queue_0_0' (19#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_insn_queue_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'if_insn_queue_0' of module 'cpu_design_if_insn_queue_0_0' has 17 connections declared, but only 15 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1029]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_memory_accessor_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_memory_accessor_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_memory_accessor_0_0' (20#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_memory_accessor_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_tlb_fetcher_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_tlb_fetcher_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_tlb_fetcher_0_0' (21#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_if_tlb_fetcher_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_jump_predictor_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_jump_predictor_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_jump_predictor_0_0' (22#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_jump_predictor_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_pc_counter_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_pc_counter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_pc_counter_0_0' (23#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_pc_counter_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_memory_accessor_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_memory_accessor_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_memory_accessor_0_0' (20#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_memory_accessor_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_tlb_fetcher_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_tlb_fetcher_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_tlb_fetcher_0_0' (21#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_if_tlb_fetcher_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_jump_predictor_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_jump_predictor_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_jump_predictor_0_0' (22#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_jump_predictor_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_pc_counter_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_pc_counter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_pc_counter_0_0' (23#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_pc_counter_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'CPUFrontEnd_imp_D5RT6D' (24#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:458]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_bram_ctrl_1_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_bram_ctrl_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_bram_ctrl_1_0' (25#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_bram_ctrl_1_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_1' of module 'cpu_design_axi_bram_ctrl_1_0' has 44 connections declared, but only 42 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1962]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_gpio_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_gpio_0_1' (26#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_intc_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_intc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_intc_0_0' (27#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_axi_intc_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'axi_intc_0' of module 'cpu_design_axi_intc_0_0' has 21 connections declared, but only 20 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2027]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_interconnect_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2461]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_FOLC1X' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5134]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_FOLC1X' (28#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5134]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_Q1SWZN' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5455]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_Q1SWZN' (29#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5455]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1V87W7D' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5713]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_ds_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_ds_0' (30#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_0' (31#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'cpu_design_auto_pc_0' has 56 connections declared, but only 54 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6064]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1V87W7D' (32#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5713]
-INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_15Y1F9R' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6121]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_ds_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_ds_1' (33#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_1' (34#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_1_stub.v:6]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'cpu_design_auto_pc_1' has 56 connections declared, but only 54 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6472]
-INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_15Y1F9R' (35#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6121]
-INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_WUQ97G' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6529]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_2' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_2' (36#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_WUQ97G' (37#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6529]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_P6IB2C' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6839]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_P6IB2C' (38#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6839]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_s00_mmu_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_s00_mmu_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_s00_mmu_0' (39#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_s00_mmu_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_HNUA4I' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7146]
-INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_HNUA4I' (40#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7146]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_s01_mmu_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_s01_mmu_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_s01_mmu_0' (41#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_s01_mmu_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_13YY3GO' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7453]
-INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_13YY3GO' (42#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7453]
-INFO: [Synth 8-6157] synthesizing module 's03_couplers_imp_1W3CVV2' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7760]
-INFO: [Synth 8-6155] done synthesizing module 's03_couplers_imp_1W3CVV2' (43#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7760]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_xbar_0' (44#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_xbar_0_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axi_aruser' does not match port width (5) of module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5057]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axi_awuser' does not match port width (5) of module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5070]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axi_wuser' does not match port width (5) of module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5088]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_interconnect_0_0' (45#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2461]
-WARNING: [Synth 8-7023] instance 'axi_interconnect_0' of module 'cpu_design_axi_interconnect_0_0' has 320 connections declared, but only 307 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2048]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_blk_mem_gen_1_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_blk_mem_gen_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_blk_mem_gen_1_0' (46#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_blk_mem_gen_1_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'blk_mem_gen_1' of module 'cpu_design_blk_mem_gen_1_0' has 6 connections declared, but only 5 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2356]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_clk_wiz_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_clk_wiz_0_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_clk_wiz_0_1' (47#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_clk_wiz_0_1_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_proc_sys_reset_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_proc_sys_reset_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_proc_sys_reset_0_0' (48#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_proc_sys_reset_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'cpu_design_proc_sys_reset_0_0' has 10 connections declared, but only 7 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2367]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_serial_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_serial_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_serial_0_0' (49#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_serial_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_sram_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_sram_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_sram_0_0' (50#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-18500-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_sram_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_bram_ctrl_1_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_bram_ctrl_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_bram_ctrl_1_0' (25#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_bram_ctrl_1_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_1' of module 'cpu_design_axi_bram_ctrl_1_0' has 44 connections declared, but only 42 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1981]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_gpio_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_gpio_0_1' (26#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_intc_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_intc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_intc_0_0' (27#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_axi_intc_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi_intc_0' of module 'cpu_design_axi_intc_0_0' has 21 connections declared, but only 20 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2046]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_axi_interconnect_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2523]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_FOLC1X' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5378]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_FOLC1X' (28#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5378]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_Q1SWZN' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5699]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_Q1SWZN' (29#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5699]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1V87W7D' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5957]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_ds_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_ds_0' (30#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_0' (31#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'cpu_design_auto_pc_0' has 56 connections declared, but only 54 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6308]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1V87W7D' (32#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5957]
+INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_15Y1F9R' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6365]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_ds_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_ds_1' (33#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_ds_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_1' (34#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_1_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'cpu_design_auto_pc_1' has 56 connections declared, but only 54 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6716]
+INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_15Y1F9R' (35#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6365]
+INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_WUQ97G' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6773]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_2' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_2' (36#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_WUQ97G' (37#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:6773]
+INFO: [Synth 8-6157] synthesizing module 'm05_couplers_imp_5ADN4Q' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7083]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_auto_pc_3' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_auto_pc_3' (38#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm05_couplers_imp_5ADN4Q' (39#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7083]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_P6IB2C' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7393]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_P6IB2C' (40#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7393]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_s00_mmu_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_s00_mmu_0' (41#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_HNUA4I' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7700]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_HNUA4I' (42#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:7700]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_s01_mmu_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_s01_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_s01_mmu_0' (43#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_s01_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_13YY3GO' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:8007]
+INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_13YY3GO' (44#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:8007]
+INFO: [Synth 8-6157] synthesizing module 's03_couplers_imp_1W3CVV2' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:8314]
+INFO: [Synth 8-6155] done synthesizing module 's03_couplers_imp_1W3CVV2' (45#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:8314]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_xbar_0' (46#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_xbar_0_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_aruser' does not match port width (6) of module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5301]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_awuser' does not match port width (6) of module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5314]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axi_wuser' does not match port width (6) of module 'cpu_design_xbar_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:5332]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_axi_interconnect_0_0' (47#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2523]
+WARNING: [Synth 8-7023] instance 'axi_interconnect_0' of module 'cpu_design_axi_interconnect_0_0' has 341 connections declared, but only 328 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2067]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_blk_mem_gen_1_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_blk_mem_gen_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_blk_mem_gen_1_0' (48#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_blk_mem_gen_1_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'blk_mem_gen_1' of module 'cpu_design_blk_mem_gen_1_0' has 6 connections declared, but only 5 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2396]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_clk_wiz_0_1' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_clk_wiz_0_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_clk_wiz_0_1' (49#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_clk_wiz_0_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_proc_sys_reset_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_proc_sys_reset_0_0' (50#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'cpu_design_proc_sys_reset_0_0' has 10 connections declared, but only 7 given [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:2407]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_qusim_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_qusim_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_qusim_0_0' (51#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_qusim_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_serial_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_serial_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_serial_0_0' (52#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_serial_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_sram_0_0' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_sram_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_sram_0_0' (53#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/.Xil/Vivado-3404-DESKTOP-D2G6SOG/realtime/cpu_design_thinpad_sram_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_xlconcat_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_xlconcat_0_0/synth/cpu_design_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -198,10 +208,10 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/gj
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 2 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (51#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_xlconcat_0_0' (52#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_xlconcat_0_0/synth/cpu_design_xlconcat_0_0.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design' (53#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1458]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_design_wrapper' (54#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/hdl/cpu_design_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (54#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_xlconcat_0_0' (55#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_xlconcat_0_0/synth/cpu_design_xlconcat_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design' (56#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/synth/cpu_design.v:1458]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_design_wrapper' (57#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/hdl/cpu_design_wrapper.v:12]
 WARNING: [Synth 8-3848] Net uart_rdn in module/entity thinpad_top does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:17]
 WARNING: [Synth 8-3848] Net uart_wrn in module/entity thinpad_top does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:18]
 WARNING: [Synth 8-3848] Net flash_a in module/entity thinpad_top does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:44]
@@ -222,7 +232,7 @@ WARNING: [Synth 8-3848] Net dm9k_iow_n in module/entity thinpad_top does not hav
 WARNING: [Synth 8-3848] Net dm9k_ior_n in module/entity thinpad_top does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:68]
 WARNING: [Synth 8-3848] Net dm9k_cs_n in module/entity thinpad_top does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:69]
 WARNING: [Synth 8-3848] Net dm9k_pwrst_n in module/entity thinpad_top does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:70]
-INFO: [Synth 8-6155] done synthesizing module 'thinpad_top' (55#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'thinpad_top' (58#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/thinpad_top.v:3]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In2[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In3[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In4[0]
@@ -269,63 +279,63 @@ WARNING: [Synth 8-3331] design s00_couplers_imp_P6IB2C has unconnected port M_AC
 WARNING: [Synth 8-3331] design s00_couplers_imp_P6IB2C has unconnected port M_ARESETN
 WARNING: [Synth 8-3331] design s00_couplers_imp_P6IB2C has unconnected port S_ACLK
 WARNING: [Synth 8-3331] design s00_couplers_imp_P6IB2C has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design m04_couplers_imp_WUQ97G has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m04_couplers_imp_WUQ97G has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m03_couplers_imp_15Y1F9R has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m03_couplers_imp_15Y1F9R has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m02_couplers_imp_1V87W7D has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m02_couplers_imp_1V87W7D has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m01_couplers_imp_Q1SWZN has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m01_couplers_imp_Q1SWZN has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m01_couplers_imp_Q1SWZN has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design m01_couplers_imp_Q1SWZN has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design m00_couplers_imp_FOLC1X has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m00_couplers_imp_FOLC1X has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m00_couplers_imp_FOLC1X has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design m00_couplers_imp_FOLC1X has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M00_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M00_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M01_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M01_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M02_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M02_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M03_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M03_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M04_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port M04_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S00_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S00_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S01_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S01_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S02_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S02_ARESETN
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S03_ACLK
-WARNING: [Synth 8-3331] design cpu_design_axi_interconnect_0_0 has unconnected port S03_ARESETN
-WARNING: [Synth 8-3331] design LoadStore_imp_1PLFT48 has unconnected port M00_AXI_bid[2]
-WARNING: [Synth 8-3331] design LoadStore_imp_1PLFT48 has unconnected port M00_AXI_bid[1]
-WARNING: [Synth 8-3331] design LoadStore_imp_1PLFT48 has unconnected port M00_AXI_rid[2]
-WARNING: [Synth 8-3331] design LoadStore_imp_1PLFT48 has unconnected port M00_AXI_rid[1]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port uart_rdn
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port uart_wrn
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[22]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[21]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[20]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[19]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[18]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[17]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[16]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[15]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[14]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[13]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[12]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[11]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[10]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[9]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[8]
-WARNING: [Synth 8-3331] design thinpad_top has unconnected port flash_a[7]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[63]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[62]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[61]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[60]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[59]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[58]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[57]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[56]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[55]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[54]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[53]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[52]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[51]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[50]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[49]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[48]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[47]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[46]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[45]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[44]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[43]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[42]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[41]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[40]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[39]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[38]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[37]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[36]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[35]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[34]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[33]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[32]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[31]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[30]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[29]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[28]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[27]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[26]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[25]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[24]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[23]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[22]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[21]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[20]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[19]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[18]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[17]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[16]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[15]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[14]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[13]
+WARNING: [Synth 8-3331] design m05_couplers_imp_5ADN4Q has unconnected port S_AXI_araddr[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 917.449 ; gain = 252.938
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 921.020 ; gain = 252.672
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -338,10 +348,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 917.449 ; gain = 252.938
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 921.020 ; gain = 252.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 917.449 ; gain = 252.938
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 921.020 ; gain = 252.672
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -403,6 +413,8 @@ Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/
 Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1_in_context.xdc] for cell 'cpu/cpu_design_i/axi_gpio_0'
 Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0_in_context.xdc] for cell 'cpu/cpu_design_i/thinpad_serial_0'
 Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0_in_context.xdc] for cell 'cpu/cpu_design_i/thinpad_serial_0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0_in_context.xdc] for cell 'cpu/cpu_design_i/thinpad_qusim_0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0_in_context.xdc] for cell 'cpu/cpu_design_i/thinpad_qusim_0'
 Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_0/cpu_design_auto_ds_0/cpu_design_auto_ds_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds'
 Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_0/cpu_design_auto_ds_0/cpu_design_auto_ds_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds'
 Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_0/cpu_design_auto_pc_0/cpu_design_auto_pc_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_pc'
@@ -413,10 +425,12 @@ Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/
 Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_1/cpu_design_auto_pc_1/cpu_design_auto_pc_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_pc'
 Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_2/cpu_design_auto_pc_2/cpu_design_auto_pc_2_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m04_couplers/auto_pc'
 Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_2/cpu_design_auto_pc_2/cpu_design_auto_pc_2_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m04_couplers/auto_pc'
-Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s00_mmu'
-Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s00_mmu'
-Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0/cpu_design_s00_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s01_mmu'
-Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0/cpu_design_s00_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s01_mmu'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_3/cpu_design_auto_pc_3/cpu_design_auto_pc_3_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m05_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_3/cpu_design_auto_pc_3/cpu_design_auto_pc_3_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m05_couplers/auto_pc'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0/cpu_design_s01_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s00_mmu'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0/cpu_design_s01_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s00_mmu'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s01_mmu'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0_in_context.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/s01_mmu'
 Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example/pll_example_in_context.xdc] for cell 'clock_gen'
 WARNING: [Constraints 18-619] A clock with name 'clk_50M' already exists, overwriting the previous clock with the same name. [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example/pll_example_in_context.xdc:1]
 Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example/pll_example_in_context.xdc] for cell 'clock_gen'
@@ -433,21 +447,21 @@ Parsing XDC File [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/
 Finished Parsing XDC File [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1064.609 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1070.301 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1064.609 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1070.301 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'cpu/cpu_design_i/blk_mem_gen_1' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -485,19 +499,21 @@ Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_intc_0. (constra
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/thinpad_serial_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/thinpad_qusim_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/m04_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/m05_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/s00_mmu. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu/cpu_design_i/axi_interconnect_0/s01_mmu. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clock_gen. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -547,7 +563,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -566,13 +582,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clock_gen/clk_out2' to pi
 WARNING: [Synth 8-565] redefining clock 'clk_50M'
 INFO: [Synth 8-5819] Moved 4 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -584,7 +600,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -618,7 +634,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \CPUBackEnd/rob_0  has unconnec
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \CPUBackEnd/rob_0  has unconnected pin search_line_1[0]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \CPUBackEnd/rob_0  has unconnected pin commit_load_speculation_failed
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -631,7 +647,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -643,25 +659,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -680,33 +696,35 @@ Report BlackBoxes:
 |7     |cpu_design_auto_ds_1                |         1|
 |8     |cpu_design_auto_pc_1                |         1|
 |9     |cpu_design_auto_pc_2                |         1|
-|10    |cpu_design_axi_bram_ctrl_1_0        |         1|
-|11    |cpu_design_axi_gpio_0_1             |         1|
-|12    |cpu_design_axi_intc_0_0             |         1|
-|13    |cpu_design_blk_mem_gen_1_0          |         1|
-|14    |cpu_design_clk_wiz_0_1              |         1|
-|15    |cpu_design_proc_sys_reset_0_0       |         1|
-|16    |cpu_design_thinpad_serial_0_0       |         1|
-|17    |cpu_design_thinpad_sram_0_0         |         1|
-|18    |cpu_design_dispatcher_0_0           |         1|
-|19    |cpu_design_registers_0_0            |         1|
-|20    |cpu_design_renamebuffer_0_0         |         1|
-|21    |cpu_design_reservestation_0_0       |         1|
-|22    |cpu_design_rob_0_0                  |         1|
-|23    |cpu_design_axi_simple_master_0_2    |         1|
-|24    |cpu_design_l1_cache_0_0             |         1|
-|25    |cpu_design_loadstore_functionun_0_0 |         1|
-|26    |cpu_design_loadstoreunit_0_0        |         1|
-|27    |cpu_design_axi_simple_master_0_0    |         1|
-|28    |cpu_design_axi_simple_master_0_1    |         1|
-|29    |cpu_design_branch_predictor_0_1     |         1|
-|30    |cpu_design_decoder_0_0              |         1|
-|31    |cpu_design_if_controller_0_0        |         1|
-|32    |cpu_design_if_insn_queue_0_0        |         1|
-|33    |cpu_design_if_memory_accessor_0_0   |         1|
-|34    |cpu_design_if_tlb_fetcher_0_0       |         1|
-|35    |cpu_design_jump_predictor_0_0       |         1|
-|36    |cpu_design_pc_counter_0_0           |         1|
+|10    |cpu_design_auto_pc_3                |         1|
+|11    |cpu_design_axi_bram_ctrl_1_0        |         1|
+|12    |cpu_design_axi_gpio_0_1             |         1|
+|13    |cpu_design_axi_intc_0_0             |         1|
+|14    |cpu_design_blk_mem_gen_1_0          |         1|
+|15    |cpu_design_clk_wiz_0_1              |         1|
+|16    |cpu_design_proc_sys_reset_0_0       |         1|
+|17    |cpu_design_thinpad_qusim_0_0        |         1|
+|18    |cpu_design_thinpad_serial_0_0       |         1|
+|19    |cpu_design_thinpad_sram_0_0         |         1|
+|20    |cpu_design_dispatcher_0_0           |         1|
+|21    |cpu_design_registers_0_0            |         1|
+|22    |cpu_design_renamebuffer_0_0         |         1|
+|23    |cpu_design_reservestation_0_0       |         1|
+|24    |cpu_design_rob_0_0                  |         1|
+|25    |cpu_design_axi_simple_master_0_2    |         1|
+|26    |cpu_design_l1_cache_0_0             |         1|
+|27    |cpu_design_loadstore_functionun_0_0 |         1|
+|28    |cpu_design_loadstoreunit_0_0        |         1|
+|29    |cpu_design_axi_simple_master_0_0    |         1|
+|30    |cpu_design_axi_simple_master_0_1    |         1|
+|31    |cpu_design_branch_predictor_0_1     |         1|
+|32    |cpu_design_decoder_0_0              |         1|
+|33    |cpu_design_if_controller_0_0        |         1|
+|34    |cpu_design_if_insn_queue_0_0        |         1|
+|35    |cpu_design_if_memory_accessor_0_0   |         1|
+|36    |cpu_design_if_tlb_fetcher_0_0       |         1|
+|37    |cpu_design_jump_predictor_0_0       |         1|
+|38    |cpu_design_pc_counter_0_0           |         1|
 +------+------------------------------------+----------+
 
 Report Cell Usage: 
@@ -718,92 +736,95 @@ Report Cell Usage:
 |3     |cpu_design_auto_pc_0                |     1|
 |4     |cpu_design_auto_pc_1                |     1|
 |5     |cpu_design_auto_pc_2                |     1|
-|6     |cpu_design_axi_bram_ctrl_1_0        |     1|
-|7     |cpu_design_axi_gpio_0_1             |     1|
-|8     |cpu_design_axi_intc_0_0             |     1|
-|9     |cpu_design_axi_simple_master_0_0    |     1|
-|10    |cpu_design_axi_simple_master_0_1    |     1|
-|11    |cpu_design_axi_simple_master_0_2    |     1|
-|12    |cpu_design_blk_mem_gen_1_0          |     1|
-|13    |cpu_design_branch_predictor_0_1     |     1|
-|14    |cpu_design_clk_wiz_0_1              |     1|
-|15    |cpu_design_decoder_0_0              |     1|
-|16    |cpu_design_dispatcher_0_0           |     1|
-|17    |cpu_design_if_controller_0_0        |     1|
-|18    |cpu_design_if_insn_queue_0_0        |     1|
-|19    |cpu_design_if_memory_accessor_0_0   |     1|
-|20    |cpu_design_if_tlb_fetcher_0_0       |     1|
-|21    |cpu_design_jump_predictor_0_0       |     1|
-|22    |cpu_design_l1_cache_0_0             |     1|
-|23    |cpu_design_loadstore_functionun_0_0 |     1|
-|24    |cpu_design_loadstoreunit_0_0        |     1|
-|25    |cpu_design_pc_counter_0_0           |     1|
-|26    |cpu_design_proc_sys_reset_0_0       |     1|
-|27    |cpu_design_registers_0_0            |     1|
-|28    |cpu_design_renamebuffer_0_0         |     1|
-|29    |cpu_design_reservestation_0_0       |     1|
-|30    |cpu_design_rob_0_0                  |     1|
-|31    |cpu_design_s00_mmu_0                |     1|
-|32    |cpu_design_s01_mmu_0                |     1|
-|33    |cpu_design_thinpad_serial_0_0       |     1|
-|34    |cpu_design_thinpad_sram_0_0         |     1|
-|35    |cpu_design_xbar_0                   |     1|
-|36    |pll_example                         |     1|
-|37    |CARRY4                              |     6|
-|38    |LUT1                                |     3|
-|39    |LUT2                                |     4|
-|40    |LUT3                                |     3|
-|41    |LUT4                                |     8|
-|42    |LUT5                                |     2|
-|43    |LUT6                                |    13|
-|44    |FDRE                                |    24|
-|45    |IBUF                                |     2|
-|46    |IOBUF                               |    64|
-|47    |OBUF                                |    99|
-|48    |OBUFT                               |    42|
+|6     |cpu_design_auto_pc_3                |     1|
+|7     |cpu_design_axi_bram_ctrl_1_0        |     1|
+|8     |cpu_design_axi_gpio_0_1             |     1|
+|9     |cpu_design_axi_intc_0_0             |     1|
+|10    |cpu_design_axi_simple_master_0_0    |     1|
+|11    |cpu_design_axi_simple_master_0_1    |     1|
+|12    |cpu_design_axi_simple_master_0_2    |     1|
+|13    |cpu_design_blk_mem_gen_1_0          |     1|
+|14    |cpu_design_branch_predictor_0_1     |     1|
+|15    |cpu_design_clk_wiz_0_1              |     1|
+|16    |cpu_design_decoder_0_0              |     1|
+|17    |cpu_design_dispatcher_0_0           |     1|
+|18    |cpu_design_if_controller_0_0        |     1|
+|19    |cpu_design_if_insn_queue_0_0        |     1|
+|20    |cpu_design_if_memory_accessor_0_0   |     1|
+|21    |cpu_design_if_tlb_fetcher_0_0       |     1|
+|22    |cpu_design_jump_predictor_0_0       |     1|
+|23    |cpu_design_l1_cache_0_0             |     1|
+|24    |cpu_design_loadstore_functionun_0_0 |     1|
+|25    |cpu_design_loadstoreunit_0_0        |     1|
+|26    |cpu_design_pc_counter_0_0           |     1|
+|27    |cpu_design_proc_sys_reset_0_0       |     1|
+|28    |cpu_design_registers_0_0            |     1|
+|29    |cpu_design_renamebuffer_0_0         |     1|
+|30    |cpu_design_reservestation_0_0       |     1|
+|31    |cpu_design_rob_0_0                  |     1|
+|32    |cpu_design_s00_mmu_0                |     1|
+|33    |cpu_design_s01_mmu_0                |     1|
+|34    |cpu_design_thinpad_qusim_0_0        |     1|
+|35    |cpu_design_thinpad_serial_0_0       |     1|
+|36    |cpu_design_thinpad_sram_0_0         |     1|
+|37    |cpu_design_xbar_0                   |     1|
+|38    |pll_example                         |     1|
+|39    |CARRY4                              |     6|
+|40    |LUT1                                |     3|
+|41    |LUT2                                |     4|
+|42    |LUT3                                |     3|
+|43    |LUT4                                |     8|
+|44    |LUT5                                |     2|
+|45    |LUT6                                |    13|
+|46    |FDRE                                |    24|
+|47    |IBUF                                |     2|
+|48    |IOBUF                               |    64|
+|49    |OBUF                                |    99|
+|50    |OBUFT                               |    42|
 +------+------------------------------------+------+
 
 Report Instance Areas: 
 +------+-------------------------+--------------------------------+------+
 |      |Instance                 |Module                          |Cells |
 +------+-------------------------+--------------------------------+------+
-|1     |top                      |                                |  9810|
-|2     |  cpu                    |cpu_design_wrapper              |  9538|
-|3     |    cpu_design_i         |cpu_design                      |  9537|
-|4     |      axi_interconnect_0 |cpu_design_axi_interconnect_0_0 |  3712|
+|1     |top                      |                                | 10343|
+|2     |  cpu                    |cpu_design_wrapper              | 10071|
+|3     |    cpu_design_i         |cpu_design                      | 10070|
+|4     |      axi_interconnect_0 |cpu_design_axi_interconnect_0_0 |  4172|
 |5     |        m02_couplers     |m02_couplers_imp_1V87W7D        |   525|
 |6     |        m03_couplers     |m03_couplers_imp_15Y1F9R        |   525|
 |7     |        m04_couplers     |m04_couplers_imp_WUQ97G         |   291|
-|8     |      xlconcat_0         |cpu_design_xlconcat_0_0         |     0|
-|9     |      CPUBackEnd         |CPUBackEnd_imp_1ABZDV0          |  3033|
-|10    |        LoadStore        |LoadStore_imp_1PLFT48           |  1261|
-|11    |      CPUFrontEnd        |CPUFrontEnd_imp_D5RT6D          |  2183|
-|12    |  vga800x600at75         |vga                             |    62|
+|8     |        m05_couplers     |m05_couplers_imp_5ADN4Q         |   187|
+|9     |      xlconcat_0         |cpu_design_xlconcat_0_0         |     0|
+|10    |      CPUBackEnd         |CPUBackEnd_imp_1ABZDV0          |  3033|
+|11    |        LoadStore        |LoadStore_imp_1PLFT48           |  1261|
+|12    |      CPUFrontEnd        |CPUFrontEnd_imp_D5RT6D          |  2183|
+|13    |  vga800x600at75         |vga                             |    62|
 +------+-------------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 10 critical warnings and 138 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 1066.660 ; gain = 252.938
-Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1066.660 ; gain = 402.148
+Synthesis finished with 0 errors, 10 critical warnings and 140 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1073.273 ; gain = 252.672
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1073.273 ; gain = 404.926
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 70 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1069.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1076.957 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 64 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 64 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-137 Infos, 147 Warnings, 10 Critical Warnings and 0 Errors encountered.
+147 Infos, 148 Warnings, 10 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 1069.246 ; gain = 680.703
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1069.246 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1076.957 ; gain = 688.520
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1076.957 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/thinpad_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file thinpad_top_utilization_synth.rpt -pb thinpad_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 20:53:12 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  2 01:37:16 2019...

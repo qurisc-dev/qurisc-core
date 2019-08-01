@@ -1,0 +1,1 @@
+floating_point_4.vhd,vhdl,xil_defaultlib,../../../../../../../ip_repo/thinpad_qusim_1.0/src/floating_point_4/sim/floating_point_4.vhd,

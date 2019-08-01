@@ -1,0 +1,801 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Aug  2 01:37:24 2019
+# Process ID: 17168
+# Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1
+# Command line: vivado.exe -log thinpad_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source thinpad_top.tcl -notrace
+# Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top.vdi
+# Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source thinpad_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_qusim_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/links/qsim'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SysArrProcessor:1.0'. The one found in IP location 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor' will take precedence over the same IP in location c:/links/qsim/qsim.srcs
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 410.418 ; gain = 31.188
+Command: link_design -top thinpad_top -part xc7a100tfgg676-2L
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example.dcp' for cell 'clock_gen'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_bram_ctrl_1_0/cpu_design_axi_bram_ctrl_1_0.dcp' for cell 'cpu/cpu_design_i/axi_bram_ctrl_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1.dcp' for cell 'cpu/cpu_design_i/axi_gpio_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0.dcp' for cell 'cpu/cpu_design_i/axi_intc_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_blk_mem_gen_1_0/cpu_design_blk_mem_gen_1_0.dcp' for cell 'cpu/cpu_design_i/blk_mem_gen_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1.dcp' for cell 'cpu/cpu_design_i/clk_wiz_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0.dcp' for cell 'cpu/cpu_design_i/proc_sys_reset_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0.dcp' for cell 'cpu/cpu_design_i/thinpad_qusim_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0.dcp' for cell 'cpu/cpu_design_i/thinpad_serial_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_sram_0_0/cpu_design_thinpad_sram_0_0.dcp' for cell 'cpu/cpu_design_i/thinpad_sram_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_dispatcher_0_0/cpu_design_dispatcher_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/dispatcher_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_registers_0_0/cpu_design_registers_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/registers_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_renamebuffer_0_0/cpu_design_renamebuffer_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/renamebuffer_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_reservestation_0_0/cpu_design_reservestation_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/reservestation_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_rob_0_0/cpu_design_rob_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/rob_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_simple_master_0_2/cpu_design_axi_simple_master_0_2.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/LoadStore/axi_simple_master_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_l1_cache_0_0/cpu_design_l1_cache_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/LoadStore/l1_cache_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_loadstore_functionun_0_0/cpu_design_loadstore_functionun_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_loadstoreunit_0_0/cpu_design_loadstoreunit_0_0.dcp' for cell 'cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstoreunit_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_simple_master_0_0/cpu_design_axi_simple_master_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/axi_simple_master_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_simple_master_0_1/cpu_design_axi_simple_master_0_1.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/axi_simple_master_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_branch_predictor_0_1/cpu_design_branch_predictor_0_1.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/branch_predictor_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_decoder_0_0/cpu_design_decoder_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/decoder_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_if_controller_0_0/cpu_design_if_controller_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/if_controller_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_if_insn_queue_0_0/cpu_design_if_insn_queue_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/if_insn_queue_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_if_memory_accessor_0_0/cpu_design_if_memory_accessor_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/if_memory_accessor_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_if_tlb_fetcher_0_0/cpu_design_if_tlb_fetcher_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/if_tlb_fetcher_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_jump_predictor_0_0/cpu_design_jump_predictor_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/jump_predictor_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_pc_counter_0_0/cpu_design_pc_counter_0_0.dcp' for cell 'cpu/cpu_design_i/CPUFrontEnd/pc_counter_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/s00_mmu'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/s01_mmu'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_xbar_0/cpu_design_xbar_0.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_0/cpu_design_auto_ds_0.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_0/cpu_design_auto_pc_0.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_1/cpu_design_auto_ds_1.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_1/cpu_design_auto_pc_1.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_2/cpu_design_auto_pc_2.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/m04_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_3/cpu_design_auto_pc_3.dcp' for cell 'cpu/cpu_design_i/axi_interconnect_0/m05_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 8261 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-35] Removing redundant IBUF, clock_gen/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-35] Removing redundant IBUF, cpu/cpu_design_i/clk_wiz_0/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'clock_gen/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'cpu/cpu_design_i/clk_wiz_0/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1_board.xdc] for cell 'cpu/cpu_design_i/clk_wiz_0/inst'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1_board.xdc] for cell 'cpu/cpu_design_i/clk_wiz_0/inst'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1.xdc] for cell 'cpu/cpu_design_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1.xdc:57]
+get_clocks: Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 1804.547 ; gain = 675.898
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1.xdc] for cell 'cpu/cpu_design_i/clk_wiz_0/inst'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0_board.xdc] for cell 'cpu/cpu_design_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0_board.xdc] for cell 'cpu/cpu_design_i/proc_sys_reset_0/U0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0.xdc] for cell 'cpu/cpu_design_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0.xdc] for cell 'cpu/cpu_design_i/proc_sys_reset_0/U0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0.xdc] for cell 'cpu/cpu_design_i/axi_intc_0/U0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0.xdc] for cell 'cpu/cpu_design_i/axi_intc_0/U0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1_board.xdc] for cell 'cpu/cpu_design_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1_board.xdc] for cell 'cpu/cpu_design_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1.xdc] for cell 'cpu/cpu_design_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1.xdc] for cell 'cpu/cpu_design_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example_board.xdc] for cell 'clock_gen/inst'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example_board.xdc] for cell 'clock_gen/inst'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example.xdc] for cell 'clock_gen/inst'
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example.xdc:57]
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example.xdc] for cell 'clock_gen/inst'
+Parsing XDC File [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]
+WARNING: [Vivado 12-507] No nets matched 'clk_11M0592_IBUF'. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'clock_btn_IBUF'. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0_clocks.xdc] for cell 'cpu/cpu_design_i/axi_intc_0/U0'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0_clocks.xdc] for cell 'cpu/cpu_design_i/axi_intc_0/U0'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_0/cpu_design_auto_ds_0_clocks.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_0/cpu_design_auto_ds_0_clocks.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst'
+Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_1/cpu_design_auto_ds_1_clocks.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst'
+Finished Parsing XDC File [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_1/cpu_design_auto_ds_1_clocks.xdc] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'cpu/cpu_design_i/axi_interconnect_0/m03_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 1805.555 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 88 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 64 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 24 instances
+
+60 Infos, 7 Warnings, 2 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:01:16 ; elapsed = 00:01:13 . Memory (MB): peak = 1805.555 ; gain = 1395.137
+write_hwdef: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1805.555 ; gain = 0.000
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1805.555 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1c954babe
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1823.465 ; gain = 17.910
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[0] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[0]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[100] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[100]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[101] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[101]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[102] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[102]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[103] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[103]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[104] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[104]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[105] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[105]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[106] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[106]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[107] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[107]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[108] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[108]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[109] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[109]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[10] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[10]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[116] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[116]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[117] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[117]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[118] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[118]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[119] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[119]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[11] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[11]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[120] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[120]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[121] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[121]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[122] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[122]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[123] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[123]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[124] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[124]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[125] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[125]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[126] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[126]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[127] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[127]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[128] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[128]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[129] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[129]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[12] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[12]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[130] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[130]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[131] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[131]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[132] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[132]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[133] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[133]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[134] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[134]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[135] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[135]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[136] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[136]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[137] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[137]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[138] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[138]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[139] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[139]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[13] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[13]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[140] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[140]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[141] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[141]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[142] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[142]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[143] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[143]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[144] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[144]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[145] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[145]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[146] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[146]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[147] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[147]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[148] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[148]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[149] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[149]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[14] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[14]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[150] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[150]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[151] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[151]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[152] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[152]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[153] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[153]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[154] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[154]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[155] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[155]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[156] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[156]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[157] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[157]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[158] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[158]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[159] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[159]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[15] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[15]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[160] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[160]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[161] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[161]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[162] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[162]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[163] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[163]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[164] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[164]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[165] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[165]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[166] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[166]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[167] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[167]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[168] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[168]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[169] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[169]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[16] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[16]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[170] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[170]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[171] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[171]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[172] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[172]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[173] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[173]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[174] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[174]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[175] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[175]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[176] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[176]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[177] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[177]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[178] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[178]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[179] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[179]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[17] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[17]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[180] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[180]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[181] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[181]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[182] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[182]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[183] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[183]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[184] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[184]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[185] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[185]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[186] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[186]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[187] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[187]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[188] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[188]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[189] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[189]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[18] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[18]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[190] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[190]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[191] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[191]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[192] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[192]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[193] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[193]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[194] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[194]_INST_0
+WARNING: [Opt 31-155] Driverless net cpu/cpu_design_i/CPUBackEnd/dispatcher_0/reissue_input[195] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: cpu/cpu_design_i/CPUBackEnd/dispatcher_0/decode_result[195]_INST_0
+INFO: [Common 17-14] Message 'Opt 31-155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-138] Pushed 18 inverter(s) to 21 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 15824b166
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 1966.773 ; gain = 0.602
+INFO: [Opt 31-389] Phase Retarget created 3191 cells and removed 4110 cells
+INFO: [Opt 31-1021] In phase Retarget, 16 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 52 inverter(s) to 615 load pin(s).
+Phase 2 Constant propagation | Checksum: 162def665
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1966.773 ; gain = 0.602
+INFO: [Opt 31-389] Phase Constant propagation created 2176 cells and removed 18818 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 12 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 179836a6c
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:36 . Memory (MB): peak = 1966.773 ; gain = 0.602
+INFO: [Opt 31-389] Phase Sweep created 68 cells and removed 6523 cells
+INFO: [Opt 31-1021] In phase Sweep, 157 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 179836a6c
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:38 . Memory (MB): peak = 1966.773 ; gain = 0.602
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 179836a6c
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:40 . Memory (MB): peak = 1966.773 ; gain = 0.602
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 16649a657
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:41 . Memory (MB): peak = 1966.773 ; gain = 0.602
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 30 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |            3191  |            4110  |                                             16  |
+|  Constant propagation         |            2176  |           18818  |                                             12  |
+|  Sweep                        |              68  |            6523  |                                            157  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             30  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.282 . Memory (MB): peak = 1966.773 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: d8e80a7a
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:46 . Memory (MB): peak = 1966.773 ; gain = 0.602
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.995 | TNS=0.000 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 2 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 4
+Ending PowerOpt Patch Enables Task | Checksum: d8e80a7a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.543 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Ending Power Optimization Task | Checksum: d8e80a7a
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:38 . Memory (MB): peak = 2435.438 ; gain = 468.664
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: d8e80a7a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: d8e80a7a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+88 Infos, 107 Warnings, 2 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:02:12 ; elapsed = 00:01:39 . Memory (MB): peak = 2435.438 ; gain = 629.883
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:41 ; elapsed = 00:00:24 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file thinpad_top_drc_opted.rpt -pb thinpad_top_drc_opted.pb -rpx thinpad_top_drc_opted.rpx
+Command: report_drc -file thinpad_top_drc_opted.rpt -pb thinpad_top_drc_opted.pb -rpx thinpad_top_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: a538f9e6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.138 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: e6b6704e
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:17 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 174dbbd95
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:39 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 174dbbd95
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:39 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 174dbbd95
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:39 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 21afb0713
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:45 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           5  |  00:00:01  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 18093a20d
+
+Time (s): cpu = 00:02:59 ; elapsed = 00:01:56 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 2.2 Global Placement Core | Checksum: 15d1bbefb
+
+Time (s): cpu = 00:03:08 ; elapsed = 00:02:02 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 15d1bbefb
+
+Time (s): cpu = 00:03:08 ; elapsed = 00:02:02 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 11cd5f32c
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:02:10 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 176a12355
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:02:25 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1168a6757
+
+Time (s): cpu = 00:03:45 ; elapsed = 00:02:26 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 12fbc72ec
+
+Time (s): cpu = 00:03:45 ; elapsed = 00:02:26 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 19e7f6815
+
+Time (s): cpu = 00:04:05 ; elapsed = 00:02:39 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 237d2e7db
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:03:20 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1efdee8cf
+
+Time (s): cpu = 00:04:53 ; elapsed = 00:03:27 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 1c7221f12
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:03:28 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1c7221f12
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:03:28 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: b525faad
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-33] Processed net cpu/cpu_design_i/proc_sys_reset_0/U0/peripheral_reset[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net cpu/cpu_design_i/thinpad_qusim_0/inst/cop/rst_reg_n_0, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net cpu/cpu_design_i/CPUBackEnd/renamebuffer_0/inst/renames[1][3]_i_1_n_0, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net cpu/cpu_design_i/CPUBackEnd/rob_0/inst/rob_head0, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wy/genblk1[3].areg/SR[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 5 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 5, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: b525faad
+
+Time (s): cpu = 00:05:27 ; elapsed = 00:03:50 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.502. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 134633c73
+
+Time (s): cpu = 00:05:35 ; elapsed = 00:03:57 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 134633c73
+
+Time (s): cpu = 00:05:35 ; elapsed = 00:03:58 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 134633c73
+
+Time (s): cpu = 00:05:36 ; elapsed = 00:03:59 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 134633c73
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:03:59 . Memory (MB): peak = 2435.438 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 198ae0d6e
+
+Time (s): cpu = 00:05:38 ; elapsed = 00:04:00 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 198ae0d6e
+
+Time (s): cpu = 00:05:38 ; elapsed = 00:04:01 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Ending Placer Task | Checksum: faadcead
+
+Time (s): cpu = 00:05:38 ; elapsed = 00:04:01 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+123 Infos, 107 Warnings, 2 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:05:46 ; elapsed = 00:04:06 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.182 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:34 ; elapsed = 00:00:11 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:56 ; elapsed = 00:00:27 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_io -file thinpad_top_io_placed.rpt
+report_io: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.225 . Memory (MB): peak = 2435.438 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file thinpad_top_utilization_placed.rpt -pb thinpad_top_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file thinpad_top_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2435.438 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 8cc11093 ConstDB: 0 ShapeSum: 6decbe1a RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: c38cd001
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:45 . Memory (MB): peak = 2508.188 ; gain = 35.961
+Post Restoration Checksum: NetGraph: 43d8bc89 NumContArr: 7fb41378 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: c38cd001
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:47 . Memory (MB): peak = 2533.098 ; gain = 60.871
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: c38cd001
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:48 . Memory (MB): peak = 2544.805 ; gain = 72.578
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: c38cd001
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:48 . Memory (MB): peak = 2544.805 ; gain = 72.578
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 115feda7b
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:01:15 . Memory (MB): peak = 2616.988 ; gain = 144.762
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.559  | TNS=0.000  | WHS=-0.220 | THS=-1306.949|
+
+Phase 2 Router Initialization | Checksum: 10e4b9a38
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:01:31 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00456979 %
+  Global Horizontal Routing Utilization  = 0.000568343 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 64511
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 64510
+  Number of Partially Routed Nets     = 1
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 16f71643b
+
+Time (s): cpu = 00:03:00 ; elapsed = 00:01:50 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 15498
+ Number of Nodes with overlaps = 2530
+ Number of Nodes with overlaps = 890
+ Number of Nodes with overlaps = 332
+ Number of Nodes with overlaps = 46
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.083 | TNS=-0.705 | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1c14820b6
+
+Time (s): cpu = 00:06:22 ; elapsed = 00:03:55 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 968
+ Number of Nodes with overlaps = 280
+ Number of Nodes with overlaps = 98
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.157  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 96851bf4
+
+Time (s): cpu = 00:06:55 ; elapsed = 00:04:20 . Memory (MB): peak = 3070.168 ; gain = 597.941
+Phase 4 Rip-up And Reroute | Checksum: 96851bf4
+
+Time (s): cpu = 00:06:55 ; elapsed = 00:04:20 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 96851bf4
+
+Time (s): cpu = 00:06:55 ; elapsed = 00:04:20 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 96851bf4
+
+Time (s): cpu = 00:06:55 ; elapsed = 00:04:21 . Memory (MB): peak = 3070.168 ; gain = 597.941
+Phase 5 Delay and Skew Optimization | Checksum: 96851bf4
+
+Time (s): cpu = 00:06:56 ; elapsed = 00:04:21 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: d8589fa9
+
+Time (s): cpu = 00:07:03 ; elapsed = 00:04:25 . Memory (MB): peak = 3070.168 ; gain = 597.941
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.222  | TNS=0.000  | WHS=0.013  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: b8f4ebc8
+
+Time (s): cpu = 00:07:03 ; elapsed = 00:04:26 . Memory (MB): peak = 3070.168 ; gain = 597.941
+Phase 6 Post Hold Fix | Checksum: b8f4ebc8
+
+Time (s): cpu = 00:07:03 ; elapsed = 00:04:26 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 17.2083 %
+  Global Horizontal Routing Utilization  = 21.7747 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 154846087
+
+Time (s): cpu = 00:07:04 ; elapsed = 00:04:26 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 154846087
+
+Time (s): cpu = 00:07:04 ; elapsed = 00:04:27 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 13c8183da
+
+Time (s): cpu = 00:07:15 ; elapsed = 00:04:39 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.222  | TNS=0.000  | WHS=0.013  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 13c8183da
+
+Time (s): cpu = 00:07:16 ; elapsed = 00:04:40 . Memory (MB): peak = 3070.168 ; gain = 597.941
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:07:16 ; elapsed = 00:04:40 . Memory (MB): peak = 3070.168 ; gain = 597.941
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+141 Infos, 107 Warnings, 2 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:07:28 ; elapsed = 00:04:46 . Memory (MB): peak = 3070.168 ; gain = 634.730
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.108 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:46 ; elapsed = 00:00:15 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:01:02 ; elapsed = 00:00:28 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file thinpad_top_drc_routed.rpt -pb thinpad_top_drc_routed.pb -rpx thinpad_top_drc_routed.rpx
+Command: report_drc -file thinpad_top_drc_routed.rpt -pb thinpad_top_drc_routed.pb -rpx thinpad_top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:41 ; elapsed = 00:00:23 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_methodology -file thinpad_top_methodology_drc_routed.rpt -pb thinpad_top_methodology_drc_routed.pb -rpx thinpad_top_methodology_drc_routed.rpx
+Command: report_methodology -file thinpad_top_methodology_drc_routed.rpt -pb thinpad_top_methodology_drc_routed.pb -rpx thinpad_top_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1/thinpad_top_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:01:06 ; elapsed = 00:00:36 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_power -file thinpad_top_power_routed.rpt -pb thinpad_top_power_summary_routed.pb -rpx thinpad_top_power_routed.rpx
+Command: report_power -file thinpad_top_power_routed.rpt -pb thinpad_top_power_summary_routed.pb -rpx thinpad_top_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+153 Infos, 107 Warnings, 2 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:01:05 ; elapsed = 00:00:40 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_route_status -file thinpad_top_route_status.rpt -pb thinpad_top_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file thinpad_top_timing_summary_routed.rpt -pb thinpad_top_timing_summary_routed.pb -rpx thinpad_top_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file thinpad_top_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file thinpad_top_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3070.168 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file thinpad_top_bus_skew_routed.rpt -pb thinpad_top_bus_skew_routed.pb -rpx thinpad_top_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  2 01:53:06 2019...

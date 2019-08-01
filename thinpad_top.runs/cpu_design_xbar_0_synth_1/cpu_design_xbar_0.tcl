@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
@@ -38,6 +39,8 @@ set_property ip_repo_paths {
   c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0
+  c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor
+  c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.cache/ip [current_project]

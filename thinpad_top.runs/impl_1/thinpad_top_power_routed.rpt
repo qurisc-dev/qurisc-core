@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Aug  1 21:10:14 2019
+| Date             : Fri Aug  2 01:52:53 2019
 | Host             : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command          : report_power -file thinpad_top_power_routed.rpt -pb thinpad_top_power_summary_routed.pb -rpx thinpad_top_power_routed.rpx
 | Design           : thinpad_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.383        |
+| Total On-Chip Power (W)  | 0.656        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.285        |
+| Dynamic (W)              | 0.558        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 2.6          |
-| Max Ambient (C)          | 99.0         |
-| Junction Temperature (C) | 26.0         |
+| Max Ambient (C)          | 98.3         |
+| Junction Temperature (C) | 26.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.052 |        7 |       --- |             --- |
-| Slice Logic              |     0.048 |    59334 |       --- |             --- |
-|   LUT as Logic           |     0.046 |    25530 |     63400 |           40.27 |
-|   CARRY4                 |     0.001 |      840 |     15850 |            5.30 |
-|   Register               |    <0.001 |    23975 |    126800 |           18.91 |
-|   F7/F8 Muxes            |    <0.001 |     3316 |     63400 |            5.23 |
+| Clocks                   |     0.127 |        7 |       --- |             --- |
+| Slice Logic              |     0.131 |   103875 |       --- |             --- |
+|   LUT as Logic           |     0.113 |    36350 |     63400 |           57.33 |
+|   Register               |     0.008 |    44541 |    126800 |           35.13 |
+|   LUT as Shift Register  |     0.006 |     1227 |     19000 |            6.46 |
+|   CARRY4                 |     0.003 |     2190 |     15850 |           13.82 |
+|   F7/F8 Muxes            |    <0.001 |     3415 |     63400 |            5.39 |
 |   LUT as Distributed RAM |    <0.001 |       96 |     19000 |            0.51 |
-|   LUT as Shift Register  |    <0.001 |      138 |     19000 |            0.73 |
-|   Others                 |     0.000 |      361 |       --- |             --- |
-| Signals                  |     0.067 |    38892 |       --- |             --- |
+|   Others                 |     0.000 |     6704 |       --- |             --- |
+| Signals                  |     0.161 |    64510 |       --- |             --- |
 | Block RAM                |    <0.001 |        2 |       135 |            1.48 |
 | MMCM                     |     0.105 |        1 |         6 |           16.67 |
-| I/O                      |     0.012 |      208 |       300 |           69.33 |
+| DSPs                     |     0.019 |       64 |       240 |           26.67 |
+| I/O                      |     0.014 |      208 |       300 |           69.33 |
 | Static Power             |     0.098 |          |           |                 |
-| Total                    |     0.383 |          |           |                 |
+| Total                    |     0.656 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.184 |       0.169 |      0.015 |
+| Vccint    |       1.000 |     0.455 |       0.439 |      0.016 |
 | Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |
-| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |
+| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -148,17 +149,19 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| thinpad_top              |     0.285 |
-|   cpu                    |     0.273 |
-|     cpu_design_i         |     0.273 |
-|       CPUBackEnd         |     0.112 |
-|       CPUFrontEnd        |     0.037 |
+| thinpad_top              |     0.558 |
+|   cpu                    |     0.544 |
+|     cpu_design_i         |     0.544 |
+|       CPUBackEnd         |     0.134 |
+|       CPUFrontEnd        |     0.047 |
 |       axi_bram_ctrl_1    |     0.002 |
 |       axi_gpio_0         |     0.001 |
-|       axi_interconnect_0 |     0.011 |
+|       axi_interconnect_0 |     0.016 |
 |       blk_mem_gen_1      |     0.001 |
 |       clk_wiz_0          |     0.106 |
+|       thinpad_qusim_0    |     0.233 |
 |       thinpad_serial_0   |     0.002 |
+|       thinpad_sram_0     |     0.001 |
 +--------------------------+-----------+
 
 

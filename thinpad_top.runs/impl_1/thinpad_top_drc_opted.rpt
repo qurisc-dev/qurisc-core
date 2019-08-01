@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Aug  1 20:57:18 2019
+| Date         : Fri Aug  2 01:41:17 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : report_drc -file thinpad_top_drc_opted.rpt -pb thinpad_top_drc_opted.pb -rpx thinpad_top_drc_opted.rpx
 | Design       : thinpad_top
@@ -24,12 +24,334 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 64
++--------+----------+-------------------------------------------------------------------+------------+
+| Rule   | Severity | Description                                                       | Violations |
++--------+----------+-------------------------------------------------------------------+------------+
+| AVAL-4 | Advisory | enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 32         |
+| AVAL-5 | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND   | 32         |
++--------+----------+-------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+AVAL-4#1 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[0].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#2 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[0].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#3 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[10].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#4 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[10].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#5 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[11].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#6 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[11].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#7 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[12].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#8 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[12].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#9 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[13].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#10 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[13].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#11 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[14].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#12 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[14].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#13 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[15].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#14 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[15].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#15 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[1].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#16 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[1].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#17 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[2].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#18 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[2].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#19 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[3].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#20 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[3].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#21 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[4].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#22 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[4].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#23 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[5].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#24 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[5].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#25 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[6].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#26 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[6].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#27 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[7].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#28 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[7].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#29 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[8].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#30 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[8].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#31 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[9].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#32 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[9].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#1 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[0].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#2 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[0].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#3 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[10].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#4 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[10].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#5 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[11].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#6 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[11].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#7 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[12].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#8 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[12].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#9 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[13].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#10 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[13].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#11 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[14].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#12 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[14].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#13 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[15].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#14 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[15].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#15 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[1].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#16 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[1].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#17 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[2].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#18 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[2].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#19 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[3].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#20 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[3].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#21 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[4].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#22 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[4].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#23 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[5].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#24 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[5].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#25 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[6].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#26 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[6].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#27 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[7].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#28 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[7].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#29 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[8].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#30 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[8].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#31 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[9].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[0].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#32 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/genblk1[9].stat/acc/U0/i_synth/ACCUM_OP.OP/g_accum_split[1].g_dsp_split.i_adder/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
 

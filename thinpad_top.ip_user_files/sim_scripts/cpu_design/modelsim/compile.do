@@ -18,6 +18,15 @@ vlib modelsim_lib/msim/axi_intc_v4_1_13
 vlib modelsim_lib/msim/interrupt_control_v3_1_4
 vlib modelsim_lib/msim/axi_gpio_v2_0_21
 vlib modelsim_lib/msim/xlconcat_v2_1_3
+vlib modelsim_lib/msim/xbip_utils_v3_0_10
+vlib modelsim_lib/msim/axi_utils_v2_0_6
+vlib modelsim_lib/msim/xbip_pipe_v3_0_6
+vlib modelsim_lib/msim/xbip_dsp48_wrapper_v3_0_4
+vlib modelsim_lib/msim/xbip_dsp48_addsub_v3_0_6
+vlib modelsim_lib/msim/xbip_dsp48_multadd_v3_0_6
+vlib modelsim_lib/msim/xbip_bram18k_v3_0_6
+vlib modelsim_lib/msim/mult_gen_v12_0_15
+vlib modelsim_lib/msim/floating_point_v7_1_8
 vlib modelsim_lib/msim/axi_protocol_converter_v2_1_19
 vlib modelsim_lib/msim/axi_clock_converter_v2_1_18
 vlib modelsim_lib/msim/axi_dwidth_converter_v2_1_19
@@ -40,6 +49,15 @@ vmap axi_intc_v4_1_13 modelsim_lib/msim/axi_intc_v4_1_13
 vmap interrupt_control_v3_1_4 modelsim_lib/msim/interrupt_control_v3_1_4
 vmap axi_gpio_v2_0_21 modelsim_lib/msim/axi_gpio_v2_0_21
 vmap xlconcat_v2_1_3 modelsim_lib/msim/xlconcat_v2_1_3
+vmap xbip_utils_v3_0_10 modelsim_lib/msim/xbip_utils_v3_0_10
+vmap axi_utils_v2_0_6 modelsim_lib/msim/axi_utils_v2_0_6
+vmap xbip_pipe_v3_0_6 modelsim_lib/msim/xbip_pipe_v3_0_6
+vmap xbip_dsp48_wrapper_v3_0_4 modelsim_lib/msim/xbip_dsp48_wrapper_v3_0_4
+vmap xbip_dsp48_addsub_v3_0_6 modelsim_lib/msim/xbip_dsp48_addsub_v3_0_6
+vmap xbip_dsp48_multadd_v3_0_6 modelsim_lib/msim/xbip_dsp48_multadd_v3_0_6
+vmap xbip_bram18k_v3_0_6 modelsim_lib/msim/xbip_bram18k_v3_0_6
+vmap mult_gen_v12_0_15 modelsim_lib/msim/mult_gen_v12_0_15
+vmap floating_point_v7_1_8 modelsim_lib/msim/floating_point_v7_1_8
 vmap axi_protocol_converter_v2_1_19 modelsim_lib/msim/axi_protocol_converter_v2_1_19
 vmap axi_clock_converter_v2_1_18 modelsim_lib/msim/axi_clock_converter_v2_1_18
 vmap axi_dwidth_converter_v2_1_19 modelsim_lib/msim/axi_dwidth_converter_v2_1_19
@@ -148,9 +166,9 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/cpu_design/ip/cpu_design_axi_gpio_0_1/sim/cpu_design_axi_gpio_0_1.vhd" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
-"../../../bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0.v" \
-"../../../bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0_S_DATA_AXI.v" \
-"../../../bd/cpu_design/ipshared/1ec4/hdl/thinpad_serial_v1_0_S_STATUS_AXI.v" \
+"../../../bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0.v" \
+"../../../bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0_S_DATA_AXI.v" \
+"../../../bd/cpu_design/ipshared/ea32/hdl/thinpad_serial_v1_0_S_STATUS_AXI.v" \
 "../../../bd/cpu_design/ip/cpu_design_thinpad_serial_0_0/sim/cpu_design_thinpad_serial_0_0.v" \
 
 vlog -work xlconcat_v2_1_3 -64 -incr "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
@@ -158,6 +176,46 @@ vlog -work xlconcat_v2_1_3 -64 -incr "+incdir+../../../../thinpad_top.srcs/sourc
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
 "../../../bd/cpu_design/ip/cpu_design_xlconcat_0_0/sim/cpu_design_xlconcat_0_0.v" \
+
+vcom -work xbip_utils_v3_0_10 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+
+vcom -work axi_utils_v2_0_6 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/axi_utils_v2_0_vh_rfs.vhd" \
+
+vcom -work xbip_pipe_v3_0_6 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_wrapper_v3_0_4 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_addsub_v3_0_6 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_multadd_v3_0_6 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_bram18k_v3_0_6 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
+
+vcom -work mult_gen_v12_0_15 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/mult_gen_v12_0_vh_rfs.vhd" \
+
+vcom -work floating_point_v7_1_8 -64 -93 \
+"../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/hdl/floating_point_v7_1_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/sim/floating_point_0.vhd" \
+"../../../bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_4/sim/floating_point_4.vhd" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
+"../../../bd/cpu_design/ipshared/278e/src/SysArr.v" \
+"../../../bd/cpu_design/ipshared/278e/src/SysArrProcessor.v" \
+"../../../bd/cpu_design/ipshared/278e/src/arrReg.v" \
+"../../../bd/cpu_design/ipshared/278e/src/arrRegArray.v" \
+"../../../bd/cpu_design/ipshared/278e/src/arrStation.v" \
+"../../../bd/cpu_design/ipshared/278e/src/axi_syspro.v" \
+"../../../bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/sim/cpu_design_thinpad_qusim_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
 "../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
@@ -174,6 +232,7 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../../thinpad_top.srcs/source
 "../../../bd/cpu_design/ip/cpu_design_auto_ds_1/sim/cpu_design_auto_ds_1.v" \
 "../../../bd/cpu_design/ip/cpu_design_auto_pc_1/sim/cpu_design_auto_pc_1.v" \
 "../../../bd/cpu_design/ip/cpu_design_auto_pc_2/sim/cpu_design_auto_pc_2.v" \
+"../../../bd/cpu_design/ip/cpu_design_auto_pc_3/sim/cpu_design_auto_pc_3.v" \
 
 vlog -work axi_mmu_v2_1_17 -64 -incr "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
 "../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/b5b8/hdl/axi_mmu_v2_1_vl_rfs.v" \

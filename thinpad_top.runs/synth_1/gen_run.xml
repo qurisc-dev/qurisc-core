@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2L" LaunchTime="1564663627">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2L" LaunchTime="1564680889">
   <File Type="PA-TCL" Name="thinpad_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="thinpad_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="thinpad_top_reports.tcl"/>
@@ -237,7 +237,6 @@
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_gpio_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_intc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_thinpad_serial_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_tlb_fetcher_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_thinpad_sram_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_dispatcher_0_0"/>
@@ -251,4 +250,6 @@
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_registers_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_l1_cache_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_reservestation_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_thinpad_qusim_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_thinpad_serial_0_0"/>
 </GenRun>

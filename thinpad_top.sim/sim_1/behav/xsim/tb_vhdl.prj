@@ -4,6 +4,8 @@ vhdl xil_defaultlib  \
 "../../../../thinpad_top.ip_user_files/bd/cpu_design/ip/cpu_design_axi_bram_ctrl_1_0/sim/cpu_design_axi_bram_ctrl_1_0.vhd" \
 "../../../../thinpad_top.ip_user_files/bd/cpu_design/ip/cpu_design_axi_intc_0_0/sim/cpu_design_axi_intc_0_0.vhd" \
 "../../../../thinpad_top.ip_user_files/bd/cpu_design/ip/cpu_design_axi_gpio_0_1/sim/cpu_design_axi_gpio_0_1.vhd" \
+"../../../../thinpad_top.ip_user_files/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/sim/floating_point_0.vhd" \
+"../../../../thinpad_top.ip_user_files/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_4/sim/floating_point_4.vhd" \
 
 # Do not sort compile order
 nosort

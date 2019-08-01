@@ -60,112 +60,28 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 
-start_step init_design
-set ACTIVE_STEP init_design
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
 set rc [catch {
-  create_msg_db init_design.pb
+  create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
-  create_project -in_memory -part xc7a100tfgg676-2L
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  open_checkpoint thinpad_top_routed.dcp
   set_property webtalk.parent_dir C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.cache/wt [current_project]
-  set_property parent.project_path C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.xpr [current_project]
-  set_property ip_repo_paths {
-  C:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0
-  C:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0
-  C:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0
-  C:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0
-  C:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0
-  C:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0
-} [current_project]
-  update_ip_catalog
-  set_property ip_output_repo C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1/thinpad_top.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/cpu_design.bd
-  read_ip -quiet C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/ip/pll_example/pll_example.xci
-  set_param project.isImplRun false
-  read_xdc C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc
-  set_param project.isImplRun true
-  link_design -top thinpad_top -part xc7a100tfgg676-2L
-  set_param project.isImplRun false
-  write_hwdef -force -file thinpad_top.hwdef
-  close_msg_db -file init_design.pb
+  catch { write_mem_info -force thinpad_top.mmi }
+  write_bitstream -force thinpad_top.bit 
+  catch { write_sysdef -hwdef thinpad_top.hwdef -bitfile thinpad_top.bit -meminfo thinpad_top.mmi -file thinpad_top.sysdef }
+  catch {write_debug_probes -quiet -force thinpad_top}
+  catch {file copy -force thinpad_top.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
-  step_failed init_design
+  step_failed write_bitstream
   return -code error $RESULT
 } else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force thinpad_top_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file thinpad_top_drc_opted.rpt -pb thinpad_top_drc_opted.pb -rpx thinpad_top_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
-    implement_debug_core 
-  } 
-  place_design 
-  write_checkpoint -force thinpad_top_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file thinpad_top_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file thinpad_top_utilization_placed.rpt -pb thinpad_top_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file thinpad_top_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force thinpad_top_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file thinpad_top_drc_routed.rpt -pb thinpad_top_drc_routed.pb -rpx thinpad_top_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file thinpad_top_methodology_drc_routed.rpt -pb thinpad_top_methodology_drc_routed.pb -rpx thinpad_top_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file thinpad_top_power_routed.rpt -pb thinpad_top_power_summary_routed.pb -rpx thinpad_top_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file thinpad_top_route_status.rpt -pb thinpad_top_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file thinpad_top_timing_summary_routed.rpt -pb thinpad_top_timing_summary_routed.pb -rpx thinpad_top_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file thinpad_top_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file thinpad_top_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file thinpad_top_bus_skew_routed.rpt -pb thinpad_top_bus_skew_routed.pb -rpx thinpad_top_bus_skew_routed.rpx"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force thinpad_top_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

@@ -1410,11 +1410,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 01 12:46:42 UTC 2019</spirit:value>
+            <spirit:value>Thu Aug 01 17:33:14 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:7d1025ba</spirit:value>
+            <spirit:value>9:b49d5b52</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1428,11 +1428,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 01 12:46:43 UTC 2019</spirit:value>
+            <spirit:value>Thu Aug 01 17:33:14 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:7d1025ba</spirit:value>
+            <spirit:value>9:b49d5b52</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1448,11 +1448,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 01 12:46:43 UTC 2019</spirit:value>
+            <spirit:value>Thu Aug 01 17:33:14 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:7d1025ba</spirit:value>
+            <spirit:value>9:b49d5b52</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1474,11 +1474,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 01 12:46:42 UTC 2019</spirit:value>
+            <spirit:value>Thu Aug 01 17:33:14 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:135327d1</spirit:value>
+            <spirit:value>9:46dcbd23</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1494,11 +1494,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 01 12:46:43 UTC 2019</spirit:value>
+            <spirit:value>Thu Aug 01 17:33:14 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:135327d1</spirit:value>
+            <spirit:value>9:46dcbd23</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1512,11 +1512,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 01 12:46:46 UTC 2019</spirit:value>
+            <spirit:value>Thu Aug 01 17:33:21 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:7d1025ba</spirit:value>
+            <spirit:value>9:b49d5b52</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3697,15 +3697,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_RANGES</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_RANGES">5</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_RANGES">6</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>C_BASE_ADDR</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_BASE_ADDR" spirit:bitStringLength="320">0x00000000c000000000000000800000000000000044a0000000000000412000000000000040000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_BASE_ADDR" spirit:bitStringLength="384">0x00000000c000000000000000800000000000000044a100000000000044a0000000000000412000000000000040000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>C_RANGE_SIZE</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RANGE_SIZE" spirit:bitStringLength="160">0x0000000d00000017000000100000001000000010</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RANGE_SIZE" spirit:bitStringLength="192">0x0000000d0000001700000010000000100000001000000010</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USES_DEST</spirit:name>
@@ -3737,11 +3737,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>C_M_AXI_SUPPORTS_WRITE</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_SUPPORTS_WRITE" spirit:bitStringLength="5">0b11111</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_SUPPORTS_WRITE" spirit:bitStringLength="6">0b111111</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>C_M_AXI_SUPPORTS_READ</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_SUPPORTS_READ" spirit:bitStringLength="5">0b11111</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_SUPPORTS_READ" spirit:bitStringLength="6">0b111111</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -3929,7 +3929,7 @@
     <spirit:parameter>
       <spirit:name>NUM_RANGES</spirit:name>
       <spirit:displayName>Number of Address Ranges</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_RANGES" spirit:order="2" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">5</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_RANGES" spirit:order="2" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">6</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SI_ADDR_WIDTH</spirit:name>
@@ -4034,12 +4034,12 @@
     <spirit:parameter>
       <spirit:name>D003_BASE_ADDR</spirit:name>
       <spirit:displayName>Range 3 base</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.D003_BASE_ADDR" spirit:order="10" spirit:bitStringLength="64">0x0000000080000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.D003_BASE_ADDR" spirit:order="10" spirit:bitStringLength="64">0x0000000044A10000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>D003_ADDR_WIDTH</spirit:name>
       <spirit:displayName>Range 3 size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.D003_ADDR_WIDTH" spirit:order="11">23</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.D003_ADDR_WIDTH" spirit:order="11">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>D003_READ_WRITE_MODE</spirit:name>
@@ -4049,12 +4049,12 @@
     <spirit:parameter>
       <spirit:name>D004_BASE_ADDR</spirit:name>
       <spirit:displayName>Range 4 base</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.D004_BASE_ADDR" spirit:order="13" spirit:bitStringLength="64">0x00000000C0000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.D004_BASE_ADDR" spirit:order="13" spirit:bitStringLength="64">0x0000000080000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>D004_ADDR_WIDTH</spirit:name>
       <spirit:displayName>Range 4 size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.D004_ADDR_WIDTH" spirit:order="14">13</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.D004_ADDR_WIDTH" spirit:order="14">23</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>D004_READ_WRITE_MODE</spirit:name>
@@ -4064,12 +4064,12 @@
     <spirit:parameter>
       <spirit:name>D005_BASE_ADDR</spirit:name>
       <spirit:displayName>Range 5 base</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.D005_BASE_ADDR" spirit:order="16" spirit:bitStringLength="64">0x0000000000050000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.D005_BASE_ADDR" spirit:order="16" spirit:bitStringLength="64">0x00000000C0000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>D005_ADDR_WIDTH</spirit:name>
       <spirit:displayName>Range 5 size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.D005_ADDR_WIDTH" spirit:order="17">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.D005_ADDR_WIDTH" spirit:order="17">13</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>D005_READ_WRITE_MODE</spirit:name>
@@ -7907,6 +7907,8 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.D003_BASE_ADDR" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.D004_ADDR_WIDTH" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.D004_BASE_ADDR" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.D005_ADDR_WIDTH" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.D005_BASE_ADDR" xilinx:valueSource="propagated"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DATA_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ID_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NUM_RANGES" xilinx:valueSource="propagated"/>

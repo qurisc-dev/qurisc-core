@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:thinpad_serial:1.0
-// IP Revision: 4
+// IP Revision: 7
 
 (* X_CORE_INFO = "thinpad_serial_v1_0,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "cpu_design_thinpad_serial_0_0,thinpad_serial_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "cpu_design_thinpad_serial_0_0,thinpad_serial_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=thinpad_serial,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_DATA_AXI_DATA_WIDTH=64,C_S_DATA_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "cpu_design_thinpad_serial_0_0,thinpad_serial_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=thinpad_serial,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_DATA_AXI_DATA_WIDTH=64,C_S_DATA_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module cpu_design_thinpad_serial_0_0 (
   clk,

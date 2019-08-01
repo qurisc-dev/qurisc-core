@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 module tb;
 
-wire clk_50M, clk_11M0592;
+wire clk_50M, clk_11M0592, clk_100M;
 
 reg clock_btn = 0;         //BTN5鎵嬪姩鏃堕挓鎸夐挳寮?鍏筹紝甯︽秷鎶栫數璺紝鎸変笅鏃朵负1
 reg reset_btn = 0;         //BTN6鎵嬪姩澶嶄綅鎸夐挳寮?鍏筹紝甯︽秷鎶栫數璺紝鎸変笅鏃朵负1
@@ -45,7 +45,7 @@ parameter EXT_RAM_INIT_FILE = "/tmp/eram.bin";    //ExtRAM鍒濆鍖栨枃浠讹紝璇蜂
 parameter RAM_INIT_FILE = "c:\\links\\rv64ui-p-add.bin";
 parameter FLASH_INIT_FILE = "/tmp/kernel.elf";    //Flash鍒濆鍖栨枃浠讹紝璇蜂慨鏀逛负瀹為檯鐨勭粷瀵硅矾寰?
 
-assign rxd = 1'b1; //idle state
+//assign rxd = 1'b1; //idle state
 
 initial begin 
     //鍦ㄨ繖閲屽彲浠ヨ嚜瀹氫箟娴嬭瘯杈撳叆搴忓垪锛屼緥濡傦細
@@ -58,6 +58,32 @@ initial begin
         clock_btn = 0; //鏉惧紑鎵嬪伐鏃堕挓鎸夐挳
     end
 end
+
+// Simulation Serial
+    wire ext_uart_busy;
+    reg ext_uart_start;
+    reg[7:0] ext_uart_tx;
+    async_transmitter #(.ClkFrequency(1000000000),.Baud(9600)) //发送模块，9600无检验位
+        sender(
+            .clk(clk_100M),                  //外部时钟信号
+            .TxD(rxd),                      //串行信号输出
+            .TxD_busy(ext_uart_busy),       //发送器忙状态指示
+            .TxD_start(ext_uart_start),    //开始发送信号
+            .TxD_data(ext_uart_tx)        //待发送的数据
+        );
+    reg [9:0] sleeper;
+    initial sleeper=0;
+    always @(posedge clk_50M) begin
+        if(!ext_uart_busy && sleeper==0)begin 
+            ext_uart_tx <= 8'h52;
+            ext_uart_start <= 1;
+        end else begin 
+            ext_uart_start <= 0;
+        end
+        sleeper<=sleeper+1;
+    end
+
+
 
 thinpad_top dut(
     .clk_50M(clk_50M),
@@ -94,7 +120,8 @@ thinpad_top dut(
 );
 clock osc(
     .clk_11M0592(clk_11M0592),
-    .clk_50M    (clk_50M)
+    .clk_50M    (clk_50M),
+    .clk_100M(clk_100M)
 );
 sram_model base1(/*autoinst*/
             .DataIO(base_ram_data[15:0]),
@@ -229,23 +256,37 @@ string test_cases[0:49]={"rv64ui-p-add.bin",
 "rv64ui-p-xori.bin"};
 // Let's start.
 integer testcase_id;
+/*
 initial begin
     for(testcase_id=0;testcase_id<50;testcase_id=testcase_id+1) begin
         $display("Running testcase #%d: %s", testcase_id, test_cases[testcase_id]);
         reset_btn=1;
         $display("Loading program into memory");
+        
         load_to_sram({"c:\\links\\", test_cases[testcase_id]});
         #100 reset_btn=0;
+        
         @(posedge (leds[0] || leds[1])) begin
             if(leds[0])
                 $display("Test case %s pass!", test_cases[testcase_id]);
             else
                 $display("Test case %s failed!", test_cases[testcase_id]);
         end
+        
         //$stop;
     end
     $stop;
 end
+*/
+initial begin
+        reset_btn=1;
+        $display("Loading program into memory");
+        
+        load_to_sram("c:\\links\\winlink\\serial.bin");
+        #100 reset_btn=0;
+
+end
+
 always @(posedge leds[0]) begin
     //$display("Test case pass!");
     //$stop;

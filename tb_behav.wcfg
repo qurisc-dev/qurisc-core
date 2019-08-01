@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4743250000fs"></ZoomStartTime>
-      <ZoomEndTime time="4876350001fs"></ZoomEndTime>
-      <Cursor1Time time="4840000000fs"></Cursor1Time>
+      <ZoomStartTime time="61073333333fs"></ZoomStartTime>
+      <ZoomEndTime time="62053333334fs"></ZoomEndTime>
+      <Cursor1Time time="61624333000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="289"></NameColumnWidth>
-      <ValueColumnWidth column_width="420"></ValueColumnWidth>
+      <ValueColumnWidth column_width="404"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="751" />
+   <WVObjectSize size="775" />
    <wave_markers>
       <marker time="2354880000" label="" />
       <marker time="2874633000" label="" />
@@ -1690,8 +1690,8 @@
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/rob_0/inst/cdb" type="array">
-      <obj_property name="ElementShortName">cdb[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/rob_0/inst/din" type="array">
       <obj_property name="ElementShortName">din[229:0]</obj_property>
@@ -1838,8 +1838,8 @@
       <obj_property name="ObjectShortName">rob_items_decoded[0:15][229:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/rob_0/inst/rob_items_extra" type="array">
-      <obj_property name="ElementShortName">rob_items_extra[0:15][159:0]</obj_property>
-      <obj_property name="ObjectShortName">rob_items_extra[0:15][159:0]</obj_property>
+      <obj_property name="ElementShortName">rob_items_extra[0:15][160:0]</obj_property>
+      <obj_property name="ObjectShortName">rob_items_extra[0:15][160:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/rob_0/inst/pop" type="logic">
       <obj_property name="ElementShortName">pop</obj_property>
@@ -1938,16 +1938,16 @@
       <obj_property name="ObjectShortName">commit_index[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/cdb" type="array">
-      <obj_property name="ElementShortName">cdb[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu_din" type="array">
-      <obj_property name="ElementShortName">lsu_din[237:0]</obj_property>
-      <obj_property name="ObjectShortName">lsu_din[237:0]</obj_property>
+      <obj_property name="ElementShortName">lsu_din[301:0]</obj_property>
+      <obj_property name="ObjectShortName">lsu_din[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu_dout" type="array">
-      <obj_property name="ElementShortName">lsu_dout[144:0]</obj_property>
-      <obj_property name="ObjectShortName">lsu_dout[144:0]</obj_property>
+      <obj_property name="ElementShortName">lsu_dout[145:0]</obj_property>
+      <obj_property name="ObjectShortName">lsu_dout[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/cdb_has_data" type="array">
       <obj_property name="ElementShortName">cdb_has_data[15:0]</obj_property>
@@ -1958,8 +1958,8 @@
       <obj_property name="ObjectShortName">cdb_send_data[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/cdb_data" type="array">
-      <obj_property name="ElementShortName">cdb_data[0:15][148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_data[0:15][148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_data[0:15][149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_data[0:15][149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/index" type="array">
       <obj_property name="ElementShortName">index[31:0]</obj_property>
@@ -1990,12 +1990,12 @@
       <obj_property name="ObjectShortName">ls_selected</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/fu_input" type="array">
-      <obj_property name="ElementShortName">fu_input[15:0][237:0]</obj_property>
-      <obj_property name="ObjectShortName">fu_input[15:0][237:0]</obj_property>
+      <obj_property name="ElementShortName">fu_input[15:0][301:0]</obj_property>
+      <obj_property name="ObjectShortName">fu_input[15:0][301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/fu_output" type="array">
-      <obj_property name="ElementShortName">fu_output[15:0][144:0]</obj_property>
-      <obj_property name="ObjectShortName">fu_output[15:0][144:0]</obj_property>
+      <obj_property name="ElementShortName">fu_output[15:0][145:0]</obj_property>
+      <obj_property name="ObjectShortName">fu_output[15:0][145:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider3685">
       <obj_property name="label">ALU1-fu</obj_property>
@@ -2010,16 +2010,16 @@
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/din" type="array">
-      <obj_property name="ElementShortName">din[237:0]</obj_property>
-      <obj_property name="ObjectShortName">din[237:0]</obj_property>
+      <obj_property name="ElementShortName">din[301:0]</obj_property>
+      <obj_property name="ObjectShortName">din[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/dout" type="array">
-      <obj_property name="ElementShortName">dout[144:0]</obj_property>
-      <obj_property name="ObjectShortName">dout[144:0]</obj_property>
+      <obj_property name="ElementShortName">dout[145:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/stored_input" type="array">
-      <obj_property name="ElementShortName">stored_input[237:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_input[237:0]</obj_property>
+      <obj_property name="ElementShortName">stored_input[301:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_input[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/rs" type="array">
       <obj_property name="ElementShortName">rs[63:0]</obj_property>
@@ -2106,24 +2106,24 @@
       <obj_property name="ObjectShortName">will_emit_to_cdb</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3/cdb_in" type="array">
-      <obj_property name="ElementShortName">cdb_in[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_in[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_in[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_in[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3/cdb_out" type="array">
-      <obj_property name="ElementShortName">cdb_out[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_out[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_out[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_out[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3/fuinput" type="array">
-      <obj_property name="ElementShortName">fuinput[237:0]</obj_property>
-      <obj_property name="ObjectShortName">fuinput[237:0]</obj_property>
+      <obj_property name="ElementShortName">fuinput[301:0]</obj_property>
+      <obj_property name="ObjectShortName">fuinput[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3/fuoutput" type="array">
-      <obj_property name="ElementShortName">fuoutput[144:0]</obj_property>
-      <obj_property name="ObjectShortName">fuoutput[144:0]</obj_property>
+      <obj_property name="ElementShortName">fuoutput[145:0]</obj_property>
+      <obj_property name="ObjectShortName">fuoutput[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3/stored_output" type="array">
-      <obj_property name="ElementShortName">stored_output[144:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_output[144:0]</obj_property>
+      <obj_property name="ElementShortName">stored_output[145:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_output[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3/CalcType" type="array">
       <obj_property name="ElementShortName">CalcType[7:0]</obj_property>
@@ -2246,24 +2246,24 @@
       <obj_property name="ObjectShortName">will_emit_to_cdb</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu1/cdb_in" type="array">
-      <obj_property name="ElementShortName">cdb_in[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_in[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_in[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_in[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu1/cdb_out" type="array">
-      <obj_property name="ElementShortName">cdb_out[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_out[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_out[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_out[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu1/fuinput" type="array">
-      <obj_property name="ElementShortName">fuinput[237:0]</obj_property>
-      <obj_property name="ObjectShortName">fuinput[237:0]</obj_property>
+      <obj_property name="ElementShortName">fuinput[301:0]</obj_property>
+      <obj_property name="ObjectShortName">fuinput[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu1/fuoutput" type="array">
-      <obj_property name="ElementShortName">fuoutput[144:0]</obj_property>
-      <obj_property name="ObjectShortName">fuoutput[144:0]</obj_property>
+      <obj_property name="ElementShortName">fuoutput[145:0]</obj_property>
+      <obj_property name="ObjectShortName">fuoutput[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu1/stored_output" type="array">
-      <obj_property name="ElementShortName">stored_output[144:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_output[144:0]</obj_property>
+      <obj_property name="ElementShortName">stored_output[145:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_output[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu1/CalcType" type="array">
       <obj_property name="ElementShortName">CalcType[7:0]</obj_property>
@@ -2362,16 +2362,16 @@
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/din" type="array">
-      <obj_property name="ElementShortName">din[237:0]</obj_property>
-      <obj_property name="ObjectShortName">din[237:0]</obj_property>
+      <obj_property name="ElementShortName">din[301:0]</obj_property>
+      <obj_property name="ObjectShortName">din[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/dout" type="array">
-      <obj_property name="ElementShortName">dout[144:0]</obj_property>
-      <obj_property name="ObjectShortName">dout[144:0]</obj_property>
+      <obj_property name="ElementShortName">dout[145:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/stored_input" type="array">
-      <obj_property name="ElementShortName">stored_input[237:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_input[237:0]</obj_property>
+      <obj_property name="ElementShortName">stored_input[301:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_input[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/alu3_fu/rs" type="array">
       <obj_property name="ElementShortName">rs[63:0]</obj_property>
@@ -2458,24 +2458,24 @@
       <obj_property name="ObjectShortName">will_emit_to_cdb</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/cdb_in" type="array">
-      <obj_property name="ElementShortName">cdb_in[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_in[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_in[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_in[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/cdb_out" type="array">
-      <obj_property name="ElementShortName">cdb_out[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb_out[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb_out[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_out[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/fuinput" type="array">
-      <obj_property name="ElementShortName">fuinput[237:0]</obj_property>
-      <obj_property name="ObjectShortName">fuinput[237:0]</obj_property>
+      <obj_property name="ElementShortName">fuinput[301:0]</obj_property>
+      <obj_property name="ObjectShortName">fuinput[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/fuoutput" type="array">
-      <obj_property name="ElementShortName">fuoutput[144:0]</obj_property>
-      <obj_property name="ObjectShortName">fuoutput[144:0]</obj_property>
+      <obj_property name="ElementShortName">fuoutput[145:0]</obj_property>
+      <obj_property name="ObjectShortName">fuoutput[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/stored_output" type="array">
-      <obj_property name="ElementShortName">stored_output[144:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_output[144:0]</obj_property>
+      <obj_property name="ElementShortName">stored_output[145:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_output[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/CalcType" type="array">
       <obj_property name="ElementShortName">CalcType[7:0]</obj_property>
@@ -2606,8 +2606,8 @@
       <obj_property name="ObjectShortName">register_result_rt[63:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/renamebuffer_0/inst/cdb" type="array">
-      <obj_property name="ElementShortName">cdb[148:0]</obj_property>
-      <obj_property name="ObjectShortName">cdb[148:0]</obj_property>
+      <obj_property name="ElementShortName">cdb[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb[149:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/renamebuffer_0/inst/renames" type="array">
       <obj_property name="ElementShortName">renames[0:63][3:0]</obj_property>
@@ -2814,12 +2814,12 @@
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/din" type="array">
-      <obj_property name="ElementShortName">din[237:0]</obj_property>
-      <obj_property name="ObjectShortName">din[237:0]</obj_property>
+      <obj_property name="ElementShortName">din[301:0]</obj_property>
+      <obj_property name="ObjectShortName">din[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/dout" type="array">
-      <obj_property name="ElementShortName">dout[144:0]</obj_property>
-      <obj_property name="ObjectShortName">dout[144:0]</obj_property>
+      <obj_property name="ElementShortName">dout[145:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[145:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/pnr" type="array">
       <obj_property name="ElementShortName">pnr[3:0]</obj_property>
@@ -2882,8 +2882,8 @@
       <obj_property name="ObjectShortName">state[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/stored_din" type="array">
-      <obj_property name="ElementShortName">stored_din[237:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_din[237:0]</obj_property>
+      <obj_property name="ElementShortName">stored_din[301:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_din[301:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/sum_addr" type="array">
       <obj_property name="ElementShortName">sum_addr[63:0]</obj_property>
@@ -2972,7 +2972,6 @@
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/LOADBUS" type="array">
       <obj_property name="ElementShortName">LOADBUS[31:0]</obj_property>
       <obj_property name="ObjectShortName">LOADBUS[31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/STORE" type="array">
       <obj_property name="ElementShortName">STORE[31:0]</obj_property>
@@ -2985,7 +2984,6 @@
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/loadstore_functionun_0/inst/WAIT_FOR_PNR" type="array">
       <obj_property name="ElementShortName">WAIT_FOR_PNR[31:0]</obj_property>
       <obj_property name="ObjectShortName">WAIT_FOR_PNR[31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider20483">
       <obj_property name="label">master3</obj_property>
@@ -3066,5 +3064,111 @@
    <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/LoadStore/l1_cache_0/inst/write_strb_buffer" type="array">
       <obj_property name="ElementShortName">write_strb_buffer[7:0]</obj_property>
       <obj_property name="ObjectShortName">write_strb_buffer[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider3778">
+      <obj_property name="label">Serial</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/S_DATA_AXI" type="protoinst">
+      <obj_property name="ElementShortName">S_DATA_AXI</obj_property>
+      <obj_property name="ObjectShortName">S_DATA_AXI</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb/dut/cpu/cpu_design_i/thinpad_serial_0/S_DATA_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/rxd" type="logic">
+      <obj_property name="ElementShortName">rxd</obj_property>
+      <obj_property name="ObjectShortName">rxd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/txd" type="logic">
+      <obj_property name="ElementShortName">txd</obj_property>
+      <obj_property name="ObjectShortName">txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/uart_can_write" type="logic">
+      <obj_property name="ElementShortName">uart_can_write</obj_property>
+      <obj_property name="ObjectShortName">uart_can_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/uart_can_read" type="logic">
+      <obj_property name="ElementShortName">uart_can_read</obj_property>
+      <obj_property name="ObjectShortName">uart_can_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/uart_interrupt" type="logic">
+      <obj_property name="ElementShortName">uart_interrupt</obj_property>
+      <obj_property name="ObjectShortName">uart_interrupt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/write_data" type="array">
+      <obj_property name="ElementShortName">write_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/read_data" type="array">
+      <obj_property name="ElementShortName">read_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/do_read" type="logic">
+      <obj_property name="ElementShortName">do_read</obj_property>
+      <obj_property name="ObjectShortName">do_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/do_write" type="logic">
+      <obj_property name="ElementShortName">do_write</obj_property>
+      <obj_property name="ObjectShortName">do_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/buffer" type="array">
+      <obj_property name="ElementShortName">buffer[0:63][7:0]</obj_property>
+      <obj_property name="ObjectShortName">buffer[0:63][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/head" type="array">
+      <obj_property name="ElementShortName">head[5:0]</obj_property>
+      <obj_property name="ObjectShortName">head[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/tail" type="array">
+      <obj_property name="ElementShortName">tail[5:0]</obj_property>
+      <obj_property name="ObjectShortName">tail[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/stored_awaddr" type="array">
+      <obj_property name="ElementShortName">stored_awaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_awaddr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/q" type="array">
+      <obj_property name="ElementShortName">q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">q[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_rx" type="array">
+      <obj_property name="ElementShortName">ext_uart_rx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ext_uart_rx[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_tx" type="array">
+      <obj_property name="ElementShortName">ext_uart_tx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ext_uart_tx[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_ready" type="logic">
+      <obj_property name="ElementShortName">ext_uart_ready</obj_property>
+      <obj_property name="ObjectShortName">ext_uart_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_busy" type="logic">
+      <obj_property name="ElementShortName">ext_uart_busy</obj_property>
+      <obj_property name="ObjectShortName">ext_uart_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_start" type="logic">
+      <obj_property name="ElementShortName">ext_uart_start</obj_property>
+      <obj_property name="ObjectShortName">ext_uart_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/stored_araddr" type="array">
+      <obj_property name="ElementShortName">stored_araddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_araddr[3:0]</obj_property>
    </wvobject>
 </wave_config>

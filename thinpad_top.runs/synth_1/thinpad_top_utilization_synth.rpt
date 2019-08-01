@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Aug  1 20:53:12 2019
+| Date         : Fri Aug  2 01:37:16 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : report_utilization -file thinpad_top_utilization_synth.rpt -pb thinpad_top_utilization_synth.pb
 | Design       : thinpad_top
@@ -173,6 +173,7 @@ Table of Contents
 | cpu_design_xbar_0                   |    1 |
 | cpu_design_thinpad_sram_0_0         |    1 |
 | cpu_design_thinpad_serial_0_0       |    1 |
+| cpu_design_thinpad_qusim_0_0        |    1 |
 | cpu_design_s01_mmu_0                |    1 |
 | cpu_design_s00_mmu_0                |    1 |
 | cpu_design_rob_0_0                  |    1 |
@@ -200,6 +201,7 @@ Table of Contents
 | cpu_design_axi_intc_0_0             |    1 |
 | cpu_design_axi_gpio_0_1             |    1 |
 | cpu_design_axi_bram_ctrl_1_0        |    1 |
+| cpu_design_auto_pc_3                |    1 |
 | cpu_design_auto_pc_2                |    1 |
 | cpu_design_auto_pc_1                |    1 |
 | cpu_design_auto_pc_0                |    1 |

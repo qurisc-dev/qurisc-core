@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:thinpad_serial:1.0
-// IP Revision: 4
+// IP Revision: 7
 
 `timescale 1ns/1ps
 

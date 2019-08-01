@@ -18,7 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 2
-set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tfgg676-2L
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,12 +31,16 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths {
+  c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_qusim_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0
+  c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor
+  c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0
+  c:/links/qsim
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.cache/ip [current_project]
@@ -74,6 +78,7 @@ set_property used_in_implementation false [get_files -all c:/Users/gjz010/Docume
 set_property used_in_implementation false [get_files -all c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_ds_1/cpu_design_auto_ds_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_1/cpu_design_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_2/cpu_design_auto_pc_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_auto_pc_3/cpu_design_auto_pc_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_s01_mmu_0/cpu_design_s01_mmu_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/cpu_design_ooc.xdc]

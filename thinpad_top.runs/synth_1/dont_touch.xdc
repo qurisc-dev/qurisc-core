@@ -96,6 +96,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_thin
 # IP: bd/cpu_design/ip/cpu_design_xlconcat_0_0/cpu_design_xlconcat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_xlconcat_0_0 || ORIG_REF_NAME==cpu_design_xlconcat_0_0} -quiet] -quiet
 
+# IP: bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_thinpad_qusim_0_0 || ORIG_REF_NAME==cpu_design_thinpad_qusim_0_0} -quiet] -quiet
+
 # IP: bd/cpu_design/ip/cpu_design_auto_ds_0/cpu_design_auto_ds_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_auto_ds_0 || ORIG_REF_NAME==cpu_design_auto_ds_0} -quiet] -quiet
 
@@ -110,6 +113,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_auto
 
 # IP: bd/cpu_design/ip/cpu_design_auto_pc_2/cpu_design_auto_pc_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_auto_pc_2 || ORIG_REF_NAME==cpu_design_auto_pc_2} -quiet] -quiet
+
+# IP: bd/cpu_design/ip/cpu_design_auto_pc_3/cpu_design_auto_pc_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_auto_pc_3 || ORIG_REF_NAME==cpu_design_auto_pc_3} -quiet] -quiet
 
 # IP: bd/cpu_design/ip/cpu_design_s00_mmu_0/cpu_design_s00_mmu_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpu_design_s00_mmu_0 || ORIG_REF_NAME==cpu_design_s00_mmu_0} -quiet] -quiet
