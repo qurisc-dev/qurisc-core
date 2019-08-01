@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="cpu_design_rob_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_rob_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_renamebuffer_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_renamebuffer_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_reservestation_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_dispatcher_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_dispatcher_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_registers_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_registers_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_pc_counter_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_pc_counter_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_decoder_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_decoder_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_tlb_fetcher_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_tlb_fetcher_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_memory_accessor_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_memory_accessor_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_insn_queue_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_jump_predictor_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_jump_predictor_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_branch_predictor_0_1_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_branch_predictor_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_controller_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_controller_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_loadstoreunit_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_loadstoreunit_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_clk_wiz_0_1_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_clk_wiz_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_proc_sys_reset_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_proc_sys_reset_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_axi_simple_master_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_axi_simple_master_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_axi_simple_master_0_1_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_axi_simple_master_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="cpu_design_axi_simple_master_0_0_synth_1"/>
+	</Run>
+	<Run Id="cpu_design_axi_simple_master_0_2_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_axi_simple_master_0_2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="cpu_design_axi_simple_master_0_0_synth_1"/>
+	</Run>
+	<Run Id="cpu_design_l1_cache_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_l1_cache_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_loadstore_functionun_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_loadstore_functionun_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_axi_bram_ctrl_1_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_axi_bram_ctrl_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_blk_mem_gen_1_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_blk_mem_gen_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_thinpad_sram_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_sram_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_xbar_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

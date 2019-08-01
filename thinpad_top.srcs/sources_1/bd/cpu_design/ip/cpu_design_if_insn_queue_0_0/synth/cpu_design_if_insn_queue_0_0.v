@@ -70,13 +70,15 @@ module cpu_design_if_insn_queue_0_0 (
   out_ready,
   decoding_instruction,
   decode_result,
-  next_insn
+  next_insn,
+  decoding_pc,
+  decoding_exception
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 input wire rst_bpfailed;
@@ -90,8 +92,10 @@ output wire [63 : 0] out_bptarget;
 output wire out_valid;
 input wire out_ready;
 output wire [31 : 0] decoding_instruction;
-input wire [221 : 0] decode_result;
-output wire [221 : 0] next_insn;
+input wire [229 : 0] decode_result;
+output wire [229 : 0] next_insn;
+output wire [63 : 0] decoding_pc;
+output wire [7 : 0] decoding_exception;
 
   if_insn_queue inst (
     .clk(clk),
@@ -108,6 +112,8 @@ output wire [221 : 0] next_insn;
     .out_ready(out_ready),
     .decoding_instruction(decoding_instruction),
     .decode_result(decode_result),
-    .next_insn(next_insn)
+    .next_insn(next_insn),
+    .decoding_pc(decoding_pc),
+    .decoding_exception(decoding_exception)
   );
 endmodule

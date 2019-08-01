@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Mon Jul 22 00:26:35 2019
+-- Date        : Thu Aug  1 19:58:32 2019
 -- Host        : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ cpu_design_pc_counter_0_0_sim_netlist.vhdl
@@ -1155,21 +1155,21 @@ begin
       Q => \^pc\(2),
       R => rst
     );
-\PC_reg[30]\: unisim.vcomponents.FDSE
+\PC_reg[30]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
       CE => \PC[63]_i_1_n_0\,
       D => \PC_reg[32]_i_1_n_6\,
       Q => \^pc\(30),
-      S => rst
+      R => rst
     );
-\PC_reg[31]\: unisim.vcomponents.FDRE
+\PC_reg[31]\: unisim.vcomponents.FDSE
      port map (
       C => clk,
       CE => \PC[63]_i_1_n_0\,
       D => \PC_reg[32]_i_1_n_5\,
       Q => \^pc\(31),
-      R => rst
+      S => rst
     );
 \PC_reg[32]\: unisim.vcomponents.FDRE
      port map (
@@ -1712,9 +1712,9 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of rst : signal is "xilinx.com:signal:reset:1.0 rst RST";
-  attribute X_INTERFACE_PARAMETER of rst : signal is "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of rst : signal is "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
 begin
 inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pc_counter
      port map (

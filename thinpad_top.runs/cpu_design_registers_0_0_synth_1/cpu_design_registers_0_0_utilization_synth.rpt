@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Jul 22 00:27:20 2019
+| Date         : Thu Aug  1 20:03:42 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : report_utilization -file cpu_design_registers_0_0_utilization_synth.rpt -pb cpu_design_registers_0_0_utilization_synth.pb
 | Design       : cpu_design_registers_0_0
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1727 |     0 |     63400 |  2.72 |
-|   LUT as Logic          | 1727 |     0 |     63400 |  2.72 |
+| Slice LUTs*             | 2815 |     0 |     63400 |  4.44 |
+|   LUT as Logic          | 2815 |     0 |     63400 |  4.44 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         | 4032 |     0 |    126800 |  3.18 |
 |   Register as Flip Flop | 4032 |     0 |    126800 |  3.18 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |  768 |     0 |     31700 |  2.42 |
-| F8 Muxes                |  256 |     0 |     15850 |  1.62 |
+| F7 Muxes                | 1280 |     0 |     31700 |  4.04 |
+| F8 Muxes                |  512 |     0 |     15850 |  3.23 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -150,10 +150,10 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     | 4032 |        Flop & Latch |
-| LUT6     | 1599 |                 LUT |
-| MUXF7    |  768 |               MuxFx |
-| MUXF8    |  256 |               MuxFx |
-| LUT5     |  128 |                 LUT |
+| LUT6     | 2623 |                 LUT |
+| MUXF7    | 1280 |               MuxFx |
+| MUXF8    |  512 |               MuxFx |
+| LUT5     |  192 |                 LUT |
 +----------+------+---------------------+
 
 

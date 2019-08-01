@@ -57,6 +57,7 @@
 module cpu_design_reservestation_0_0 (
   clk,
   rst,
+  flush_bpfailed,
   rst_startreissue,
   try_reserve,
   din,
@@ -67,21 +68,24 @@ module cpu_design_reservestation_0_0 (
   rob_free_item,
   known_load_mask,
   can_reserve,
-  kill_by_mask,
+  do_commit,
+  commit_loadspec_failed,
+  commit_index,
   cdb,
   lsu_din,
   lsu_dout
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
+input wire flush_bpfailed;
 input wire rst_startreissue;
 input wire try_reserve;
-input wire [221 : 0] din;
+input wire [229 : 0] din;
 input wire [63 : 0] svalue;
 input wire [63 : 0] tvalue;
 input wire s_isval;
@@ -89,14 +93,17 @@ input wire t_isval;
 input wire [3 : 0] rob_free_item;
 input wire [15 : 0] known_load_mask;
 output wire can_reserve;
-input wire [15 : 0] kill_by_mask;
-output wire [148 : 0] cdb;
-output wire [233 : 0] lsu_din;
-input wire [144 : 0] lsu_dout;
+input wire do_commit;
+input wire commit_loadspec_failed;
+input wire [3 : 0] commit_index;
+output wire [149 : 0] cdb;
+output wire [301 : 0] lsu_din;
+input wire [145 : 0] lsu_dout;
 
   reservestation inst (
     .clk(clk),
     .rst(rst),
+    .flush_bpfailed(flush_bpfailed),
     .rst_startreissue(rst_startreissue),
     .try_reserve(try_reserve),
     .din(din),
@@ -107,7 +114,9 @@ input wire [144 : 0] lsu_dout;
     .rob_free_item(rob_free_item),
     .known_load_mask(known_load_mask),
     .can_reserve(can_reserve),
-    .kill_by_mask(kill_by_mask),
+    .do_commit(do_commit),
+    .commit_loadspec_failed(commit_loadspec_failed),
+    .commit_index(commit_index),
     .cdb(cdb),
     .lsu_din(lsu_din),
     .lsu_dout(lsu_dout)

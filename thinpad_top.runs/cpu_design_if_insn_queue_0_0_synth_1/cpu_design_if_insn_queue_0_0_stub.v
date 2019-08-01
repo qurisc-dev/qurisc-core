@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Jul 22 00:29:10 2019
+// Date        : Thu Aug  1 20:04:26 2019
 // Host        : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ cpu_design_if_insn_queue_0_0_stub.v
@@ -16,8 +16,8 @@
 (* X_CORE_INFO = "if_insn_queue,Vivado 2019.1" *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(clk, rst, rst_bpfailed, inInstruction, inPC, 
   inException, in_valid, in_ready, out_bpjump, out_bptarget, out_valid, out_ready, 
-  decoding_instruction, decode_result, next_insn)
-/* synthesis syn_black_box black_box_pad_pin="clk,rst,rst_bpfailed,inInstruction[31:0],inPC[63:0],inException[7:0],in_valid,in_ready,out_bpjump,out_bptarget[63:0],out_valid,out_ready,decoding_instruction[31:0],decode_result[221:0],next_insn[221:0]" */;
+  decoding_instruction, decode_result, next_insn, decoding_pc, decoding_exception)
+/* synthesis syn_black_box black_box_pad_pin="clk,rst,rst_bpfailed,inInstruction[31:0],inPC[63:0],inException[7:0],in_valid,in_ready,out_bpjump,out_bptarget[63:0],out_valid,out_ready,decoding_instruction[31:0],decode_result[229:0],next_insn[229:0],decoding_pc[63:0],decoding_exception[7:0]" */;
   input clk;
   input rst;
   input rst_bpfailed;
@@ -31,6 +31,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(clk, rst, rst_bpfailed, inInstr
   output out_valid;
   input out_ready;
   output [31:0]decoding_instruction;
-  input [221:0]decode_result;
-  output [221:0]next_insn;
+  input [229:0]decode_result;
+  output [229:0]next_insn;
+  output [63:0]decoding_pc;
+  output [7:0]decoding_exception;
 endmodule

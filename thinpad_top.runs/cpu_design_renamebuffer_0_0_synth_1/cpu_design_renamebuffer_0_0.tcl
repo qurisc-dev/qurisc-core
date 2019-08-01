@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 create_project -in_memory -part xc7a100tfgg676-2L
@@ -31,8 +32,12 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths {
+  c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0
+  c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0
+  c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0
   c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0
+  c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.cache/ip [current_project]

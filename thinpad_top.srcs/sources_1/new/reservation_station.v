@@ -6,7 +6,10 @@ module function_unit_wrapper(
     input wire clk,
     input wire rst,
     input `DecodeResultWire din,
-    input wire[15:0] kill_by_mask,
+    input wire do_commit,
+    input wire commit_loadspec_failed,
+    input wire flush_bpfailed,
+    input wire[3:0] commit_index,
     input wire[63:0] svalue,
     input wire[63:0] tvalue,
     input wire s_isval,
@@ -23,7 +26,7 @@ module function_unit_wrapper(
     input `FunctionUnitOutputWire fuoutput
 );
 parameter RESERVE_STATION_TYPE=0;
-assign can_accept=`DecodeResult$RSType(din)==RESERVE_STATION_TYPE;
+
 `FunctionUnitOutputReg stored_output;
 reg[7:0] CalcType;
 reg[15:0] Dependencies;
@@ -36,16 +39,34 @@ reg ReadyT;
 reg[3:0] Qd;
 reg[1:0] Status; //0 for Ready, 1 for Listening, 2 for Executing and 3 for WriteBack.
 wire need_reset;
-assign need_reset=(rst || (kill_by_mask & Dependencies));
-assign can_accept=Status==0;
-assign emit_to_cdb=Status==3;
+reg[15:0] kill_by_mask;
+
+assign can_accept=`DecodeResult$RSType(din)==RESERVE_STATION_TYPE && Status==0;
 always @* begin
-    `FunctionUnitInput$StartCalculation(fuinput)=ReadyS && ReadyT && (Status==1);
+    kill_by_mask=0;
+    if(do_commit && commit_loadspec_failed) begin
+        kill_by_mask[commit_index]=1;
+    end
+    if(flush_bpfailed) begin
+        kill_by_mask=0;
+        kill_by_mask=~kill_by_mask; // kill everything.
+    end
+end
+assign need_reset=(rst || (kill_by_mask & Dependencies));
+assign emit_to_cdb=Status==3;
+reg[63:0] stored_pc;
+reg[31:0] stored_immediate;
+reg[63:0] stored_bpresult;
+always @* begin
+    `FunctionUnitInput$StartCalculation(fuinput)=(ReadyS && ReadyT && (Status==1)) || (Status==0 && s_isval && t_isval && will_accept);
     `FunctionUnitInput$ResetCalculation(fuinput)=need_reset;
-    `FunctionUnitInput$RsValue(fuinput)=Vs;
-    `FunctionUnitInput$RtValue(fuinput)=Vt;
-    `FunctionUnitInput$CalcType(fuinput)=CalcType;
-    `FunctionUnitInput$CurrentPC(fuinput)=`DecodeResult$PC(din);
+    `FunctionUnitInput$RsValue(fuinput)=(Status==0)?svalue:Vs;
+    `FunctionUnitInput$RtValue(fuinput)=(Status==0)?tvalue:Vt;
+    `FunctionUnitInput$CalcType(fuinput)=(Status==0?`DecodeResult$FUType(din):CalcType);
+    `FunctionUnitInput$CurrentPC(fuinput)=(Status==0?`DecodeResult$PC(din):stored_pc);
+    `FunctionUnitInput$ROBIdx(fuinput)=(Status==0?rob_free_item:Qd);
+    `FunctionUnitInput$Immediate(fuinput)=(Status==0?`DecodeResult$Immediate(din):stored_immediate);
+    `FunctionUnitInput$BPResult(fuinput)=(Status==0?`DecodeResult$PredictedResult(din):stored_bpresult);
 end
 always @* begin
     `CDB$Valid(cdb_out)=1;
@@ -54,6 +75,7 @@ always @* begin
     `CDB$Exception(cdb_out)=`FunctionUnitOutput$Exception(stored_output);
     `CDB$FPUException(cdb_out)=`FunctionUnitOutput$FPUException(stored_output);
     `CDB$NewPC(cdb_out)=`FunctionUnitOutput$NewPC(stored_output);
+    `CDB$BPSuccess(cdb_out)=`FunctionUnitOutput$BPSuccess(stored_output);
 end
 always @(posedge clk) begin
     if(need_reset) begin
@@ -72,31 +94,42 @@ always @(posedge clk) begin
             0: begin
                 if(will_accept) begin
                     Qd<=rob_free_item;
-                    Status<=1;
+                    stored_pc<=`DecodeResult$PC(din);
+                    stored_immediate<=`DecodeResult$Immediate(din);
                     Dependencies<=known_load_mask;
                     CalcType<=`DecodeResult$FUType(din);
-                    if(s_isval) begin
+                    stored_bpresult<=`DecodeResult$PredictedResult(din);
+                    if(s_isval && t_isval) begin
                         ReadyS<=1;
-                        Vs<=svalue;
-                    end else begin
-                        if(`CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==svalue[3:0]) begin
-                            ReadyS<=1;
-                            Vs<=`CDB$Value(cdb_in);
-                        end else begin
-                            ReadyS<=0;
-                            Qs<=svalue[3:0];
-                        end
-                    end
-                    if(t_isval) begin
                         ReadyT<=1;
+                        Vs<=svalue;
                         Vt<=tvalue;
+                        Status<=2;
                     end else begin
-                        if(`CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==tvalue[3:0]) begin
-                            ReadyT<=1;
-                            Vt<=`CDB$Value(cdb_in);
+                        Status<=1;
+                        if(s_isval) begin
+                            ReadyS<=1;
+                            Vs<=svalue;
                         end else begin
-                            ReadyT<=0;
-                            Qt<=tvalue[3:0];
+                            if(`CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==svalue[3:0]) begin
+                                ReadyS<=1;
+                                Vs<=`CDB$Value(cdb_in);
+                            end else begin
+                                ReadyS<=0;
+                                Qs<=svalue[3:0];
+                            end
+                        end
+                        if(t_isval) begin
+                            ReadyT<=1;
+                            Vt<=tvalue;
+                        end else begin
+                            if(`CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==tvalue[3:0]) begin
+                                ReadyT<=1;
+                                Vt<=`CDB$Value(cdb_in);
+                            end else begin
+                                ReadyT<=0;
+                                Qt<=tvalue[3:0];
+                            end
                         end
                     end
                 /*
@@ -113,11 +146,11 @@ always @(posedge clk) begin
                 end
             end
             1: begin
-                if((!ReadyS) && `CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==svalue[3:0]) begin
+                if((!ReadyS) && `CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==Qs) begin
                     Vs<=`CDB$Value(cdb_in);
                     ReadyS<=1;
                 end
-                if ((!ReadyT) && `CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==tvalue[3:0]) begin
+                if ((!ReadyT) && `CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==Qt) begin
                     Vs<=`CDB$Value(cdb_in);
                     ReadyT<=1;
                 end
@@ -149,6 +182,7 @@ endmodule
 module reservestation(
     input wire clk,
     input wire rst,
+    input wire flush_bpfailed,
     input wire rst_startreissue,
     input wire try_reserve,
     input `DecodeResultWire din,
@@ -159,7 +193,9 @@ module reservestation(
     input wire[3:0] rob_free_item,
     input wire[15:0] known_load_mask,
     output reg can_reserve, // if false, no reservation will be done.
-    input wire[15:0] kill_by_mask,
+    input wire do_commit,
+    input wire commit_loadspec_failed,
+    input wire[3:0] commit_index,
     output `CDBReg cdb,
     output  `FunctionUnitInputWire lsu_din,
     input `FunctionUnitOutputWire lsu_dout
@@ -173,6 +209,7 @@ module reservestation(
     integer index;
     integer index2;
     reg[15:0] temp;
+    wire rst_bpfailed=do_commit && flush_bpfailed;
     always @* begin
         for(index=0;index<`CDBSize;index=index+1) begin // For each bit
             for(index2=0;index2<16;index2=index2+1) begin // For each device
@@ -186,7 +223,10 @@ module reservestation(
     wire[3:0] alu_selector;
     
     wire ls_free;
-    wire ls_selected;
+    reg ls_selected;
+    always @* begin
+        ls_selected=ls_free;
+    end
     priority_arbiter#(.SIZE_LOG2(2)) alu_input(.requests(alu_free), .enable(1), .responses(alu_selector));
     always @* begin
         can_reserve=0;
@@ -196,13 +236,17 @@ module reservestation(
                 can_reserve=(|alu_selector) || ls_selected;
             end
         endcase
+        
     end
     `define REGISTER_FUNCTION_UNIT(index, name, rstype, arbit_req, arbit_res) \
     function_unit_wrapper#(.RESERVE_STATION_TYPE(rstype)) name( \
     .clk(clk), \
     .rst(rst), \
     .din(din), \
-    .kill_by_mask(kill_by_mask), \
+    .do_commit(do_commit), \
+    .commit_loadspec_failed(commit_loadspec_failed), \
+    .flush_bpfailed(flush_bpfailed), \
+    .commit_index(commit_index), \
     .svalue(svalue), \
     .tvalue(tvalue), \
     .s_isval(s_isval), \
@@ -210,7 +254,7 @@ module reservestation(
     .rob_free_item(rob_free_item), \
     .known_load_mask(known_load_mask), \
     .can_accept(arbit_req), \
-    .will_accept(arbit_res), \
+    .will_accept(arbit_res && try_reserve), \
     .emit_to_cdb(cdb_has_data[index]), \
     .will_emit_to_cdb(cdb_send_data[index]), \
     .cdb_in(cdb), \
@@ -231,5 +275,6 @@ module reservestation(
     `REGISTER_FUNCTION_UNIT(4, lsu, `RSType_LoadStore, ls_free, ls_selected)
     assign lsu_din=fu_input[4];
     assign fu_output[4]=lsu_dout;
+    assign cdb_has_data[15:5]=0;
 endmodule
 

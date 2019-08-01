@@ -60,17 +60,19 @@ module cpu_design_branch_predictor_0_1 (
   rst,
   bp,
   bp_commit,
+  bp_isbranch,
   bp_commit_result
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 output wire bp;
 input wire bp_commit;
+input wire bp_isbranch;
 input wire bp_commit_result;
 
   branch_predictor inst (
@@ -78,6 +80,7 @@ input wire bp_commit_result;
     .rst(rst),
     .bp(bp),
     .bp_commit(bp_commit),
+    .bp_isbranch(bp_isbranch),
     .bp_commit_result(bp_commit_result)
   );
 endmodule

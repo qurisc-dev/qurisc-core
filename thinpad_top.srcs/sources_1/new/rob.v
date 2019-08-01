@@ -60,11 +60,22 @@ module rob(
     input wire can_commit_storequeue,
     output reg commit_bpfailed,
     output reg[3:0] rob_next_item,
-    output reg rob_not_full
+    output reg rob_not_full,
+    output reg commit_isbranch,
+    output reg commit_branchret,
+    output reg commit_isjal,
+    output reg commit_isjalr,
+    output reg[4:0] commit_val_rs1,
+    output reg[4:0] commit_val_rd,
+    output reg[63:0] commit_ras_commit_push_item
     );
     `DecodeResultReg rob_items_decoded[0:`ROB_ItemCount-1];
     `ROBLineReg rob_items_extra[0:`ROB_ItemCount-1];
+    reg bpfail_reset;
     
+    always @* begin
+        bpfail_reset=do_commit && commit_bpfailed;
+    end
     wire pop;
 
     assign pop=do_commit;
@@ -75,8 +86,17 @@ module rob(
         rob_full=rob_size==4'b1111;
         rob_empty=rob_size==0;
         rob_next_item=rob_head;
-        rob_not_full=!rob_full;
+        rob_not_full=(!rob_full) && !(bpfail_reset);
         commit_line=rob_tail;
+    end
+    always @* begin
+        commit_isjalr=`DecodeResult$RSType(rob_items_decoded[rob_tail])==`RSType_ALU && `DecodeResult$FUType(rob_items_decoded[rob_tail])==`CalcType_ALU_Jump && (`DecodeResult$IsJump(rob_items_decoded[rob_tail]));
+        commit_isjal=`DecodeResult$RSType(rob_items_decoded[rob_tail])==`RSType_ALU && `DecodeResult$FUType(rob_items_decoded[rob_tail])==`CalcType_ALU_Jump && (!`DecodeResult$IsJump(rob_items_decoded[rob_tail]));
+        commit_val_rs1=`DecodeResult$Rs(rob_items_decoded[rob_tail]);
+        commit_val_rd=`DecodeResult$Target(rob_items_decoded[rob_tail]);
+        commit_ras_commit_push_item=`DecodeResult$PC(rob_items_decoded[rob_tail])+4;
+        commit_isbranch=`DecodeResult$IsBranch(rob_items_decoded[rob_tail]) && !(commit_isjalr || commit_isjal);
+        commit_branchret=`ROBLine$Value$Slice(rob_items_decoded[rob_tail],0,0);
     end
     always @* begin
         search_result_0=`ROBLine$Value(rob_items_extra[search_line_0]);
@@ -95,20 +115,21 @@ module rob(
     end
     reg can_commit;
     always @* begin
+        commit_store=`DecodeResult$IsStore(rob_items_decoded[rob_tail]);
         can_commit=can_commit_storequeue || !`DecodeResult$IsStore(rob_items_decoded[rob_tail]);
     end
     always @* begin
         do_commit=`ROBLine$ValueReady(rob_items_extra[rob_tail]) && can_commit;
         commit_regwrite_index=`DecodeResult$Target(rob_items_decoded[rob_tail]);
         commit_regwrite_value=`ROBLine$Value(rob_items_extra[rob_tail]);
-        commit_bpfailed=`ROBLine$NewPC(rob_items_extra[rob_tail])!=`DecodeResult$PredictedResult(rob_items_decoded[rob_tail]);
+        commit_bpfailed=(!`ROBLine$BPSuccess(rob_items_extra[rob_tail])) && `DecodeResult$IsBranch(rob_items_decoded[rob_tail]);
         commit_jump_address=`ROBLine$NewPC(rob_items_extra[rob_tail]);
         commit_exception=`ROBLine$ExceptionType(rob_items_extra[rob_tail]);
         commit_float_exception=`ROBLine$ExceptionType(rob_items_extra[rob_tail]);
         start_reissue=0;
     end
     always @(posedge clk) begin
-        if(rst) begin
+        if(rst || bpfail_reset) begin
             rob_head<=0;
             rob_tail<=0;
             rob_size<=0;
@@ -132,22 +153,24 @@ module rob(
                     `ROBLine$ValueReady(rob_items_extra[i])<=0;
                     `ROBLine$ExceptionType(rob_items_extra[i])<=0;
                     `ROBLine$NeedReissue(rob_items_extra[i])<=0;
+                    `ROBLine$BPSuccess(rob_items_extra[i])<=0; 
                 end else
                 if(do_commit && can_commit && rob_tail==i) begin
                     rob_items_decoded[i]<=0;
                     rob_items_extra[i]<=0;
                     
                 end else begin
-                    if(`CDB$Valid(cdb)) begin // CDB writeback event.
+                    if(`CDB$Valid(cdb) && `CDB$RenameID(cdb)==i) begin // CDB writeback event.
                         `ROBLine$ValueReady(rob_items_extra[i])<=1;
                         `ROBLine$Value(rob_items_extra[i])<=`CDB$Value(cdb);
                         `ROBLine$ExceptionType(rob_items_extra[i])<=`CDB$Exception(cdb);
                         `ROBLine$FloatPointException(rob_items_extra[i])<=`CDB$FPUException(cdb);
-                        if(`DecodeResult$IsBranch(rob_items_decoded[i])) begin
-                            `ROBLine$NewPC(rob_items_extra[i])<=`CDB$Value(cdb)?(`DecodeResult$PC(rob_items_decoded[i])+`DecodeResult$Immediate(rob_items_decoded[i])):(`DecodeResult$PC(rob_items_decoded[i])+4);
-                        end else begin
+                        //if(`DecodeResult$IsBranch(rob_items_decoded[i])) begin
                             `ROBLine$NewPC(rob_items_extra[i])<=`CDB$NewPC(cdb);
-                        end
+                        `ROBLine$BPSuccess(rob_items_extra[i])<=`CDB$BPSuccess(cdb);
+                        //end else begin
+                        //    `ROBLine$NewPC(rob_items_extra[i])<=`DecodeResult$PC(rob_items_decoded[i])+4;
+                        //end
                         
                         
                     end

@@ -1,0 +1,111 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port M00_AXI -pg 1 -lvl 9 -x 3970 -y 690 -defaultsOSRD
+preplace port decoder_valid -pg 1 -lvl 0 -x 0 -y 1320 -defaultsOSRD
+preplace port decoder_pop -pg 1 -lvl 9 -x 3970 -y 1480 -defaultsOSRD
+preplace port clk -pg 1 -lvl 0 -x 0 -y 1060 -defaultsOSRD
+preplace port rst -pg 1 -lvl 0 -x 0 -y 1080 -defaultsOSRD
+preplace port do_commit -pg 1 -lvl 9 -x 3970 -y 1010 -defaultsOSRD
+preplace port commit_bpfailed -pg 1 -lvl 9 -x 3970 -y 1230 -defaultsOSRD
+preplace port m00_axi_aresetn -pg 1 -lvl 0 -x 0 -y 800 -defaultsOSRD
+preplace port commit_isjal -pg 1 -lvl 9 -x 3970 -y 1330 -defaultsOSRD
+preplace port commit_isjalr -pg 1 -lvl 9 -x 3970 -y 1350 -defaultsOSRD
+preplace port commit_branchret -pg 1 -lvl 9 -x 3970 -y 1310 -defaultsOSRD
+preplace port commit_isbranch -pg 1 -lvl 9 -x 3970 -y 1290 -defaultsOSRD
+preplace portBus decoder_input -pg 1 -lvl 0 -x 0 -y 1300 -defaultsOSRD
+preplace portBus bp_query -pg 1 -lvl 0 -x 0 -y 1200 -defaultsOSRD
+preplace portBus bp_query_result -pg 1 -lvl 9 -x 3970 -y 1590 -defaultsOSRD
+preplace portBus commit_jump_address -pg 1 -lvl 9 -x 3970 -y 1150 -defaultsOSRD
+preplace portBus commit_val_rs1 -pg 1 -lvl 9 -x 3970 -y 1370 -defaultsOSRD
+preplace portBus commit_val_rd -pg 1 -lvl 9 -x 3970 -y 1390 -defaultsOSRD
+preplace portBus commit_ras_commit_push_item -pg 1 -lvl 9 -x 3970 -y 1410 -defaultsOSRD
+preplace inst axi_simple_master_0 -pg 1 -lvl 8 -x 3810 -y 710 -defaultsOSRD
+preplace inst dispatcher_0 -pg 1 -lvl 3 -x 1390 -y 1330 -defaultsOSRD
+preplace inst l1_cache_0 -pg 1 -lvl 7 -x 3480 -y 560 -defaultsOSRD
+preplace inst loadstoreunit_0 -pg 1 -lvl 2 -x 800 -y 500 -defaultsOSRD
+preplace inst registers_0 -pg 1 -lvl 1 -x 240 -y 1130 -defaultsOSRD
+preplace inst renamebuffer_0 -pg 1 -lvl 2 -x 800 -y 1040 -defaultsOSRD
+preplace inst rob_0 -pg 1 -lvl 4 -x 1940 -y 1150 -defaultsOSRD
+preplace inst reservestation_0 -pg 1 -lvl 5 -x 2570 -y 750 -defaultsOSRD
+preplace inst loadstore_functionun_0 -pg 1 -lvl 6 -x 3010 -y 140 -defaultsOSRD
+preplace netloc rob_0_reissue_args 1 2 3 1170 1560 NJ 1560 2220
+preplace netloc rob_0_reissue 1 2 3 1180 1570 NJ 1570 2230
+preplace netloc dispatcher_0_reissue_next 1 3 1 1640 1210n
+preplace netloc dispatcher_0_can_dispatch 1 1 4 490 730 NJ 730 1630 670 N
+preplace netloc rob_0_rob_not_full 1 2 3 1140 1590 NJ 1590 2210
+preplace netloc reservestation_0_can_reserve 1 2 4 1160 530 NJ 530 NJ 530 2750
+preplace netloc dispatcher_0_decode_result 1 3 2 1660 1500 2320J
+preplace netloc Net 1 0 4 60 980 470 1490 NJ 1490 1610
+preplace netloc Net1 1 0 4 70 990 440 1500 NJ 1500 1600
+preplace netloc dispatcher_0_rd_register_target 1 1 3 530 1510 NJ 1510 1590
+preplace netloc renamebuffer_0_rs_value 1 2 1 1080 1000n
+preplace netloc renamebuffer_0_rt_value 1 2 1 1010 1040n
+preplace netloc dispatcher_0_rs_value 1 3 2 1640 1490 2330J
+preplace netloc dispatcher_0_rt_value 1 3 2 1630 1480 2340J
+preplace netloc rob_0_start_reissue 1 1 4 480 1390 1090 1640 NJ 1640 2350
+preplace netloc rob_0_rob_empty 1 2 3 1190 1580 NJ 1580 2260
+preplace netloc loadstoreunit_0_store_queue_available 1 2 1 1030 450n
+preplace netloc registers_0_query_rs_result 1 1 1 460 1110n
+preplace netloc registers_0_query_rt_result 1 1 1 430 1130n
+preplace netloc rob_0_commit_regwrite_index 1 0 5 50 1000 450 1530 NJ 1530 NJ 1530 2200
+preplace netloc rob_0_commit_regwrite_value 1 0 5 70 1540 NJ 1540 NJ 1540 NJ 1540 2190
+preplace netloc rob_0_rob_next_item 1 1 4 510 790 NJ 790 NJ 790 2300
+preplace netloc rob_0_commit_line 1 1 5 560 1260 1130J 830 NJ 830 2290 950 2790
+preplace netloc renamebuffer_0_combine_dep 1 2 3 NJ 980 1670 810 N
+preplace netloc renamebuffer_0_rs_is_value 1 2 3 1110 750 NJ 750 NJ
+preplace netloc renamebuffer_0_rt_is_value 1 2 3 1120 770 NJ 770 NJ
+preplace netloc renamebuffer_0_query_line_rs 1 2 2 NJ 1080 1650
+preplace netloc rob_0_search_result_0 1 1 4 520 1620 NJ 1620 NJ 1620 2280
+preplace netloc rob_0_search_ready_0 1 1 4 550 1600 NJ 1600 NJ 1600 2250
+preplace netloc renamebuffer_0_query_line_rt 1 2 2 NJ 1100 1640
+preplace netloc rob_0_search_result_1 1 1 4 540 1630 NJ 1630 NJ 1630 2270
+preplace netloc rob_0_search_ready_1 1 1 4 570 1610 NJ 1610 NJ 1610 2240
+preplace netloc reservestation_0_cdb 1 3 3 1690 540 NJ 540 2740
+preplace netloc rob_0_commit_store 1 1 6 500 710 NJ 710 NJ 710 2310 550 NJ 550 3210J
+preplace netloc if_insn_queue_0_next_insn 1 0 3 NJ 1300 NJ 1300 1140J
+preplace netloc if_insn_queue_0_out_valid 1 0 3 40J 1270 NJ 1270 1150J
+preplace netloc dispatcher_0_decoder_pop 1 3 6 1620J 1510 NJ 1510 NJ 1510 NJ 1510 NJ 1510 3950J
+preplace netloc clk_0_1 1 0 8 20 880 410 720 NJ 720 1650 610 2360 470 2740 470 3230 710 NJ
+preplace netloc rst_0_1 1 0 7 30 900 420 740 NJ 740 1660 630 2370 500 2780 500 NJ
+preplace netloc rob_0_do_commit 1 0 9 40 970 420 1550 NJ 1550 NJ 1550 2370 1010 NJ 1010 NJ 1010 NJ 1010 NJ
+preplace netloc jump_predictor_0_forward_index 1 0 1 NJ 1200
+preplace netloc registers_0_bp_query_result 1 1 8 410J 1520 NJ 1520 NJ 1520 NJ 1520 NJ 1520 NJ 1520 NJ 1520 3950J
+preplace netloc rob_0_commit_jump_address 1 4 5 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ
+preplace netloc rob_0_commit_bpfailed 1 4 5 NJ 1230 NJ 1230 NJ 1230 NJ 1230 NJ
+preplace netloc loadstoreunit_0_next_commit_value 1 2 5 1050J 490 NJ 490 NJ 490 NJ 490 3240
+preplace netloc loadstoreunit_0_next_commit_mask 1 2 5 1080J 520 NJ 520 NJ 520 NJ 520 3200
+preplace netloc loadstoreunit_0_next_commit_addr 1 2 5 1060J 480 NJ 480 NJ 480 NJ 480 3220
+preplace netloc m00_axi_aresetn_1 1 0 8 NJ 800 NJ 800 1100J 510 NJ 510 NJ 510 NJ 510 3190J 730 NJ
+preplace netloc axi_simple_master_0_axi_slave 1 6 3 3270 790 NJ 790 3950
+preplace netloc l1_cache_0_axi_master 1 7 1 3670 600n
+preplace netloc l1_cache_0_wready 1 3 5 1680 460 NJ 460 NJ 460 3270J 420 3640
+preplace netloc reservestation_0_lsu_din 1 5 1 2760 100n
+preplace netloc loadstore_functionun_0_dout 1 4 3 2380 310 NJ 310 3240
+preplace netloc loadstoreunit_0_loadbypass_ret_mask 1 2 4 1000J 290 NJ 290 NJ 290 2770
+preplace netloc loadstoreunit_0_loadbypass_ret_value 1 2 4 1010J 310 NJ 310 2310J 300 2800
+preplace netloc l1_cache_0_rdata 1 5 3 2830 700 NJ 700 3630
+preplace netloc l1_cache_0_rvalid 1 5 3 2820 740 NJ 740 3650
+preplace netloc l1_cache_0_arready 1 5 3 2810 720 NJ 720 3660
+preplace netloc loadstore_functionun_0_read_valid 1 6 1 3280 120n
+preplace netloc loadstore_functionun_0_read_addr 1 1 6 570 670 1020J 420 NJ 420 NJ 420 NJ 420 3260
+preplace netloc loadstore_functionun_0_sq_store 1 1 6 540 700 1090J 450 NJ 450 NJ 450 NJ 450 3250
+preplace netloc loadstore_functionun_0_sq_store_index 1 1 6 550 680 1040J 430 NJ 430 NJ 430 NJ 430 3220
+preplace netloc loadstore_functionun_0_sq_store_mask 1 1 6 560 690 1070J 440 NJ 440 NJ 440 NJ 440 3210
+preplace netloc loadstore_functionun_0_sq_store_data 1 1 6 530 330 NJ 330 NJ 330 NJ 330 NJ 330 3190
+preplace netloc loadstore_functionun_0_sq_store_addr 1 1 6 520 320 NJ 320 NJ 320 NJ 320 NJ 320 3200
+preplace netloc rob_0_commit_isjal 1 4 5 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ
+preplace netloc rob_0_commit_isjalr 1 4 5 NJ 1350 NJ 1350 NJ 1350 NJ 1350 NJ
+preplace netloc rob_0_commit_val_rs1 1 4 5 NJ 1370 NJ 1370 NJ 1370 NJ 1370 NJ
+preplace netloc rob_0_commit_val_rd 1 4 5 NJ 1390 NJ 1390 NJ 1390 NJ 1390 NJ
+preplace netloc rob_0_commit_ras_commit_push_item 1 4 5 NJ 1410 NJ 1410 NJ 1410 NJ 1410 NJ
+preplace netloc rob_0_commit_branchret 1 4 5 NJ 1310 NJ 1310 NJ 1310 NJ 1310 NJ
+preplace netloc rob_0_commit_isbranch 1 4 5 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ
+preplace netloc Net2 1 3 2 1690 1470 2360J
+preplace netloc Conn1 1 8 1 NJ 690
+levelinfo -pg 1 0 240 800 1390 1940 2570 3010 3480 3810 3970
+pagesize -pg 1 -db -bbox -sgen -190 0 4260 1650
+"
+}
+

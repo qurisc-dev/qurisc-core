@@ -125,30 +125,14 @@ end
 //           // ---d---  p
 
 // 7¶ÎÊıÂë¹ÜÒëÂëÆ÷ÑİÊ¾£¬½«numberÓÃ16½øÖÆÏÔÊ¾ÔÚÊıÂë¹ÜÉÏÃæ
-reg[7:0] number;
-SEG7_LUT segL(.oSEG1(dpy0), .iDIG(number[3:0])); //dpy0ÊÇµÍÎ»ÊıÂë¹Ü
-SEG7_LUT segH(.oSEG1(dpy1), .iDIG(number[7:4])); //dpy1ÊÇ¸ßÎ»ÊıÂë¹Ü
 
-reg[15:0] led_bits;
-assign leds = led_bits;
-
-always@(posedge clock_btn or posedge reset_btn) begin
-    if(reset_btn)begin //¸´Î»°´ÏÂ£¬ÉèÖÃLEDºÍÊıÂë¹ÜÎª³õÊ¼Öµ
-        number<=0;
-        led_bits <= 16'h1;
-    end
-    else begin //Ã¿´Î°´ÏÂÊ±ÖÓ°´Å¥£¬ÊıÂë¹ÜÏÔÊ¾Öµ¼Ó1£¬LEDÑ­»·×óÒÆ
-        number <= number+1;
-        led_bits <= {led_bits[14:0],led_bits[15]};
-    end
-end
 
 //Ö±Á¬´®¿Ú½ÓÊÕ·¢ËÍÑİÊ¾£¬´ÓÖ±Á¬´®¿ÚÊÕµ½µÄÊı¾İÔÙ·¢ËÍ³öÈ¥
 wire [7:0] ext_uart_rx;
 reg  [7:0] ext_uart_buffer, ext_uart_tx;
 wire ext_uart_ready, ext_uart_busy;
 reg ext_uart_start, ext_uart_avai;
-
+/*
 async_receiver #(.ClkFrequency(50000000),.Baud(9600)) //½ÓÊÕÄ£¿é£¬9600ÎŞ¼ìÑéÎ»
     ext_uart_r(
         .clk(clk_50M),                       //Íâ²¿Ê±ÖÓĞÅºÅ
@@ -183,7 +167,7 @@ async_transmitter #(.ClkFrequency(50000000),.Baud(9600)) //·¢ËÍÄ£¿é£¬9600ÎŞ¼ìÑéÎ
         .TxD_start(ext_uart_start),    //¿ªÊ¼·¢ËÍĞÅºÅ
         .TxD_data(ext_uart_tx)        //´ı·¢ËÍµÄÊı¾İ
     );
-
+*/
 //Í¼ÏñÊä³öÑİÊ¾£¬·Ö±æÂÊ800x600@75Hz£¬ÏñËØÊ±ÖÓÎª50MHz
 wire [11:0] hdata;
 assign video_red = hdata < 266 ? 3'b111 : 0; //ºìÉ«ÊúÌõ
@@ -199,5 +183,46 @@ vga #(12, 800, 856, 976, 1040, 600, 637, 643, 666, 1, 1) vga800x600at75 (
     .data_enable(video_de)
 );
 /* =========== Demo code end =========== */
-cpu_design_wrapper cpu(.clk_0(clk_50M));
+
+
+// SRAM Start
+wire[19:0] sram_addr;
+wire sram_ce;
+wire[63:0] sram_data;
+wire sram_oe;
+wire sram_we;
+
+wire[63:0] sram_din;
+wire[63:0] sram_dout;
+wire sram_bidir;
+assign ext_ram_data=sram_bidir?sram_dout[63:32]:32'bZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ;
+assign base_ram_data=sram_bidir?sram_dout[31:0]:32'bZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ;
+
+assign sram_din={ext_ram_data, base_ram_data};
+assign base_ram_addr=sram_addr;
+assign ext_ram_addr=sram_addr;
+assign base_ram_ce_n=sram_ce;
+assign base_ram_oe_n=sram_oe;
+assign base_ram_we_n=sram_we;
+assign ext_ram_ce_n=sram_ce;
+assign ext_ram_oe_n=sram_oe;
+assign ext_ram_we_n=sram_we;
+
+// SRAM End
+cpu_design_wrapper cpu(
+    .bidir_0(sram_bidir),
+    .clk_0(clk_50M),
+    .din_0(sram_din),
+    .dout_0(sram_dout),
+    .rst_0(reset_btn),
+    .sram_addr_0(sram_addr),
+    .sram_be_0({ext_ram_be_n, base_ram_be_n}),
+    .sram_ce_0(sram_ce),
+    .sram_oe_0(sram_oe),
+    .sram_we_0(sram_we),
+    .GPIO_0_tri_o({dpy0, dpy1, leds}),
+    .rxd_0(rxd),
+    .txd_0(txd)
+    //.GPIO2_0_tri_i(dip_sw)
+    );
 endmodule

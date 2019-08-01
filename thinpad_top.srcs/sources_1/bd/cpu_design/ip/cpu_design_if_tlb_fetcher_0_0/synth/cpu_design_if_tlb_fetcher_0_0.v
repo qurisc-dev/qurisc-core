@@ -69,10 +69,10 @@ module cpu_design_if_tlb_fetcher_0_0 (
   out_ready
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 input wire flush;
@@ -80,7 +80,7 @@ input wire [63 : 0] PC;
 output wire [63 : 0] outPC_physical;
 output wire [63 : 0] outPC_virtual;
 output wire [1 : 0] memoryattr;
-output wire out_tlbmiss;
+output wire [1 : 0] out_tlbmiss;
 output wire in_ready;
 output wire out_valid;
 input wire out_ready;

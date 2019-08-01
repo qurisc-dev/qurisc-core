@@ -37,7 +37,7 @@ module registers(
     
     always @* begin
         reg_heap[0]=0;
-        query_rt_result=reg_heap[query_rs];
+        query_rs_result=reg_heap[query_rs];
         query_rt_result=reg_heap[query_rt]; //When something is committing to register, it must also be in ROB and with correct rename in renamebuffer.
         // So no necessity to propagate commiting to issuer.
         //query_rs_result=(query_rs==0)?0:(commit_idx==query_rs)?commit_val:query_rs_result;

@@ -58,6 +58,7 @@
 module cpu_design_renamebuffer_0_0 (
   clk,
   rst,
+  flush_bpfailed,
   rst_startreissue,
   new_rename,
   new_rob_item,
@@ -72,22 +73,18 @@ module cpu_design_renamebuffer_0_0 (
   rs_is_value,
   rt_value,
   rt_is_value,
-  query_line_rs,
-  query_result_rs,
-  query_ready_rs,
   register_result_rs,
-  query_line_rt,
-  query_result_rt,
-  query_ready_rt,
-  register_result_rt
+  register_result_rt,
+  cdb
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
+input wire flush_bpfailed;
 input wire rst_startreissue;
 input wire [7 : 0] new_rename;
 input wire [3 : 0] new_rob_item;
@@ -102,18 +99,14 @@ output wire [63 : 0] rs_value;
 output wire rs_is_value;
 output wire [63 : 0] rt_value;
 output wire rt_is_value;
-output wire [3 : 0] query_line_rs;
-input wire [63 : 0] query_result_rs;
-input wire query_ready_rs;
 input wire [63 : 0] register_result_rs;
-output wire [3 : 0] query_line_rt;
-input wire [63 : 0] query_result_rt;
-input wire query_ready_rt;
 input wire [63 : 0] register_result_rt;
+input wire [149 : 0] cdb;
 
   renamebuffer inst (
     .clk(clk),
     .rst(rst),
+    .flush_bpfailed(flush_bpfailed),
     .rst_startreissue(rst_startreissue),
     .new_rename(new_rename),
     .new_rob_item(new_rob_item),
@@ -128,13 +121,8 @@ input wire [63 : 0] register_result_rt;
     .rs_is_value(rs_is_value),
     .rt_value(rt_value),
     .rt_is_value(rt_is_value),
-    .query_line_rs(query_line_rs),
-    .query_result_rs(query_result_rs),
-    .query_ready_rs(query_ready_rs),
     .register_result_rs(register_result_rs),
-    .query_line_rt(query_line_rt),
-    .query_result_rt(query_result_rt),
-    .query_ready_rt(query_ready_rt),
-    .register_result_rt(register_result_rt)
+    .register_result_rt(register_result_rt),
+    .cdb(cdb)
   );
 endmodule

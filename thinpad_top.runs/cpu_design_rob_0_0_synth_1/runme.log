@@ -9,11 +9,16 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source cpu_design_rob_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 355.363 ; gain = 64.820
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 354.730 ; gain = 59.152
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 378.566 ; gain = 23.836
 Command: synth_design -top cpu_design_rob_0_0 -part xc7a100tfgg676-2L -mode out_of_context
 Starting synth_design
 WARNING: [IP_Flow 19-3571] IP 'cpu_design_rob_0_0' is restricted:
@@ -22,16 +27,23 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22436 
+INFO: Helper process launched with PID 12620 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 819.754 ; gain = 178.695
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 819.789 ; gain = 176.801
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_rob_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_rob_0_0/synth/cpu_design_rob_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'rob' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/rob.v:28]
 WARNING: [Synth 8-3848] Net reissue_args in module/entity rob does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/rob.v:50]
-WARNING: [Synth 8-3848] Net commit_store in module/entity rob does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/rob.v:59]
 INFO: [Synth 8-6155] done synthesizing module 'rob' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/rob.v:28]
 INFO: [Synth 8-6155] done synthesizing module 'cpu_design_rob_0_0' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_rob_0_0/synth/cpu_design_rob_0_0.v:58]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[229]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[228]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[227]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[226]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[225]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[224]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[223]
+WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[222]
 WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[221]
 WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[220]
 WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[219]
@@ -124,17 +136,9 @@ WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[133]
 WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[132]
 WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[131]
 WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[130]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[129]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[128]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[127]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[126]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[125]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[124]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[123]
-WARNING: [Synth 8-3331] design rob has unconnected port reissue_args[122]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 890.418 ; gain = 249.359
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 890.469 ; gain = 247.480
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -147,10 +151,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 890.418 ; gain = 249.359
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 890.469 ; gain = 247.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 890.418 ; gain = 249.359
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 890.469 ; gain = 247.480
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -158,59 +162,58 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1046.055 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1056.652 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1052.125 ; gain = 6.070
+Constraint Validation Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1065.672 ; gain = 9.020
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished Constraint Validation : Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/rob.v:161]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/rob.v:184]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:52 ; elapsed = 00:01:07 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |rob__GB0      |           1|     47949|
-|2     |rob__GB1      |           1|     17985|
+|1     |rob__GB0      |           1|     42151|
+|2     |rob__GB1      |           1|     12675|
+|3     |rob__GB2      |           1|     21583|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     64 Bit       Adders := 16    
+	   2 Input     64 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
-	              222 Bit    Registers := 16    
-	              160 Bit    Registers := 16    
+	              230 Bit    Registers := 16    
+	              161 Bit    Registers := 16    
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    222 Bit        Muxes := 16    
-	   2 Input    160 Bit        Muxes := 49    
-	   2 Input    159 Bit        Muxes := 1     
-	   2 Input     64 Bit        Muxes := 16    
-	   2 Input     32 Bit        Muxes := 16    
+	   2 Input    230 Bit        Muxes := 16    
+	   5 Input    161 Bit        Muxes := 16    
+	   2 Input    160 Bit        Muxes := 16    
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 17    
 ---------------------------------------------------------------------------------
@@ -223,19 +226,17 @@ Hierarchical RTL Component report
 Module rob 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     64 Bit       Adders := 16    
+	   2 Input     64 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
-	              222 Bit    Registers := 16    
-	              160 Bit    Registers := 16    
+	              230 Bit    Registers := 16    
+	              161 Bit    Registers := 16    
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    222 Bit        Muxes := 16    
-	   2 Input    160 Bit        Muxes := 49    
-	   2 Input    159 Bit        Muxes := 1     
-	   2 Input     64 Bit        Muxes := 16    
-	   2 Input     32 Bit        Muxes := 16    
+	   2 Input    230 Bit        Muxes := 16    
+	   5 Input    161 Bit        Muxes := 16    
+	   2 Input    160 Bit        Muxes := 16    
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 17    
 ---------------------------------------------------------------------------------
@@ -255,43 +256,45 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-3917] design cpu_design_rob_0_0 has port start_reissue driven by constant 0
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/reissue_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_0/reissue_reg)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:01:43 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:02:34 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |rob__GB0      |           1|     11875|
-|2     |rob__GB1      |           1|      9212|
+|1     |rob__GB0      |           1|      9767|
+|2     |rob__GB1      |           1|      6691|
+|3     |rob__GB2      |           1|      4614|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:53 ; elapsed = 00:02:08 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:26 ; elapsed = 00:03:25 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:53 ; elapsed = 00:02:08 . Memory (MB): peak = 1052.125 ; gain = 411.066
+Finished Timing Optimization : Time (s): cpu = 00:02:26 ; elapsed = 00:03:25 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |rob__GB0      |           1|     11875|
-|2     |rob__GB1      |           1|      9212|
+|1     |rob__GB0      |           1|      9767|
+|2     |rob__GB1      |           1|      6691|
+|3     |rob__GB2      |           1|      4614|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:02 ; elapsed = 00:02:18 . Memory (MB): peak = 1053.996 ; gain = 412.938
+Finished Technology Mapping : Time (s): cpu = 00:02:40 ; elapsed = 00:03:52 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -315,7 +318,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:10 ; elapsed = 00:02:28 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished IO Insertion : Time (s): cpu = 00:02:51 ; elapsed = 00:04:10 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -328,7 +331,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:10 ; elapsed = 00:02:29 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:51 ; elapsed = 00:04:11 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -340,25 +343,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:11 ; elapsed = 00:02:29 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:52 ; elapsed = 00:04:12 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:11 ; elapsed = 00:02:29 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:52 ; elapsed = 00:04:12 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:19 ; elapsed = 00:02:39 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:16 ; elapsed = 00:04:54 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:19 ; elapsed = 00:02:39 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:16 ; elapsed = 00:04:54 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -374,53 +377,54 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |   262|
-|2     |LUT1   |    11|
-|3     |LUT2   |  2736|
-|4     |LUT3   |  1541|
-|5     |LUT4   |    39|
+|1     |CARRY4 |    16|
+|2     |LUT1   |    28|
+|3     |LUT2   |   394|
+|4     |LUT3   |    42|
+|5     |LUT4   |  1048|
 |6     |LUT5   |    61|
-|7     |LUT6   |  2473|
-|8     |MUXF7  |   632|
-|9     |MUXF8  |   316|
-|10    |FDRE   |  4912|
+|7     |LUT6   |  3076|
+|8     |MUXF7  |   598|
+|9     |MUXF8  |   294|
+|10    |FDRE   |  3808|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       | 12983|
-|2     |  inst   |rob    | 12983|
+|1     |top      |       |  9365|
+|2     |  inst   |rob    |  9365|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:19 ; elapsed = 00:02:39 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:16 ; elapsed = 00:04:54 . Memory (MB): peak = 1065.672 ; gain = 422.684
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 231 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:52 ; elapsed = 00:02:27 . Memory (MB): peak = 1058.984 ; gain = 256.219
-Synthesis Optimization Complete : Time (s): cpu = 00:02:19 ; elapsed = 00:02:40 . Memory (MB): peak = 1058.984 ; gain = 417.926
+Synthesis finished with 0 errors, 0 critical warnings and 234 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:41 ; elapsed = 00:04:35 . Memory (MB): peak = 1065.672 ; gain = 247.480
+Synthesis Optimization Complete : Time (s): cpu = 00:03:16 ; elapsed = 00:04:55 . Memory (MB): peak = 1065.672 ; gain = 422.684
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1210 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 908 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'cpu_design_rob_0_0' is not ideal for floorplanning, since the cellview 'rob' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1075.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1079.203 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-23 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+27 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1075.215 ; gain = 696.004
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1075.215 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:40 ; elapsed = 00:05:44 . Memory (MB): peak = 1079.203 ; gain = 700.637
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1079.203 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_rob_0_0_synth_1/cpu_design_rob_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1079.203 ; gain = 0.000
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1075.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1079.203 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_rob_0_0_synth_1/cpu_design_rob_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_design_rob_0_0_utilization_synth.rpt -pb cpu_design_rob_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 22 00:31:04 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 20:02:26 2019...

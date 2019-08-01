@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Jul 22 00:26:30 2019
+// Date        : Thu Aug  1 20:02:14 2019
 // Host        : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ cpu_design_branch_predictor_0_1_sim_netlist.v
@@ -14,11 +14,13 @@
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_branch_predictor
    (bp,
+    bp_isbranch,
     bp_commit,
     bp_commit_result,
     rst,
     clk);
   output bp;
+  input bp_isbranch;
   input bp_commit;
   input bp_commit_result;
   input rst;
@@ -27,31 +29,32 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_branch_predictor
   wire bp;
   wire bp_commit;
   wire bp_commit_result;
+  wire bp_isbranch;
   wire clk;
   wire [0:0]cntr;
   wire \cntr[0]_i_1_n_0 ;
   wire \cntr[1]_i_1_n_0 ;
   wire rst;
 
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h0000E662)) 
+  LUT6 #(
+    .INIT(64'h00000000EA6A6A2A)) 
     \cntr[0]_i_1 
        (.I0(cntr),
-        .I1(bp_commit),
-        .I2(bp_commit_result),
-        .I3(bp),
-        .I4(rst),
+        .I1(bp_isbranch),
+        .I2(bp_commit),
+        .I3(bp_commit_result),
+        .I4(bp),
+        .I5(rst),
         .O(\cntr[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'hFFFFEAA2)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFEAAAAA2A)) 
     \cntr[1]_i_1 
        (.I0(bp),
-        .I1(bp_commit),
-        .I2(cntr),
-        .I3(bp_commit_result),
-        .I4(rst),
+        .I1(bp_isbranch),
+        .I2(bp_commit),
+        .I3(cntr),
+        .I4(bp_commit_result),
+        .I5(rst),
         .O(\cntr[1]_i_1_n_0 ));
   FDRE \cntr_reg[0] 
        (.C(clk),
@@ -75,16 +78,19 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     rst,
     bp,
     bp_commit,
+    bp_isbranch,
     bp_commit_result);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input rst;
   output bp;
   input bp_commit;
+  input bp_isbranch;
   input bp_commit_result;
 
   wire bp;
   wire bp_commit;
   wire bp_commit_result;
+  wire bp_isbranch;
   wire clk;
   wire rst;
 
@@ -92,6 +98,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
        (.bp(bp),
         .bp_commit(bp_commit),
         .bp_commit_result(bp_commit_result),
+        .bp_isbranch(bp_isbranch),
         .clk(clk),
         .rst(rst));
 endmodule

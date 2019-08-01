@@ -137,9 +137,4 @@ module burst_sram(
 endmodule
 
 
-module l1_cache(
 
-    );
-    
-    
-endmodule

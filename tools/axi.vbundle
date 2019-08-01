@@ -1,0 +1,41 @@
+interface AXIMaster{
+    // AW
+    var AWAddr[64];
+    var AWLen[8];
+    var AWSize[3];
+    var AWBurst[2];
+    var AWValid;
+    // W
+    var WData[64];
+    var WStrb[8];
+    var WLast;
+    var WValid;
+    // B
+    var BReady;
+    // AR
+    var ARAddr[64];
+    var ARLen[8];
+    var ARSize[3];
+    var ARBurst[2];
+    var ARValid;
+    // R
+    var RReady;
+}
+
+interface AXISlave{
+    // AW
+    var AWReady;
+    // W
+    var WReady;
+    // B
+    var BResp[2];
+    var BValid;
+    // AR
+    var ARReady;
+    // R
+    var RData[64];
+    var RResp[2];
+    var RLast;
+    var RValid;
+}
+

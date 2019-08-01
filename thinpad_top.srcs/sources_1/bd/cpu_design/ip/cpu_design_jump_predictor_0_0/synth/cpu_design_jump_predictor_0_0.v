@@ -63,6 +63,7 @@ module cpu_design_jump_predictor_0_0 (
   is_jalr,
   val_rs1,
   val_rd,
+  jal_result,
   ras_push_item,
   ras_next_address,
   forward_index,
@@ -76,10 +77,10 @@ module cpu_design_jump_predictor_0_0 (
   ras_commit_flush
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 input wire do_jp;
@@ -87,6 +88,7 @@ input wire is_jal;
 input wire is_jalr;
 input wire [4 : 0] val_rs1;
 input wire [4 : 0] val_rd;
+input wire [63 : 0] jal_result;
 input wire [63 : 0] ras_push_item;
 output wire [63 : 0] ras_next_address;
 output wire [4 : 0] forward_index;
@@ -107,6 +109,7 @@ input wire ras_commit_flush;
     .is_jalr(is_jalr),
     .val_rs1(val_rs1),
     .val_rd(val_rd),
+    .jal_result(jal_result),
     .ras_push_item(ras_push_item),
     .ras_next_address(ras_next_address),
     .forward_index(forward_index),

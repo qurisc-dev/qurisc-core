@@ -3,46 +3,47 @@ module tb;
 
 wire clk_50M, clk_11M0592;
 
-reg clock_btn = 0;         //BTN5手动时钟按钮开关，带消抖电路，按下时为1
-reg reset_btn = 0;         //BTN6手动复位按钮开关，带消抖电路，按下时为1
+reg clock_btn = 0;         //BTN5手动时钟按钮�?关，带消抖电路，按下时为1
+reg reset_btn = 0;         //BTN6手动复位按钮�?关，带消抖电路，按下时为1
 
 reg[3:0]  touch_btn;  //BTN1~BTN4，按钮开关，按下时为1
-reg[31:0] dip_sw;     //32位拨码开关，拨到“ON”时为1
+reg[31:0] dip_sw;     //32位拨码开关，拨到“ON”时�?1
 
 wire[15:0] leds;       //16位LED，输出时1点亮
 wire[7:0]  dpy0;       //数码管低位信号，包括小数点，输出1点亮
 wire[7:0]  dpy1;       //数码管高位信号，包括小数点，输出1点亮
 
-wire txd;  //直连串口发送端
-wire rxd;  //直连串口接收端
+wire txd;  //直连串口发�?�端
+wire rxd;  //直连串口接收�?
 
-wire[31:0] base_ram_data; //BaseRAM数据，低8位与CPLD串口控制器共享
+wire[31:0] base_ram_data; //BaseRAM数据，低8位与CPLD串口控制器共�?
 wire[19:0] base_ram_addr; //BaseRAM地址
-wire[3:0] base_ram_be_n;  //BaseRAM字节使能，低有效。如果不使用字节使能，请保持为0
-wire base_ram_ce_n;       //BaseRAM片选，低有效
-wire base_ram_oe_n;       //BaseRAM读使能，低有效
-wire base_ram_we_n;       //BaseRAM写使能，低有效
+wire[3:0] base_ram_be_n;  //BaseRAM字节使能，低有效。如果不使用字节使能，请保持�?0
+wire base_ram_ce_n;       //BaseRAM片�?�，低有�?
+wire base_ram_oe_n;       //BaseRAM读使能，低有�?
+wire base_ram_we_n;       //BaseRAM写使能，低有�?
 
 wire[31:0] ext_ram_data; //ExtRAM数据
 wire[19:0] ext_ram_addr; //ExtRAM地址
-wire[3:0] ext_ram_be_n;  //ExtRAM字节使能，低有效。如果不使用字节使能，请保持为0
-wire ext_ram_ce_n;       //ExtRAM片选，低有效
-wire ext_ram_oe_n;       //ExtRAM读使能，低有效
-wire ext_ram_we_n;       //ExtRAM写使能，低有效
+wire[3:0] ext_ram_be_n;  //ExtRAM字节使能，低有效。如果不使用字节使能，请保持�?0
+wire ext_ram_ce_n;       //ExtRAM片�?�，低有�?
+wire ext_ram_oe_n;       //ExtRAM读使能，低有�?
+wire ext_ram_we_n;       //ExtRAM写使能，低有�?
 
-wire [22:0]flash_a;      //Flash地址，a0仅在8bit模式有效，16bit模式无意义
+wire [22:0]flash_a;      //Flash地址，a0仅在8bit模式有效�?16bit模式无意�?
 wire [15:0]flash_d;      //Flash数据
 wire flash_rp_n;         //Flash复位信号，低有效
-wire flash_vpen;         //Flash写保护信号，低电平时不能擦除、烧写
-wire flash_ce_n;         //Flash片选信号，低有效
-wire flash_oe_n;         //Flash读使能信号，低有效
-wire flash_we_n;         //Flash写使能信号，低有效
-wire flash_byte_n;       //Flash 8bit模式选择，低有效。在使用flash的16位模式时请设为1
+wire flash_vpen;         //Flash写保护信号，低电平时不能擦除、烧�?
+wire flash_ce_n;         //Flash片�?�信号，低有�?
+wire flash_oe_n;         //Flash读使能信号，低有�?
+wire flash_we_n;         //Flash写使能信号，低有�?
+wire flash_byte_n;       //Flash 8bit模式选择，低有效。在使用flash�?16位模式时请设�?1
 
-//Windows需要注意路径分隔符的转义，例如"D:\\foo\\bar.bin"
-parameter BASE_RAM_INIT_FILE = "/tmp/main.bin"; //BaseRAM初始化文件，请修改为实际的绝对路径
-parameter EXT_RAM_INIT_FILE = "/tmp/eram.bin";    //ExtRAM初始化文件，请修改为实际的绝对路径
-parameter FLASH_INIT_FILE = "/tmp/kernel.elf";    //Flash初始化文件，请修改为实际的绝对路径
+//Windows�?要注意路径分隔符的转义，例如"D:\\foo\\bar.bin"
+parameter BASE_RAM_INIT_FILE = "/tmp/main.bin"; //BaseRAM初始化文件，请修改为实际的绝对路�?
+parameter EXT_RAM_INIT_FILE = "/tmp/eram.bin";    //ExtRAM初始化文件，请修改为实际的绝对路�?
+parameter RAM_INIT_FILE = "c:\\links\\rv64ui-p-add.bin";
+parameter FLASH_INIT_FILE = "/tmp/kernel.elf";    //Flash初始化文件，请修改为实际的绝对路�?
 
 assign rxd = 1'b1; //idle state
 
@@ -149,6 +150,107 @@ initial begin
     $stop;
 end
 
+// For 64-bit purposes. Hi-data at ext ram and lo-data at base ram.
+task load_to_sram(input string filename);
+    reg[63:0] tmp_array[0:1048575];
+    integer n_File_ID, n_Init_Size;
+    n_File_ID = $fopen(filename, "rb");
+    if(!n_File_ID)begin 
+        n_Init_Size = 0;
+        $display("Failed to open SRAM init file");
+    end else begin
+        n_Init_Size = $fread(tmp_array, n_File_ID);
+        n_Init_Size /= 8;
+        $fclose(n_File_ID);
+    end
+    $display("SRAM Init Size(words): %d",n_Init_Size);
+    for (integer i = 0; i < n_Init_Size; i++) begin
+
+        base1.mem_array0[i] = tmp_array[i][56+:8];
+        base1.mem_array1[i] = tmp_array[i][48+:8];
+        base2.mem_array0[i] = tmp_array[i][40+:8];
+        base2.mem_array1[i] = tmp_array[i][32+:8];
+        ext1.mem_array0[i] = tmp_array[i][24+:8];
+        ext1.mem_array1[i] = tmp_array[i][16+:8];
+        ext2.mem_array0[i] = tmp_array[i][8+:8];
+        ext2.mem_array1[i] = tmp_array[i][0+:8];
+    end
+endtask
+
+string test_cases[0:49]={"rv64ui-p-add.bin",
+"rv64ui-p-addi.bin",
+"rv64ui-p-addiw.bin",
+"rv64ui-p-addw.bin",
+"rv64ui-p-and.bin",
+"rv64ui-p-andi.bin",
+"rv64ui-p-auipc.bin",
+"rv64ui-p-beq.bin",
+"rv64ui-p-bge.bin",
+"rv64ui-p-bgeu.bin",
+"rv64ui-p-blt.bin",
+"rv64ui-p-bltu.bin",
+"rv64ui-p-bne.bin",
+"rv64ui-p-jal.bin",
+"rv64ui-p-jalr.bin",
+"rv64ui-p-lb.bin",
+"rv64ui-p-lbu.bin",
+"rv64ui-p-ld.bin",
+"rv64ui-p-lh.bin",
+"rv64ui-p-lhu.bin",
+"rv64ui-p-lui.bin",
+"rv64ui-p-lw.bin",
+"rv64ui-p-lwu.bin",
+"rv64ui-p-or.bin",
+"rv64ui-p-ori.bin",
+"rv64ui-p-sb.bin",
+"rv64ui-p-sd.bin",
+"rv64ui-p-sh.bin",
+"rv64ui-p-simple.bin",
+"rv64ui-p-sll.bin",
+"rv64ui-p-slli.bin",
+"rv64ui-p-slliw.bin",
+"rv64ui-p-sllw.bin",
+"rv64ui-p-slt.bin",
+"rv64ui-p-slti.bin",
+"rv64ui-p-sltiu.bin",
+"rv64ui-p-sltu.bin",
+"rv64ui-p-sra.bin",
+"rv64ui-p-srai.bin",
+"rv64ui-p-sraiw.bin",
+"rv64ui-p-sraw.bin",
+"rv64ui-p-srl.bin",
+"rv64ui-p-srli.bin",
+"rv64ui-p-srliw.bin",
+"rv64ui-p-srlw.bin",
+"rv64ui-p-sub.bin",
+"rv64ui-p-subw.bin",
+"rv64ui-p-sw.bin",
+"rv64ui-p-xor.bin",
+"rv64ui-p-xori.bin"};
+// Let's start.
+integer testcase_id;
+initial begin
+    for(testcase_id=0;testcase_id<50;testcase_id=testcase_id+1) begin
+        $display("Running testcase #%d: %s", testcase_id, test_cases[testcase_id]);
+        reset_btn=1;
+        $display("Loading program into memory");
+        load_to_sram({"c:\\links\\", test_cases[testcase_id]});
+        #100 reset_btn=0;
+        @(posedge (leds[0] || leds[1])) begin
+            if(leds[0])
+                $display("Test case %s pass!", test_cases[testcase_id]);
+            else
+                $display("Test case %s failed!", test_cases[testcase_id]);
+        end
+        //$stop;
+    end
+    $stop;
+end
+always @(posedge leds[0]) begin
+    //$display("Test case pass!");
+    //$stop;
+end
+/*
 initial begin 
     reg [31:0] tmp_array[0:1048575];
     integer n_File_ID, n_Init_Size;
@@ -190,4 +292,5 @@ initial begin
         ext2.mem_array1[i] = tmp_array[i][0+:8];
     end
 end
+*/
 endmodule

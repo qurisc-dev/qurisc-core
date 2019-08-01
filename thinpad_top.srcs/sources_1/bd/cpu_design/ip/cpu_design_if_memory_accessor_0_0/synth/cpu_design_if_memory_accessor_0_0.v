@@ -69,19 +69,21 @@ module cpu_design_if_memory_accessor_0_0 (
   in_ready,
   in_valid,
   out_valid,
-  out_ready
+  out_ready,
+  axi_master,
+  axi_slave
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 input wire flush;
 input wire [63 : 0] PC_physical;
 input wire [63 : 0] PC_virtual;
-input wire tlbmiss;
+input wire [1 : 0] tlbmiss;
 input wire [1 : 0] memoryattr;
 output wire [31 : 0] outInstruction;
 output wire [63 : 0] outPC;
@@ -90,6 +92,8 @@ output wire in_ready;
 input wire in_valid;
 output wire out_valid;
 input wire out_ready;
+output wire [231 : 0] axi_master;
+input wire [73 : 0] axi_slave;
 
   if_memory_accessor inst (
     .clk(clk),
@@ -105,6 +109,8 @@ input wire out_ready;
     .in_ready(in_ready),
     .in_valid(in_valid),
     .out_valid(out_valid),
-    .out_ready(out_ready)
+    .out_ready(out_ready),
+    .axi_master(axi_master),
+    .axi_slave(axi_slave)
   );
 endmodule

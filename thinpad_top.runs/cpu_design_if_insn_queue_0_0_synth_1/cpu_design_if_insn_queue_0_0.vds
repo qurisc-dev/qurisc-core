@@ -2,19 +2,24 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Jul 22 00:26:57 2019
-# Process ID: 13444
+# Start of session at: Thu Aug  1 20:00:10 2019
+# Process ID: 128
 # Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1
 # Command line: vivado.exe -log cpu_design_if_insn_queue_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_design_if_insn_queue_0_0.tcl
 # Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1/cpu_design_if_insn_queue_0_0.vds
 # Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source cpu_design_if_insn_queue_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 354.848 ; gain = 67.211
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 354.270 ; gain = 55.145
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 378.113 ; gain = 23.844
 Command: synth_design -top cpu_design_if_insn_queue_0_0 -part xc7a100tfgg676-2L -mode out_of_context
 Starting synth_design
 WARNING: [IP_Flow 19-3571] IP 'cpu_design_if_insn_queue_0_0' is restricted:
@@ -23,17 +28,15 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 20536 
+INFO: Helper process launched with PID 20036 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 819.445 ; gain = 177.563
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 819.770 ; gain = 178.879
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_if_insn_queue_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_if_insn_queue_0_0/synth/cpu_design_if_insn_queue_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'if_insn_queue' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:421]
-WARNING: [Synth 8-6014] Unused sequential element decoding_pc_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:488]
-WARNING: [Synth 8-6014] Unused sequential element decoding_exception_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:489]
-WARNING: [Synth 8-3848] Net out_bpjump in module/entity if_insn_queue does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:430]
-WARNING: [Synth 8-3848] Net out_bptarget in module/entity if_insn_queue does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:431]
-INFO: [Synth 8-6155] done synthesizing module 'if_insn_queue' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:421]
+INFO: [Synth 8-6157] synthesizing module 'if_insn_queue' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:559]
+WARNING: [Synth 8-3848] Net out_bpjump in module/entity if_insn_queue does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:568]
+WARNING: [Synth 8-3848] Net out_bptarget in module/entity if_insn_queue does not have driver. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:569]
+INFO: [Synth 8-6155] done synthesizing module 'if_insn_queue' (1#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:559]
 INFO: [Synth 8-6155] done synthesizing module 'cpu_design_if_insn_queue_0_0' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_if_insn_queue_0_0/synth/cpu_design_if_insn_queue_0_0.v:58]
 WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bpjump
 WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[63]
@@ -100,44 +103,8 @@ WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[3
 WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[2]
 WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[1]
 WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[0]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[63]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[62]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[61]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[60]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[59]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[58]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[57]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[56]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[55]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[54]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[53]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[52]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[51]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[50]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[49]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[48]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[47]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[46]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[45]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[44]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[43]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[42]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[41]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[40]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[39]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[38]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[37]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[36]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[35]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[34]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[33]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[32]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[31]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[30]
-WARNING: [Synth 8-3331] design if_insn_queue has unconnected port inPC[29]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 885.984 ; gain = 244.102
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 886.789 ; gain = 245.898
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -150,10 +117,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 885.984 ; gain = 244.102
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 886.789 ; gain = 245.898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 885.984 ; gain = 244.102
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 886.789 ; gain = 245.898
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -161,32 +128,32 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 941.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1017.707 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.245 . Memory (MB): peak = 942.563 ; gain = 1.004
+Constraint Validation Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1020.746 ; gain = 3.039
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 942.563 ; gain = 300.680
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:59 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 942.563 ; gain = 300.680
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:59 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 942.563 ; gain = 300.680
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:59 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:473]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/instruction_fetch_components.v:614]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 942.563 ; gain = 300.680
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -199,16 +166,21 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
+	              230 Bit    Registers := 16    
+	               64 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
-+---RAMs : 
-	               3K Bit         RAMs := 1     
 +---Muxes : 
+	   2 Input    230 Bit        Muxes := 48    
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 49    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -219,16 +191,21 @@ Hierarchical RTL Component report
 Module if_insn_queue 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
+	              230 Bit    Registers := 16    
+	               64 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
-+---RAMs : 
-	               3K Bit         RAMs := 1     
 +---Muxes : 
+	   2 Input    230 Bit        Muxes := 48    
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 49    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -245,23 +222,44 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bpjump
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[63]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[62]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[61]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[60]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[59]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[58]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[57]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[56]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[55]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[54]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[53]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[52]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[51]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[50]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[49]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[48]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[47]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[46]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[45]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[44]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[43]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[42]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[41]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[40]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[39]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[38]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[37]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[36]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[35]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[34]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[33]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[32]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[31]
+WARNING: [Synth 8-3331] design if_insn_queue has unconnected port out_bptarget[30]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 942.563 ; gain = 300.680
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Distributed RAM: Preliminary Mapping  Report (see note below)
-+-----------------------------+---------------------+-----------+----------------------+---------------+
-|Module Name                  | RTL Object          | Inference | Size (Depth x Width) | Primitives    | 
-+-----------------------------+---------------------+-----------+----------------------+---------------+
-|cpu_design_if_insn_queue_0_0 | inst/insn_queue_reg | Implied   | 16 x 222             | RAM32M x 37   | 
-+-----------------------------+---------------------+-----------+----------------------+---------------+
-
-Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:54 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -273,27 +271,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 975.668 ; gain = 333.785
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:51 ; elapsed = 00:02:38 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 975.891 ; gain = 334.008
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Distributed RAM: Final Mapping  Report
-+-----------------------------+---------------------+-----------+----------------------+---------------+
-|Module Name                  | RTL Object          | Inference | Size (Depth x Width) | Primitives    | 
-+-----------------------------+---------------------+-----------+----------------------+---------------+
-|cpu_design_if_insn_queue_0_0 | inst/insn_queue_reg | Implied   | 16 x 222             | RAM32M x 37   | 
-+-----------------------------+---------------------+-----------+----------------------+---------------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Timing Optimization : Time (s): cpu = 00:01:53 ; elapsed = 00:02:41 . Memory (MB): peak = 1020.746 ; gain = 379.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -304,12 +288,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'inst/tail_reg_rep[2]' (FDRE) to 'inst/tail_reg[2]'
-INFO: [Synth 8-3886] merging instance 'inst/tail_reg_rep[1]' (FDRE) to 'inst/tail_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/tail_reg_rep[0]' (FDRE) to 'inst/tail_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/tail_reg_rep[3]' (FDRE) to 'inst/tail_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:01:02 . Memory (MB): peak = 995.742 ; gain = 353.859
+Finished Technology Mapping : Time (s): cpu = 00:01:59 ; elapsed = 00:02:48 . Memory (MB): peak = 1021.336 ; gain = 380.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -333,7 +313,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished IO Insertion : Time (s): cpu = 00:02:08 ; elapsed = 00:02:58 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -346,7 +326,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:08 ; elapsed = 00:02:58 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -358,25 +338,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:08 ; elapsed = 00:02:59 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:08 ; elapsed = 00:02:59 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:08 ; elapsed = 00:02:59 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:09 ; elapsed = 00:02:59 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -389,54 +369,55 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |LUT1   |     3|
-|2     |LUT2   |     3|
-|3     |LUT3   |     3|
-|4     |LUT4   |     4|
-|5     |LUT5   |     1|
-|6     |LUT6   |     5|
-|7     |RAM32M |    37|
-|8     |FDRE   |    45|
-+------+-------+------+
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |    10|
+|2     |LUT2  |   241|
+|3     |LUT3  |     2|
+|4     |LUT4  |     5|
+|5     |LUT5  |     1|
+|6     |LUT6  |   992|
+|7     |MUXF7 |   460|
+|8     |MUXF8 |   230|
+|9     |FDRE  |  3811|
++------+------+------+
 
 Report Instance Areas: 
 +------+---------+--------------+------+
 |      |Instance |Module        |Cells |
 +------+---------+--------------+------+
-|1     |top      |              |   101|
-|2     |  inst   |if_insn_queue |   101|
+|1     |top      |              |  5752|
+|2     |  inst   |if_insn_queue |  5752|
 +------+---------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:09 ; elapsed = 00:02:59 . Memory (MB): peak = 1026.328 ; gain = 385.438
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 137 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:01:03 . Memory (MB): peak = 1000.535 ; gain = 302.074
-Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:09 . Memory (MB): peak = 1000.535 ; gain = 358.652
+Synthesis finished with 0 errors, 0 critical warnings and 65 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:41 ; elapsed = 00:02:40 . Memory (MB): peak = 1026.328 ; gain = 251.480
+Synthesis Optimization Complete : Time (s): cpu = 00:02:09 ; elapsed = 00:02:59 . Memory (MB): peak = 1026.328 ; gain = 385.438
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 690 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'cpu_design_if_insn_queue_0_0' is not ideal for floorplanning, since the cellview 'if_insn_queue' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1019.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1039.457 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 37 instances were transformed.
-  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 37 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-25 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+25 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:30 . Memory (MB): peak = 1019.598 ; gain = 640.906
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1019.598 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:32 ; elapsed = 00:03:39 . Memory (MB): peak = 1039.457 ; gain = 661.344
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1039.457 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1/cpu_design_if_insn_queue_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1019.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1039.457 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1/cpu_design_if_insn_queue_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_design_if_insn_queue_0_0_utilization_synth.rpt -pb cpu_design_if_insn_queue_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 22 00:29:11 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 20:04:36 2019...

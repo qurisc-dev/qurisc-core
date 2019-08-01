@@ -11,7 +11,7 @@ module pc_counter(
 );
     always @(posedge clk) begin
         if(rst) begin
-            PC<=64'h0000000040000000;
+            PC<=64'h0000000080000000;
         end else begin
             if(flush) begin
                 PC<=new_pc;
@@ -36,6 +36,8 @@ module memory_attribute_table(
             memoryattr=1; // ram
         end else if(physaddr>=64'h0000000020000000 && physaddr<64'h0000000030000000)begin
             memoryattr=2; // io
+        end else if(physaddr >= 64'h0000000040000000 && physaddr<64'h0000000050000000)begin
+            memoryattr=2; // io
         end else begin
             memoryattr=0; // none
         end
@@ -49,56 +51,124 @@ module if_tlb_fetcher(
     input wire[63:0] PC,
     output reg[63:0] outPC_physical,
     output reg[63:0] outPC_virtual,
-    output wire[1:0] memoryattr,
-    output reg out_tlbmiss,
+    output reg[1:0] memoryattr,
+    output reg[1:0] out_tlbmiss, // 0 for ok, 1 for miss, 2 for unexecutable.
     output reg in_ready,
     output reg out_valid,
     input wire out_ready
 );
     
-    memory_attribute_table mattr(.physaddr(outPC_physical), .memoryattr(memoryattr));
+    wire in_valid;
+	assign in_valid=!flush; // PC always gives out a value.
+	// Although according to the behavioral model, flush to PC causes in_valid to be 0,
+	// we tolerate this here since PC never flushes on its own. PC flush means TLB flush.
 
     reg[3:0] state;
-    reg tlb_hit;
-    reg[63:0] translating_address;
+	reg stored_cancelled;
+	reg[63:0] stored_PC;
+	
+	reg[63:0] calculated_PC_physical[0:1];
+	reg[63:0] calculated_PC_virtual[0:1];
+	wire[1:0] mattr_out;
+	reg[1:0] calculated_memoryattr[0:1];
+	reg calculation_done;
+	reg[1:0] calculated_tlbmiss[0:1];
+	
+	reg calculation_enabled;
+	
+	always @* begin
+		calculation_enabled=(~flush) && in_ready;
+	end
+	memory_attribute_table mattr(.physaddr(calculated_PC_physical[0]), .memoryattr(mattr_out));
+	always @* begin
+	   calculated_memoryattr[0]=mattr_out;
+	end
+	always @* begin
+		calculated_PC_physical[0]=stored_PC;
+		calculated_PC_virtual[0]=stored_PC;
+		calculated_tlbmiss[0]=0;
+		calculation_done=1; // Can always be finished in 1 cycle.
+	end
+	
     always @* begin
-        tlb_hit=1;
-        out_valid=0;
-        in_ready=0;
-        outPC_virtual=translating_address;
-        outPC_physical=translating_address;
-        out_tlbmiss=0;
+		outPC_physical=calculated_PC_physical[0];
+		outPC_virtual=calculated_PC_virtual[0];
+		memoryattr=calculated_memoryattr[0];
+		out_tlbmiss=calculated_tlbmiss[0];
+		in_ready=0; // Can be used to indicate whether to start a new calculation.
+		out_valid=0;
         case(state)
             0: begin
-                out_valid=0;
-                in_ready=1;
+				in_ready=1;
+				out_valid=0;
             end
             1: begin
-                out_valid=tlb_hit;
-                in_ready=tlb_hit;
+				in_ready=calculation_done && (out_ready || (stored_cancelled || flush));
+				out_valid=calculation_done && (~stored_cancelled) && (~flush);
+				
             end
+			2: begin
+				in_ready=out_ready || flush;
+				out_valid=1 && (~stored_cancelled) && (~flush);
+				outPC_physical=calculated_PC_physical[1];
+				outPC_virtual=calculated_PC_virtual[1];
+				memoryattr=calculated_memoryattr[1];
+				out_tlbmiss=calculated_tlbmiss[1];
+			end
         endcase
     end
     always @(posedge clk) begin
         if(rst) begin
             state<=0;
-        end else if(flush) begin
-            state<=0;
+			stored_cancelled<=0;
         end else begin
             case(state)
-                0: begin
-                    translating_address<=PC;
-                    state<=1;
-                end
-                1: begin
-                    if(tlb_hit && out_ready) begin
-                        translating_address<=PC;
-                        state<=1;
-                    end else begin
-                        // todo: miss operations
-                    end
-                end
-            endcase
+				0: begin
+					if(!flush) begin // We ignore a flushed calculation.
+						// Start calculation here.
+						stored_cancelled<=0;
+						stored_PC<=PC;
+						state<=1;
+					end
+				end
+				1: begin
+					// In any case, we push the calculation forward.
+					calculated_PC_physical[1]<=calculated_PC_physical[0];
+					calculated_PC_virtual[1]<=calculated_PC_virtual[0];
+					calculated_memoryattr[1]<=calculated_memoryattr[0];
+					calculated_tlbmiss[1]<=calculated_tlbmiss[0];
+					if(calculation_done) begin // At the moment we end calculation.
+						if(in_ready) begin // If there is someone to take the result (i.e. next calculation should be able to come.)
+							if(in_valid) begin // If someone wants another calculation.
+								// Then let's start.
+								state<=1;
+								stored_cancelled<=0;
+								stored_PC<=PC;
+							end else begin // Goto the idle state.
+								state<=0;
+								stored_cancelled<=0;
+							end
+						end else begin // We move to stored state.
+							state<=2;
+						end
+					end
+					else stored_cancelled<=stored_cancelled || flush;
+					
+				end
+				2: begin
+					if(in_ready) begin // If there is someone to take the result (i.e. next calculation should be able to come.)
+						if(in_valid) begin // If someone wants another calculation.
+							// Then let's start.
+							state<=1;
+							stored_cancelled<=0;
+							stored_PC<=PC;
+						end else begin // Goto the idle state.
+							state<=0;
+							stored_cancelled<=0;
+						end
+					end
+				end
+			endcase
         end
     end
 endmodule
@@ -109,7 +179,7 @@ module if_memory_accessor(
     input wire flush,
     input wire[63:0] PC_physical,
     input wire[63:0] PC_virtual,
-    input wire tlbmiss,
+    input wire[1:0] tlbmiss,
     input wire[1:0] memoryattr,
     output reg[31:0] outInstruction,
     output reg[63:0] outPC,
@@ -117,88 +187,152 @@ module if_memory_accessor(
     output reg in_ready,
     input wire in_valid,
     output reg out_valid,
-    input wire out_ready
+    input wire out_ready,
+	
+	// For accessing the AXI bus.
+	output `AXIMasterReg axi_master,
+	input `AXISlaveWire axi_slave
 );
     reg[3:0] state;
-    reg ram_read;
-    wire[63:0] ram_dout;
-    reg[18:0] ram_read_addr;
-    reg ram_write;
-    reg[18:0] ram_write_addr;
-    reg[7:0] ram_write_byte_enable;
-    reg[63:0] ram_din;
-    reg[63:0] stored_pc_physical;
-    reg stored_tlbmiss;
-    reg stored_memoryattr;
-    always @* begin
-        in_ready=0;
-        out_valid=0;
-        ram_read_addr=PC_physical[21:3];
-        ram_read=0;
-        outInstruction=stored_pc_physical[2]?ram_dout[63:32]:ram_dout[31:0];
-        outException=0;
-        if(stored_tlbmiss) outException=1; // TLB Miss.
-        else if(stored_memoryattr!=0) outException=2; // Not executable.
-        else if(stored_pc_physical[1:0]!=0) outException=4; // Unaligned address.
+	
+	reg[63:0] stored_PC_physical;
+	reg[63:0] stored_PC_virtual;
+	reg[1:0] stored_tlbmiss;
+	reg[1:0] stored_memoryattr;
+	
+	reg[31:0] calculated_outInstruction[0:1];
+	reg[63:0] calculated_outPC[0:1];
+	reg[7:0] calculated_outException[0:1];
+	reg calculation_done;
+	reg stored_cancelled;
+	
+	reg start_burst;
+	
+	always @* begin
+	    axi_master=0;
+		`AXIMaster$ARAddr(axi_master)=stored_PC_physical & ({{61{1'b1}}, 3'b0}); // Aligned case.
+		`AXIMaster$ARLen(axi_master)=0;
+		`AXIMaster$ARSize(axi_master)=6; // Burst 64 bytes.
+		`AXIMaster$ARBurst(axi_master)=0;
+		
+		`AXIMaster$RReady(axi_master)=1;
+		
+		calculated_outException[0]=0;
+		if(stored_tlbmiss) calculated_outException[0]=1;
+		else if(stored_memoryattr!=1) calculated_outException[0]=2;
+		else if(stored_tlbmiss==1) calculated_outException[0]=3;
+		else if(stored_tlbmiss==2) calculated_outException[0]=4;
+		
+		`AXIMaster$ARValid(axi_master)=start_burst && (calculated_outException[0]==0);
+		
+		calculated_outPC[0]=stored_PC_virtual;
+		calculated_outInstruction[0]=stored_PC_virtual[2]?`AXISlave$RData$Slice(axi_slave,63,32):`AXISlave$RData$Slice(axi_slave,31,0);
+		calculation_done=`AXISlave$RValid(axi_slave) || (calculated_outException[0]!=0); // After receiving a dword or some exception.
+	end
+	
+	always @(posedge clk) begin
+		if(rst) begin
+			start_burst<=0;
+		end else begin
+			if(in_ready && in_valid && ~flush) begin
+				// Some calculation is starting. Set ARValid=1 for a tick.
+				start_burst<=1;
+			end else if(start_burst && (calculated_outException[0]!=0 || `AXISlave$ARReady(axi_slave))) begin
+				// If exception detected or the read address accepted.
+				start_burst<=0; // anyway, stop the valid sign.
+			end
+		end
+	end
+	
+	always @* begin
+		outInstruction=calculated_outInstruction[0];
+		outPC=calculated_outPC[0];
+		outException=calculated_outException[0];
+		in_ready=1; // Can be used to indicate whether to start a new calculation.
+		out_valid=0;
         case(state)
             0: begin
-                in_ready=1;
-                out_valid=0;
-                ram_read=1;
+				in_ready=1;
+				out_valid=0;
             end
             1: begin
-                in_ready=out_ready;
-                out_valid=1;
-                ram_read=out_ready && in_valid;
-                
+				in_ready=calculation_done && (out_ready || (stored_cancelled || flush));
+				out_valid=calculation_done && (~stored_cancelled) && (~flush);
+				
             end
-
+			2: begin
+				in_ready=out_ready || flush;
+				out_valid=1 && (~stored_cancelled) && (~flush);
+				outInstruction=calculated_outInstruction[1];
+				outPC=calculated_outPC[1];
+				outException=calculated_outException[1];
+			end
         endcase
     end
-
-    always @(posedge clk) begin
+	always @(posedge clk) begin
         if(rst) begin
             state<=0;
+			stored_cancelled<=0;
         end else begin
             case(state)
-                0: begin
-                    if(in_valid) begin
-                        stored_pc_physical<=PC_physical;
-                        stored_tlbmiss<=tlbmiss;
-                        stored_memoryattr<=memoryattr;
-                        outPC<=PC_virtual;
-                        state<=1;
-                    end
-                end
-                1: begin
-                    if(out_ready) begin
-                        if(in_valid) begin
-                            stored_pc_physical<=PC_physical;
+				0: begin
+					if(!flush) begin // We ignore a flushed calculation.
+						// Start calculation here.
+						if(in_valid) begin
+                            stored_cancelled<=0;
+                            stored_PC_physical<=PC_physical;
+                            stored_PC_virtual<=PC_virtual;
                             stored_tlbmiss<=tlbmiss;
                             stored_memoryattr<=memoryattr;
                             state<=1;
-                        end else begin
-                            state<=0;
-                        end
-                    end else begin
-                        // Do nothing here. Assume bram preserves its state. This is also required for L1.
-                    end
-                end
-            endcase
+					   end
+					end
+				end
+				1: begin
+					// In any case, we push the calculation forward.
+					calculated_outInstruction[1]<=calculated_outInstruction[0];
+					calculated_outPC[1]<=calculated_outPC[0];
+					calculated_outException[1]<=calculated_outException[0];
+					if(calculation_done) begin // At the moment we end calculation.
+						if(in_ready) begin // If there is someone to take the result (i.e. next calculation should be able to come.)
+							if(in_valid) begin // If someone wants another calculation.
+								// Then let's start.
+								state<=1;
+								stored_cancelled<=0;
+								stored_PC_physical<=PC_physical;
+								stored_PC_virtual<=PC_virtual;
+								stored_tlbmiss<=tlbmiss;
+								stored_memoryattr<=memoryattr;
+							end else begin // Goto the idle state.
+								state<=0;
+								stored_cancelled<=0;
+							end
+						end else begin // We move to stored state.
+							state<=2;
+						end
+					end
+					else stored_cancelled<=stored_cancelled || flush;
+					
+				end
+				2: begin
+					if(in_ready) begin // If there is someone to take the result (i.e. next calculation should be able to come.)
+						if(in_valid) begin // If someone wants another calculation.
+							// Then let's start.
+							state<=1;
+							stored_cancelled<=0;
+							stored_PC_physical<=PC_physical;
+							stored_PC_virtual<=PC_virtual;
+							stored_tlbmiss<=tlbmiss;
+							stored_memoryattr<=memoryattr;
+						end else begin // Goto the idle state.
+							state<=0;
+							stored_cancelled<=0;
+						end
+					end
+				end
+			endcase
         end
     end
-
-    simulated_ram bram(
-    clk,
-    rst,
-    ram_read,
-    ram_dout,
-    ram_read_addr,
-    ram_write,
-    ram_write_addr,
-    ram_write_byte_enable,
-    ram_din
-    );
 endmodule
 
 module branch_predictor(
@@ -206,6 +340,7 @@ module branch_predictor(
     input wire rst,
     output wire bp,
     input wire bp_commit,
+    input wire bp_isbranch,
     input wire bp_commit_result
     
 );
@@ -216,7 +351,7 @@ module branch_predictor(
             cntr<=2'b10;
         end
         else begin
-            if(bp_commit) begin
+            if(bp_commit && bp_isbranch) begin
                 if(bp_commit_result) begin
                     case(cntr)
                         0: cntr<=1;
@@ -245,7 +380,7 @@ module jump_predictor(
     input wire is_jalr,
     input wire[4:0] val_rs1,
     input wire[4:0] val_rd,
-
+    input wire[63:0] jal_result,
     input wire[63:0] ras_push_item,
     output reg[63:0] ras_next_address,
     output reg[4:0] forward_index,
@@ -286,7 +421,7 @@ module jump_predictor(
     always @* begin
         shadow_ras_pop=0;
         shadow_ras_push=0;
-        if(do_jp) begin
+        if(is_jal || is_jalr) begin
             if(is_jal && (rd_link)) begin
                 shadow_ras_push=1;
             end
@@ -343,6 +478,9 @@ module jump_predictor(
     reg[4:0] shadow_ras_top;
     reg[5:0] shadow_ras_counter;
     always @* begin
+        if(is_jal) begin
+            ras_next_address=jal_result;
+        end else 
         if(ras_counter==0 || !rs1_link) begin
             ras_next_address=forward_value;
         end else begin
@@ -433,20 +571,19 @@ module if_insn_queue(
     input wire out_ready,
     output reg[31:0] decoding_instruction,
     input `DecodeResultWire decode_result,
-    output `DecodeResultReg next_insn
+    output `DecodeResultReg next_insn,
+    output reg[63:0] decoding_pc,
+    output reg[7:0] decoding_exception
 );
     `DecodeResultReg insn_queue[0:15];
     reg[3:0] head;
     reg[3:0] tail;
     reg[3:0] size;
-   
-    reg[63:0] decoding_pc;
-    reg[7:0] decoding_exception;
     reg decoding_valid;
     reg q_push;
     reg q_pop;
     always @* begin
-        in_ready=size<=14;
+        in_ready=size<=10;
         out_valid=size!=0;
         next_insn=insn_queue[tail];
     end
@@ -463,12 +600,16 @@ module if_insn_queue(
         end
             
     end
+    integer i;
     always @(posedge clk) begin
         if(rst || rst_bpfailed) begin
             head<=0;
             tail<=0;
             size<=0;
             decoding_valid<=0;
+            for(i=0;i<16;i=i+1) begin
+                insn_queue[i]=0;
+            end
         end else begin
             if(q_push && !q_pop) begin
                 size<=size+1;
@@ -484,12 +625,14 @@ module if_insn_queue(
             end
             if(in_valid && in_ready) begin
                 decoding_valid<=1;
-                decoding_instruction<=inInstruction;
+                decoding_instruction<=inException?0:inInstruction;
                 decoding_pc<=inPC;
                 decoding_exception<=inException;
             end else begin
                 decoding_valid<=0;
-                
+                decoding_instruction<=0;
+                decoding_pc<=0;
+                decoding_exception<=0;
             end
             
         end

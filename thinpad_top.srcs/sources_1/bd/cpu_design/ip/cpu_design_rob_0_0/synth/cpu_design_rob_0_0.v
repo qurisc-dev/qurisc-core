@@ -86,17 +86,24 @@ module cpu_design_rob_0_0 (
   can_commit_storequeue,
   commit_bpfailed,
   rob_next_item,
-  rob_not_full
+  rob_not_full,
+  commit_isbranch,
+  commit_branchret,
+  commit_isjal,
+  commit_isjalr,
+  commit_val_rs1,
+  commit_val_rd,
+  commit_ras_commit_push_item
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
-input wire [148 : 0] cdb;
-input wire [221 : 0] din;
+input wire [149 : 0] cdb;
+input wire [229 : 0] din;
 input wire [15 : 0] new_dependency_mask;
 input wire push;
 output wire rob_full;
@@ -110,7 +117,7 @@ output wire search_ready_1;
 output wire start_reissue;
 output wire reissue;
 input wire reissue_next;
-output wire [221 : 0] reissue_args;
+output wire [229 : 0] reissue_args;
 output wire do_commit;
 output wire [5 : 0] commit_regwrite_index;
 output wire [63 : 0] commit_regwrite_value;
@@ -124,6 +131,13 @@ input wire can_commit_storequeue;
 output wire commit_bpfailed;
 output wire [3 : 0] rob_next_item;
 output wire rob_not_full;
+output wire commit_isbranch;
+output wire commit_branchret;
+output wire commit_isjal;
+output wire commit_isjalr;
+output wire [4 : 0] commit_val_rs1;
+output wire [4 : 0] commit_val_rd;
+output wire [63 : 0] commit_ras_commit_push_item;
 
   rob inst (
     .clk(clk),
@@ -156,6 +170,13 @@ output wire rob_not_full;
     .can_commit_storequeue(can_commit_storequeue),
     .commit_bpfailed(commit_bpfailed),
     .rob_next_item(rob_next_item),
-    .rob_not_full(rob_not_full)
+    .rob_not_full(rob_not_full),
+    .commit_isbranch(commit_isbranch),
+    .commit_branchret(commit_branchret),
+    .commit_isjal(commit_isjal),
+    .commit_isjalr(commit_isjalr),
+    .commit_val_rs1(commit_val_rs1),
+    .commit_val_rd(commit_val_rd),
+    .commit_ras_commit_push_item(commit_ras_commit_push_item)
   );
 endmodule

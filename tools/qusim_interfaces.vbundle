@@ -13,6 +13,7 @@ interface DecodeResult{
     var IsLoad;
     var IsStore;
     var IsWordOp;
+    var IFException[8];
 }
 interface CDB{
     var Valid;
@@ -21,6 +22,7 @@ interface CDB{
     var Value[64]; // For branch: result. For jalr: CurrentPC+4.
     var Exception[8];
     var FPUException[8];
+    var BPSuccess;
 }
 
 
@@ -32,6 +34,8 @@ interface FunctionUnitInput{
     var CurrentPC[64];
     var Immediate[32];
     var CalcType[8];
+    var ROBIdx[4];
+    var BPResult[64];
 }
 
 interface FunctionUnitOutput{
@@ -40,6 +44,7 @@ interface FunctionUnitOutput{
     var NewPC[64];
     var Exception[8];
     var FPUException[8];
+    var BPSuccess;
 }
 
 interface ROBLine{
@@ -51,6 +56,7 @@ interface ROBLine{
     var ValueReady;
     var ExceptionType[8];
     var NeedReissue;
+    var BPSuccess;
 }
     
 

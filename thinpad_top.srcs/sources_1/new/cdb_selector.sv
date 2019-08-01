@@ -45,6 +45,7 @@ module priority_arbiter #(parameter SIZE_LOG2=5)(
             end
             mask[j]=~has_responded;
         end
+        mask=~mask;
     end else begin
         responses=0;
         mask={((1<<SIZE_LOG2)){1'b1}};
@@ -96,7 +97,7 @@ module roundrobin_arbiter #(parameter SIZE_LOG2=5)(
     wire[(1<<SIZE_LOG2)-1:0] original_mask;
     wire[(1<<SIZE_LOG2)-1:0] masked_mask;
     reg[(1<<SIZE_LOG2)-1:0] mask;
-    assign masked_requests=requests|mask;
+    assign masked_requests=requests&mask;
     priority_arbiter#(.SIZE_LOG2(SIZE_LOG2)) original_arbiter(requests, 1'b1, original_responses, original_mask);
     priority_arbiter#(.SIZE_LOG2(SIZE_LOG2)) masked_arbiter(masked_requests, 1'b1, masked_responses, masked_mask);
     assign responses=(|masked_responses)?masked_responses:original_responses;
@@ -109,7 +110,7 @@ module roundrobin_arbiter #(parameter SIZE_LOG2=5)(
                     mask<=masked_mask; // mask some bits.
                 end else
                 begin
-                    mask<={((1<<SIZE_LOG2)){1'b1}}; // unmask everything.
+                    mask<=original_mask; // unmask everything.
                 end
             end else
             begin

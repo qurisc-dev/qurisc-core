@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Jul 22 00:26:35 2019
+// Date        : Thu Aug  1 19:58:32 2019
 // Host        : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ cpu_design_pc_counter_0_0_sim_netlist.v
@@ -22,8 +22,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     flush,
     new_pc,
     out_ready);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN cpu_design_clk_0, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input rst;
   output [63:0]PC;
   input flush;
   input [63:0]new_pc;
@@ -893,18 +893,18 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pc_counter
         .D(\PC_reg[4]_i_1_n_6 ),
         .Q(PC[2]),
         .R(rst));
-  FDSE \PC_reg[30] 
+  FDRE \PC_reg[30] 
        (.C(clk),
         .CE(\PC[63]_i_1_n_0 ),
         .D(\PC_reg[32]_i_1_n_6 ),
         .Q(PC[30]),
-        .S(rst));
-  FDRE \PC_reg[31] 
+        .R(rst));
+  FDSE \PC_reg[31] 
        (.C(clk),
         .CE(\PC[63]_i_1_n_0 ),
         .D(\PC_reg[32]_i_1_n_5 ),
         .Q(PC[31]),
-        .R(rst));
+        .S(rst));
   FDRE \PC_reg[32] 
        (.C(clk),
         .CE(\PC[63]_i_1_n_0 ),

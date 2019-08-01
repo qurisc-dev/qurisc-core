@@ -37,6 +37,7 @@ module decode_bundle(
     input wire decoded_flags_load,
     input wire decoded_flags_store,
     input wire decoded_flags_wordop,
+    input wire[7:0] decoded_if_exception,
     output `DecodeResultReg decoded);
     always @* begin
         `DecodeResult$PC(decoded)=pc;
@@ -44,6 +45,7 @@ module decode_bundle(
         `DecodeResult$FUType(decoded)=decoded_fu_type;
         `DecodeResult$Rs(decoded)=decoded_rs;
         `DecodeResult$Rt(decoded)=decoded_rt;
+        `DecodeResult$Target(decoded)=decoded_rd;
         `DecodeResult$Immediate(decoded)=decoded_immediate[31:0];
         `DecodeResult$Valid(decoded)=decoded_flags_valid;
         `DecodeResult$PredictedResult(decoded)=bp_result;
@@ -52,12 +54,14 @@ module decode_bundle(
         `DecodeResult$IsLoad(decoded)=decoded_flags_load;
         `DecodeResult$IsStore(decoded)=decoded_flags_store;
         `DecodeResult$IsWordOp(decoded)=decoded_flags_wordop;
+        `DecodeResult$IFException(decoded)=decoded_if_exception;
     end
 endmodule
     
 module decoder(
-    input wire[31:0] inst,
+    input wire[31:0] current_inst,
     input wire[`WordLen-1:0] pc,
+    input wire[7:0] exception,
     input wire bp_result_branch, // Using some "pre-decoder" to decode the branch and get the result early.
     input wire[63:0] bp_result_jump,
     output `DecodeResultWire decoded,
@@ -69,9 +73,14 @@ module decoder(
     output reg[4:0] jp_val_rs1,
     output reg[4:0] jp_val_rd,
     output reg bp_need_jump,
+    output reg[63:0] jal_result,
     output reg[63:0] bp_result
 
     );
+    reg[31:0] inst;
+    always @* begin
+        inst=current_inst;
+    end
     // The 64bit immediate.
     reg[63:0] immediate;
     wire[63:0] imm_i;
@@ -90,13 +99,7 @@ module decoder(
     assign imm_b={{20+32{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
     assign imm_u={{1+32{inst[31]}}, inst[30:20], inst[19:12], 12'b0};
     assign imm_j={{12+32{inst[31]}}, inst[19:12], inst[20], inst[30:25], inst[24:21], 1'b0};
-    always @* begin
-        bp_branch_taken_target=pc+imm_b;
-    end
-    always @* begin
-        if(bp_is_branch) bp_result=bp_result_branch?(pc+imm_b):(pc+4);
-        else bp_result=bp_result_jump;
-    end
+
     wire[4:0] rd; assign rd=inst[11:7];
     wire[4:0] rs1; assign rs1=inst[19:15];
     wire[4:0] rs2; assign rs2=inst[24:20];
@@ -149,6 +152,7 @@ module decoder(
     decoded_flags_load,
     decoded_flags_store,
     decoded_flags_wordop,
+    exception,
     decoded
     );
     localparam ImmI=0, ImmS=1, ImmB=2, ImmU=3, ImmJ=4;
@@ -160,28 +164,34 @@ module decoder(
             ImmB: immediate=imm_b;
             ImmU: immediate=imm_u;
             ImmJ: immediate=imm_j;
-            default: immediate='bx;
+            default: immediate=0;
         endcase
         decoded_immediate=immediate;
     end
     always @* begin
+        bp_is_branch=0;
         decoded_flags_valid=1'b0;
         decoded_rs_type=0;
-        decoded_fu_type='bx;
-        decoded_rs='bx;
-        decoded_rt='bx;
-        imm_type='bx;
-        decoded_rd='bx;
+        decoded_fu_type=0;
+        decoded_rs=0;
+        decoded_rt=0;
+        imm_type=0;
+        decoded_rd=0;
         decoded_flags_branch=0;
         decoded_flags_jump=0;
-        decoded_flags_bp=bp_result;
         decoded_flags_write_csr_float=0;
         decoded_flags_load=0;
         decoded_flags_store=0;    
         decoded_flags_wordop=0;
+        jp_is_jal=0;
+        jp_is_jalr=0;
+        jp_val_rs1=rs1;
+        jp_val_rd=rd;
+        jal_result=pc+imm_j;
         // Decode instruction <beq> .
         if(inst[14:12] == 0 && inst[6:2] == 24 && inst[1:0] == 3) begin
         // Available arguments: bimm12hi,rs1,rs2,bimm12lo.
+        bp_is_branch=1;
         decoded_rs_type=`RSType_ALU;
         decoded_fu_type=`CalcType_ALU_Eq;
         decoded_rs=rs1;
@@ -195,6 +205,7 @@ module decoder(
         // Decode instruction <bne> .
         if(inst[14:12] == 1 && inst[6:2] == 24 && inst[1:0] == 3) begin
         // Available arguments: bimm12hi,rs1,rs2,bimm12lo.
+        bp_is_branch=1;
         decoded_rs_type=`RSType_ALU;
         decoded_fu_type=`CalcType_ALU_Ne;
         decoded_rs=rs1;
@@ -208,6 +219,7 @@ module decoder(
         // Decode instruction <blt> .
         if(inst[14:12] == 4 && inst[6:2] == 24 && inst[1:0] == 3) begin
         // Available arguments: bimm12hi,rs1,rs2,bimm12lo.
+        bp_is_branch=1;
         decoded_rs_type=`RSType_ALU;
         decoded_fu_type=`CalcType_ALU_Lt;
         decoded_rs=rs1;
@@ -221,6 +233,7 @@ module decoder(
         // Decode instruction <bge> .
         if(inst[14:12] == 5 && inst[6:2] == 24 && inst[1:0] == 3) begin
         // Available arguments: bimm12hi,rs1,rs2,bimm12lo.
+        bp_is_branch=1;
         decoded_rs_type=`RSType_ALU;
         decoded_fu_type=`CalcType_ALU_Ge;
         decoded_rs=rs1;
@@ -247,6 +260,7 @@ module decoder(
         // Decode instruction <bgeu> .
         if(inst[14:12] == 7 && inst[6:2] == 24 && inst[1:0] == 3) begin
         // Available arguments: bimm12hi,rs1,rs2,bimm12lo.
+        bp_is_branch=1;
         decoded_rs_type=`RSType_ALU;
         decoded_fu_type=`CalcType_ALU_Geu;
         decoded_rs=rs1;
@@ -255,6 +269,7 @@ module decoder(
         decoded_flags_branch=1;
         decoded_flags_valid=1;
         imm_type=ImmB;
+        
         end
         
         // Decode instruction <jalr> .
@@ -269,6 +284,7 @@ module decoder(
         decoded_flags_jump=1;
         decoded_flags_valid=1;
         imm_type=ImmI;
+        jp_is_jalr=1;
         end
         
         // Decode instruction <jal> .
@@ -281,6 +297,8 @@ module decoder(
         decoded_rd=rd;
         decoded_flags_valid=1;
         imm_type=ImmJ;
+        decoded_flags_branch=1;
+        jp_is_jal=1;
         end
         
         // Decode instruction <lui> .
@@ -734,8 +752,8 @@ module decoder(
         decoded_fu_type=`CalcType_Store_SB;
         decoded_rs=rs1;
         decoded_rt=rs2;
-        decoded_rd=rd;
-        decoded_flags_load=1;
+        decoded_rd=0;
+        decoded_flags_store=1;
         decoded_flags_valid=1;
         imm_type=ImmS;
         end
@@ -747,8 +765,8 @@ module decoder(
         decoded_fu_type=`CalcType_Store_SH;
         decoded_rs=rs1;
         decoded_rt=rs2;
-        decoded_rd=rd;
-        decoded_flags_load=1;
+        decoded_rd=0;
+        decoded_flags_store=1;
         decoded_flags_valid=1;
         imm_type=ImmS;
         end
@@ -760,8 +778,8 @@ module decoder(
         decoded_fu_type=`CalcType_Store_SW;
         decoded_rs=rs1;
         decoded_rt=rs2;
-        decoded_rd=rd;
-        decoded_flags_load=1;
+        decoded_rd=0;
+        decoded_flags_store=1;
         decoded_flags_valid=1;
         imm_type=ImmS;
         end
@@ -773,8 +791,8 @@ module decoder(
         decoded_fu_type=`CalcType_Store_SD;
         decoded_rs=rs1;
         decoded_rt=rs2;
-        decoded_rd=rd;
-        decoded_flags_load=1;
+        decoded_rd=0;
+        decoded_flags_store=1;
         decoded_flags_valid=1;
         imm_type=ImmS;
         end
@@ -1672,5 +1690,13 @@ module decoder(
         // Available arguments: rd,rs1,rs2,rs3,rm.
         
         end
+        
+        if(exception) decoded_rs_type=`RSType_None;
+        bp_branch_taken_target=pc+imm_b;
+        if(bp_is_branch) bp_result=bp_result_branch?(pc+imm_b):(pc+4);
+        else bp_result=bp_result_jump;
+        if(bp_is_branch) bp_need_jump=bp_result_branch;
+        else if(jp_is_jal || jp_is_jalr) bp_need_jump=1;
+        else bp_need_jump=0;
     end
 endmodule

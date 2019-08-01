@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Jul 22 00:30:41 2019
+| Date         : Thu Aug  1 20:51:04 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : report_utilization -file cpu_design_reservestation_0_0_utilization_synth.rpt -pb cpu_design_reservestation_0_0_utilization_synth.pb
 | Design       : cpu_design_reservestation_0_0
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 5412 |     0 |     63400 |  8.54 |
-|   LUT as Logic          | 5412 |     0 |     63400 |  8.54 |
+| Slice LUTs*             | 9009 |     0 |     63400 | 14.21 |
+|   LUT as Logic          | 9009 |     0 |     63400 | 14.21 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 1416 |     0 |    126800 |  1.12 |
-|   Register as Flip Flop | 1416 |     0 |    126800 |  1.12 |
+| Slice Registers         | 3592 |     0 |    126800 |  2.83 |
+|   Register as Flip Flop | 3592 |     0 |    126800 |  2.83 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |    8 |     0 |     31700 |  0.03 |
-| F8 Muxes                |    4 |     0 |     15850 |  0.03 |
+| F7 Muxes                |    0 |     0 |     31700 |  0.00 |
+| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 16    |          Yes |         Set |            - |
-| 1400  |          Yes |       Reset |            - |
+| 150   |          Yes |         Set |            - |
+| 3442  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,17 +149,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 2478 |                 LUT |
-| FDRE     | 1400 |        Flop & Latch |
-| LUT5     | 1227 |                 LUT |
-| LUT4     | 1153 |                 LUT |
-| LUT2     |  819 |                 LUT |
-| LUT3     |  462 |                 LUT |
-| CARRY4   |  400 |          CarryLogic |
-| FDSE     |   16 |        Flop & Latch |
-| MUXF7    |    8 |               MuxFx |
-| LUT1     |    5 |                 LUT |
-| MUXF8    |    4 |               MuxFx |
+| LUT6     | 4680 |                 LUT |
+| FDRE     | 3442 |        Flop & Latch |
+| LUT3     | 2218 |                 LUT |
+| LUT4     | 1404 |                 LUT |
+| LUT5     | 1275 |                 LUT |
+| LUT2     | 1266 |                 LUT |
+| CARRY4   |  600 |          CarryLogic |
+| FDSE     |  150 |        Flop & Latch |
+| LUT1     |    8 |                 LUT |
 +----------+------+---------------------+
 
 

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Jul 31 16:56:27 2019
+# Process ID: 2452
+# Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cache_tag_store_synth_1
+# Command line: vivado.exe -log cache_tag_store.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cache_tag_store.tcl
+# Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cache_tag_store_synth_1/cache_tag_store.vds
+# Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cache_tag_store_synth_1\vivado.jou
+#-----------------------------------------------------------
+source cache_tag_store.tcl -notrace

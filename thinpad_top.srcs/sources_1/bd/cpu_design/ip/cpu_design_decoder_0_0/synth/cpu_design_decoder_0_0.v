@@ -56,8 +56,9 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module cpu_design_decoder_0_0 (
-  inst,
+  current_inst,
   pc,
+  exception,
   bp_result_branch,
   bp_result_jump,
   decoded,
@@ -68,14 +69,16 @@ module cpu_design_decoder_0_0 (
   jp_val_rs1,
   jp_val_rd,
   bp_need_jump,
+  jal_result,
   bp_result
 );
 
-input wire [31 : 0] inst;
+input wire [31 : 0] current_inst;
 input wire [63 : 0] pc;
+input wire [7 : 0] exception;
 input wire bp_result_branch;
 input wire [63 : 0] bp_result_jump;
-output wire [221 : 0] decoded;
+output wire [229 : 0] decoded;
 output wire do_jp;
 output wire jp_is_jal;
 output wire jp_is_jalr;
@@ -83,11 +86,13 @@ output wire [63 : 0] bp_branch_taken_target;
 output wire [4 : 0] jp_val_rs1;
 output wire [4 : 0] jp_val_rd;
 output wire bp_need_jump;
+output wire [63 : 0] jal_result;
 output wire [63 : 0] bp_result;
 
   decoder inst (
-    .inst(inst),
+    .current_inst(current_inst),
     .pc(pc),
+    .exception(exception),
     .bp_result_branch(bp_result_branch),
     .bp_result_jump(bp_result_jump),
     .decoded(decoded),
@@ -98,6 +103,7 @@ output wire [63 : 0] bp_result;
     .jp_val_rs1(jp_val_rs1),
     .jp_val_rd(jp_val_rd),
     .bp_need_jump(bp_need_jump),
+    .jal_result(jal_result),
     .bp_result(bp_result)
   );
 endmodule

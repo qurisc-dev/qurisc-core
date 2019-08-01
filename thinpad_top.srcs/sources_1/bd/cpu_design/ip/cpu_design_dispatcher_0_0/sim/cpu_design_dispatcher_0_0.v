@@ -62,6 +62,7 @@ module cpu_design_dispatcher_0_0 (
   reissue_valid,
   reissue_next,
   can_dispatch,
+  allocate_sq,
   rob_ready,
   rs_ready,
   decode_result,
@@ -77,16 +78,17 @@ module cpu_design_dispatcher_0_0 (
   store_queue_ready
 );
 
-input wire [221 : 0] decoder_input;
+input wire [229 : 0] decoder_input;
 input wire decoder_valid;
 output wire decoder_pop;
-input wire [221 : 0] reissue_input;
+input wire [229 : 0] reissue_input;
 input wire reissue_valid;
 output wire reissue_next;
 output wire can_dispatch;
+output wire allocate_sq;
 input wire rob_ready;
 input wire rs_ready;
-output wire [221 : 0] decode_result;
+output wire [229 : 0] decode_result;
 output wire [5 : 0] rs_register_dependency;
 output wire [5 : 0] rt_register_dependency;
 output wire [5 : 0] rd_register_target;
@@ -106,6 +108,7 @@ input wire store_queue_ready;
     .reissue_valid(reissue_valid),
     .reissue_next(reissue_next),
     .can_dispatch(can_dispatch),
+    .allocate_sq(allocate_sq),
     .rob_ready(rob_ready),
     .rs_ready(rs_ready),
     .decode_result(decode_result),

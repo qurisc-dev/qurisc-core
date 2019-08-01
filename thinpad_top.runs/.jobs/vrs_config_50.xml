@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="cpu_design_dispatcher_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_dispatcher_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_renamebuffer_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_renamebuffer_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_loadstoreunit_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_loadstoreunit_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_tlb_fetcher_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_tlb_fetcher_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_insn_queue_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_insn_queue_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_decoder_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_decoder_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_branch_predictor_0_1_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_branch_predictor_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_loadstore_functionun_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_loadstore_functionun_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_memory_accessor_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_memory_accessor_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_if_controller_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_if_controller_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_jump_predictor_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_jump_predictor_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="cpu_design_pc_counter_0_0_synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_pc_counter_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="cpu_design_dispatcher_0_0_synth_1"/>
+		<Parent Id="cpu_design_renamebuffer_0_0_synth_1"/>
+		<Parent Id="cpu_design_loadstoreunit_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_tlb_fetcher_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_insn_queue_0_0_synth_1"/>
+		<Parent Id="cpu_design_decoder_0_0_synth_1"/>
+		<Parent Id="cpu_design_branch_predictor_0_1_synth_1"/>
+		<Parent Id="cpu_design_loadstore_functionun_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_memory_accessor_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_controller_0_0_synth_1"/>
+		<Parent Id="cpu_design_jump_predictor_0_0_synth_1"/>
+		<Parent Id="cpu_design_pc_counter_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="cpu_design_dispatcher_0_0_synth_1"/>
+		<Parent Id="cpu_design_renamebuffer_0_0_synth_1"/>
+		<Parent Id="cpu_design_loadstoreunit_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_tlb_fetcher_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_insn_queue_0_0_synth_1"/>
+		<Parent Id="cpu_design_decoder_0_0_synth_1"/>
+		<Parent Id="cpu_design_branch_predictor_0_1_synth_1"/>
+		<Parent Id="cpu_design_loadstore_functionun_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_memory_accessor_0_0_synth_1"/>
+		<Parent Id="cpu_design_if_controller_0_0_synth_1"/>
+		<Parent Id="cpu_design_jump_predictor_0_0_synth_1"/>
+		<Parent Id="cpu_design_pc_counter_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
