@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Aug  2 01:33:14 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Aug  2 06:53:21 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a100t" NAME="cpu_design" PACKAGE="fgg676" SPEEDGRADE="-2L"/>
 
@@ -542,8 +542,8 @@
         </PORT>
         <PORT DIR="O" LEFT="63" NAME="read_addr" RIGHT="0" SIGIS="undef" SIGNAME="CPUBackEnd_LoadStore_loadstore_functionun_0_read_addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstoreunit_0" PORT="loadbypass_addr"/>
             <CONNECTION INSTANCE="CPUBackEnd_LoadStore_l1_cache_0" PORT="araddr"/>
+            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstoreunit_0" PORT="loadbypass_addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="63" NAME="reading_addr" RIGHT="0" SIGIS="undef"/>
@@ -12244,9 +12244,9 @@
             <CONNECTION INSTANCE="CPUFrontEnd_jump_predictor_0" PORT="clk"/>
             <CONNECTION INSTANCE="CPUFrontEnd_pc_counter_0" PORT="clk"/>
             <CONNECTION INSTANCE="CPUBackEnd_LoadStore_axi_simple_master_0" PORT="m00_axi_aclk"/>
-            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstoreunit_0" PORT="clk"/>
-            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstore_functionun_0" PORT="clk"/>
             <CONNECTION INSTANCE="CPUBackEnd_LoadStore_l1_cache_0" PORT="clk"/>
+            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstore_functionun_0" PORT="clk"/>
+            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstoreunit_0" PORT="clk"/>
             <CONNECTION INSTANCE="CPUBackEnd_renamebuffer_0" PORT="clk"/>
             <CONNECTION INSTANCE="CPUBackEnd_registers_0" PORT="clk"/>
             <CONNECTION INSTANCE="CPUBackEnd_rob_0" PORT="clk"/>
@@ -12266,8 +12266,8 @@
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M04_ACLK"/>
             <CONNECTION INSTANCE="thinpad_sram_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M05_ACLK"/>
-            <CONNECTION INSTANCE="thinpad_qusim_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="thinpad_serial_0" PORT="clk"/>
+            <CONNECTION INSTANCE="thinpad_qusim_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="clk_wiz_0_locked">
@@ -12325,9 +12325,9 @@
             <CONNECTION INSTANCE="CPUFrontEnd_if_tlb_fetcher_0" PORT="rst"/>
             <CONNECTION INSTANCE="CPUFrontEnd_jump_predictor_0" PORT="rst"/>
             <CONNECTION INSTANCE="CPUFrontEnd_pc_counter_0" PORT="rst"/>
-            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstoreunit_0" PORT="rst"/>
-            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstore_functionun_0" PORT="rst"/>
             <CONNECTION INSTANCE="CPUBackEnd_LoadStore_l1_cache_0" PORT="rst"/>
+            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstore_functionun_0" PORT="rst"/>
+            <CONNECTION INSTANCE="CPUBackEnd_LoadStore_loadstoreunit_0" PORT="rst"/>
             <CONNECTION INSTANCE="CPUBackEnd_renamebuffer_0" PORT="rst"/>
             <CONNECTION INSTANCE="CPUBackEnd_registers_0" PORT="rst"/>
             <CONNECTION INSTANCE="CPUBackEnd_rob_0" PORT="rst"/>
@@ -12362,7 +12362,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/thinpad_qusim_0" HWVERSION="1.0" INSTANCE="thinpad_qusim_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="thinpad_qusim" VLNV="xilinx.com:user:thinpad_qusim:1.0">
+    <MODULE COREREVISION="6" FULLNAME="/thinpad_qusim_0" HWVERSION="1.0" INSTANCE="thinpad_qusim_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="thinpad_qusim" VLNV="xilinx.com:user:thinpad_qusim:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>

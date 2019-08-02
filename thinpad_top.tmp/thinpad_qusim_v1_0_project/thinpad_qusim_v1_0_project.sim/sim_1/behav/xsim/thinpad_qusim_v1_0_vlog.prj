@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog   \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/SysArr.v" \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/SysArrProcessor.v" \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/arrReg.v" \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/arrRegArray.v" \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/arrStation.v" \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/axi_syspro.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:thinpad_qusim:1.0
-// IP Revision: 5
+// IP Revision: 6
 
 (* X_CORE_INFO = "thinpad_qusim_v1_0,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "cpu_design_thinpad_qusim_0_0,thinpad_qusim_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "cpu_design_thinpad_qusim_0_0,thinpad_qusim_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=thinpad_qusim,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=64,C_S00_AXI_ADDR_WIDTH=12}" *)
+(* CORE_GENERATION_INFO = "cpu_design_thinpad_qusim_0_0,thinpad_qusim_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=thinpad_qusim,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=64,C_S00_AXI_ADDR_WIDTH=12}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module cpu_design_thinpad_qusim_0_0 (
   s00_axi_awaddr,

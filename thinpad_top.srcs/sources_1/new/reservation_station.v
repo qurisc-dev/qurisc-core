@@ -151,7 +151,7 @@ always @(posedge clk) begin
                     ReadyS<=1;
                 end
                 if ((!ReadyT) && `CDB$Valid(cdb_in) && `CDB$RenameID(cdb_in)==Qt) begin
-                    Vs<=`CDB$Value(cdb_in);
+                    Vt<=`CDB$Value(cdb_in);
                     ReadyT<=1;
                 end
                 if(ReadyS && ReadyT) begin

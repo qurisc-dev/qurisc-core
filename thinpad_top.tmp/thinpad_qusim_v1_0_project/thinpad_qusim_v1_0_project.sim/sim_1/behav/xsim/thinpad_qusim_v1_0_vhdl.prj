@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/floating_point_4/sim/floating_point_4.vhd" \
+"../../../../../../../ip_repo/thinpad_qusim_1.0/src/floating_point_0/sim/floating_point_0.vhd" \
+
+# Do not sort compile order
+nosort

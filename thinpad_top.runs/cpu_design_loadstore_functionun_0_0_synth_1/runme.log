@@ -9,15 +9,21 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source cpu_design_loadstore_functionun_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 354.301 ; gain = 58.996
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 353.859 ; gain = 63.445
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_qusim_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/links/qsim'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SysArrProcessor:1.0'. The one found in IP location 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor' will take precedence over the same IP in location c:/links/qsim/qsim.srcs
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 377.840 ; gain = 23.844
 Command: synth_design -top cpu_design_loadstore_functionun_0_0 -part xc7a100tfgg676-2L -mode out_of_context
 Starting synth_design
 WARNING: [IP_Flow 19-3571] IP 'cpu_design_loadstore_functionun_0_0' is restricted:
@@ -26,9 +32,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11076 
+INFO: Helper process launched with PID 17836 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 819.543 ; gain = 178.039
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 820.672 ; gain = 178.148
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_loadstore_functionun_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_loadstore_functionun_0_0/synth/cpu_design_loadstore_functionun_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'loadstore_functionunit' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:21]
@@ -45,8 +51,8 @@ INFO: [Synth 8-6155] done synthesizing module 'memory_attribute_table' (1#1) [C:
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:57]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:95]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:129]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:220]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:247]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:218]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:245]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:187]
 WARNING: [Synth 8-6014] Unused sequential element stored_tlb_miss_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:193]
 WARNING: [Synth 8-6014] Unused sequential element stored_align_fail_reg was removed.  [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:194]
@@ -54,7 +60,7 @@ WARNING: [Synth 8-6014] Unused sequential element stored_invalid_phys_reg was re
 INFO: [Synth 8-6155] done synthesizing module 'loadstore_functionunit' (2#1) [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/loadstoreunit.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'cpu_design_loadstore_functionun_0_0' (3#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_loadstore_functionun_0_0/synth/cpu_design_loadstore_functionun_0_0.v:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 886.398 ; gain = 244.895
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 887.309 ; gain = 244.785
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -67,10 +73,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 886.398 ; gain = 244.895
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 887.309 ; gain = 244.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 886.398 ; gain = 244.895
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 887.309 ; gain = 244.785
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -78,45 +84,45 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1000.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.977 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.373 . Memory (MB): peak = 1002.023 ; gain = 1.992
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.264 . Memory (MB): peak = 1001.973 ; gain = 0.996
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'loadstore_functionunit'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                         00000001 |                         00000000
-             ADD_ADDRESS |                         00000010 |                         00000111
-                     TLB |                         00000100 |                         00000001
-            WAIT_FOR_PNR |                         00001000 |                         00000101
-                 LOADFWD |                         00010000 |                         00000010
-                 LOADBUS |                         00100000 |                         00000110
-                 REALIGN |                         01000000 |                         00000100
-                   STORE |                         10000000 |                         00000011
+                    IDLE |                              000 |                         00000000
+             ADD_ADDRESS |                              001 |                         00000111
+                     TLB |                              010 |                         00000001
+            WAIT_FOR_PNR |                              011 |                         00000101
+                 LOADFWD |                              100 |                         00000010
+                 LOADBUS |                              101 |                         00000110
+                 REALIGN |                              110 |                         00000100
+                   STORE |                              111 |                         00000011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'loadstore_functionunit'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'loadstore_functionunit'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -149,14 +155,16 @@ Detailed RTL Component Info :
 	   4 Input      8 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 3     
 	   5 Input      8 Bit        Muxes := 1     
-	  16 Input      8 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 13    
-	   3 Input      1 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 2     
-	   8 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -191,13 +199,15 @@ Detailed RTL Component Info :
 	   4 Input      8 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 3     
 	   5 Input      8 Bit        Muxes := 1     
-	  16 Input      8 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 2     
 	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 13    
-	   3 Input      1 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 2     
-	   8 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -297,8 +307,9 @@ INFO: [Synth 8-3886] merging instance 'inst/dout_ff_reg[76]' (FDRE) to 'inst/dou
 INFO: [Synth 8-3886] merging instance 'inst/dout_ff_reg[77]' (FDRE) to 'inst/dout_ff_reg[78]'
 INFO: [Synth 8-3886] merging instance 'inst/dout_ff_reg[78]' (FDRE) to 'inst/dout_ff_reg[79]'
 INFO: [Synth 8-3886] merging instance 'inst/dout_ff_reg[79]' (FDRE) to 'inst/dout_ff_reg[80]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/dout_ff_reg[80] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:01:02 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -310,13 +321,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:20 ; elapsed = 00:01:28 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:01:28 . Memory (MB): peak = 1002.023 ; gain = 360.520
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 1001.973 ; gain = 359.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -328,7 +339,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:01:29 . Memory (MB): peak = 1024.828 ; gain = 383.324
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1027.492 ; gain = 384.969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -352,7 +363,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -365,7 +376,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:26 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -377,25 +388,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -414,52 +425,51 @@ Report Cell Usage:
 |1     |CARRY4 |    56|
 |2     |LUT1   |     6|
 |3     |LUT2   |   313|
-|4     |LUT3   |    66|
-|5     |LUT4   |    14|
-|6     |LUT5   |    45|
-|7     |LUT6   |   253|
+|4     |LUT3   |    68|
+|5     |LUT4   |    12|
+|6     |LUT5   |    50|
+|7     |LUT6   |   252|
 |8     |MUXF7  |     1|
-|9     |FDRE   |   452|
-|10    |FDSE   |     1|
+|9     |FDRE   |   447|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+----------+-----------------------+------+
 |      |Instance  |Module                 |Cells |
 +------+----------+-----------------------+------+
-|1     |top       |                       |  1207|
-|2     |  inst    |loadstore_functionunit |  1207|
+|1     |top       |                       |  1205|
+|2     |  inst    |loadstore_functionunit |  1205|
 |3     |    mattr |memory_attribute_table |    27|
 +------+----------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:01:34 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 1032.793 ; gain = 390.270
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:26 . Memory (MB): peak = 1030.141 ; gain = 273.012
-Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:01:35 . Memory (MB): peak = 1030.141 ; gain = 388.637
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:51 . Memory (MB): peak = 1032.793 ; gain = 275.605
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1032.793 ; gain = 390.270
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'cpu_design_loadstore_functionun_0_0' is not ideal for floorplanning, since the cellview 'loadstore_functionunit' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1030.141 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1032.793 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-116 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+121 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:01:57 . Memory (MB): peak = 1030.141 ; gain = 651.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1030.141 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:17 . Memory (MB): peak = 1032.793 ; gain = 654.953
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1032.793 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_loadstore_functionun_0_0_synth_1/cpu_design_loadstore_functionun_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
 INFO: [Coretcl 2-1174] Renamed 2 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1030.141 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1032.793 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_loadstore_functionun_0_0_synth_1/cpu_design_loadstore_functionun_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_design_loadstore_functionun_0_0_utilization_synth.rpt -pb cpu_design_loadstore_functionun_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 20:05:45 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  2 06:55:38 2019...

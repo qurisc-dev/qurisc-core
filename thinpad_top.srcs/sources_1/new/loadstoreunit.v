@@ -214,8 +214,6 @@ always @(posedge clk) begin
                     end else if(translated_attribute==0) begin // None
                         state<=REALIGN;
                         stored_invalid_phys<=0;
-                    end else if(translated_attribute==2 && !reached_pnr) begin // IO
-                        state<=WAIT_FOR_PNR;
                     end else begin
                         case(`FunctionUnitInput$CalcType(stored_din))
                         `CalcType_Load_LW, `CalcType_Load_LWU, `CalcType_Store_SW: begin
@@ -248,8 +246,12 @@ always @(posedge clk) begin
                             `CalcType_Load_LW, `CalcType_Load_LWU, `CalcType_Load_LH, `CalcType_Load_LHU, `CalcType_Load_LD, `CalcType_Load_LB, `CalcType_Load_LBU: begin
                                 read_addr<=translated_addr;
                                 if(translated_attribute==2) begin
-                                    state<=LOADBUS;
-                                    read_valid<=1;
+                                    if(!reached_pnr) begin // IO
+                                        state<=WAIT_FOR_PNR;
+                                    end else begin
+                                        state<=LOADBUS;
+                                        read_valid<=1;
+                                    end
                                 end else begin
                                     state<=LOADFWD;
                                 end

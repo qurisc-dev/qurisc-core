@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="61073333333fs"></ZoomStartTime>
-      <ZoomEndTime time="62053333334fs"></ZoomEndTime>
-      <Cursor1Time time="61624333000fs"></Cursor1Time>
+      <ZoomStartTime time="19018000000fs"></ZoomStartTime>
+      <ZoomEndTime time="19416400001fs"></ZoomEndTime>
+      <Cursor1Time time="19176600000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="289"></NameColumnWidth>
-      <ValueColumnWidth column_width="404"></ValueColumnWidth>
+      <ValueColumnWidth column_width="372"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="775" />
+   <WVObjectSize size="920" />
    <wave_markers>
       <marker time="2354880000" label="" />
       <marker time="2874633000" label="" />
@@ -32,6 +32,10 @@
       <marker time="9105338000" label="" />
       <marker time="9066310000" label="" />
       <marker time="4840000000" label="" />
+      <marker time="27080000000" label="" />
+      <marker time="11570000000" label="" />
+      <marker time="26600000000" label="" />
+      <marker time="20619241000" label="" />
    </wave_markers>
    <wvobject fp_name="/tb/clk_50M" type="logic">
       <obj_property name="ElementShortName">clk_50M</obj_property>
@@ -57,17 +61,21 @@
       <obj_property name="ElementShortName">dip_sw[31:0]</obj_property>
       <obj_property name="ObjectShortName">dip_sw[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/leds" type="array">
-      <obj_property name="ElementShortName">leds[15:0]</obj_property>
-      <obj_property name="ObjectShortName">leds[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dpy0" type="array">
-      <obj_property name="ElementShortName">dpy0[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dpy0[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dpy1" type="array">
-      <obj_property name="ElementShortName">dpy1[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dpy1[7:0]</obj_property>
+   <wvobject fp_name="vbus14454" type="vbus">
+      <obj_property name="label">gpio_out</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb/dpy0" type="array">
+         <obj_property name="ElementShortName">dpy0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">dpy0[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/dpy1" type="array">
+         <obj_property name="ElementShortName">dpy1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">dpy1[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/leds" type="array">
+         <obj_property name="ElementShortName">leds[15:0]</obj_property>
+         <obj_property name="ObjectShortName">leds[15:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/tb/txd" type="logic">
       <obj_property name="ElementShortName">txd</obj_property>
@@ -3065,110 +3073,696 @@
       <obj_property name="ElementShortName">write_strb_buffer[7:0]</obj_property>
       <obj_property name="ObjectShortName">write_strb_buffer[7:0]</obj_property>
    </wvobject>
-   <wvobject type="divider" fp_name="divider3778">
-      <obj_property name="label">Serial</obj_property>
+   <wvobject type="divider" fp_name="divider10338">
+      <obj_property name="label">lsuw</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/S_DATA_AXI" type="protoinst">
-      <obj_property name="ElementShortName">S_DATA_AXI</obj_property>
-      <obj_property name="ObjectShortName">S_DATA_AXI</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/din" type="array">
+      <obj_property name="ElementShortName">din[229:0]</obj_property>
+      <obj_property name="ObjectShortName">din[229:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/do_commit" type="logic">
+      <obj_property name="ElementShortName">do_commit</obj_property>
+      <obj_property name="ObjectShortName">do_commit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/commit_loadspec_failed" type="logic">
+      <obj_property name="ElementShortName">commit_loadspec_failed</obj_property>
+      <obj_property name="ObjectShortName">commit_loadspec_failed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/flush_bpfailed" type="logic">
+      <obj_property name="ElementShortName">flush_bpfailed</obj_property>
+      <obj_property name="ObjectShortName">flush_bpfailed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/commit_index" type="array">
+      <obj_property name="ElementShortName">commit_index[3:0]</obj_property>
+      <obj_property name="ObjectShortName">commit_index[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/svalue" type="array">
+      <obj_property name="ElementShortName">svalue[63:0]</obj_property>
+      <obj_property name="ObjectShortName">svalue[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/tvalue" type="array">
+      <obj_property name="ElementShortName">tvalue[63:0]</obj_property>
+      <obj_property name="ObjectShortName">tvalue[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/s_isval" type="logic">
+      <obj_property name="ElementShortName">s_isval</obj_property>
+      <obj_property name="ObjectShortName">s_isval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/t_isval" type="logic">
+      <obj_property name="ElementShortName">t_isval</obj_property>
+      <obj_property name="ObjectShortName">t_isval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/rob_free_item" type="array">
+      <obj_property name="ElementShortName">rob_free_item[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rob_free_item[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/known_load_mask" type="array">
+      <obj_property name="ElementShortName">known_load_mask[15:0]</obj_property>
+      <obj_property name="ObjectShortName">known_load_mask[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/can_accept" type="logic">
+      <obj_property name="ElementShortName">can_accept</obj_property>
+      <obj_property name="ObjectShortName">can_accept</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/will_accept" type="logic">
+      <obj_property name="ElementShortName">will_accept</obj_property>
+      <obj_property name="ObjectShortName">will_accept</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/emit_to_cdb" type="logic">
+      <obj_property name="ElementShortName">emit_to_cdb</obj_property>
+      <obj_property name="ObjectShortName">emit_to_cdb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/will_emit_to_cdb" type="logic">
+      <obj_property name="ElementShortName">will_emit_to_cdb</obj_property>
+      <obj_property name="ObjectShortName">will_emit_to_cdb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/cdb_in" type="array">
+      <obj_property name="ElementShortName">cdb_in[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_in[149:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/cdb_out" type="array">
+      <obj_property name="ElementShortName">cdb_out[149:0]</obj_property>
+      <obj_property name="ObjectShortName">cdb_out[149:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/fuinput" type="array">
+      <obj_property name="ElementShortName">fuinput[301:0]</obj_property>
+      <obj_property name="ObjectShortName">fuinput[301:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/fuoutput" type="array">
+      <obj_property name="ElementShortName">fuoutput[145:0]</obj_property>
+      <obj_property name="ObjectShortName">fuoutput[145:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/stored_output" type="array">
+      <obj_property name="ElementShortName">stored_output[145:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_output[145:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/CalcType" type="array">
+      <obj_property name="ElementShortName">CalcType[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CalcType[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Dependencies" type="array">
+      <obj_property name="ElementShortName">Dependencies[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Dependencies[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Vs" type="array">
+      <obj_property name="ElementShortName">Vs[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Vs[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Vt" type="array">
+      <obj_property name="ElementShortName">Vt[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Vt[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Qs" type="array">
+      <obj_property name="ElementShortName">Qs[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Qs[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Qt" type="array">
+      <obj_property name="ElementShortName">Qt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Qt[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/ReadyS" type="logic">
+      <obj_property name="ElementShortName">ReadyS</obj_property>
+      <obj_property name="ObjectShortName">ReadyS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/ReadyT" type="logic">
+      <obj_property name="ElementShortName">ReadyT</obj_property>
+      <obj_property name="ObjectShortName">ReadyT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Qd" type="array">
+      <obj_property name="ElementShortName">Qd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Qd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/Status" type="array">
+      <obj_property name="ElementShortName">Status[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Status[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/need_reset" type="logic">
+      <obj_property name="ElementShortName">need_reset</obj_property>
+      <obj_property name="ObjectShortName">need_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/kill_by_mask" type="array">
+      <obj_property name="ElementShortName">kill_by_mask[15:0]</obj_property>
+      <obj_property name="ObjectShortName">kill_by_mask[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/stored_pc" type="array">
+      <obj_property name="ElementShortName">stored_pc[63:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_pc[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/stored_immediate" type="array">
+      <obj_property name="ElementShortName">stored_immediate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_immediate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/stored_bpresult" type="array">
+      <obj_property name="ElementShortName">stored_bpresult[63:0]</obj_property>
+      <obj_property name="ObjectShortName">stored_bpresult[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/CPUBackEnd/reservestation_0/inst/lsu/RESERVE_STATION_TYPE" type="array">
+      <obj_property name="ElementShortName">RESERVE_STATION_TYPE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RESERVE_STATION_TYPE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider11297">
+      <obj_property name="label">sysarr</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/S00_AXI" type="protoinst">
       <obj_property name="children_use_element_short_name">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
       <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
       <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">turquoise</obj_property>
-      <obj_property name="Render_Data">/tb/dut/cpu/cpu_design_i/thinpad_serial_0/S_DATA_AXI.readWriteSummary</obj_property>
+      <obj_property name="Render_Data">/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/S00_AXI.readWriteSummary</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">S00_AXI</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/rst" type="logic">
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_awaddr" type="array">
+      <obj_property name="ElementShortName">s00_axi_awaddr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awaddr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_awprot" type="array">
+      <obj_property name="ElementShortName">s00_axi_awprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_awvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_awready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_wdata" type="array">
+      <obj_property name="ElementShortName">s00_axi_wdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wdata[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_wstrb" type="array">
+      <obj_property name="ElementShortName">s00_axi_wstrb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wstrb[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_wvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_wready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_bresp" type="array">
+      <obj_property name="ElementShortName">s00_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_bvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_bready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_bready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_araddr" type="array">
+      <obj_property name="ElementShortName">s00_axi_araddr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_araddr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_arprot" type="array">
+      <obj_property name="ElementShortName">s00_axi_arprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_arprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_arvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_arready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_arready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_rdata" type="array">
+      <obj_property name="ElementShortName">s00_axi_rdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rdata[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_rresp" type="array">
+      <obj_property name="ElementShortName">s00_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_rvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/s00_axi_rready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/awaddr" type="array">
+      <obj_property name="ElementShortName">awaddr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">awaddr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/araddr" type="array">
+      <obj_property name="ElementShortName">araddr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">araddr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/rst" type="logic">
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/rxd" type="logic">
-      <obj_property name="ElementShortName">rxd</obj_property>
-      <obj_property name="ObjectShortName">rxd</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/xvalid" type="logic">
+      <obj_property name="ElementShortName">xvalid</obj_property>
+      <obj_property name="ObjectShortName">xvalid</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/txd" type="logic">
-      <obj_property name="ElementShortName">txd</obj_property>
-      <obj_property name="ObjectShortName">txd</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/yvalid" type="logic">
+      <obj_property name="ElementShortName">yvalid</obj_property>
+      <obj_property name="ObjectShortName">yvalid</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/uart_can_write" type="logic">
-      <obj_property name="ElementShortName">uart_can_write</obj_property>
-      <obj_property name="ObjectShortName">uart_can_write</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/wstate" type="array">
+      <obj_property name="ElementShortName">wstate[1:0]</obj_property>
+      <obj_property name="ObjectShortName">wstate[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/uart_can_read" type="logic">
-      <obj_property name="ElementShortName">uart_can_read</obj_property>
-      <obj_property name="ObjectShortName">uart_can_read</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/rstate" type="array">
+      <obj_property name="ElementShortName">rstate[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rstate[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/uart_interrupt" type="logic">
-      <obj_property name="ElementShortName">uart_interrupt</obj_property>
-      <obj_property name="ObjectShortName">uart_interrupt</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/awready" type="logic">
+      <obj_property name="ElementShortName">awready</obj_property>
+      <obj_property name="ObjectShortName">awready</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/write_data" type="array">
-      <obj_property name="ElementShortName">write_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">write_data[7:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/wready" type="logic">
+      <obj_property name="ElementShortName">wready</obj_property>
+      <obj_property name="ObjectShortName">wready</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/read_data" type="array">
-      <obj_property name="ElementShortName">read_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">read_data[7:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/bvalid" type="logic">
+      <obj_property name="ElementShortName">bvalid</obj_property>
+      <obj_property name="ObjectShortName">bvalid</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/do_read" type="logic">
-      <obj_property name="ElementShortName">do_read</obj_property>
-      <obj_property name="ObjectShortName">do_read</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/arready" type="logic">
+      <obj_property name="ElementShortName">arready</obj_property>
+      <obj_property name="ObjectShortName">arready</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/do_write" type="logic">
-      <obj_property name="ElementShortName">do_write</obj_property>
-      <obj_property name="ObjectShortName">do_write</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/rvalid" type="logic">
+      <obj_property name="ElementShortName">rvalid</obj_property>
+      <obj_property name="ObjectShortName">rvalid</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/buffer" type="array">
-      <obj_property name="ElementShortName">buffer[0:63][7:0]</obj_property>
-      <obj_property name="ObjectShortName">buffer[0:63][7:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/head" type="array">
-      <obj_property name="ElementShortName">head[5:0]</obj_property>
-      <obj_property name="ObjectShortName">head[5:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/working" type="logic">
+      <obj_property name="ElementShortName">working</obj_property>
+      <obj_property name="ObjectShortName">working</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/tail" type="array">
-      <obj_property name="ElementShortName">tail[5:0]</obj_property>
-      <obj_property name="ObjectShortName">tail[5:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/stored_awaddr" type="array">
-      <obj_property name="ElementShortName">stored_awaddr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_awaddr[3:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/xaddr" type="array">
+      <obj_property name="ElementShortName">xaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">xaddr[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/q" type="array">
-      <obj_property name="ElementShortName">q[31:0]</obj_property>
-      <obj_property name="ObjectShortName">q[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/yaddr" type="array">
+      <obj_property name="ElementShortName">yaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">yaddr[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_rx" type="array">
-      <obj_property name="ElementShortName">ext_uart_rx[7:0]</obj_property>
-      <obj_property name="ObjectShortName">ext_uart_rx[7:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/zaddr" type="array">
+      <obj_property name="ElementShortName">zaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">zaddr[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_tx" type="array">
-      <obj_property name="ElementShortName">ext_uart_tx[7:0]</obj_property>
-      <obj_property name="ObjectShortName">ext_uart_tx[7:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/xdata" type="array">
+      <obj_property name="ElementShortName">xdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xdata[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_ready" type="logic">
-      <obj_property name="ElementShortName">ext_uart_ready</obj_property>
-      <obj_property name="ObjectShortName">ext_uart_ready</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/ydata" type="array">
+      <obj_property name="ElementShortName">ydata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ydata[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_busy" type="logic">
-      <obj_property name="ElementShortName">ext_uart_busy</obj_property>
-      <obj_property name="ObjectShortName">ext_uart_busy</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/xmask" type="array">
+      <obj_property name="ElementShortName">xmask[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xmask[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/uart/ext_uart_start" type="logic">
-      <obj_property name="ElementShortName">ext_uart_start</obj_property>
-      <obj_property name="ObjectShortName">ext_uart_start</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/ymask" type="array">
+      <obj_property name="ElementShortName">ymask[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ymask[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_serial_0/inst/stored_araddr" type="array">
-      <obj_property name="ElementShortName">stored_araddr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">stored_araddr[3:0]</obj_property>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/zdata" type="array">
+      <obj_property name="ElementShortName">zdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">zdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/status" type="array">
+      <obj_property name="ElementShortName">status[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/C_S00_AXI_DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">C_S00_AXI_DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_S00_AXI_DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/C_S00_AXI_ADDR_WIDTH" type="array">
+      <obj_property name="ElementShortName">C_S00_AXI_ADDR_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_S00_AXI_ADDR_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider11345">
+      <obj_property name="label">cop</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/g_rst" type="logic">
+      <obj_property name="ElementShortName">g_rst</obj_property>
+      <obj_property name="ObjectShortName">g_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/xaddr" type="array">
+      <obj_property name="ElementShortName">xaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">xaddr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/yaddr" type="array">
+      <obj_property name="ElementShortName">yaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">yaddr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/xvalid" type="logic">
+      <obj_property name="ElementShortName">xvalid</obj_property>
+      <obj_property name="ObjectShortName">xvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/yvalid" type="logic">
+      <obj_property name="ElementShortName">yvalid</obj_property>
+      <obj_property name="ObjectShortName">yvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/xdata" type="array">
+      <obj_property name="ElementShortName">xdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/ydata" type="array">
+      <obj_property name="ElementShortName">ydata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ydata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/zaddr" type="array">
+      <obj_property name="ElementShortName">zaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">zaddr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/flag" type="logic">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/result" type="array">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx_data" type="array">
+      <obj_property name="ElementShortName">wx_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">wx_data[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wy_data" type="array">
+      <obj_property name="ElementShortName">wy_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">wy_data[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/xready" type="logic">
+      <obj_property name="ElementShortName">xready</obj_property>
+      <obj_property name="ObjectShortName">xready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/yready" type="logic">
+      <obj_property name="ElementShortName">yready</obj_property>
+      <obj_property name="ObjectShortName">yready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/input_ready" type="logic">
+      <obj_property name="ElementShortName">input_ready</obj_property>
+      <obj_property name="ObjectShortName">input_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/jobDone" type="logic">
+      <obj_property name="ElementShortName">jobDone</obj_property>
+      <obj_property name="ObjectShortName">jobDone</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/temp" type="array">
+      <obj_property name="ElementShortName">temp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">temp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /g_rst" type="logic">
+      <obj_property name="ElementShortName">g_rst</obj_property>
+      <obj_property name="ObjectShortName">g_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /emit" type="logic">
+      <obj_property name="ElementShortName">emit</obj_property>
+      <obj_property name="ObjectShortName">emit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /index" type="array">
+      <obj_property name="ElementShortName">index[1:0]</obj_property>
+      <obj_property name="ObjectShortName">index[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /input_data" type="array">
+      <obj_property name="ElementShortName">input_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /valid" type="logic">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /data" type="array">
+      <obj_property name="ElementShortName">data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /x" type="array">
+      <obj_property name="ElementShortName">x[3:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">x[3:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /counter" type="array">
+      <obj_property name="ElementShortName">counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wx/\genblk1[0].areg /i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider11722">
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /dataA" type="array">
+      <obj_property name="ElementShortName">dataA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /dataB" type="array">
+      <obj_property name="ElementShortName">dataB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /g_rst" type="logic">
+      <obj_property name="ElementShortName">g_rst</obj_property>
+      <obj_property name="ObjectShortName">g_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /dataReady" type="logic">
+      <obj_property name="ElementShortName">dataReady</obj_property>
+      <obj_property name="ObjectShortName">dataReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /dataAOut" type="array">
+      <obj_property name="ElementShortName">dataAOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataAOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /dataBOut" type="array">
+      <obj_property name="ElementShortName">dataBOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataBOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /dataOutReady" type="logic">
+      <obj_property name="ElementShortName">dataOutReady</obj_property>
+      <obj_property name="ObjectShortName">dataOutReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /result" type="array">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /resultOutReady" type="logic">
+      <obj_property name="ElementShortName">resultOutReady</obj_property>
+      <obj_property name="ObjectShortName">resultOutReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /counter" type="array">
+      <obj_property name="ElementShortName">counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /buff" type="array">
+      <obj_property name="ElementShortName">buff[31:0]</obj_property>
+      <obj_property name="ObjectShortName">buff[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /buffReady" type="logic">
+      <obj_property name="ElementShortName">buffReady</obj_property>
+      <obj_property name="ObjectShortName">buffReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /wr" type="array">
+      <obj_property name="ElementShortName">wr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /multReady" type="logic">
+      <obj_property name="ElementShortName">multReady</obj_property>
+      <obj_property name="ObjectShortName">multReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /mult_res_tready" type="logic">
+      <obj_property name="ElementShortName">mult_res_tready</obj_property>
+      <obj_property name="ObjectShortName">mult_res_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_res_tready" type="logic">
+      <obj_property name="ElementShortName">acc_res_tready</obj_property>
+      <obj_property name="ObjectShortName">acc_res_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_valid" type="logic">
+      <obj_property name="ElementShortName">acc_valid</obj_property>
+      <obj_property name="ObjectShortName">acc_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_input_valid" type="logic">
+      <obj_property name="ElementShortName">acc_input_valid</obj_property>
+      <obj_property name="ObjectShortName">acc_input_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_input_data" type="array">
+      <obj_property name="ElementShortName">acc_input_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">acc_input_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_data" type="array">
+      <obj_property name="ElementShortName">acc_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">acc_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /result_valid" type="logic">
+      <obj_property name="ElementShortName">result_valid</obj_property>
+      <obj_property name="ObjectShortName">result_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_result_valid" type="logic">
+      <obj_property name="ElementShortName">acc_result_valid</obj_property>
+      <obj_property name="ObjectShortName">acc_result_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /result_counter" type="array">
+      <obj_property name="ElementShortName">result_counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">result_counter[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /acc_result" type="array">
+      <obj_property name="ElementShortName">acc_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">acc_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /tlast" type="logic">
+      <obj_property name="ElementShortName">tlast</obj_property>
+      <obj_property name="ObjectShortName">tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[1].stat /SIZE" type="array">
+      <obj_property name="ElementShortName">SIZE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">SIZE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/s_axis_a_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_a_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/s_axis_a_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_a_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/s_axis_b_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_b_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_b_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/s_axis_b_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_b_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_b_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/m_axis_result_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_result_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /mult/m_axis_result_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_result_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/s_axis_a_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_a_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/s_axis_a_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_a_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/s_axis_a_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_a_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/s_axis_a_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_a_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/m_axis_result_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_result_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/m_axis_result_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_result_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/m_axis_result_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_result_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/cpu/cpu_design_i/thinpad_qusim_0/inst/cop/wz/\genblk1[0].stat /acc/m_axis_result_tlast" type="logic">
+      <obj_property name="ElementShortName">m_axis_result_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tlast</obj_property>
    </wvobject>
 </wave_config>

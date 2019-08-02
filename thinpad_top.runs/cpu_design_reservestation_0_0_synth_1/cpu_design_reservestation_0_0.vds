@@ -2,23 +2,29 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Aug  1 20:47:14 2019
-# Process ID: 11664
+# Start of session at: Fri Aug  2 04:59:23 2019
+# Process ID: 12884
 # Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1
 # Command line: vivado.exe -log cpu_design_reservestation_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_design_reservestation_0_0.tcl
 # Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1/cpu_design_reservestation_0_0.vds
 # Journal file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source cpu_design_reservestation_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 355.484 ; gain = 63.387
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 354.266 ; gain = 64.109
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_qusim_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_serial_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/simple_axilite_slave_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/axi_simple_master_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/l1_cache_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/sram_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/thinpad_sram_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/gjz010/Documents/GitHub/ip_repo/systolic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/links/qsim'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SysArrProcessor:1.0'. The one found in IP location 'c:/Users/gjz010/Documents/GitHub/qsim_compiler_coprocessor' will take precedence over the same IP in location c:/links/qsim/qsim.srcs
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 378.102 ; gain = 23.836
 Command: synth_design -top cpu_design_reservestation_0_0 -part xc7a100tfgg676-2L -mode out_of_context
 Starting synth_design
 WARNING: [IP_Flow 19-3571] IP 'cpu_design_reservestation_0_0' is restricted:
@@ -27,9 +33,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17632 
+INFO: Helper process launched with PID 12496 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 820.469 ; gain = 179.156
+Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 819.719 ; gain = 178.559
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_reservestation_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_reservestation_0_0/synth/cpu_design_reservestation_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'reservestation' [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:182]
@@ -166,7 +172,7 @@ WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconne
 WARNING: [Synth 8-3331] design function_unit_wrapper__parameterized0 has unconnected port cdb_in[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 908.961 ; gain = 267.648
+Finished RTL Elaboration : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 907.223 ; gain = 266.063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -179,10 +185,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 908.961 ; gain = 267.648
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 907.223 ; gain = 266.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 908.961 ; gain = 267.648
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 907.223 ; gain = 266.063
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -190,28 +196,28 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1045.105 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1044.387 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.559 . Memory (MB): peak = 1051.512 ; gain = 6.406
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1050.660 ; gain = 6.273
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1051.512 ; gain = 410.199
+Finished Constraint Validation : Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 1050.660 ; gain = 409.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1051.512 ; gain = 410.199
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 1050.660 ; gain = 409.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1051.512 ; gain = 410.199
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 1050.660 ; gain = 409.500
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3936] Found unconnected internal register 'stored_output_reg' and it is trimmed from '146' to '145' bits. [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/new/reservation_station.v:164]
 INFO: [Synth 8-802] inferred FSM for state register 'Status_reg' in module 'function_unit_wrapper'
@@ -236,7 +242,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'Status_reg' using encoding
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'Status_reg' using encoding 'one-hot' in module 'function_unit_wrapper__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1051.512 ; gain = 410.199
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:11 ; elapsed = 00:01:22 . Memory (MB): peak = 1050.660 ; gain = 409.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -267,13 +273,13 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input    146 Bit        Muxes := 4     
 	   2 Input     64 Bit        Muxes := 48    
-	   4 Input     64 Bit        Muxes := 5     
+	   4 Input     64 Bit        Muxes := 10    
 	   2 Input     32 Bit        Muxes := 5     
 	   2 Input     16 Bit        Muxes := 16    
 	   2 Input      8 Bit        Muxes := 5     
 	   2 Input      4 Bit        Muxes := 17    
 	   4 Input      4 Bit        Muxes := 5     
-	   2 Input      1 Bit        Muxes := 113   
+	   2 Input      1 Bit        Muxes := 108   
 	   4 Input      1 Bit        Muxes := 50    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -325,13 +331,13 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 8     
-	   4 Input     64 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 8     
 	   4 Input      1 Bit        Muxes := 10    
 Module function_unit_wrapper__parameterized0 
 Detailed RTL Component Info : 
@@ -345,13 +351,13 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 8     
-	   4 Input     64 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 8     
 	   4 Input      1 Bit        Muxes := 10    
 Module reservestation 
 Detailed RTL Component Info : 
@@ -449,7 +455,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/alu2
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/alu3/\stored_output_reg[16] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/cdb_rr_arbiter/\mask_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:15 ; elapsed = 00:02:19 . Memory (MB): peak = 1051.512 ; gain = 410.199
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:11 ; elapsed = 00:03:42 . Memory (MB): peak = 1050.660 ; gain = 409.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -461,13 +467,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:31 ; elapsed = 00:02:35 . Memory (MB): peak = 1051.512 ; gain = 410.199
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:28 ; elapsed = 00:04:00 . Memory (MB): peak = 1050.660 ; gain = 409.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:34 ; elapsed = 00:02:39 . Memory (MB): peak = 1055.285 ; gain = 413.973
+Finished Timing Optimization : Time (s): cpu = 00:03:33 ; elapsed = 00:04:05 . Memory (MB): peak = 1054.188 ; gain = 413.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -479,7 +485,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:45 ; elapsed = 00:02:49 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Technology Mapping : Time (s): cpu = 00:03:45 ; elapsed = 00:04:17 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -503,7 +509,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:50 ; elapsed = 00:02:54 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished IO Insertion : Time (s): cpu = 00:03:51 ; elapsed = 00:04:23 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -516,7 +522,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:50 ; elapsed = 00:02:54 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:51 ; elapsed = 00:04:23 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -528,25 +534,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:51 ; elapsed = 00:02:55 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:52 ; elapsed = 00:04:24 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:51 ; elapsed = 00:02:55 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:52 ; elapsed = 00:04:24 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:52 ; elapsed = 00:02:56 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:53 ; elapsed = 00:04:26 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:52 ; elapsed = 00:02:56 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:54 ; elapsed = 00:04:26 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -564,61 +570,61 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |   600|
 |2     |LUT1   |     8|
-|3     |LUT2   |  1266|
-|4     |LUT3   |  2218|
-|5     |LUT4   |  1404|
-|6     |LUT5   |  1275|
-|7     |LUT6   |  4680|
+|3     |LUT2   |  1271|
+|4     |LUT3   |  2171|
+|5     |LUT4   |  1419|
+|6     |LUT5   |  1276|
+|7     |LUT6   |  4980|
 |8     |FDRE   |  3442|
-|9     |FDSE   |   150|
+|9     |FDSE   |   154|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------+--------------------------------------+------+
 |      |Instance           |Module                                |Cells |
 +------+-------------------+--------------------------------------+------+
-|1     |top                |                                      | 15043|
-|2     |  inst             |reservestation                        | 15041|
-|3     |    alu0           |function_unit_wrapper                 |   884|
+|1     |top                |                                      | 15321|
+|2     |  inst             |reservestation                        | 15319|
+|3     |    alu0           |function_unit_wrapper                 |   945|
 |4     |    alu0_fu        |alu                                   |  2562|
-|5     |    alu1           |function_unit_wrapper_0               |   883|
+|5     |    alu1           |function_unit_wrapper_0               |   944|
 |6     |    alu1_fu        |alu_1                                 |  2562|
-|7     |    alu2           |function_unit_wrapper_2               |   882|
+|7     |    alu2           |function_unit_wrapper_2               |   943|
 |8     |    alu2_fu        |alu_3                                 |  2562|
-|9     |    alu3           |function_unit_wrapper_4               |   882|
+|9     |    alu3           |function_unit_wrapper_4               |   943|
 |10    |    alu3_fu        |alu_5                                 |  2562|
-|11    |    cdb_rr_arbiter |roundrobin_arbiter                    |   362|
-|12    |    lsu            |function_unit_wrapper__parameterized0 |   900|
+|11    |    cdb_rr_arbiter |roundrobin_arbiter                    |   337|
+|12    |    lsu            |function_unit_wrapper__parameterized0 |   959|
 +------+-------------------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:52 ; elapsed = 00:02:56 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:54 ; elapsed = 00:04:26 . Memory (MB): peak = 1435.660 ; gain = 794.500
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 273 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:25 ; elapsed = 00:02:51 . Memory (MB): peak = 1428.797 ; gain = 644.934
-Synthesis Optimization Complete : Time (s): cpu = 00:02:52 ; elapsed = 00:02:57 . Memory (MB): peak = 1428.797 ; gain = 787.484
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:08 ; elapsed = 00:04:12 . Memory (MB): peak = 1435.660 ; gain = 651.063
+Synthesis Optimization Complete : Time (s): cpu = 00:03:54 ; elapsed = 00:04:26 . Memory (MB): peak = 1435.660 ; gain = 794.500
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 600 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1428.797 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1435.660 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-115 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+119 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:10 ; elapsed = 00:03:19 . Memory (MB): peak = 1428.797 ; gain = 1049.477
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1428.797 ; gain = 0.000
+synth_design: Time (s): cpu = 00:04:17 ; elapsed = 00:04:59 . Memory (MB): peak = 1435.660 ; gain = 1057.559
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1435.660 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1/cpu_design_reservestation_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1435.660 ; gain = 0.000
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
 INFO: [Coretcl 2-1174] Renamed 11 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1428.797 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1435.660 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_reservestation_0_0_synth_1/cpu_design_reservestation_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_design_reservestation_0_0_utilization_synth.rpt -pb cpu_design_reservestation_0_0_utilization_synth.pb
-write_vhdl: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1428.797 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 20:51:13 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  2 05:05:21 2019...

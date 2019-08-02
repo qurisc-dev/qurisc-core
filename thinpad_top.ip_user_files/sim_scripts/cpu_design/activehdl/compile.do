@@ -209,12 +209,12 @@ vcom -work xil_defaultlib -93 \
 "../../../bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_4/sim/floating_point_4.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \
-"../../../bd/cpu_design/ipshared/278e/src/SysArr.v" \
-"../../../bd/cpu_design/ipshared/278e/src/SysArrProcessor.v" \
-"../../../bd/cpu_design/ipshared/278e/src/arrReg.v" \
-"../../../bd/cpu_design/ipshared/278e/src/arrRegArray.v" \
-"../../../bd/cpu_design/ipshared/278e/src/arrStation.v" \
-"../../../bd/cpu_design/ipshared/278e/src/axi_syspro.v" \
+"../../../bd/cpu_design/ipshared/f520/src/SysArr.v" \
+"../../../bd/cpu_design/ipshared/f520/src/SysArrProcessor.v" \
+"../../../bd/cpu_design/ipshared/f520/src/arrReg.v" \
+"../../../bd/cpu_design/ipshared/f520/src/arrRegArray.v" \
+"../../../bd/cpu_design/ipshared/f520/src/arrStation.v" \
+"../../../bd/cpu_design/ipshared/f520/src/axi_syspro.v" \
 "../../../bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/sim/cpu_design_thinpad_qusim_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/c923" "+incdir+../../../../thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/ec67/hdl" \

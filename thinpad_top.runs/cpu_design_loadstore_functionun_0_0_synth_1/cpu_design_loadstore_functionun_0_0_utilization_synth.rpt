@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Aug  1 20:05:45 2019
+| Date         : Fri Aug  2 06:55:37 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : report_utilization -file cpu_design_loadstore_functionun_0_0_utilization_synth.rpt -pb cpu_design_loadstore_functionun_0_0_utilization_synth.pb
 | Design       : cpu_design_loadstore_functionun_0_0
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  562 |     0 |     63400 |  0.89 |
-|   LUT as Logic          |  562 |     0 |     63400 |  0.89 |
+| Slice LUTs*             |  563 |     0 |     63400 |  0.89 |
+|   LUT as Logic          |  563 |     0 |     63400 |  0.89 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  453 |     0 |    126800 |  0.36 |
-|   Register as Flip Flop |  453 |     0 |    126800 |  0.36 |
+| Slice Registers         |  447 |     0 |    126800 |  0.35 |
+|   Register as Flip Flop |  447 |     0 |    126800 |  0.35 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    1 |     0 |     31700 | <0.01 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 1     |          Yes |         Set |            - |
-| 452   |          Yes |       Reset |            - |
+| 0     |          Yes |         Set |            - |
+| 447   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,16 +149,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  452 |        Flop & Latch |
+| FDRE     |  447 |        Flop & Latch |
 | LUT2     |  313 |                 LUT |
-| LUT6     |  253 |                 LUT |
-| LUT3     |   66 |                 LUT |
+| LUT6     |  252 |                 LUT |
+| LUT3     |   68 |                 LUT |
 | CARRY4   |   56 |          CarryLogic |
-| LUT5     |   45 |                 LUT |
-| LUT4     |   14 |                 LUT |
+| LUT5     |   50 |                 LUT |
+| LUT4     |   12 |                 LUT |
 | LUT1     |    6 |                 LUT |
 | MUXF7    |    1 |               MuxFx |
-| FDSE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 
 

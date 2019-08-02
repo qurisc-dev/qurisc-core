@@ -1,6 +1,48 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Aug  2 04:57:50 2019
+| Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg676-2L
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'cpu_design_thinpad_qusim_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of cpu_design_thinpad_qusim_0_0 (xilinx.com:user:thinpad_qusim:1.0) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Aug  2 04:57:50 2019
+| Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tfgg676-2L
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'cpu_design_reservestation_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of cpu_design_reservestation_0_0 (xilinx.com:module_ref:reservestation:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 | Date         : Fri Aug  2 01:32:54 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

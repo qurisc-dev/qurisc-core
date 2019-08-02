@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Aug  1 23:09:58 2019
-# Process ID: 3344
+# Start of session at: Fri Aug  2 05:25:42 2019
+# Process ID: 9600
 # Current directory: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_qusim_0_0_synth_1
 # Command line: vivado.exe -log cpu_design_thinpad_qusim_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_design_thinpad_qusim_0_0.tcl
 # Log file: C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_qusim_0_0_synth_1/cpu_design_thinpad_qusim_0_0.vds
@@ -29,25 +29,25 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10540 
+INFO: Helper process launched with PID 8960 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 821.922 ; gain = 178.137
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 822.645 ; gain = 177.871
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu_design_thinpad_qusim_0_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/synth/cpu_design_thinpad_qusim_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'thinpad_qusim_v1_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/axi_syspro.v:24]
+INFO: [Synth 8-6157] synthesizing module 'thinpad_qusim_v1_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/axi_syspro.v:24]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 64 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 12 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'SysArrProcessor' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/SysArrProcessor.v:23]
-INFO: [Synth 8-6157] synthesizing module 'arrRegArray' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrRegArray.v:23]
-INFO: [Synth 8-6157] synthesizing module 'arrReg' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrReg.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'arrReg' (1#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrReg.v:22]
-WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrRegArray.v:45]
-WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrRegArray.v:45]
-WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrRegArray.v:45]
-WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrRegArray.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'arrRegArray' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrRegArray.v:23]
-INFO: [Synth 8-6157] synthesizing module 'SysArr' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/SysArr.v:26]
-INFO: [Synth 8-6157] synthesizing module 'arrStation' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrStation.v:26]
+INFO: [Synth 8-6157] synthesizing module 'SysArrProcessor' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/SysArrProcessor.v:23]
+INFO: [Synth 8-6157] synthesizing module 'arrRegArray' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrRegArray.v:23]
+INFO: [Synth 8-6157] synthesizing module 'arrReg' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrReg.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'arrReg' (1#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrReg.v:22]
+WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrRegArray.v:45]
+WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrRegArray.v:45]
+WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrRegArray.v:45]
+WARNING: [Synth 8-7023] instance 'areg' of module 'arrReg' has 9 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrRegArray.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'arrRegArray' (2#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrRegArray.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SysArr' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/SysArr.v:26]
+INFO: [Synth 8-6157] synthesizing module 'arrStation' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrStation.v:26]
 	Parameter SIZE bound to: 3'b100 
 INFO: [Synth 8-638] synthesizing module 'floating_point_0' [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_0/synth/floating_point_0.vhd:72]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
@@ -209,12 +209,12 @@ INFO: [Synth 8-3491] module 'floating_point_v7_1_8' declared at 'c:/Users/gjz010
 WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
 WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
 INFO: [Synth 8-256] done synthesizing module 'floating_point_4' (33#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/src/floating_point_4/synth/floating_point_4.vhd:74]
-WARNING: [Synth 8-7023] instance 'acc' of module 'floating_point_4' has 10 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrStation.v:92]
-WARNING: [Synth 8-6014] Unused sequential element result_valid_reg was removed.  [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrStation.v:123]
-INFO: [Synth 8-6155] done synthesizing module 'arrStation' (34#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/arrStation.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'SysArr' (35#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/SysArr.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'SysArrProcessor' (36#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/SysArrProcessor.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'thinpad_qusim_v1_0' (37#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/278e/src/axi_syspro.v:24]
+WARNING: [Synth 8-7023] instance 'acc' of module 'floating_point_4' has 10 connections declared, but only 8 given [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrStation.v:92]
+WARNING: [Synth 8-6014] Unused sequential element result_valid_reg was removed.  [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrStation.v:123]
+INFO: [Synth 8-6155] done synthesizing module 'arrStation' (34#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/arrStation.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'SysArr' (35#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/SysArr.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'SysArrProcessor' (36#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/SysArrProcessor.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'thinpad_qusim_v1_0' (37#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ipshared/f520/src/axi_syspro.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'cpu_design_thinpad_qusim_0_0' (38#1) [c:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.srcs/sources_1/bd/cpu_design/ip/cpu_design_thinpad_qusim_0_0/synth/cpu_design_thinpad_qusim_0_0.v:57]
 WARNING: [Synth 8-3331] design axi_slave_2to1 has unconnected port s_axis_a_tuser[0]
 WARNING: [Synth 8-3331] design axi_slave_2to1 has unconnected port s_axis_b_tuser[0]
@@ -318,7 +318,7 @@ WARNING: [Synth 8-3331] design carry_chain__parameterized7 has unconnected port 
 WARNING: [Synth 8-3331] design carry_chain__parameterized7 has unconnected port CARRYS_OUT[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 996.512 ; gain = 352.727
+Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 997.016 ; gain = 352.242
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -331,10 +331,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 996.512 ; gain = 352.727
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 997.016 ; gain = 352.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 996.512 ; gain = 352.727
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 997.016 ; gain = 352.242
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 6720 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -346,21 +346,21 @@ Parsing XDC File [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/
 Finished Parsing XDC File [C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_qusim_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 1286.168 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.138 . Memory (MB): peak = 1288.754 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 848 instances were transformed.
   FDE => FDRE: 848 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1319.195 ; gain = 33.027
+Constraint Validation Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1323.445 ; gain = 34.691
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Constraint Validation : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -398,7 +398,7 @@ Applied set_property DONT_TOUCH = true for inst/cop/wz/\genblk1[13].stat /acc. (
 Applied set_property DONT_TOUCH = true for inst/cop/wz/\genblk1[14].stat /acc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/cop/wz/\genblk1[15].stat /acc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:05 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'temp_reg' in module 'SysArrProcessor'
 ---------------------------------------------------------------------------------------------------
@@ -412,7 +412,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'temp_reg' in module 'SysArr
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'temp_reg' using encoding 'one-hot' in module 'SysArrProcessor'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:42 ; elapsed = 00:01:45 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'floating_point_0:/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized13) to 'floating_point_0:/U0/i_synth/DELAY_ACCUM_OVERFLOW'
 INFO: [Synth 8-223] decloning instance 'floating_point_0:/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized13) to 'floating_point_0:/U0/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
@@ -422,10 +422,10 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |SysArr__GB0             |           1|     32934|
-|2     |SysArr__GB1             |           1|     10978|
-|3     |SysArr__GB2             |           1|     22439|
-|4     |SysArr__GB3             |           1|     21977|
+|1     |SysArr__GB0             |           1|     32940|
+|2     |SysArr__GB1             |           1|     10980|
+|3     |SysArr__GB2             |           1|     22443|
+|4     |SysArr__GB3             |           1|     21981|
 |5     |SysArrProcessor__GC0    |           1|      3538|
 |6     |thinpad_qusim_v1_0__GC0 |           1|       233|
 +------+------------------------+------------+----------+
@@ -757,17 +757,17 @@ INFO: [Synth 8-3332] Sequential element (ACCUM_OP.OP/i_lsb_detect_final/g_encode
 INFO: [Synth 8-3332] Sequential element (ACCUM_OP.OP/g_accum_split[0].g_lsb_and_msb_bit_detection.i_msb_detect/i_all_zeros/CHAIN_GEN[2].CARRYS_DEL.NEED_DEL.CARRYS_FD) is unused and will be removed from module floating_point_v7_1_8_viv__parameterized1__28.
 INFO: [Synth 8-3332] Sequential element (ACCUM_OP.OP/g_accum_split[0].g_lsb_and_msb_bit_detection.i_msb_detect_neg/i_all_zeros/CHAIN_GEN[2].CARRYS_DEL.NEED_DEL.CARRYS_FD) is unused and will be removed from module floating_point_v7_1_8_viv__parameterized1__28.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:40 ; elapsed = 00:02:48 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:00 ; elapsed = 00:02:05 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |SysArr__GB0             |           1|     24319|
-|2     |SysArr__GB1             |           1|      8043|
-|3     |SysArr__GB2             |           1|     16664|
-|4     |SysArr__GB3             |           1|     16060|
+|1     |SysArr__GB0             |           1|     24320|
+|2     |SysArr__GB1             |           1|      8044|
+|3     |SysArr__GB2             |           1|     16665|
+|4     |SysArr__GB3             |           1|     16061|
 |5     |SysArrProcessor__GC0    |           1|      3415|
 |6     |thinpad_qusim_v1_0__GC0 |           1|       228|
 +------+------------------------+------------+----------+
@@ -775,23 +775,23 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:01 ; elapsed = 00:03:09 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:19 ; elapsed = 00:02:24 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:01 ; elapsed = 00:03:09 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Timing Optimization : Time (s): cpu = 00:02:19 ; elapsed = 00:02:24 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |SysArr__GB0             |           1|     24319|
-|2     |SysArr__GB1             |           1|      8043|
-|3     |SysArr__GB2             |           1|     16664|
-|4     |SysArr__GB3             |           1|     16060|
+|1     |SysArr__GB0             |           1|     24320|
+|2     |SysArr__GB1             |           1|      8044|
+|3     |SysArr__GB2             |           1|     16665|
+|4     |SysArr__GB3             |           1|     16061|
 |5     |SysArrProcessor__GC0    |           1|      3415|
 |6     |thinpad_qusim_v1_0__GC0 |           1|       228|
 +------+------------------------+------------+----------+
@@ -799,7 +799,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:20 ; elapsed = 00:03:29 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Technology Mapping : Time (s): cpu = 00:02:31 ; elapsed = 00:02:36 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -823,7 +823,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:27 ; elapsed = 00:03:36 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished IO Insertion : Time (s): cpu = 00:02:35 ; elapsed = 00:02:41 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -836,7 +836,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:28 ; elapsed = 00:03:37 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:36 ; elapsed = 00:02:41 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -848,25 +848,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:36 ; elapsed = 00:03:46 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:41 ; elapsed = 00:02:47 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:37 ; elapsed = 00:03:47 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:42 ; elapsed = 00:02:47 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:39 ; elapsed = 00:03:49 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:43 ; elapsed = 00:02:49 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:40 ; elapsed = 00:03:49 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:44 ; elapsed = 00:02:49 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -886,7 +886,7 @@ Report Cell Usage:
 |2     |DSP48E1_1 |    16|
 |3     |DSP48E1_2 |    32|
 |4     |LUT1      |   416|
-|5     |LUT2      |  2616|
+|5     |LUT2      |  2613|
 |6     |LUT3      |  2474|
 |7     |LUT4      |  4708|
 |8     |LUT5      |  2320|
@@ -902,17 +902,17 @@ Report Cell Usage:
 |18    |FDSE      |    19|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:40 ; elapsed = 00:03:49 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:44 ; elapsed = 00:02:49 . Memory (MB): peak = 1323.445 ; gain = 678.672
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:12 ; elapsed = 00:03:12 . Memory (MB): peak = 1319.195 ; gain = 352.727
-Synthesis Optimization Complete : Time (s): cpu = 00:03:40 ; elapsed = 00:03:50 . Memory (MB): peak = 1319.195 ; gain = 675.410
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:45 ; elapsed = 00:02:21 . Memory (MB): peak = 1323.445 ; gain = 352.242
+Synthesis Optimization Complete : Time (s): cpu = 00:02:44 ; elapsed = 00:02:50 . Memory (MB): peak = 1323.445 ; gain = 678.672
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 6515 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1319.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1323.445 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2144 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 1360 instances
@@ -921,23 +921,23 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 353 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:21 ; elapsed = 00:04:32 . Memory (MB): peak = 1319.195 ; gain = 932.719
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.115 . Memory (MB): peak = 1319.195 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:12 ; elapsed = 00:03:19 . Memory (MB): peak = 1323.445 ; gain = 937.777
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 1323.445 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_qusim_0_0_synth_1/cpu_design_thinpad_qusim_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 1319.195 ; gain = 0.000
-write_verilog: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1319.195 ; gain = 0.000
-write_vhdl: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1319.195 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 1323.445 ; gain = 0.000
+write_verilog: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1323.445 ; gain = 0.000
+write_vhdl: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1323.445 ; gain = 0.000
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cpu_design_thinpad_qusim_0_0, cache-ID = 0a913523a482eef6
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cpu_design_thinpad_qusim_0_0, cache-ID = c0e32398dcf448d3
 INFO: [Coretcl 2-1174] Renamed 5533 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.138 . Memory (MB): peak = 1319.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 1323.445 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gjz010/Documents/GitHub/thinpad_top/thinpad_top.runs/cpu_design_thinpad_qusim_0_0_synth_1/cpu_design_thinpad_qusim_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 1319.195 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:21 ; elapsed = 00:00:13 . Memory (MB): peak = 1323.445 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file cpu_design_thinpad_qusim_0_0_utilization_synth.rpt -pb cpu_design_thinpad_qusim_0_0_utilization_synth.pb
-write_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1319.195 ; gain = 0.000
-write_vhdl: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1319.195 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  1 23:15:53 2019...
+write_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1323.445 ; gain = 0.000
+write_vhdl: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1323.445 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  2 05:30:18 2019...

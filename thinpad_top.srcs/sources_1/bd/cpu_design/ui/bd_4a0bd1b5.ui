@@ -2,80 +2,146 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port GPIO2_0 -pg 1 -lvl 7 -x 15080 -y 2780 -defaultsOSRD
-preplace port GPIO_0 -pg 1 -lvl 7 -x 15080 -y 2760 -defaultsOSRD
+preplace port GPIO2_0 -pg 1 -lvl 8 -x 18540 -y 2780 -defaultsOSRD
+preplace port GPIO_0 -pg 1 -lvl 8 -x 18540 -y 2760 -defaultsOSRD
 preplace port clk_0 -pg 1 -lvl 0 -x -10 -y 1980 -defaultsOSRD
 preplace port rst_0 -pg 1 -lvl 0 -x -10 -y 1900 -defaultsOSRD
-preplace port sram_oe_0 -pg 1 -lvl 7 -x 15080 -y 1860 -defaultsOSRD
-preplace port sram_we_0 -pg 1 -lvl 7 -x 15080 -y 1880 -defaultsOSRD
-preplace port bidir_0 -pg 1 -lvl 7 -x 15080 -y 1800 -defaultsOSRD
-preplace port sram_ce_0 -pg 1 -lvl 7 -x 15080 -y 1840 -defaultsOSRD
+preplace port sram_oe_0 -pg 1 -lvl 8 -x 18540 -y 1860 -defaultsOSRD
+preplace port sram_we_0 -pg 1 -lvl 8 -x 18540 -y 1880 -defaultsOSRD
+preplace port bidir_0 -pg 1 -lvl 8 -x 18540 -y 1800 -defaultsOSRD
+preplace port sram_ce_0 -pg 1 -lvl 8 -x 18540 -y 1840 -defaultsOSRD
 preplace port rxd_0 -pg 1 -lvl 0 -x -10 -y 3570 -defaultsOSRD
-preplace port txd_0 -pg 1 -lvl 7 -x 15080 -y 3530 -defaultsOSRD
-preplace portBus sram_addr_0 -pg 1 -lvl 7 -x 15080 -y 1900 -defaultsOSRD
-preplace portBus dout_0 -pg 1 -lvl 7 -x 15080 -y 1780 -defaultsOSRD
-preplace portBus sram_be_0 -pg 1 -lvl 7 -x 15080 -y 1820 -defaultsOSRD
+preplace port txd_0 -pg 1 -lvl 8 -x 18540 -y 3530 -defaultsOSRD
+preplace portBus sram_addr_0 -pg 1 -lvl 8 -x 18540 -y 1900 -defaultsOSRD
+preplace portBus dout_0 -pg 1 -lvl 8 -x 18540 -y 1780 -defaultsOSRD
+preplace portBus sram_be_0 -pg 1 -lvl 8 -x 18540 -y 1820 -defaultsOSRD
 preplace portBus din_0 -pg 1 -lvl 0 -x -10 -y 1830 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 1970 -defaultsOSRD
 preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 390 -y 1940 -defaultsOSRD
-preplace inst CPUFrontEnd -pg 1 -lvl 3 -x 1070 -y 5302 -defaultsOSRD
-preplace inst CPUBackEnd -pg 1 -lvl 3 -x 1070 -y 200 -defaultsOSRD
-preplace inst axi_bram_ctrl_1 -pg 1 -lvl 5 -x 14590 -y 2570 -defaultsOSRD
-preplace inst blk_mem_gen_1 -pg 1 -lvl 6 -x 14926 -y 2570 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 14171 -y 2790 -defaultsOSRD
-preplace inst axi_intc_0 -pg 1 -lvl 5 -x 14590 -y 3090 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 5 -x 14590 -y 2780 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 4 -x 14171 -y 3620 -defaultsOSRD
-preplace inst thinpad_sram_0 -pg 1 -lvl 5 -x 14590 -y 1840 -defaultsOSRD
-preplace inst thinpad_qusim_0 -pg 1 -lvl 5 -x 14590 -y 3830 -defaultsOSRD
-preplace inst thinpad_serial_0 -pg 1 -lvl 5 -x 14590 -y 3540 -defaultsOSRD
-preplace netloc clk_0_1 1 1 4 210 1840 560 2470 1430 2470 14360
-preplace netloc rst_0_1 1 2 3 570 3540 N 3540 14350
-preplace netloc rob_0_do_commit 1 2 2 710 450 1370
-preplace netloc dispatcher_0_decoder_pop 1 2 2 660 20 1280
-preplace netloc if_insn_queue_0_out_valid 1 2 2 700 400 1290
-preplace netloc jump_predictor_0_forward_index 1 2 2 710 410 1280
-preplace netloc registers_0_bp_query_result 1 2 2 680 420 1330
-preplace netloc if_insn_queue_0_next_insn 1 2 2 690 390 1340
-preplace netloc rob_0_commit_jump_address 1 2 2 700 440 1350
-preplace netloc rob_0_commit_bpfailed 1 2 2 690 430 1300
+preplace inst CPUFrontEnd -pg 1 -lvl 3 -x 1070 -y 6176 -defaultsOSRD
+preplace inst CPUBackEnd -pg 1 -lvl 3 -x 1070 -y 210 -defaultsOSRD
+preplace inst axi_bram_ctrl_1 -pg 1 -lvl 6 -x 18048 -y 2570 -defaultsOSRD
+preplace inst blk_mem_gen_1 -pg 1 -lvl 7 -x 18384 -y 2570 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 5 -x 17629 -y 2790 -defaultsOSRD
+preplace inst axi_intc_0 -pg 1 -lvl 6 -x 18048 -y 3090 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 18048 -y 2780 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 5 -x 17629 -y 3620 -defaultsOSRD
+preplace inst thinpad_sram_0 -pg 1 -lvl 6 -x 18048 -y 1840 -defaultsOSRD
+preplace inst thinpad_serial_0 -pg 1 -lvl 6 -x 18048 -y 3540 -defaultsOSRD
+preplace inst thinpad_qusim_0 -pg 1 -lvl 6 -x 18048 -y 3830 -defaultsOSRD
+preplace inst CPUBackEnd|LoadStore -pg 1 -lvl 6 -x 3980 -y 1070 -defaultsOSRD
+preplace inst CPUBackEnd|renamebuffer_0 -pg 1 -lvl 2 -x 1620 -y 760 -defaultsOSRD
+preplace inst CPUBackEnd|dispatcher_0 -pg 1 -lvl 4 -x 2920 -y 710 -defaultsOSRD
+preplace inst CPUBackEnd|registers_0 -pg 1 -lvl 1 -x 1140 -y 920 -defaultsOSRD
+preplace inst CPUBackEnd|rob_0 -pg 1 -lvl 3 -x 2180 -y 380 -defaultsOSRD
+preplace inst CPUBackEnd|reservestation_0 -pg 1 -lvl 5 -x 3490 -y 760 -defaultsOSRD
+preplace netloc clk_0_1 1 1 5 210 1840 560 2470 N 2470 4780 2470 17820
+preplace netloc rst_0_1 1 2 4 570 3550 N 3550 N 3550 N
+preplace netloc rob_0_do_commit 1 2 2 700 1320 4450
+preplace netloc dispatcher_0_decoder_pop 1 2 2 660 1250 4430
+preplace netloc if_insn_queue_0_out_valid 1 2 2 690 1270 4400
+preplace netloc jump_predictor_0_forward_index 1 2 2 700 1280 4360
+preplace netloc registers_0_bp_query_result 1 2 2 670 1290 4390
+preplace netloc if_insn_queue_0_next_insn 1 2 2 680 1260 4430
+preplace netloc rob_0_commit_jump_address 1 2 2 690 1310 4420
+preplace netloc rob_0_commit_bpfailed 1 2 2 680 1300 4380
 preplace netloc rst_0_2 1 0 2 10 1900 200
 preplace netloc clk_0_2 1 0 1 NJ 1980
 preplace netloc clk_wiz_0_locked 1 1 1 N 1980
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 3 580 2480 1380 2480 14370
-preplace netloc CPUBackEnd_commit_isjal 1 2 2 620 -20 1320
-preplace netloc commit_is_jalr_1 1 2 2 640 10 1290
-preplace netloc CPUBackEnd_commit_val_rs1 1 2 2 630 0 1310
-preplace netloc commit_val_rd_1 1 2 2 670 380 1290
-preplace netloc CPUBackEnd_commit_ras_commit_push_item 1 2 2 610 -10 1360
-preplace netloc CPUBackEnd_commit_branchret 1 2 2 600 -30 1380
-preplace netloc bp_isbranch_1 1 2 2 650 370 1280
-preplace netloc thinpad_sram_0_sram_oe 1 5 2 NJ 1860 NJ
-preplace netloc thinpad_sram_0_sram_we 1 5 2 NJ 1880 NJ
-preplace netloc thinpad_sram_0_sram_addr 1 5 2 NJ 1900 NJ
-preplace netloc thinpad_sram_0_bidir 1 5 2 NJ 1800 NJ
-preplace netloc thinpad_sram_0_sram_ce 1 5 2 NJ 1840 NJ
-preplace netloc thinpad_sram_0_dout 1 5 2 NJ 1780 NJ
-preplace netloc thinpad_sram_0_sram_be 1 5 2 NJ 1820 NJ
-preplace netloc din_0_1 1 0 5 NJ 1830 NJ 1830 NJ 1830 NJ 1830 NJ
-preplace netloc xlconcat_0_dout 1 4 1 14390 3120n
-preplace netloc axi_gpio_0_ip2intc_irpt 1 3 3 1420 3180 NJ 3180 14730
-preplace netloc rxd_0_1 1 0 5 NJ 3570 NJ 3570 590J 3550 NJ 3550 14330J
-preplace netloc thinpad_serial_0_txd 1 5 2 NJ 3530 NJ
-preplace netloc thinpad_serial_0_uart_intr 1 3 3 1430 3450 NJ 3450 14730
-preplace netloc axi_interconnect_0_M01_AXI 1 4 1 14340 2550n
-preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 5 1 NJ 2570
-preplace netloc axi_interconnect_0_M00_AXI 1 4 1 14330 1810n
-preplace netloc axi_gpio_0_GPIO 1 5 2 NJ 2770 15060
-preplace netloc axi_interconnect_0_M03_AXI 1 4 1 14350 2800n
-preplace netloc CPUFrontEnd_M00_AXI1 1 3 1 1410 2560n
-preplace netloc CPUFrontEnd_M00_AXI 1 3 1 1400 2540n
-preplace netloc axi_interconnect_0_M02_AXI 1 4 1 14350 2760n
-preplace netloc axi_interconnect_0_M04_AXI 1 4 1 14380 2820n
-preplace netloc CPUBackEnd_M00_AXI 1 3 1 1390 80n
-preplace netloc axi_interconnect_0_M05_AXI 1 4 1 14340 2840n
-levelinfo -pg 1 -10 110 390 1070 14171 14590 14926 15080
-pagesize -pg 1 -db -bbox -sgen -130 -40 15250 5520
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 4 580 2480 N 2480 4760 2480 17830
+preplace netloc CPUBackEnd_commit_isjal 1 2 2 620 -20 4410
+preplace netloc commit_is_jalr_1 1 2 2 640 10 4370
+preplace netloc CPUBackEnd_commit_val_rs1 1 2 2 610 -10 4440
+preplace netloc commit_val_rd_1 1 2 2 650 30 4360
+preplace netloc CPUBackEnd_commit_ras_commit_push_item 1 2 2 630 20 4400
+preplace netloc CPUBackEnd_commit_branchret 1 2 2 590 -30 4470
+preplace netloc bp_isbranch_1 1 2 2 600 0 4460
+preplace netloc thinpad_sram_0_sram_oe 1 6 2 NJ 1860 NJ
+preplace netloc thinpad_sram_0_sram_we 1 6 2 NJ 1880 NJ
+preplace netloc thinpad_sram_0_sram_addr 1 6 2 NJ 1900 NJ
+preplace netloc thinpad_sram_0_bidir 1 6 2 NJ 1800 NJ
+preplace netloc thinpad_sram_0_sram_ce 1 6 2 NJ 1840 NJ
+preplace netloc thinpad_sram_0_dout 1 6 2 NJ 1780 NJ
+preplace netloc thinpad_sram_0_sram_be 1 6 2 NJ 1820 NJ
+preplace netloc din_0_1 1 0 6 NJ 1830 NJ 1830 NJ 1830 NJ 1830 N 1830 NJ
+preplace netloc xlconcat_0_dout 1 5 1 17840 3120n
+preplace netloc axi_gpio_0_ip2intc_irpt 1 4 3 4770 3100 17790J 3000 18190
+preplace netloc rxd_0_1 1 0 6 NJ 3570 NJ 3570 NJ 3570 NJ 3570 4760 3690 17850J
+preplace netloc thinpad_serial_0_txd 1 6 2 NJ 3530 NJ
+preplace netloc thinpad_serial_0_uart_intr 1 4 3 4780 3450 NJ 3450 18190
+preplace netloc axi_interconnect_0_M01_AXI 1 5 1 17790 2550n
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 6 1 NJ 2570
+preplace netloc axi_interconnect_0_M00_AXI 1 5 1 17780 1810n
+preplace netloc axi_gpio_0_GPIO 1 6 2 NJ 2770 18520
+preplace netloc axi_interconnect_0_M03_AXI 1 5 1 17810 2800n
+preplace netloc CPUFrontEnd_M00_AXI1 1 3 2 4470 2560 N
+preplace netloc CPUFrontEnd_M00_AXI 1 3 2 4460 2540 N
+preplace netloc axi_interconnect_0_M02_AXI 1 5 1 17800 2760n
+preplace netloc axi_interconnect_0_M04_AXI 1 5 1 17800 2820n
+preplace netloc CPUBackEnd_M00_AXI 1 3 2 N 400 4770
+preplace netloc axi_interconnect_0_M05_AXI 1 5 1 17780 2840n
+preplace netloc CPUBackEnd|rob_0_reissue_args 1 3 1 2610 280n
+preplace netloc CPUBackEnd|rob_0_reissue 1 3 1 2620 260n
+preplace netloc CPUBackEnd|dispatcher_0_reissue_next 1 2 3 1890 920 NJ 920 3140
+preplace netloc CPUBackEnd|dispatcher_0_can_dispatch 1 1 5 1420 990 1860 990 NJ 990 3250 1060 N
+preplace netloc CPUBackEnd|rob_0_rob_not_full 1 3 1 2450 500n
+preplace netloc CPUBackEnd|reservestation_0_can_reserve 1 3 3 2650 1020 NJ 1020 3670
+preplace netloc CPUBackEnd|dispatcher_0_decode_result 1 2 3 1880 910 NJ 910 3160
+preplace netloc CPUBackEnd|Net 1 0 5 960 790 1330 970 1800J 940 NJ 940 3130
+preplace netloc CPUBackEnd|Net1 1 0 5 950 780 1340 980 1810J 970 NJ 970 3150
+preplace netloc CPUBackEnd|dispatcher_0_rd_register_target 1 1 4 1390 1000 1880J 950 NJ 950 3120
+preplace netloc CPUBackEnd|renamebuffer_0_rs_value 1 2 2 N 740 2620J
+preplace netloc CPUBackEnd|renamebuffer_0_rt_value 1 2 2 NJ 780 2640
+preplace netloc CPUBackEnd|dispatcher_0_rs_value 1 4 1 3170 730n
+preplace netloc CPUBackEnd|dispatcher_0_rt_value 1 4 1 3180 750n
+preplace netloc CPUBackEnd|rob_0_start_reissue 1 1 5 1380 1070 NJ 1070 2570 1050 3260 1050 3790J
+preplace netloc CPUBackEnd|rob_0_rob_empty 1 3 1 2630 140n
+preplace netloc CPUBackEnd|loadstoreunit_0_store_queue_available 1 3 4 2660 1000 NJ 1000 3680J 890 4160
+preplace netloc CPUBackEnd|registers_0_query_rs_result 1 1 1 1310 860n
+preplace netloc CPUBackEnd|registers_0_query_rt_result 1 1 1 1350 880n
+preplace netloc CPUBackEnd|rob_0_commit_regwrite_index 1 0 4 950 1050 1360 1050 NJ 1050 2440
+preplace netloc CPUBackEnd|rob_0_commit_regwrite_value 1 0 4 960 1090 NJ 1090 NJ 1090 2430
+preplace netloc CPUBackEnd|rob_0_rob_next_item 1 1 5 1410 960 1810J 930 2480 930 3290 1140 NJ
+preplace netloc CPUBackEnd|rob_0_commit_line 1 1 5 1400 1030 NJ 1030 2560 1030 3300 1030 3790J
+preplace netloc CPUBackEnd|renamebuffer_0_combine_dep 1 2 3 1870 730 2490J 870 3240
+preplace netloc CPUBackEnd|renamebuffer_0_rs_is_value 1 2 3 1840 880 NJ 880 3220J
+preplace netloc CPUBackEnd|renamebuffer_0_rt_is_value 1 2 3 1800J 890 NJ 890 3230
+preplace netloc CPUBackEnd|renamebuffer_0_query_line_rs 1 2 1 N 400
+preplace netloc CPUBackEnd|rob_0_search_result_0 1 3 1 N 160
+preplace netloc CPUBackEnd|rob_0_search_ready_0 1 3 1 N 180
+preplace netloc CPUBackEnd|renamebuffer_0_query_line_rt 1 2 1 N 420
+preplace netloc CPUBackEnd|rob_0_search_result_1 1 3 1 N 200
+preplace netloc CPUBackEnd|rob_0_search_ready_1 1 3 1 N 220
+preplace netloc CPUBackEnd|reservestation_0_cdb 1 1 5 1430 1020 1830 1020 2520J 1040 NJ 1040 3660
+preplace netloc CPUBackEnd|rob_0_commit_store 1 3 3 NJ 440 NJ 440 3730
+preplace netloc CPUBackEnd|if_insn_queue_0_next_insn 1 0 4 NJ 1060 NJ 1060 NJ 1060 2460
+preplace netloc CPUBackEnd|if_insn_queue_0_out_valid 1 0 4 NJ 1080 NJ 1080 NJ 1080 2530
+preplace netloc CPUBackEnd|dispatcher_0_decoder_pop 1 4 3 3120 420 NJ 420 NJ
+preplace netloc CPUBackEnd|clk_0_1 1 0 6 920 620 1310 550 1820 980 NJ 980 3190 970 3720J
+preplace netloc CPUBackEnd|rst_0_1 1 0 6 930 640 1430 560 1850 960 NJ 960 3270 980 NJ
+preplace netloc CPUBackEnd|rob_0_do_commit 1 0 7 940 770 1320 1100 NJ 1100 2550 1080 3170 1090 3780 440 NJ
+preplace netloc CPUBackEnd|jump_predictor_0_forward_index 1 0 1 940 990n
+preplace netloc CPUBackEnd|registers_0_bp_query_result 1 1 6 1310 1010 NJ 1010 2520J 460 NJ 460 NJ 460 NJ
+preplace netloc CPUBackEnd|rob_0_commit_jump_address 1 3 4 2580 410 NJ 410 NJ 410 4190J
+preplace netloc CPUBackEnd|rob_0_commit_bpfailed 1 1 6 1370 1040 NJ 1040 2510 1060 3210 1070 3770 500 NJ
+preplace netloc CPUBackEnd|l1_cache_0_wready 1 2 5 1900 1000 2540J 1010 NJ 1010 3700J 880 4150
+preplace netloc CPUBackEnd|reservestation_0_lsu_din 1 5 1 3690 780n
+preplace netloc CPUBackEnd|loadstore_functionun_0_dout 1 4 3 3310 990 3710J 900 4140
+preplace netloc CPUBackEnd|rob_0_commit_isjal 1 3 4 2500 520 NJ 520 NJ 520 NJ
+preplace netloc CPUBackEnd|rob_0_commit_isjalr 1 3 4 2490 510 NJ 510 3750J 540 NJ
+preplace netloc CPUBackEnd|rob_0_commit_val_rs1 1 3 4 2600 550 NJ 550 3660J 560 NJ
+preplace netloc CPUBackEnd|rob_0_commit_val_rd 1 3 4 2590 540 NJ 540 3740J 550 4150J
+preplace netloc CPUBackEnd|rob_0_commit_ras_commit_push_item 1 3 4 2580 530 NJ 530 NJ 530 4160J
+preplace netloc CPUBackEnd|rob_0_commit_branchret 1 3 4 2460 490 NJ 490 NJ 490 4170J
+preplace netloc CPUBackEnd|rob_0_commit_isbranch 1 3 4 2470 500 NJ 500 3760J 510 4140J
+preplace netloc CPUBackEnd|Net2 1 2 3 1910 900 NJ 900 3280
+preplace netloc CPUBackEnd|dispatcher_0_allocate_sq 1 4 2 3200J 1080 N
+preplace netloc CPUBackEnd|m00_axi_aresetn_1 1 0 6 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 N
+preplace netloc CPUBackEnd|LoadStore_M00_AXI 1 6 1 4180 400n
+levelinfo -pg 1 -10 110 390 1070 4740 17629 18048 18384 18540
+levelinfo -hier CPUBackEnd * 1140 1620 2180 2920 3490 3980 *
+pagesize -pg 1 -db -bbox -sgen -130 -40 18710 6370
+pagesize -hier CPUBackEnd -db -bbox -sgen 890 60 4220 1230
 "
 }
 {

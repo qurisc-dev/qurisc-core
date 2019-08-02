@@ -282,7 +282,7 @@ initial begin
         reset_btn=1;
         $display("Loading program into memory");
         
-        load_to_sram("c:\\links\\winlink\\serial.bin");
+        load_to_sram("c:\\links\\winlink\\sys_tb.bin");
         #100 reset_btn=0;
 
 end

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Aug  1 23:15:37 2019
+| Date         : Fri Aug  2 05:30:01 2019
 | Host         : DESKTOP-D2G6SOG running 64-bit major release  (build 9200)
 | Command      : report_utilization -file cpu_design_thinpad_qusim_0_0_utilization_synth.rpt -pb cpu_design_thinpad_qusim_0_0_utilization_synth.pb
 | Design       : cpu_design_thinpad_qusim_0_0
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 12985 |     0 |     63400 | 20.48 |
-|   LUT as Logic             | 11449 |     0 |     63400 | 18.06 |
+| Slice LUTs*                | 12982 |     0 |     63400 | 20.48 |
+|   LUT as Logic             | 11446 |     0 |     63400 | 18.05 |
 |   LUT as Memory            |  1536 |     0 |     19000 |  8.08 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |  1536 |     0 |           |       |
@@ -155,7 +155,7 @@ Table of Contents
 | FDRE     | 20551 |        Flop & Latch |
 | LUT4     |  4708 |                 LUT |
 | LUT6     |  3402 |                 LUT |
-| LUT2     |  2616 |                 LUT |
+| LUT2     |  2613 |                 LUT |
 | LUT3     |  2474 |                 LUT |
 | LUT5     |  2320 |                 LUT |
 | SRL16E   |  1472 |  Distributed Memory |
