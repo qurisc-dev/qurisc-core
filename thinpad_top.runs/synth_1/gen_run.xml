@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2L" LaunchTime="1564700027">
   <File Type="PA-TCL" Name="thinpad_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="thinpad_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="thinpad_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="thinpad_top.vds"/>
   <File Type="RDS-UTIL" Name="thinpad_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="thinpad_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="thinpad_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="thinpad_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="thinpad_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/defs.vh">
@@ -232,28 +229,28 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="pll_example"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_simple_master_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_clk_wiz_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_decoder_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_pc_counter_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_simple_master_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_clk_wiz_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_bram_ctrl_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_simple_master_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_loadstore_functionun_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_bram_ctrl_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_blk_mem_gen_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_loadstore_functionun_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_controller_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_gpio_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_axi_intc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_tlb_fetcher_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_thinpad_sram_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_tlb_fetcher_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_dispatcher_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_rob_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_renamebuffer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_memory_accessor_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_jump_predictor_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_insn_queue_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_branch_predictor_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_design_if_insn_queue_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_registers_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_l1_cache_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_design_thinpad_serial_0_0"/>

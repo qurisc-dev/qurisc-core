@@ -21,6 +21,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/thinpad_fpu_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/thinpad_qusim_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/thinpad_serial_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/simple_axilite_slave_1.0"/>
@@ -156,92 +157,92 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_reservestation_0_0/cpu_design_reservestation_0_0.xci">
-          <Proxy FileSetName="cpu_design_reservestation_0_0"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_xbar_0/cpu_design_xbar_0.xci">
+          <Proxy FileSetName="cpu_design_xbar_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_simple_master_0_1/cpu_design_axi_simple_master_0_1.xci">
           <Proxy FileSetName="cpu_design_axi_simple_master_0_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_pc_counter_0_0/cpu_design_pc_counter_0_0.xci">
-          <Proxy FileSetName="cpu_design_pc_counter_0_0"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_rob_0_0/cpu_design_rob_0_0.xci">
+          <Proxy FileSetName="cpu_design_rob_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_thinpad_sram_0_0/cpu_design_thinpad_sram_0_0.xci">
-          <Proxy FileSetName="cpu_design_thinpad_sram_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_xbar_0/cpu_design_xbar_0.xci">
-          <Proxy FileSetName="cpu_design_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_registers_0_0/cpu_design_registers_0_0.xci">
-          <Proxy FileSetName="cpu_design_registers_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1.xci">
-          <Proxy FileSetName="cpu_design_axi_gpio_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0.xci">
-          <Proxy FileSetName="cpu_design_thinpad_serial_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0.xci">
-          <Proxy FileSetName="cpu_design_thinpad_qusim_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_l1_cache_0_0/cpu_design_l1_cache_0_0.xci">
-          <Proxy FileSetName="cpu_design_l1_cache_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0.xci">
-          <Proxy FileSetName="cpu_design_axi_intc_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_loadstore_functionun_0_0/cpu_design_loadstore_functionun_0_0.xci">
-          <Proxy FileSetName="cpu_design_loadstore_functionun_0_0"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_if_memory_accessor_0_0/cpu_design_if_memory_accessor_0_0.xci">
+          <Proxy FileSetName="cpu_design_if_memory_accessor_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_bram_ctrl_1_0/cpu_design_axi_bram_ctrl_1_0.xci">
           <Proxy FileSetName="cpu_design_axi_bram_ctrl_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0.xci">
-          <Proxy FileSetName="cpu_design_proc_sys_reset_0_0"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_l1_cache_0_0/cpu_design_l1_cache_0_0.xci">
+          <Proxy FileSetName="cpu_design_l1_cache_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_if_controller_0_0/cpu_design_if_controller_0_0.xci">
-          <Proxy FileSetName="cpu_design_if_controller_0_0"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_thinpad_qusim_0_0/cpu_design_thinpad_qusim_0_0.xci">
+          <Proxy FileSetName="cpu_design_thinpad_qusim_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_branch_predictor_0_1/cpu_design_branch_predictor_0_1.xci">
-          <Proxy FileSetName="cpu_design_branch_predictor_0_1"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_simple_master_0_2/cpu_design_axi_simple_master_0_2.xci">
+          <Proxy FileSetName="cpu_design_axi_simple_master_0_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_renamebuffer_0_0/cpu_design_renamebuffer_0_0.xci">
           <Proxy FileSetName="cpu_design_renamebuffer_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_loadstore_functionun_0_0/cpu_design_loadstore_functionun_0_0.xci">
+          <Proxy FileSetName="cpu_design_loadstore_functionun_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_reservestation_0_0/cpu_design_reservestation_0_0.xci">
+          <Proxy FileSetName="cpu_design_reservestation_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_dispatcher_0_0/cpu_design_dispatcher_0_0.xci">
           <Proxy FileSetName="cpu_design_dispatcher_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_decoder_0_0/cpu_design_decoder_0_0.xci">
-          <Proxy FileSetName="cpu_design_decoder_0_0"/>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_registers_0_0/cpu_design_registers_0_0.xci">
+          <Proxy FileSetName="cpu_design_registers_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_pc_counter_0_0/cpu_design_pc_counter_0_0.xci">
+          <Proxy FileSetName="cpu_design_pc_counter_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_if_tlb_fetcher_0_0/cpu_design_if_tlb_fetcher_0_0.xci">
           <Proxy FileSetName="cpu_design_if_tlb_fetcher_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_loadstoreunit_0_0/cpu_design_loadstoreunit_0_0.xci">
+          <Proxy FileSetName="cpu_design_loadstoreunit_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_branch_predictor_0_1/cpu_design_branch_predictor_0_1.xci">
+          <Proxy FileSetName="cpu_design_branch_predictor_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_proc_sys_reset_0_0/cpu_design_proc_sys_reset_0_0.xci">
+          <Proxy FileSetName="cpu_design_proc_sys_reset_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_blk_mem_gen_1_0/cpu_design_blk_mem_gen_1_0.xci">
+          <Proxy FileSetName="cpu_design_blk_mem_gen_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_simple_master_0_0/cpu_design_axi_simple_master_0_0.xci">
+          <Proxy FileSetName="cpu_design_axi_simple_master_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_intc_0_0/cpu_design_axi_intc_0_0.xci">
+          <Proxy FileSetName="cpu_design_axi_intc_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_gpio_0_1/cpu_design_axi_gpio_0_1.xci">
+          <Proxy FileSetName="cpu_design_axi_gpio_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_if_controller_0_0/cpu_design_if_controller_0_0.xci">
+          <Proxy FileSetName="cpu_design_if_controller_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_thinpad_serial_0_0/cpu_design_thinpad_serial_0_0.xci">
+          <Proxy FileSetName="cpu_design_thinpad_serial_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_jump_predictor_0_0/cpu_design_jump_predictor_0_0.xci">
+          <Proxy FileSetName="cpu_design_jump_predictor_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_thinpad_sram_0_0/cpu_design_thinpad_sram_0_0.xci">
+          <Proxy FileSetName="cpu_design_thinpad_sram_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_decoder_0_0/cpu_design_decoder_0_0.xci">
+          <Proxy FileSetName="cpu_design_decoder_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_if_insn_queue_0_0/cpu_design_if_insn_queue_0_0.xci">
           <Proxy FileSetName="cpu_design_if_insn_queue_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_clk_wiz_0_1/cpu_design_clk_wiz_0_1.xci">
           <Proxy FileSetName="cpu_design_clk_wiz_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_loadstoreunit_0_0/cpu_design_loadstoreunit_0_0.xci">
-          <Proxy FileSetName="cpu_design_loadstoreunit_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_simple_master_0_0/cpu_design_axi_simple_master_0_0.xci">
-          <Proxy FileSetName="cpu_design_axi_simple_master_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_axi_simple_master_0_2/cpu_design_axi_simple_master_0_2.xci">
-          <Proxy FileSetName="cpu_design_axi_simple_master_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_if_memory_accessor_0_0/cpu_design_if_memory_accessor_0_0.xci">
-          <Proxy FileSetName="cpu_design_if_memory_accessor_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_blk_mem_gen_1_0/cpu_design_blk_mem_gen_1_0.xci">
-          <Proxy FileSetName="cpu_design_blk_mem_gen_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_jump_predictor_0_0/cpu_design_jump_predictor_0_0.xci">
-          <Proxy FileSetName="cpu_design_jump_predictor_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="cpu_design.bd" FileRelPathName="ip/cpu_design_rob_0_0/cpu_design_rob_0_0.xci">
-          <Proxy FileSetName="cpu_design_rob_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/cpu_design/hdl/cpu_design_wrapper.v">
@@ -336,6 +337,14 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/fpu.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/thinpad_fpu/thinpad_fpu.bd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -1054,9 +1063,7 @@
     </Run>
     <Run Id="cpu_design_thinpad_serial_0_0_synth_1" Type="Ft3:Synth" SrcSet="cpu_design_thinpad_serial_0_0" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_thinpad_serial_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/cpu_design_thinpad_serial_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1065,9 +1072,7 @@
     </Run>
     <Run Id="cpu_design_reservestation_0_0_synth_1" Type="Ft3:Synth" SrcSet="cpu_design_reservestation_0_0" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_reservestation_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/cpu_design_reservestation_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1076,9 +1081,7 @@
     </Run>
     <Run Id="cpu_design_thinpad_qusim_0_0_synth_1" Type="Ft3:Synth" SrcSet="cpu_design_thinpad_qusim_0_0" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_thinpad_qusim_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/cpu_design_thinpad_qusim_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1087,9 +1090,7 @@
     </Run>
     <Run Id="cpu_design_loadstore_functionun_0_0_synth_1" Type="Ft3:Synth" SrcSet="cpu_design_loadstore_functionun_0_0" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_loadstore_functionun_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/cpu_design_loadstore_functionun_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1098,9 +1099,7 @@
     </Run>
     <Run Id="cpu_design_loadstoreunit_0_0_synth_1" Type="Ft3:Synth" SrcSet="cpu_design_loadstoreunit_0_0" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_loadstoreunit_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/cpu_design_loadstoreunit_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1590,9 +1589,7 @@
     </Run>
     <Run Id="cpu_design_thinpad_serial_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_thinpad_serial_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="cpu_design_thinpad_serial_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1608,9 +1605,7 @@
     </Run>
     <Run Id="cpu_design_reservestation_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_reservestation_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="cpu_design_reservestation_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1626,9 +1621,7 @@
     </Run>
     <Run Id="cpu_design_thinpad_qusim_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_thinpad_qusim_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="cpu_design_thinpad_qusim_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1644,9 +1637,7 @@
     </Run>
     <Run Id="cpu_design_loadstore_functionun_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_loadstore_functionun_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="cpu_design_loadstore_functionun_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1662,9 +1653,7 @@
     </Run>
     <Run Id="cpu_design_loadstoreunit_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg676-2L" ConstrsSet="cpu_design_loadstoreunit_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="cpu_design_loadstoreunit_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

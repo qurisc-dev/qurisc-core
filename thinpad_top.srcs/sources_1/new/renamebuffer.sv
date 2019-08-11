@@ -49,6 +49,7 @@ module renamebuffer(
         query_result_rt=cached_value[rt_dep];
         query_ready_rt=cached[rt_dep];
     end
+    /*
     always @(posedge clk) begin
         if(rst || rst_bpfailed || rst_startreissue) begin
             for(l=1;l<64;l=l+1) begin
@@ -67,6 +68,7 @@ module renamebuffer(
             end
         end
     end
+    */
     /*
     always @* begin
         renamed_item=renames[check_rename];
@@ -111,25 +113,37 @@ module renamebuffer(
                 renames[i]<=0;
                 renamed[i]<=0;
                 dependency_mask[i]<=0;
+                cached_value[i]<=0;
+                cached[i]<=0;
             end
         end
         else begin
             // In parallel.
             for(i=1;i<64;i=i+1) begin
                 if(do_rename && new_rename==i) begin
-                // The item is being overwritten: write the correct dependency mask.
+                // The item is being overwritten: write the correct dependency mask and remove cache.
                     renamed[i]<=1;
                     renames[i]<=new_rob_item;
                     dependency_mask[i]<=combine_dep;
-                    
+                    cached[i]<=0;
+                    cached_value[i]<=0;
                 end else if( do_commit && commit_register==i && commit_robitem==renames[i]) begin
-                // The item is being committed: remove the dependency mask.
+                // The item is being committed: remove the dependency mask and cache.
                     renamed[i]<=0;
                     renames[i]<=0;
                     dependency_mask[i]<=0;
-                end else if(do_commit) begin
-                // Other item is being committed: remove the flag.
-                    dependency_mask[i][commit_robitem]<=0;
+                    cached_value[i]<=0;
+                    cached[i]<=0;
+                end else begin
+                    if(do_commit) begin
+                    // Other item is being committed: remove the flag.
+                        dependency_mask[i][commit_robitem]<=0;
+                    end
+                    // This item is being written into by CDB: cache the value.
+                    if(`CDB$Valid(cdb) && `CDB$RenameID(cdb)==renames[i] && renamed[i]) begin
+                        cached_value[i]<=`CDB$Value(cdb);
+                        cached[i]<=1;
+                    end 
                 end
 
             end
