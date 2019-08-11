@@ -1,7 +1,8 @@
-Thinpad 模板工程
----------------
+QuRISC core
+========
 
-工程包含示例代码和所有引脚约束，可以直接编译。
+https://qurisc-docs.readthedocs.io/zh_CN/latest/index.html
 
-代码中包含中文注释，编码为utf-8，在Windows版Vivado下可能出现乱码问题。  
-请用别的代码编辑器打开文件，并将编码改为GBK。
+Reorganize the code!
+--------
+The code repository is too large now...
